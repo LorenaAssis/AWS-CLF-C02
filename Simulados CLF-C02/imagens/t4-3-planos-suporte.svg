@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 680 370" role="img"><title>Degraus dos planos do AWS Support</title><desc>Escada com cinco planos clássicos, do mais simples ao mais completo. Basic é grátis, para toda conta, com conta e cobrança, documentação e re:Post, sem suporte técnico. Developer é para testes, com e-mail em horário comercial. Business é para produção, 24x7 por telefone e chat e Trusted Advisor completo. Enterprise On-Ramp tem pool de TAMs. Enterprise tem TAM designado para missão crítica.</desc>
+<style>
+svg{font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif}
+.bg{fill:#ffffff}
+.t{font-size:14px;fill:#2C2C2A}.ts{font-size:12px;fill:#5F5E5A}.th{font-size:14px;font-weight:500;fill:#2C2C2A}
+.arr{stroke:#888780;stroke-width:1.5;fill:none}
+.c-gray rect{fill:#F1EFE8;stroke:#5F5E5A}.c-gray .th{fill:#444441}.c-gray .ts{fill:#5F5E5A}
+.c-teal rect{fill:#E1F5EE;stroke:#0F6E56}.c-teal .th{fill:#085041}.c-teal .ts{fill:#0F6E56}
+.c-amber rect{fill:#FAEEDA;stroke:#854F0B}.c-amber .th{fill:#633806}.c-amber .ts{fill:#854F0B}
+@media (prefers-color-scheme:dark){
+.bg{fill:#1b1b1a}.arr{stroke:#B4B2A9}
+.t{fill:#F1EFE8}.ts{fill:#D3D1C7}.th{fill:#F1EFE8}
+.c-gray rect{fill:#444441;stroke:#B4B2A9}.c-gray .th{fill:#F1EFE8}.c-gray .ts{fill:#D3D1C7}
+.c-teal rect{fill:#085041;stroke:#5DCAA5}.c-teal .th{fill:#E1F5EE}.c-teal .ts{fill:#9FE1CB}
+.c-amber rect{fill:#633806;stroke:#EF9F27}.c-amber .th{fill:#FAEEDA}.c-amber .ts{fill:#FAC775}
+}
+</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect class="bg" x="0" y="0" width="680" height="370"/>
+<text class="ts" x="20" y="46" dominant-baseline="central">Cada degrau</text>
+<text class="ts" x="20" y="64" dominant-baseline="central">inclui o anterior</text>
+<text class="ts" x="20" y="82" dominant-baseline="central">e custa mais</text>
+<g class="c-amber"><rect x="160" y="30" width="500" height="56" rx="8" stroke-width="0.5"/><text class="th" x="176" y="50" dominant-baseline="central">Enterprise</text><text class="th" x="644" y="50" text-anchor="end" dominant-baseline="central">TAM designado</text><text class="ts" x="176" y="70" dominant-baseline="central">Missão crítica: TAM só seu, Concierge, resposta mais rápida</text></g>
+<g class="c-amber"><rect x="125" y="96" width="500" height="56" rx="8" stroke-width="0.5"/><text class="th" x="141" y="116" dominant-baseline="central">Enterprise On-Ramp</text><text class="th" x="609" y="116" text-anchor="end" dominant-baseline="central">Pool de TAMs</text><text class="ts" x="141" y="136" dominant-baseline="central">Produção crescendo: pool de TAMs e tudo do Business</text></g>
+<g class="c-teal"><rect x="90" y="162" width="500" height="56" rx="8" stroke-width="0.5"/><text class="th" x="106" y="182" dominant-baseline="central">Business</text><text class="th" x="574" y="182" text-anchor="end" dominant-baseline="central">Produção 24x7</text><text class="ts" x="106" y="202" dominant-baseline="central">Produção: telefone e chat 24x7, Trusted Advisor completo</text></g>
+<g class="c-gray"><rect x="55" y="228" width="500" height="56" rx="8" stroke-width="0.5"/><text class="th" x="71" y="248" dominant-baseline="central">Developer</text><text class="th" x="539" y="248" text-anchor="end" dominant-baseline="central">Teste e dev</text><text class="ts" x="71" y="268" dominant-baseline="central">Testes: e-mail com engenheiros em horário comercial</text></g>
+<g class="c-gray"><rect x="20" y="294" width="500" height="56" rx="8" stroke-width="0.5"/><text class="th" x="36" y="314" dominant-baseline="central">Basic</text><text class="th" x="504" y="314" text-anchor="end" dominant-baseline="central">Grátis</text><text class="ts" x="36" y="334" dominant-baseline="central">Toda conta: conta e cobrança, docs, re:Post, sem suporte técnico</text></g>
+</svg>

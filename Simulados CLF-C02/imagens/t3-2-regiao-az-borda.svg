@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 680 390" role="img"><title>Região, Zonas de Disponibilidade e ponto de presença</title><desc>A Região sa-east-1 (São Paulo) contém três Zonas de Disponibilidade, cada uma com um ou mais data centers e energia e rede próprias. Uma usuária em Recife assiste a um vídeo entregue por um ponto de presença do CloudFront, que fica fora da Região e guarda uma cópia em cache; sem cópia, ele busca na Região.</desc>
+<style>
+svg{font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif}
+.bg{fill:#ffffff}
+.t{font-size:14px;fill:#2C2C2A}.ts{font-size:12px;fill:#5F5E5A}.th{font-size:14px;font-weight:500;fill:#2C2C2A}
+.arr{stroke:#888780;stroke-width:1.5;fill:none}
+.c-gray rect{fill:#F1EFE8;stroke:#5F5E5A}.c-gray .th{fill:#444441}.c-gray .ts{fill:#5F5E5A}
+.c-teal rect{fill:#E1F5EE;stroke:#0F6E56}.c-teal .th{fill:#085041}.c-teal .ts{fill:#0F6E56}
+.c-amber rect{fill:#FAEEDA;stroke:#854F0B}.c-amber .th{fill:#633806}.c-amber .ts{fill:#854F0B}
+.c-blue rect{fill:#E6F1FB;stroke:#185FA5}.c-blue .th{fill:#0C447C}.c-blue .ts{fill:#185FA5}
+@media (prefers-color-scheme:dark){
+.bg{fill:#1b1b1a}.arr{stroke:#B4B2A9}
+.t,.th{fill:#F1EFE8}.ts{fill:#D3D1C7}
+.c-gray rect{fill:#444441;stroke:#B4B2A9}.c-gray .th{fill:#F1EFE8}.c-gray .ts{fill:#D3D1C7}
+.c-teal rect{fill:#085041;stroke:#5DCAA5}.c-teal .th{fill:#E1F5EE}.c-teal .ts{fill:#9FE1CB}
+.c-amber rect{fill:#633806;stroke:#EF9F27}.c-amber .th{fill:#FAEEDA}.c-amber .ts{fill:#FAC775}
+.c-blue rect{fill:#0C447C;stroke:#85B7EB}.c-blue .th{fill:#E6F1FB}.c-blue .ts{fill:#85B7EB}
+}
+</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect class="bg" x="0" y="0" width="680" height="390"/>
+<g class="c-teal"><rect x="20" y="20" width="430" height="300" rx="12" stroke-width="0.5"/><text class="th" x="235" y="42" text-anchor="middle" dominant-baseline="central">Região sa-east-1 (São Paulo)</text><text class="ts" x="235" y="62" text-anchor="middle" dominant-baseline="central">área geográfica com várias AZs</text><text class="ts" x="235" y="280" text-anchor="middle" dominant-baseline="central">App em 2 AZs: se uma cair, a outra segue</text><text class="ts" x="235" y="300" text-anchor="middle" dominant-baseline="central">AZs distantes e ligadas por rede rápida</text></g>
+<g class="c-blue"><rect x="36" y="80" width="124" height="176" rx="8" stroke-width="0.5"/><text class="th" x="98" y="100" text-anchor="middle" dominant-baseline="central">AZ a</text><text class="ts" x="98" y="118" text-anchor="middle" dominant-baseline="central">energia e rede</text><text class="ts" x="98" y="134" text-anchor="middle" dominant-baseline="central">próprias</text></g>
+<g class="c-gray"><rect x="46" y="150" width="104" height="36" rx="6" stroke-width="0.5"/><text class="ts" x="98" y="168" text-anchor="middle" dominant-baseline="central">data center</text></g>
+<g class="c-gray"><rect x="46" y="198" width="104" height="36" rx="6" stroke-width="0.5"/><text class="ts" x="98" y="216" text-anchor="middle" dominant-baseline="central">data center</text></g>
+<g class="c-blue"><rect x="174" y="80" width="124" height="176" rx="8" stroke-width="0.5"/><text class="th" x="236" y="100" text-anchor="middle" dominant-baseline="central">AZ b</text><text class="ts" x="236" y="118" text-anchor="middle" dominant-baseline="central">energia e rede</text><text class="ts" x="236" y="134" text-anchor="middle" dominant-baseline="central">próprias</text></g>
+<g class="c-gray"><rect x="184" y="150" width="104" height="36" rx="6" stroke-width="0.5"/><text class="ts" x="236" y="168" text-anchor="middle" dominant-baseline="central">data center</text></g>
+<g class="c-blue"><rect x="312" y="80" width="124" height="176" rx="8" stroke-width="0.5"/><text class="th" x="374" y="100" text-anchor="middle" dominant-baseline="central">AZ c</text><text class="ts" x="374" y="118" text-anchor="middle" dominant-baseline="central">energia e rede</text><text class="ts" x="374" y="134" text-anchor="middle" dominant-baseline="central">próprias</text></g>
+<g class="c-gray"><rect x="322" y="150" width="104" height="36" rx="6" stroke-width="0.5"/><text class="ts" x="374" y="168" text-anchor="middle" dominant-baseline="central">data center</text></g>
+<g class="c-gray"><rect x="322" y="198" width="104" height="36" rx="6" stroke-width="0.5"/><text class="ts" x="374" y="216" text-anchor="middle" dominant-baseline="central">data center</text></g>
+<g class="c-gray"><rect x="490" y="20" width="170" height="56" rx="8" stroke-width="0.5"/><text class="th" x="575" y="40" text-anchor="middle" dominant-baseline="central">Usuária em Recife</text><text class="ts" x="575" y="60" text-anchor="middle" dominant-baseline="central">assiste a um vídeo</text></g>
+<line x1="575" y1="80" x2="575" y2="120" class="arr" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<g class="c-amber"><rect x="490" y="124" width="170" height="96" rx="8" stroke-width="0.5"/><text class="th" x="575" y="144" text-anchor="middle" dominant-baseline="central">Ponto de presença</text><text class="ts" x="575" y="166" text-anchor="middle" dominant-baseline="central">CloudFront (cache)</text><text class="ts" x="575" y="184" text-anchor="middle" dominant-baseline="central">guarda uma cópia</text><text class="ts" x="575" y="202" text-anchor="middle" dominant-baseline="central">fora da Região</text></g>
+<line x1="452" y1="172" x2="488" y2="172" class="arr" marker-end="url(#arrow)"/>
+<text class="ts" x="340" y="344" text-anchor="middle" dominant-baseline="central">Sem cópia no ponto de presença, o CloudFront busca na Região e guarda para o próximo</text>
+<text class="ts" x="340" y="366" text-anchor="middle" dominant-baseline="central">Região = onde a app roda; ponto de presença = cache perto de quem usa</text>
+</svg>

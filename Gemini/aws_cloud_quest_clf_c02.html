@@ -1,0 +1,3219 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AWS Cloud Quest • CLF-C02</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            slateDark: '#0f172a',
+            cardDark: '#1e293b',
+            borderDark: '#334155',
+            awsAmber: '#f59e0b',
+            awsCyan: '#38bdf8',
+            awsEmerald: '#10b981',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Flashcard 3D Flip Mechanics */
+    .perspective-1000 {
+      perspective: 1200px;
+    }
+    .transform-style-3d {
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .rotate-y-180 {
+      transform: rotateY(180deg);
+    }
+    .backface-hidden {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    /* Subtle Pulse for Current Active Node */
+    @keyframes pulseRing {
+      0% {
+        box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.55);
+      }
+      70% {
+        box-shadow: 0 0 0 12px rgba(245, 158, 11, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+      }
+    }
+    .node-active-pulse {
+      animation: pulseRing 2.2s infinite;
+    }
+
+    /* Smooth Fade In */
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-up {
+      animation: fadeSlideUp 0.28s ease-out forwards;
+    }
+
+    /* Confetti particle animation */
+    @keyframes confettiFall {
+      0% {
+        transform: translateY(-20px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(260px) rotate(720deg);
+        opacity: 0;
+      }
+    }
+    .confetti-piece {
+      position: fixed;
+      width: 9px;
+      height: 9px;
+      border-radius: 2px;
+      pointer-events: none;
+      z-index: 9999;
+      animation: confettiFall 1.5s ease-out forwards;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-amber-500/30 selection:text-amber-200">
+
+  <!-- FIXED GAMIFIED HEADER -->
+  <header class="sticky top-0 z-40 bg-[#0f172a]/95 backdrop-blur-md border-b border-[#334155] shadow-lg">
+    <div class="max-w-6xl mx-auto px-3 sm:px-6 pt-3 pb-2">
+      <!-- Top Row: Brand, Overall Progress Bar, XP & Controls -->
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <!-- Brand -->
+        <div class="flex items-center gap-2.5">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-md shadow-amber-500/20 shrink-0">
+            <svg class="w-6 h-6 text-slate-950" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 class="text-base sm:text-lg font-extrabold tracking-tight text-white leading-none">
+                AWS Cloud Quest <span class="text-amber-400">• CLF-C02</span>
+              </h1>
+            </div>
+            <p id="header-level-label" class="text-xs text-slate-400 mt-0.5 font-medium">Nível 1 • Explorador da Nuvem</p>
+          </div>
+        </div>
+
+        <!-- Center: Overall Progress Bar -->
+        <div class="order-3 md:order-2 w-full md:w-72 lg:w-80">
+          <div class="flex items-center justify-between text-xs mb-1">
+            <span class="text-slate-400 font-medium">Progresso Geral</span>
+            <span id="header-progress-text" class="font-mono font-bold text-cyan-400">0%</span>
+          </div>
+          <div class="w-full h-2.5 bg-[#1e293b] rounded-full overflow-hidden border border-[#334155]">
+            <div id="header-progress-bar" class="h-full bg-gradient-to-r from-amber-500 via-cyan-400 to-emerald-400 rounded-full transition-all duration-500" style="width: 0%"></div>
+          </div>
+        </div>
+
+        <!-- Right: XP Badge, Sound Toggle, Reset -->
+        <div class="order-2 md:order-3 flex items-center gap-2">
+          <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#1e293b] border border-amber-500/40 shadow-inner" title="XP Acumulado">
+            <span class="text-amber-400 text-sm">⚡</span>
+            <span id="header-xp-value" class="font-mono font-bold text-sm text-amber-300">0 XP</span>
+          </div>
+
+          <button id="btn-toggle-sound" onclick="toggleSound()" class="p-2 rounded-xl bg-[#1e293b] hover:bg-slate-700 border border-[#334155] text-slate-300 transition" title="Ativar/Silenciar Efeitos Sonoros">
+            <span id="sound-icon" class="text-sm">🔊</span>
+          </button>
+
+          <button onclick="openResetModal()" class="px-2.5 py-2 rounded-xl bg-[#1e293b] hover:bg-rose-950/60 border border-[#334155] hover:border-rose-500/50 text-xs text-slate-400 hover:text-rose-300 transition" title="Resetar Progresso">
+            Resetar
+          </button>
+        </div>
+      </div>
+
+      <!-- Bottom Row: 3 Main Navigation Tabs -->
+      <nav class="grid grid-cols-3 gap-1.5 sm:gap-2 mt-3" aria-label="Navegação Principal">
+        <button id="tab-btn-trail" onclick="switchMainTab('trail')" class="main-tab-btn flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 px-2 sm:px-4 rounded-xl text-xs sm:text-sm font-bold transition border">
+          <span>🗺️</span>
+          <span class="truncate">Trilha do Curso</span>
+        </button>
+        <button id="tab-btn-cram" onclick="switchMainTab('cram')" class="main-tab-btn flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 px-2 sm:px-4 rounded-xl text-xs sm:text-sm font-bold transition border">
+          <span>⚡</span>
+          <span class="truncate">Cola Rápida & Flashcards</span>
+        </button>
+        <button id="tab-btn-exam" onclick="switchMainTab('exam')" class="main-tab-btn flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 px-2 sm:px-4 rounded-xl text-xs sm:text-sm font-bold transition border">
+          <span>🎯</span>
+          <span class="truncate">Simulado Express</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT AREA -->
+  <main id="app-main" class="flex-1 max-w-6xl w-full mx-auto px-3 sm:px-6 py-6">
+    <!-- Dynamic Tab Views Injected Here -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-[#334155]/70 py-4 px-4 text-center text-xs text-slate-500">
+    AWS Cloud Quest • Preparatório Interativo CLF-C02 (pt-BR) • Foco em Aprendizagem Ativa e Memorização Rápida
+  </footer>
+
+  <!-- INTERACTIVE LESSON PLAYER MODAL (4 STEPS) -->
+  <div id="lesson-modal" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 overflow-y-auto">
+    <div class="bg-[#1e293b] border border-[#334155] rounded-2xl w-full max-w-3xl shadow-2xl overflow-hidden my-auto animate-fade-up">
+      <!-- Lesson Modal Top Bar -->
+      <div class="bg-[#0f172a] px-4 sm:px-6 py-3.5 border-b border-[#334155] flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3 flex-1">
+          <button onclick="closeLessonModal()" class="p-2 rounded-xl bg-[#1e293b] hover:bg-slate-700 text-slate-300 transition" title="Fechar Aula (Esc)">
+            ✕
+          </button>
+          <div class="flex-1">
+            <div class="flex items-center justify-between text-xs mb-1">
+              <span id="lesson-step-label" class="font-bold text-amber-400 uppercase tracking-wider">Etapa 1 de 4 • Conceito em 30s</span>
+              <span id="lesson-module-badge" class="text-slate-400 hidden sm:inline">Módulo 1</span>
+            </div>
+            <!-- 4-Segment Step Bar -->
+            <div class="grid grid-cols-4 gap-1.5">
+              <div id="step-bar-1" class="h-2 rounded-full bg-amber-500 transition-all"></div>
+              <div id="step-bar-2" class="h-2 rounded-full bg-[#334155] transition-all"></div>
+              <div id="step-bar-3" class="h-2 rounded-full bg-[#334155] transition-all"></div>
+              <div id="step-bar-4" class="h-2 rounded-full bg-[#334155] transition-all"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lesson Modal Body -->
+      <div id="lesson-modal-body" class="p-5 sm:p-8 max-h-[75vh] overflow-y-auto">
+        <!-- Dynamic Step Content -->
+      </div>
+
+      <!-- Lesson Modal Footer Controls -->
+      <div id="lesson-modal-footer" class="bg-[#0f172a]/80 px-4 sm:px-6 py-3.5 border-t border-[#334155] flex items-center justify-between gap-3">
+        <!-- Dynamic Navigation Buttons -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CUSTOM CONFIRMATION MODAL (NO alert/confirm) -->
+  <div id="confirm-modal" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-[#1e293b] border border-[#334155] rounded-2xl max-w-md w-full p-6 shadow-2xl animate-fade-up">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-10 h-10 rounded-xl bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 text-lg">
+          ⚠️
+        </div>
+        <h3 id="confirm-title" class="text-lg font-bold text-white">Confirmar Ação</h3>
+      </div>
+      <p id="confirm-message" class="text-sm text-slate-300 mb-6 leading-relaxed">
+        Tem certeza?
+      </p>
+      <div class="flex items-center justify-end gap-3">
+        <button onclick="closeConfirmModal()" class="px-4 py-2.5 rounded-xl bg-[#0f172a] hover:bg-slate-800 border border-[#334155] text-sm font-semibold text-slate-300 transition">
+          Cancelar
+        </button>
+        <button id="confirm-action-btn" class="px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-sm font-bold text-white shadow-lg shadow-rose-600/20 transition">
+          Confirmar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-container" class="fixed bottom-4 right-4 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <script>
+    // =========================================================================
+    // 1. DATASET COMPLETO DO CURSO AWS CLF-C02 (CURTO, VISUAL E MEMORÁVEL)
+    // =========================================================================
+
+    const MODULES = [
+      {
+        id: 'm1',
+        number: 1,
+        title: 'Conceitos de Nuvem',
+        weight: '24%',
+        color: 'amber',
+        description: 'Fundamentos da computação em nuvem, modelos de serviço e arquitetura AWS.',
+        lessons: [
+          {
+            id: 'm1_l1',
+            title: 'As 6 Vantagens da Nuvem',
+            duration: '2 min',
+            icon: '🚀',
+            analogy: 'Pense na energia elétrica da sua casa: você não constrói uma usina no quintal, apenas liga na tomada e paga só pelo que consumir.',
+            bullets: [
+              'Trocar <span class="text-amber-400 font-bold">CapEx por OpEx</span>: Zero gasto inicial com servidores físicos; pague apenas sob demanda.',
+              '<span class="text-cyan-400 font-bold">Economia de Escala</span>: Milhões de clientes AWS reduzem o custo unitário para todos.',
+              '<span class="text-emerald-400 font-bold">Parar de adivinhar capacidade</span>: Escale para cima ou para baixo automaticamente em minutos.',
+              '<span class="text-amber-400 font-bold">Velocidade, Agilidade e Alcance Global</span>: Lance sistemas no mundo todo com poucos cliques e foque no negócio.'
+            ],
+            goldenRuleTitle: 'Regra de Ouro • CapEx vs. OpEx',
+            goldenRuleCards: [
+              {
+                badge: 'Data Center Próprio (CapEx)',
+                color: 'rose',
+                points: ['Compra antecipada de hardware', 'Custo fixo alto mesmo ocioso', 'Meses para expandir capacidade']
+              },
+              {
+                badge: 'Nuvem AWS (OpEx)',
+                color: 'emerald',
+                points: ['Pagamento conforme o uso (Pay-as-you-go)', 'Custo variável otimizado', 'Escala elástica em segundos']
+              }
+            ],
+            mnemonic: 'Macete: "V-E-C-A-F-G" → Variável (OpEx), Escala, Capacidade elástica, Agilidade, Foco no cliente, Global.',
+            quiz: [
+              {
+                question: 'Uma startup não quer gastar dinheiro comprando servidores antes de testar seu aplicativo. Qual vantagem da nuvem AWS resolve isso?',
+                options: [
+                  'Trocar despesas de capital (CapEx) por despesas variáveis (OpEx)',
+                  'Aumentar a latência entre regiões globais',
+                  'Manter capacidade fixa superdimensionada',
+                  'Gerenciar hardware físico diretamente'
+                ],
+                correct: 0,
+                explanation: 'Na nuvem você troca o investimento inicial alto (CapEx) pelo pagamento conforme o uso (OpEx).'
+              },
+              {
+                question: 'Por que a AWS consegue reduzir preços constantemente para os clientes?',
+                options: [
+                  'Porque desliga servidores à noite',
+                  'Pela enorme economia de escala agregada de milhões de clientes',
+                  'Porque usa apenas contratos de 5 anos',
+                  'Porque cobra suporte obrigatório'
+                ],
+                correct: 1,
+                explanation: 'O volume gigantesco de uso global gera economia de escala, repassada em preços menores.'
+              }
+            ]
+          },
+          {
+            id: 'm1_l2',
+            title: 'IaaS, PaaS, SaaS e Modelos de Implantação',
+            duration: '2 min',
+            icon: '🍕',
+            analogy: 'Analogia da Pizza: IaaS = você compra massa e ingredientes e assa; PaaS = pizza pronta entregue em casa; SaaS = você vai ao restaurante e só come.',
+            bullets: [
+              '<span class="text-amber-400 font-bold">IaaS</span> (Infraestrutura): Controle total do SO e rede. Ex: <span class="font-mono text-cyan-300">Amazon EC2, VPC, EBS</span>.',
+              '<span class="text-cyan-400 font-bold">PaaS</span> (Plataforma): Você só envia o código; AWS cuida do servidor. Ex: <span class="font-mono text-cyan-300">Elastic Beanstalk, RDS</span>.',
+              '<span class="text-emerald-400 font-bold">SaaS</span> (Software): Produto pronto para o usuário final. Ex: <span class="font-mono text-cyan-300">Amazon WorkSpaces, Chime, Rekognition</span>.',
+              '<span class="text-amber-400 font-bold">Implantação</span>: Nuvem Pública (100% AWS), Privada (On-premises) ou <span class="text-cyan-400 font-bold">Híbrida</span> (ambos conectados).'
+            ],
+            goldenRuleTitle: 'Mapa Visual • Quem Gerencia o Quê?',
+            goldenRuleCards: [
+              {
+                badge: 'IaaS (EC2)',
+                color: 'amber',
+                points: ['Você gerencia: Sistema Operacional, Apps e Dados', 'AWS gerencia: Hardware, Rede física e Virtualização']
+              },
+              {
+                badge: 'PaaS (Elastic Beanstalk)',
+                color: 'cyan',
+                points: ['Você gerencia: Apenas seu Código e Dados', 'AWS gerencia: SO, Runtime, Patches e Servidores']
+              }
+            ],
+            mnemonic: 'Macete: Se a questão falar "focar apenas no código sem gerenciar SO" → PaaS (Elastic Beanstalk)!',
+            quiz: [
+              {
+                question: 'Um desenvolvedor quer subir sua aplicação web Java sem precisar configurar servidores ou atualizar o sistema operacional. Qual modelo é esse?',
+                options: ['IaaS (Infrastructure as a Service)', 'PaaS (Platform as a Service)', 'On-Premises', 'Bare Metal'],
+                correct: 1,
+                explanation: 'No PaaS (como o AWS Elastic Beanstalk), você foca só no código e a AWS gerencia a infraestrutura e o SO.'
+              },
+              {
+                question: 'Um banco mantém dados sigilosos em seu data center próprio e usa a AWS para picos de processamento. Qual é esse modelo de implantação?',
+                options: ['Totalmente na Nuvem', 'Nuvem Híbrida', 'Multi-Tenant Isolado', 'SaaS Público'],
+                correct: 1,
+                explanation: 'A integração entre infraestrutura local (on-premises) e nuvem AWS caracteriza o modelo Híbrido.'
+              }
+            ]
+          },
+          {
+            id: 'm1_l3',
+            title: 'Well-Architected Framework (Os 6 Pilares)',
+            duration: '3 min',
+            icon: '🏛️',
+            analogy: 'São os 6 pilares que sustentam um prédio perfeito na nuvem: se um falhar, a arquitetura balança.',
+            bullets: [
+              '1. <span class="text-amber-400 font-bold">Excelência Operacional</span>: Automatizar operações, Infraestrutura como Código (CloudFormation) e melhoria contínua.',
+              '2. <span class="text-cyan-400 font-bold">Segurança</span>: Proteger dados, IAM, criptografia e rastreabilidade.',
+              '3. <span class="text-emerald-400 font-bold">Confiabilidade</span>: Recuperar-se de falhas automaticamente (Multi-AZ, backups, auto-healing).',
+              '4. <span class="text-amber-400 font-bold">Eficiência de Performance</span>: Usar o tipo certo de recurso (Serverless, tipos de EC2) e tecnologia moderna.',
+              '5. <span class="text-cyan-400 font-bold">Otimização de Custos</span>: Eliminar desperdícios, desligar recursos ociosos, usar Spot/Reserved.',
+              '6. <span class="text-emerald-400 font-bold">Sustentabilidade</span>: Minimizar impacto ambiental e consumo de energia usando recursos gerenciados.'
+            ],
+            goldenRuleTitle: 'Pegadinha Clássica • Confiabilidade vs. Eficiência',
+            goldenRuleCards: [
+              {
+                badge: 'Confiabilidade (Reliability)',
+                color: 'emerald',
+                points: ['Sobreviver a falhas sem cair', 'Multi-AZ, Failover automático, Backups', 'Palavra-chave: Disponibilidade e Recuperação']
+              },
+              {
+                badge: 'Eficiência de Performance',
+                color: 'cyan',
+                points: ['Manter rapidez conforme demanda cresce', 'Escolher instância certa, CloudFront', 'Palavra-chave: Latência baixa e Recursos adequados']
+              }
+            ],
+            mnemonic: 'Mnemônico "ES-CO-EF-OT-SU": Excelência, Segurança, Confiabilidade, Eficiência, Otimização de Custos, Sustentabilidade.',
+            quiz: [
+              {
+                question: 'Qual pilar do AWS Well-Architected Framework foca em automatizar mudanças com código e responder rapidamente a eventos operacionais?',
+                options: ['Confiabilidade', 'Excelência Operacional', 'Sustentabilidade', 'Eficiência de Performance'],
+                correct: 1,
+                explanation: 'Excelência Operacional trata de automação (IaC), monitoramento de operações e melhoria contínua de processos.'
+              },
+              {
+                question: 'Desligar ambientes de desenvolvimento nos fins de semana para economizar dinheiro pertence principalmente a qual pilar?',
+                options: ['Otimização de Custos', 'Segurança', 'Confiabilidade', 'Excelência Operacional'],
+                correct: 0,
+                explanation: 'Evitar gastos desnecessários e pagar apenas pelo que precisa é o foco central da Otimização de Custos.'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'm2',
+        number: 2,
+        title: 'Segurança e Conformidade',
+        weight: '30%',
+        color: 'cyan',
+        description: 'Segundo maior peso da prova! Domine responsabilidades, IAM e serviços de defesa.',
+        lessons: [
+          {
+            id: 'm2_l1',
+            title: 'Responsabilidade Compartilhada (DA vs. NA)',
+            duration: '2 min',
+            icon: '🛡️',
+            analogy: 'A AWS constrói um condomínio blindado com câmeras e muros (Segurança DA nuvem). Você tranca a porta do seu apartamento e guarda suas joias no cofre (Segurança NA nuvem).',
+            bullets: [
+              '<span class="text-amber-400 font-bold">AWS = Segurança DA Nuvem</span>: Hardware, Data Centers, energia, rede física, hipervisor e serviços gerenciados.',
+              '<span class="text-cyan-400 font-bold">Cliente = Segurança NA Nuvem</span>: Seus dados, criptografia, IAM, grupos de segurança e sistema operacional do EC2.',
+              '<span class="text-emerald-400 font-bold">Atenção ao EC2 vs. RDS</span>: No EC2, <span class="underline">você</span> atualiza o SO (patches). No RDS/Lambda, a <span class="underline">AWS</span> atualiza o SO!'
+            ],
+            goldenRuleTitle: 'Divisão de Tarefas • Nunca Mais Erre',
+            goldenRuleCards: [
+              {
+                badge: 'Responsabilidade da AWS (DA Nuvem)',
+                color: 'amber',
+                points: ['Segurança física dos Data Centers', 'Manutenção de hardware e discos', 'Virtualização e infraestrutura global']
+              },
+              {
+                badge: 'Responsabilidade do Cliente (NA Nuvem)',
+                color: 'cyan',
+                points: ['Dados dos clientes e Criptografia', 'Senhas, MFA e Permissões IAM', 'Patches do SO convidado no EC2']
+              }
+            ],
+            mnemonic: 'Regra de Ouro: Física/Hardware = AWS. Dados/IAM/SO do EC2 = Cliente!',
+            quiz: [
+              {
+                question: 'De acordo com o Modelo de Responsabilidade Compartilhada da AWS, qual item é responsabilidade exclusiva do CLIENTE?',
+                options: [
+                  'Destruição física de discos rígidos defeituosos',
+                  'Controle de acesso biométrico nos data centers AWS',
+                  'Aplicar patches de segurança no sistema operacional de uma instância Amazon EC2',
+                  'Manutenção da camada de virtualização'
+                ],
+                correct: 2,
+                explanation: 'No EC2 (IaaS), o cliente é responsável pelo sistema operacional convidado, incluindo patches e firewall.'
+              },
+              {
+                question: 'Quem é responsável pela segurança física das Zonas de Disponibilidade (AZs) da AWS?',
+                options: [
+                  'O cliente, por meio de Security Groups',
+                  'A AWS (Segurança DA Nuvem)',
+                  'Compartilhado 50/50',
+                  'O AWS Trusted Advisor'
+                ],
+                correct: 1,
+                explanation: 'Toda a segurança física de instalações, hardware e rede global pertence à AWS.'
+              }
+            ]
+          },
+          {
+            id: 'm2_l2',
+            title: 'IAM na Prática (Users, Groups, Roles, MFA)',
+            duration: '3 min',
+            icon: '🔑',
+            analogy: 'User é seu crachá pessoal; Group é o departamento (ex: Devs); Policy é a lista de salas permitidas; Role é um crachá temporário de visitante.',
+            bullets: [
+              '<span class="text-rose-400 font-bold">Conta Root</span>: Criada no início com poder total. Ative <span class="text-amber-400 font-bold">MFA</span> imediatamente e <span class="underline">nunca</span> use no dia a dia!',
+              '<span class="text-cyan-400 font-bold">Princípio do Privilégio Mínimo</span>: Dê apenas as permissões estritamente necessárias.',
+              '<span class="text-emerald-400 font-bold">IAM Roles (Funções)</span>: Credenciais temporárias seguras para serviços (ex: permitir que uma EC2 acesse um bucket S3 sem salvar senhas no código).'
+            ],
+            goldenRuleTitle: 'Peças do IAM • Conecte os Pontos',
+            goldenRuleCards: [
+              {
+                badge: 'Users & Groups (Pessoas)',
+                color: 'cyan',
+                points: ['Users = Pessoas ou apps externos', 'Groups = Coleção de Users (ex: Financeiro)', 'Policies (JSON) = Definem o que pode fazer']
+              },
+              {
+                badge: 'IAM Roles (Serviços/Temporário)',
+                color: 'emerald',
+                points: ['Sem senha ou chave fixa!', 'Ideal para EC2 acessar S3/DynamoDB', 'Evita vazamento de Access Keys']
+              }
+            ],
+            mnemonic: 'Macete: "EC2 precisa ler arquivos no S3" → Sempre marque IAM ROLE (nunca Access Key no código)!',
+            quiz: [
+              {
+                question: 'Uma aplicação rodando em uma instância Amazon EC2 precisa gravar arquivos no Amazon S3 de forma segura. Qual é a melhor prática?',
+                options: [
+                  'Salvar Access Key e Secret Key dentro do código da aplicação',
+                  'Anexar uma IAM Role com permissão S3 à instância EC2',
+                  'Usar as credenciais da conta Root',
+                  'Tornar o bucket S3 totalmente público'
+                ],
+                correct: 1,
+                explanation: 'IAM Roles fornecem credenciais temporárias e rotacionadas automaticamente para instâncias EC2.'
+              },
+              {
+                question: 'Qual é a primeira recomendação de segurança ao criar uma nova conta AWS?',
+                options: [
+                  'Compartilhar a senha Root com os administradores',
+                  'Habilitar MFA na conta Root e criar usuários IAM administrativos',
+                  'Excluir a conta Root',
+                  'Criar 10 Access Keys para a conta Root'
+                ],
+                correct: 1,
+                explanation: 'A conta Root deve ter MFA ativado e ser guardada; o trabalho diário deve usar usuários IAM com privilégio mínimo.'
+              }
+            ]
+          },
+          {
+            id: 'm2_l3',
+            title: 'Serviços de Segurança (GuardDuty, Shield, WAF, KMS)',
+            duration: '3 min',
+            icon: '🚨',
+            analogy: 'WAF é o segurança na porta do site; Shield é o escudo anti-tsunami (DDoS); GuardDuty é o detetive com IA vigiando câmeras.',
+            bullets: [
+              '<span class="text-amber-400 font-bold">AWS Shield</span>: Proteção contra ataques <span class="text-cyan-400 font-bold">DDoS</span> (Standard grátis automático; Advanced pago 24/7).',
+              '<span class="text-cyan-400 font-bold">AWS WAF</span>: Firewall de Aplicação Web (Camada 7) — bloqueia <span class="underline">SQL Injection e XSS</span>.',
+              '<span class="text-emerald-400 font-bold">Amazon GuardDuty</span>: Detecção inteligente de ameaças (IA) analisando logs de VPC, CloudTrail e DNS.',
+              '<span class="text-amber-400 font-bold">KMS & Artifact</span>: <span class="font-mono text-cyan-300">KMS</span> gerencia chaves de criptografia; <span class="font-mono text-cyan-300">Artifact</span> baixa relatórios de conformidade (ISO, PCI, SOC).'
+            ],
+            goldenRuleTitle: 'Esquadrão de Segurança AWS',
+            goldenRuleCards: [
+              {
+                badge: 'Defesa de Rede & App',
+                color: 'amber',
+                points: ['Shield = Anti-DDoS (Camada 3/4)', 'WAF = Anti-SQL Injection/XSS (Camada 7)', 'Network Firewall = Firewall gerenciado VPC']
+              },
+              {
+                badge: 'Auditoria, Chaves & Compliance',
+                color: 'cyan',
+                points: ['GuardDuty = Detetive de ameaças (ML)', 'Inspector = Scanner de vulnerabilidades EC2', 'KMS = Chaves | Artifact = Certificados/PDFs']
+              }
+            ],
+            mnemonic: 'Macete: DDoS = Shield | SQL Injection = WAF | Criptografia = KMS | Auditoria ISO/PCI = Artifact.',
+            quiz: [
+              {
+                question: 'Uma empresa precisa baixar relatórios de conformidade SOC 2 e ISO 27001 da AWS para mostrar a um auditor. Qual serviço usar?',
+                options: ['AWS Shield', 'AWS Artifact', 'Amazon Inspector', 'AWS KMS'],
+                correct: 1,
+                explanation: 'O AWS Artifact é o portal sob demanda para baixar relatórios de conformidade e acordos da AWS.'
+              },
+              {
+                question: 'Qual serviço protege uma aplicação web contra ataques de SQL Injection e Cross-Site Scripting (XSS)?',
+                options: ['AWS WAF', 'AWS Shield Standard', 'Amazon Macie', 'AWS CloudTrail'],
+                correct: 0,
+                explanation: 'O AWS WAF (Web Application Firewall) filtra tráfego HTTP/HTTPS malicioso como SQLi e XSS.'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'm3',
+        number: 3,
+        title: 'Tecnologia e Serviços',
+        weight: '34%',
+        color: 'emerald',
+        description: 'O coração técnico da prova (34%): Computação, Armazenamento, Bancos e Redes.',
+        lessons: [
+          {
+            id: 'm3_l1',
+            title: 'Computação (EC2, Lambda, Fargate, Beanstalk)',
+            duration: '3 min',
+            icon: '⚙️',
+            analogy: 'EC2 é alugar um carro; Fargate é chamar um Uber por corrida; Lambda é teletransporte instantâneo que só cobra os segundos da viagem.',
+            bullets: [
+              '<span class="text-amber-400 font-bold">Amazon EC2</span>: Máquinas virtuais redimensionáveis na nuvem (IaaS). Controle total do SO.',
+              '<span class="text-cyan-400 font-bold">AWS Lambda</span>: <span class="underline">Serverless</span>! Roda código orientado a eventos sem servidores. Limite de <span class="text-amber-400 font-bold">15 minutos</span> por execução.',
+              '<span class="text-emerald-400 font-bold">ECS / EKS + Fargate</span>: Orquestração de <span class="underline">Containers</span>. Com <span class="text-cyan-400 font-bold">Fargate</span>, você roda containers sem gerenciar servidores EC2!',
+              '<span class="text-amber-400 font-bold">Elastic Beanstalk</span>: PaaS — suba seu código web e ele cria EC2, Load Balancer e Auto Scaling sozinho.'
+            ],
+            goldenRuleTitle: 'Qual Computação Escolher na Prova?',
+            goldenRuleCards: [
+              {
+                badge: 'EC2 & Elastic Beanstalk',
+                color: 'amber',
+                points: ['EC2 = Controle total do SO e rede', 'Beanstalk = Deploy rápido de app web (PaaS)', 'Auto Scaling = Ajusta quantidade de EC2']
+              },
+              {
+                badge: 'Lambda & Fargate (Sem Servidor)',
+                color: 'emerald',
+                points: ['Lambda = Funções curtas (<15 min) por evento', 'Fargate = Containers Docker sem gerenciar EC2', 'Pague apenas pelo tempo exato de execução']
+              }
+            ],
+            mnemonic: 'Macete: "Sem gerenciar servidor + evento curto" = Lambda | "Containers sem EC2" = Fargate.',
+            quiz: [
+              {
+                question: 'Você precisa redimensionar automaticamente uma foto toda vez que ela for enviada para um bucket S3, pagando apenas pelos milissegundos de execução. Qual serviço usar?',
+                options: ['Amazon EC2 Dedicated Host', 'AWS Lambda', 'Amazon Redshift', 'AWS Direct Connect'],
+                correct: 1,
+                explanation: 'AWS Lambda é perfeito para processamento orientado a eventos (como upload no S3) sem gerenciar servidores.'
+              },
+              {
+                question: 'Qual serviço permite executar containers Docker na AWS sem precisar provisionar ou gerenciar instâncias EC2 subjacentes?',
+                options: ['AWS Fargate', 'Amazon EBS', 'AWS Snowball', 'Amazon Route 53'],
+                correct: 0,
+                explanation: 'AWS Fargate é o motor de computação serverless para containers (funciona com ECS e EKS).'
+              }
+            ]
+          },
+          {
+            id: 'm3_l2',
+            title: 'Armazenamento (S3 e Classes, EBS, EFS)',
+            duration: '3 min',
+            icon: '🗄️',
+            analogy: 'S3 é um depósito infinito na internet (acesso via link); EBS é o HD interno do seu notebook (1 computador); EFS é uma pasta compartilhada na rede.',
+            bullets: [
+              '<span class="text-amber-400 font-bold">Amazon S3</span>: Armazenamento de <span class="underline">objetos</span> ilimitado (99,999999999% de durabilidade). Ideal para vídeos, backups e sites estáticos.',
+              '<span class="text-cyan-400 font-bold">Classes S3</span>: <span class="font-mono">Standard</span> (frequente), <span class="font-mono">Intelligent-Tiering</span> (padrão desconhecido), <span class="font-mono">Glacier</span> (arquivamento frio barato).',
+              '<span class="text-emerald-400 font-bold">Amazon EBS</span>: Disco de <span class="underline">bloco</span> para <span class="text-amber-400 font-bold">1 instância EC2</span> na mesma Zona de Disponibilidade (AZ).',
+              '<span class="text-amber-400 font-bold">Amazon EFS</span>: Sistema de arquivos <span class="underline">Linux compartilhado</span> entre centenas de EC2 simultaneamente em várias AZs.'
+            ],
+            goldenRuleTitle: 'Trio de Ouro do Armazenamento',
+            goldenRuleCards: [
+              {
+                badge: 'S3 (Objetos) vs. Glacier',
+                color: 'cyan',
+                points: ['S3 = Arquivos/Objetos via HTTP (não instala SO)', 'Intelligent-Tiering = Move automático e economiza', 'Glacier Deep Archive = Mais barato para anos']
+              },
+              {
+                badge: 'EBS (Bloco) vs. EFS (Arquivo)',
+                color: 'emerald',
+                points: ['EBS = HD do EC2 (1 AZ, ultra-rápido)', 'EFS = Pasta de rede Linux (Multi-EC2, Multi-AZ)', 'Storage Gateway = Ponte Híbrida local ↔ S3']
+              }
+            ],
+            mnemonic: 'Macete: 1 EC2 = EBS | Várias EC2 Linux juntas = EFS | Arquivos/Backups/Arquivamento = S3 / Glacier.',
+            quiz: [
+              {
+                question: 'Uma empresa precisa armazenar logs fiscais por 7 anos. Eles raramente serão acessados e o custo deve ser o menor possível. Qual opção escolher?',
+                options: ['Amazon EBS Provisioned IOPS', 'Amazon S3 Glacier Deep Archive', 'Amazon EFS Standard', 'Amazon S3 Standard'],
+                correct: 1,
+                explanation: 'S3 Glacier Deep Archive é a classe de armazenamento mais barata da AWS para retenção de longo prazo.'
+              },
+              {
+                question: 'Dez instâncias EC2 Linux em diferentes Zonas de Disponibilidade precisam ler e gravar nos mesmos arquivos simultaneamente. Qual serviço usar?',
+                options: ['Amazon EBS', 'Amazon EFS', 'AWS Snowcone', 'Amazon Glacier'],
+                correct: 1,
+                explanation: 'O Amazon EFS é um sistema de arquivos elástico compartilhado entre múltiplas instâncias EC2 e Multi-AZ.'
+              }
+            ]
+          },
+          {
+            id: 'm3_l3',
+            title: 'Bancos de Dados (RDS, Aurora, DynamoDB, Redshift)',
+            duration: '3 min',
+            icon: '🧬',
+            analogy: 'RDS/Aurora são planilhas relacionais super organizadas (SQL); DynamoDB é uma agenda telefônica instantânea (NoSQL); Redshift é um cérebro analítico de BI.',
+            bullets: [
+              '<span class="text-amber-400 font-bold">Amazon RDS</span>: Banco <span class="underline">relacional (SQL)</span> gerenciado (MySQL, PostgreSQL, Oracle, SQL Server). Suporta <span class="text-cyan-400 font-bold">Multi-AZ</span> (alta disponibilidade).',
+              '<span class="text-cyan-400 font-bold">Amazon Aurora</span>: Banco relacional proprietário da AWS — até <span class="text-emerald-400 font-bold">5x mais rápido</span> que MySQL e 3x mais rápido que PostgreSQL.',
+              '<span class="text-emerald-400 font-bold">Amazon DynamoDB</span>: Banco <span class="underline">NoSQL</span> (chave-valor) serverless com latência de <span class="text-amber-400 font-bold">milissegundos</span> em qualquer escala.',
+              '<span class="text-amber-400 font-bold">Amazon Redshift</span>: <span class="underline">Data Warehouse (OLAP)</span> para análises complexas e Business Intelligence (BI) em petabytes.'
+            ],
+            goldenRuleTitle: 'Radar de Bancos de Dados na Prova',
+            goldenRuleCards: [
+              {
+                badge: 'Transacional (OLTP) • App do Dia a Dia',
+                color: 'cyan',
+                points: ['RDS = SQL tradicional gerenciado', 'Aurora = SQL nativo AWS de altíssima performance', 'DynamoDB = NoSQL serverless ultra-rápido (ms)']
+              },
+              {
+                badge: 'Analítico (OLAP) & Cache',
+                color: 'amber',
+                points: ['Redshift = Data Warehouse / Relatórios BI', 'ElastiCache = Cache em memória (Redis/Memcached)', 'DMS = Migra bancos locais para AWS sem parada']
+              }
+            ],
+            mnemonic: 'Macete: NoSQL milissegundos = DynamoDB | Data Warehouse/BI = Redshift | SQL 5x mais rápido = Aurora.',
+            quiz: [
+              {
+                question: 'Um jogo mobile precisa armazenar o placar de milhões de jogadores com tempo de resposta de milissegundos em um banco NoSQL totalmente gerenciado. Qual serviço usar?',
+                options: ['Amazon Redshift', 'Amazon DynamoDB', 'Amazon RDS for Oracle', 'AWS Snowball'],
+                correct: 1,
+                explanation: 'Amazon DynamoDB é o banco NoSQL serverless da AWS projetado para latência de milissegundos em qualquer escala.'
+              },
+              {
+                question: 'Uma equipe de Business Intelligence precisa rodar consultas analíticas complexas (OLAP) sobre petabytes de vendas históricas. Qual serviço é ideal?',
+                options: ['Amazon Redshift', 'Amazon ElastiCache', 'Amazon DynamoDB', 'Amazon VPC'],
+                correct: 0,
+                explanation: 'Amazon Redshift é o Data Warehouse colunar otimizado para análises pesadas e BI.'
+              }
+            ]
+          },
+          {
+            id: 'm3_l4',
+            title: 'Redes e Entrega (VPC, Route 53, CloudFront, Direct Connect)',
+            duration: '3 min',
+            icon: '🌐',
+            analogy: 'VPC é seu terreno cercado; Subnets são os cômodos; Route 53 é o GPS; CloudFront entrega cópias na esquina da sua casa; Direct Connect é um túnel VIP.',
+            bullets: [
+              '<span class="text-amber-400 font-bold">Amazon VPC</span>: Sua rede virtual isolada na AWS (Subnets Públicas e Privadas, Internet Gateway, NAT Gateway).',
+              '<span class="text-cyan-400 font-bold">Amazon Route 53</span>: Serviço de <span class="underline">DNS</span> altamente disponível (100% SLA) e registro de domínios.',
+              '<span class="text-emerald-400 font-bold">Amazon CloudFront</span>: <span class="underline">CDN</span> que entrega vídeos, imagens e APIs com baixa latência usando <span class="text-amber-400 font-bold">Edge Locations</span> globais.',
+              '<span class="text-amber-400 font-bold">AWS Direct Connect</span>: Conexão de fibra óptica <span class="underline">física dedicada e privada</span> entre seu data center e a AWS (não passa pela internet pública).'
+            ],
+            goldenRuleTitle: 'Infraestrutura Global & Conectividade',
+            goldenRuleCards: [
+              {
+                badge: 'Regiões, AZs e Edge Locations',
+                color: 'cyan',
+                points: ['Região = Área geográfica (ex: São Paulo)', 'AZ = 1 ou mais Data Centers isolados na Região', 'Edge Location = Pontos de cache do CloudFront']
+              },
+              {
+                badge: 'Conectando Empresa ↔ AWS',
+                color: 'emerald',
+                points: ['Site-to-Site VPN = Túnel criptografado via Internet', 'Direct Connect = Cabo físico dedicado privado', 'NAT Gateway = Subnet privada acessa internet']
+              }
+            ],
+            mnemonic: 'Macete: Baixa latência global = CloudFront (Edge Locations) | DNS = Route 53 | Link físico dedicado = Direct Connect.',
+            quiz: [
+              {
+                question: 'Uma plataforma de streaming quer entregar vídeos com baixa latência para usuários no Brasil, Japão e Europa fazendo cache próximo a eles. Qual serviço usar?',
+                options: ['AWS Direct Connect', 'Amazon CloudFront', 'AWS Snowmobile', 'Amazon EBS'],
+                correct: 1,
+                explanation: 'O Amazon CloudFront é a CDN da AWS que armazena conteúdo em cache nas Edge Locations ao redor do mundo.'
+              },
+              {
+                question: 'Uma instituição financeira exige uma conexão de rede privada, consistente e dedicada entre seu escritório e a AWS sem passar pela internet pública. Qual serviço escolher?',
+                options: ['AWS Site-to-Site VPN', 'AWS Direct Connect', 'Internet Gateway', 'Amazon Route 53'],
+                correct: 1,
+                explanation: 'O AWS Direct Connect estabelece uma conexão física dedicada privada entre o ambiente local e a AWS.'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'm4',
+        number: 4,
+        title: 'Cobrança, Preços e Suporte',
+        weight: '12%',
+        color: 'amber',
+        description: 'Pontos fáceis e rápidos! Modelos de compra EC2, ferramentas de custo e suporte.',
+        lessons: [
+          {
+            id: 'm4_l1',
+            title: 'Modelos de Compra EC2 (On-Demand, Reserved, Spot, Savings)',
+            duration: '2 min',
+            icon: '🏷️',
+            analogy: 'On-Demand é diária de hotel sem reserva; Reserved/Savings Plans é pacote anual com mega desconto; Spot é leilão de última hora por centavos (mas podem pedir o quarto de volta).',
+            bullets: [
+              '<span class="text-amber-400 font-bold">On-Demand</span>: Pague por segundo/hora sem compromisso. Ideal para cargas imprevisíveis ou testes.',
+              '<span class="text-cyan-400 font-bold">Reserved Instances & Savings Plans</span>: Compromisso de <span class="underline">1 ou 3 anos</span> com até <span class="text-emerald-400 font-bold">72% de desconto</span>. Ideal para cargas estáveis.',
+              '<span class="text-emerald-400 font-bold">Spot Instances</span>: Capacidade ociosa com até <span class="text-amber-400 font-bold">90% de desconto</span>! Pode ser interrompida com aviso de <span class="underline">2 minutos</span> (ideal para batch tolerante a falhas).',
+              '<span class="text-amber-400 font-bold">Dedicated Hosts</span>: Servidor físico exclusivo para licenças por socket/core (ex: Windows/Oracle) ou compliance.'
+            ],
+            goldenRuleTitle: 'Qual Modelo EC2 Marcar na Prova?',
+            goldenRuleCards: [
+              {
+                badge: 'Desconto Máximo vs. Flexibilidade',
+                color: 'emerald',
+                points: ['Spot = Até 90% OFF (tolerante a interrupção)', 'Savings Plans = Até 72% OFF (flexível $/hora)', 'On-Demand = Sem contrato, cargas novas/curtas']
+              },
+              {
+                badge: 'Hardware Exclusivo',
+                color: 'amber',
+                points: ['Dedicated Host = Servidor físico só seu', 'Visibilidade de sockets e cores físicos', 'Compliance rigoroso e licenciamento BYOL']
+              }
+            ],
+            mnemonic: 'Macete: "Tolerante a falhas + menor custo" = Spot | "Carga constante 1-3 anos" = Savings Plans / Reserved.',
+            quiz: [
+              {
+                question: 'Um trabalho de renderização 3D pode ser pausado e retomado a qualquer momento sem prejuízo. Qual modelo de compra EC2 oferece a maior economia?',
+                options: ['On-Demand Instances', 'Spot Instances', 'Dedicated Hosts', 'Reserved Instances All Upfront'],
+                correct: 1,
+                explanation: 'Spot Instances oferecem até 90% de desconto para cargas tolerantes a falhas e interrupções.'
+              },
+              {
+                question: 'Uma empresa precisa usar licenças de software existentes vinculadas a núcleos físicos de servidor (BYOL) por motivos de conformidade. O que usar?',
+                options: ['Spot Instances', 'Amazon EC2 Dedicated Hosts', 'AWS Lambda', 'On-Demand'],
+                correct: 1,
+                explanation: 'Dedicated Hosts fornecem um servidor físico exclusivo com visibilidade de sockets e cores para licenciamento.'
+              }
+            ]
+          },
+          {
+            id: 'm4_l2',
+            title: 'Ferramentas de Custo (Calculator, Explorer, Budgets, Advisor)',
+            duration: '2 min',
+            icon: '📊',
+            analogy: 'Pricing Calculator é o orçamento antes da reforma; Cost Explorer é a fatura detalhada do mês passado; Budgets é o alarme quando o cartão chega perto do limite.',
+            bullets: [
+              '<span class="text-amber-400 font-bold">AWS Pricing Calculator</span>: Estima custos <span class="underline">ANTES</span> de criar os recursos na nuvem.',
+              '<span class="text-cyan-400 font-bold">AWS Cost Explorer</span>: Visualiza e analisa gastos <span class="underline">PASSADOS</span> e prevê tendências.',
+              '<span class="text-emerald-400 font-bold">AWS Budgets</span>: Define orçamentos e envia <span class="underline">alertas</span> (e-mail/SNS) quando o gasto real ou previsto ultrapassa o limite.',
+              '<span class="text-amber-400 font-bold">AWS Trusted Advisor</span>: Consultor online que verifica <span class="underline">5 pilares</span>: Custo, Performance, Segurança, Tolerância a Falhas e Limites de Serviço.'
+            ],
+            goldenRuleTitle: 'Linha do Tempo do Dinheiro na AWS',
+            goldenRuleCards: [
+              {
+                badge: 'Antes • Durante • Depois',
+                color: 'cyan',
+                points: ['ANTES → Pricing Calculator (simular arquitetura)', 'DURANTE → AWS Budgets (alertas de limite)', 'DEPOIS → Cost Explorer (gráficos históricos)']
+              },
+              {
+                badge: 'AWS Organizations (Múltiplas Contas)',
+                color: 'emerald',
+                points: ['Consolidated Billing = Fatura única unificada', 'Desconto por volume somado entre contas', 'SCPs = Políticas de controle centralizadas']
+              }
+            ],
+            mnemonic: 'Macete: Simular antes = Calculator | Ver passado = Cost Explorer | Alerta de limite = Budgets | 5 verificações = Trusted Advisor.',
+            quiz: [
+              {
+                question: 'Um arquiteto quer estimar quanto vai custar mensalmente uma nova aplicação na AWS antes mesmo de implantá-la. Qual ferramenta usar?',
+                options: ['AWS Cost Explorer', 'AWS Pricing Calculator', 'AWS Artifact', 'AWS CloudTrail'],
+                correct: 1,
+                explanation: 'A AWS Pricing Calculator permite simular arquiteturas e estimar custos futuros antes da implantação.'
+              },
+              {
+                question: 'Qual ferramenta envia uma notificação automática quando os gastos da conta AWS ultrapassam 80% do valor planejado para o mês?',
+                options: ['AWS Budgets', 'AWS Pricing Calculator', 'AWS Organizations', 'Amazon Inspector'],
+                correct: 0,
+                explanation: 'O AWS Budgets monitora custos e uso e dispara alertas quando limites definidos são atingidos.'
+              }
+            ]
+          },
+          {
+            id: 'm4_l3',
+            title: 'Planos de Suporte AWS (Basic, Developer, Business, Enterprise)',
+            duration: '2 min',
+            icon: '🎧',
+            analogy: 'Basic é o manual grátis; Developer é suporte por e-mail; Business é plantão 24/7 por telefone/chat; Enterprise é ter um gerente VIP exclusivo cuidando da sua conta.',
+            bullets: [
+              '<span class="text-slate-300 font-bold">Basic (Grátis)</span>: Acesso à documentação, fóruns, faturamento e 7 verificações básicas do Trusted Advisor.',
+              '<span class="text-cyan-400 font-bold">Developer</span>: Para ambientes de teste. Suporte técnico por e-mail em <span class="underline">horário comercial</span> (SLA < 12h/24h).',
+              '<span class="text-amber-400 font-bold">Business</span>: Mínimo recomendado para <span class="underline">produção</span>. Suporte 24/7 por chat/telefone, Trusted Advisor completo e SLA <span class="text-emerald-400 font-bold">< 1 hora</span> (sistema indisponível).',
+              '<span class="text-emerald-400 font-bold">Enterprise</span>: Missão crítica! Inclui <span class="text-amber-400 font-bold">TAM</span> (Technical Account Manager) dedicado, SLA <span class="text-cyan-400 font-bold">< 15 minutos</span> e Infrastructure Event Management.'
+            ],
+            goldenRuleTitle: 'Escada dos Planos de Suporte AWS',
+            goldenRuleCards: [
+              {
+                badge: 'Basic & Developer (Não-Produção)',
+                color: 'cyan',
+                points: ['Basic = R$ 0 (sem suporte técnico)', 'Developer = Horário comercial, 1 contato', 'Ideal apenas para testes e desenvolvimento']
+              },
+              {
+                badge: 'Business & Enterprise (Produção)',
+                color: 'amber',
+                points: ['Business = 24/7 + Trusted Advisor 100% (<1h)', 'Enterprise = TAM dedicado + SLA <15 min', 'Enterprise On-Ramp = TAM compartilhado (<30m)']
+              }
+            ],
+            mnemonic: 'Macete: "TAM (Gerente Técnico de Conta) ou SLA < 15 min" → SEMPRE marque Enterprise Support!',
+            quiz: [
+              {
+                question: 'Uma empresa com cargas de trabalho de missão crítica precisa de um Technical Account Manager (TAM) dedicado e tempo de resposta inferior a 15 minutos. Qual plano escolher?',
+                options: ['AWS Basic Support', 'AWS Developer Support', 'AWS Business Support', 'AWS Enterprise Support'],
+                correct: 3,
+                explanation: 'Apenas o plano AWS Enterprise Support inclui um TAM dedicado e SLA de < 15 minutos para falhas críticas.'
+              },
+              {
+                question: 'Qual é o plano de suporte mais econômico que oferece acesso completo a todas as verificações do AWS Trusted Advisor e suporte 24/7 por telefone?',
+                options: ['Basic', 'Developer', 'Business', 'Enterprise'],
+                correct: 2,
+                explanation: 'O plano Business é o primeiro nível com suporte 24/7 completo e acesso total ao AWS Trusted Advisor.'
+              }
+            ]
+          }
+        ]
+      }
+    ];
+
+    // 24 High-Yield 3D Flashcards
+    const FLASHCARDS = [
+      { id: 'fc1', domain: 'Conceitos', front: 'Qual a diferença entre CapEx e OpEx na nuvem AWS?', back: 'CapEx = Investimento inicial alto em hardware físico. OpEx = Gasto variável sob demanda (pay-as-you-go), pagando apenas pelo que usar.', mnemonic: 'Nuvem troca CapEx por OpEx!' },
+      { id: 'fc2', domain: 'Conceitos', front: 'O que define uma Zona de Disponibilidade (AZ)?', back: 'Um ou mais data centers discretos com energia, rede e conectividade redundantes dentro de uma mesma Região AWS, conectados por links de ultra-baixa latência.', mnemonic: 'Região = Cidade/Estado | AZ = Prédios separados dentro da Região.' },
+      { id: 'fc3', domain: 'Conceitos', front: 'Quais são os 6 pilares do AWS Well-Architected Framework?', back: '1. Excelência Operacional • 2. Segurança • 3. Confiabilidade • 4. Eficiência de Performance • 5. Otimização de Custos • 6. Sustentabilidade.', mnemonic: 'Lembre-se: Sustentabilidade é o 6º pilar!' },
+      { id: 'fc4', domain: 'Conceitos', front: 'Qual a diferença entre Elasticidade e Escalabilidade?', back: 'Escalabilidade = Capacidade de crescer para atender demanda. Elasticidade = Crescer E encolher automaticamente conforme a demanda em tempo real.', mnemonic: 'Elástico estica e volta ao normal (economiza dinheiro!).' },
+      { id: 'fc5', domain: 'Segurança', front: 'No Modelo de Responsabilidade Compartilhada, quem atualiza o SO de uma instância EC2?', back: 'O CLIENTE! O EC2 é IaaS, então o cliente gerencia o sistema operacional convidado, patches e firewall. (No RDS/Lambda é a AWS).', mnemonic: 'EC2 = SO do Cliente | RDS = SO da AWS.' },
+      { id: 'fc6', domain: 'Segurança', front: 'Por que usar uma IAM Role em uma instância EC2 em vez de Access Keys?', back: 'IAM Roles fornecem credenciais temporárias e rotacionadas automaticamente, eliminando o risco de vazar chaves fixas no código.', mnemonic: 'Serviço AWS falando com Serviço AWS = IAM Role!' },
+      { id: 'fc7', domain: 'Segurança', front: 'Qual a diferença entre AWS Shield e AWS WAF?', back: 'Shield protege contra ataques DDoS (volumétricos, Camada 3/4). WAF é um Firewall de Aplicação Web (Camada 7) que bloqueia SQL Injection e XSS.', mnemonic: 'Shield = Escudo DDoS | WAF = Web Application Firewall.' },
+      { id: 'fc8', domain: 'Segurança', front: 'Para que serve o Amazon Macie?', back: 'Usa Machine Learning para descobrir e proteger dados sensíveis (como CPF, cartões de crédito, PII) armazenados no Amazon S3.', mnemonic: 'Macie = Farejador de PII/CPF no S3.' },
+      { id: 'fc9', domain: 'Segurança', front: 'Qual a diferença entre Amazon GuardDuty e Amazon Inspector?', back: 'GuardDuty = Monitora ameaças ativas e comportamento malicioso (logs). Inspector = Escaneia vulnerabilidades de software (CVEs) e portas abertas em EC2/Containers.', mnemonic: 'GuardDuty = Guarda vigiando invasores | Inspector = Inspetor checando falhas.' },
+      { id: 'fc10', domain: 'Segurança', front: 'Onde baixar relatórios de conformidade ISO 27001, PCI-DSS e SOC da AWS?', back: 'No AWS Artifact (portal gratuito sob demanda de documentos de compliance).', mnemonic: 'Artifact = Artefatos/Documentos de auditoria.' },
+      { id: 'fc11', domain: 'Tecnologia', front: 'Qual o tempo máximo de execução de uma função AWS Lambda?', back: '15 minutos por invocação. Ideal para tarefas curtas e orientadas a eventos sem gerenciar servidores.', mnemonic: 'Passou de 15 min? Use EC2, Fargate ou AWS Batch!' },
+      { id: 'fc12', domain: 'Tecnologia', front: 'Compare Amazon S3, EBS e EFS em 1 frase cada.', back: 'S3 = Objetos ilimitados via HTTP. EBS = Disco de bloco para 1 EC2 (mesma AZ). EFS = Sistema de arquivos Linux compartilhado entre várias EC2 (Multi-AZ).', mnemonic: '1 EC2 = EBS | Multi-EC2 Linux = EFS | Objetos = S3.' },
+      { id: 'fc13', domain: 'Tecnologia', front: 'Qual classe do S3 usar quando os padrões de acesso são desconhecidos ou mudam?', back: 'S3 Intelligent-Tiering! Ele move objetos automaticamente entre camadas de acesso frequente e infrequente sem taxas de recuperação.', mnemonic: 'Não sabe o padrão de acesso? Intelligent-Tiering!' },
+      { id: 'fc14', domain: 'Tecnologia', front: 'Qual a diferença entre Amazon RDS e Amazon DynamoDB?', back: 'RDS = Banco Relacional (SQL) gerenciado (MySQL, Postgres, etc.). DynamoDB = Banco NoSQL (chave-valor) serverless com latência de milissegundos.', mnemonic: 'SQL = RDS/Aurora | NoSQL milissegundos = DynamoDB.' },
+      { id: 'fc15', domain: 'Tecnologia', front: 'Para que serve o Amazon Redshift?', back: 'Data Warehouse totalmente gerenciado para análises complexas (OLAP) e Business Intelligence (BI) em grande escala.', mnemonic: 'BI e Relatórios pesados = Redshift.' },
+      { id: 'fc16', domain: 'Tecnologia', front: 'Qual a diferença entre Amazon CloudFront e AWS Direct Connect?', back: 'CloudFront = CDN que faz cache de conteúdo nas Edge Locations para baixa latência global. Direct Connect = Cabo físico dedicado privado entre data center local e AWS.', mnemonic: 'Cache global = CloudFront | Fibra privada = Direct Connect.' },
+      { id: 'fc17', domain: 'Tecnologia', front: 'Como permitir que uma EC2 em uma Subnet Privada acesse a internet para baixar atualizações sem receber conexões externas?', back: 'Usando um NAT Gateway (posicionado na Subnet Pública).', mnemonic: 'Saída privada para internet = NAT Gateway.' },
+      { id: 'fc18', domain: 'Tecnologia', front: 'Qual a diferença entre Amazon SQS e Amazon SNS?', back: 'SQS = Fila de mensagens (desacoplamento, modelo Pull 1-para-1). SNS = Notificações Pub/Sub (envio Push 1-para-muitos, SMS, e-mail, Lambda).', mnemonic: 'SQS = Queue (Fila) | SNS = Notification (Megafone).' },
+      { id: 'fc19', domain: 'Cobrança', front: 'Quando escolher EC2 Spot Instances?', back: 'Para cargas de trabalho sem estado, flexíveis e tolerantes a falhas (ex: processamento batch, renderização) buscando até 90% de desconto.', mnemonic: 'Spot = Super barato (até 90% off), mas pode ser interrompido em 2 min.' },
+      { id: 'fc20', domain: 'Cobrança', front: 'Qual a diferença entre AWS Pricing Calculator e AWS Cost Explorer?', back: 'Pricing Calculator = Estimar custos ANTES de implantar. Cost Explorer = Analisar gastos PASSADOS e tendências.', mnemonic: 'Calculator = Futuro | Cost Explorer = Passado.' },
+      { id: 'fc21', domain: 'Cobrança', front: 'Quais são as 5 categorias analisadas pelo AWS Trusted Advisor?', back: '1. Otimização de Custos • 2. Performance • 3. Segurança • 4. Tolerância a Falhas • 5. Limites de Serviço (Service Quotas).', mnemonic: 'Trusted Advisor = Seu consultor automático de boas práticas.' },
+      { id: 'fc22', domain: 'Cobrança', front: 'Qual plano de suporte AWS inclui um Technical Account Manager (TAM) dedicado?', back: 'AWS Enterprise Support (também oferece SLA de resposta < 15 minutos para falhas críticas de negócios).', mnemonic: 'Viu "TAM" na questão? Marque Enterprise!' },
+      { id: 'fc23', domain: 'Cobrança', front: 'Qual o benefício financeiro do Faturamento Consolidado no AWS Organizations?', back: 'Soma o uso de todas as contas da organização para atingir faixas maiores de desconto por volume e compartilhar Reserved Instances / Savings Plans.', mnemonic: 'Juntar contas = Maior desconto por volume!' },
+      { id: 'fc24', domain: 'Tecnologia', front: 'Qual serviço migra fisicamente petabytes de dados offline para a AWS usando dispositivos robustos?', back: 'Família AWS Snow (Snowcone, Snowball Edge) — ideal quando a internet local é lenta ou cara demais para transferir terabytes/petabytes.', mnemonic: 'Maleta física de dados = Snowball!' }
+    ];
+
+    // 26 Classic Exam Keyword Triggers ("Se a prova disser... Marque...")
+    const KEYWORD_RADAR = [
+      { trigger: 'Proteção contra ataques DDoS (Camada 3/4)', service: 'AWS Shield', category: 'Segurança', tip: 'Standard é gratuito e automático; Advanced tem equipe 24/7.' },
+      { trigger: 'Bloquear SQL Injection e Cross-Site Scripting (XSS)', service: 'AWS WAF', category: 'Segurança', tip: 'Firewall de Aplicação Web (Camada 7) no CloudFront ou ALB.' },
+      { trigger: 'Auditoria de chamadas de API ("Quem fez o quê e quando?")', service: 'AWS CloudTrail', category: 'Segurança', tip: 'Registra toda ação na conta AWS para governança e auditoria.' },
+      { trigger: 'Métricas de CPU, logs de aplicação e alarmes', service: 'Amazon CloudWatch', category: 'Tecnologia', tip: 'Monitora saúde e performance; dispara Auto Scaling.' },
+      { trigger: 'Baixar relatórios de conformidade (ISO, PCI, SOC)', service: 'AWS Artifact', category: 'Segurança', tip: 'Portal sob demanda para auditores externos.' },
+      { trigger: 'Gerente Técnico de Conta (TAM) dedicado ou SLA < 15 min', service: 'AWS Enterprise Support', category: 'Cobrança', tip: 'Plano mais completo para missão crítica.' },
+      { trigger: 'Descobrir dados sensíveis (CPF, PII, cartão) no S3', service: 'Amazon Macie', category: 'Segurança', tip: 'Usa ML para classificar dados privados em buckets S3.' },
+      { trigger: 'Detecção inteligente de ameaças e contas comprometidas', service: 'Amazon GuardDuty', category: 'Segurança', tip: 'Analisa logs continuamente com Machine Learning.' },
+      { trigger: 'Escanear vulnerabilidades (CVEs) em EC2 e imagens Docker', service: 'Amazon Inspector', category: 'Segurança', tip: 'Avaliação automatizada de vulnerabilidades de rede e software.' },
+      { trigger: 'Gerenciar chaves de criptografia', service: 'AWS KMS', category: 'Segurança', tip: 'Key Management Service (ou CloudHSM se pedir hardware dedicado single-tenant).' },
+      { trigger: 'Armazenar e rotacionar senhas de banco de dados automaticamente', service: 'AWS Secrets Manager', category: 'Segurança', tip: 'Evita senhas hardcoded no código.' },
+      { trigger: 'Banco de dados NoSQL com latência de milissegundos', service: 'Amazon DynamoDB', category: 'Tecnologia', tip: 'Serverless, chave-valor/documento, escala ilimitada.' },
+      { trigger: 'Data Warehouse para consultas analíticas (OLAP) e BI', service: 'Amazon Redshift', category: 'Tecnologia', tip: 'Otimizado para petabytes de análise histórica.' },
+      { trigger: 'Banco relacional compatível com MySQL/PostgreSQL 5x mais rápido', service: 'Amazon Aurora', category: 'Tecnologia', tip: 'Replica dados em 6 cópias através de 3 AZs.' },
+      { trigger: 'Migração física offline de dezenas de terabytes ou petabytes', service: 'AWS Snowball', category: 'Tecnologia', tip: 'Dispositivo físico robusto enviado pela AWS.' },
+      { trigger: 'Executar código sem servidores orientado a eventos (até 15 min)', service: 'AWS Lambda', category: 'Tecnologia', tip: 'Serverless puro: pague só pelos milissegundos usados.' },
+      { trigger: 'Executar containers Docker sem gerenciar servidores EC2', service: 'AWS Fargate', category: 'Tecnologia', tip: 'Computação serverless para ECS e EKS.' },
+      { trigger: 'Deploy rápido de app web sem gerenciar SO ou infra (PaaS)', service: 'AWS Elastic Beanstalk', category: 'Tecnologia', tip: 'Você sobe o código; AWS cuida do resto.' },
+      { trigger: 'Sistema de arquivos Linux compartilhado entre múltiplas EC2', service: 'Amazon EFS', category: 'Tecnologia', tip: 'Protocolo NFS, elástico e Multi-AZ.' },
+      { trigger: 'Arquivamento de dados por anos com o menor custo possível', service: 'S3 Glacier Deep Archive', category: 'Tecnologia', tip: 'Recuperação em horas, centavos por TB.' },
+      { trigger: 'Entrega de conteúdo global com baixa latência (CDN)', service: 'Amazon CloudFront', category: 'Tecnologia', tip: 'Usa Edge Locations ao redor do mundo.' },
+      { trigger: 'Serviço de DNS gerenciado e registro de domínios', service: 'Amazon Route 53', category: 'Tecnologia', tip: 'Porta 53 é a porta padrão de DNS!' },
+      { trigger: 'Conexão de rede física privada dedicada (sem internet pública)', service: 'AWS Direct Connect', category: 'Tecnologia', tip: 'Baixa latência consistente e banda dedicada.' },
+      { trigger: 'Desacoplar microsserviços com fila de mensagens', service: 'Amazon SQS', category: 'Tecnologia', tip: 'Simple Queue Service (evita perda de mensagens em picos).' },
+      { trigger: 'Estimar custos ANTES de criar recursos na nuvem', service: 'AWS Pricing Calculator', category: 'Cobrança', tip: 'Simulador público de preços.' },
+      { trigger: 'Alertas quando gastos atingirem um limite definido', service: 'AWS Budgets', category: 'Cobrança', tip: 'Notifica sobre custo ou uso real/previsto.' }
+    ];
+
+    // 6 Side-by-Side Concept Battles ("X vs. Y")
+    const CONCEPT_BATTLES = [
+      {
+        title: 'CloudTrail vs. CloudWatch',
+        subtitle: 'A maior pegadinha de monitoramento e auditoria',
+        left: {
+          name: 'AWS CloudTrail',
+          badge: 'Auditoria & Governança',
+          color: 'amber',
+          bullets: [
+            'Responde: "QUEM fez O QUÊ, QUANDO e de ONDE?"',
+            'Registra chamadas de API (ex: quem apagou um bucket S3)',
+            'Ativado por padrão na conta (histórico de 90 dias)',
+            'Foco em conformidade e investigação de segurança'
+          ]
+        },
+        right: {
+          name: 'Amazon CloudWatch',
+          badge: 'Performance & Saúde',
+          color: 'cyan',
+          bullets: [
+            'Responde: "COMO está a saúde do meu sistema?"',
+            'Coleta métricas (CPU, memória, disco) e logs de apps',
+            'Dispara Alarmes (ex: CPU > 80% → aciona Auto Scaling)',
+            'Foco em observabilidade operacional'
+          ]
+        }
+      },
+      {
+        title: 'Security Group vs. NACL',
+        subtitle: 'Firewalls virtuais dentro da sua Amazon VPC',
+        left: {
+          name: 'Security Group (SG)',
+          badge: 'Nível de Instância • Stateful',
+          color: 'emerald',
+          bullets: [
+            'Atua direto na placa de rede da instância EC2',
+            'STATEFUL: Se você libera entrada, a saída volta automática',
+            'Suporta APENAS regras de PERMITIR (Allow)',
+            'Avalia todas as regras juntas antes de decidir'
+          ]
+        },
+        right: {
+          name: 'Network ACL (NACL)',
+          badge: 'Nível de Subnet • Stateless',
+          color: 'amber',
+          bullets: [
+            'Atua na fronteira da Subnet inteira',
+            'STATELESS: Precisa liberar entrada E saída explicitamente',
+            'Suporta regras de PERMITIR (Allow) e NEGAR (Deny IP)',
+            'Avalia regras em ordem numérica (menor número primeiro)'
+          ]
+        }
+      },
+      {
+        title: 'S3 vs. EBS vs. EFS',
+        subtitle: 'Escolha o armazenamento certo sem hesitar',
+        left: {
+          name: 'Amazon S3 & Glacier',
+          badge: 'Objetos • Acesso HTTP',
+          color: 'cyan',
+          bullets: [
+            'Armazena arquivos/objetos (fotos, vídeos, backups)',
+            'Escala ilimitada, 11 noves de durabilidade',
+            'Não é possível instalar Sistema Operacional nele',
+            'Glacier = Arquivamento frio ultra-barato'
+          ]
+        },
+        right: {
+          name: 'Amazon EBS vs. EFS',
+          badge: 'Bloco (1 EC2) vs. Arquivo (Multi-EC2)',
+          color: 'emerald',
+          bullets: [
+            'EBS = Disco de bloco acoplado a 1 EC2 (mesma AZ)',
+            'EBS persiste dados mesmo se a EC2 for parada',
+            'EFS = Sistema de arquivos Linux (NFS) compartilhado',
+            'EFS conecta centenas de EC2 em várias AZs'
+          ]
+        }
+      },
+      {
+        title: 'GuardDuty vs. Inspector vs. Macie',
+        subtitle: 'Os 3 serviços inteligentes de segurança da AWS',
+        left: {
+          name: 'GuardDuty & Inspector',
+          badge: 'Ameaças vs. Vulnerabilidades',
+          color: 'amber',
+          bullets: [
+            'GuardDuty = Detetive de ameaças (mineração de cripto, IP malicioso)',
+            'GuardDuty analisa logs (VPC Flow, DNS, CloudTrail)',
+            'Inspector = Inspetor de falhas (CVEs de software e portas abertas)',
+            'Inspector escaneia instâncias EC2, Lambda e containers ECR'
+          ]
+        },
+        right: {
+          name: 'Amazon Macie',
+          badge: 'Proteção de Dados Sensíveis (PII)',
+          color: 'cyan',
+          bullets: [
+            'Foco exclusivo em privacidade de dados no Amazon S3',
+            'Usa Machine Learning para achar CPF, RG, cartão de crédito',
+            'Alerta se um bucket S3 com dados sensíveis ficar público',
+            'Palavra-chave na prova: "PII" ou "dados sensíveis no S3"'
+          ]
+        }
+      },
+      {
+        title: 'Pricing Calculator vs. Cost Explorer',
+        subtitle: 'Planejamento futuro vs. Análise histórica',
+        left: {
+          name: 'AWS Pricing Calculator',
+          badge: 'Antes de Usar (Simulação)',
+          color: 'emerald',
+          bullets: [
+            'Usado ANTES de provisionar recursos na AWS',
+            'Não precisa ter conta AWS para acessar',
+            'Estima o valor mensal de uma arquitetura planejada',
+            'Gera link compartilhável para aprovação de orçamento'
+          ]
+        },
+        right: {
+          name: 'AWS Cost Explorer',
+          badge: 'Depois de Usar (Histórico)',
+          color: 'amber',
+          bullets: [
+            'Usado DEPOIS que os recursos já estão rodando',
+            'Mostra gráficos detalhados dos últimos 12 meses',
+            'Filtra gastos por serviço, tag ou conta vinculada',
+            'Ajuda a identificar onde cortar desperdícios'
+          ]
+        }
+      },
+      {
+        title: 'SQS vs. SNS',
+        subtitle: 'Mensageria e desacoplamento de aplicações',
+        left: {
+          name: 'Amazon SQS (Queue)',
+          badge: 'Fila de Mensagens • Pull',
+          color: 'cyan',
+          bullets: [
+            'Armazena mensagens em fila até o consumidor processar',
+            'Modelo Pull (consumidor busca da fila no seu ritmo)',
+            'Evita perda de pedidos durante picos de tráfego',
+            'Standard (alta vazão) ou FIFO (ordem exata)'
+          ]
+        },
+        right: {
+          name: 'Amazon SNS (Topic)',
+          badge: 'Pub/Sub • Push 1-para-N',
+          color: 'emerald',
+          bullets: [
+            'Publica uma mensagem para vários assinantes ao mesmo tempo',
+            'Modelo Push (empurra na hora para Lambda, SQS, E-mail, SMS)',
+            'Ideal para alertas críticos e fan-out de eventos',
+            'Padrão comum: SNS + SQS juntos (Fan-out)'
+          ]
+        }
+      }
+    ];
+
+    // 28 Realistic AWS CLF-C02 Exam Questions across all 4 Domains
+    const EXAM_QUESTIONS = [
+      // Domain 1: Conceitos (7 questions ~ 25%)
+      {
+        id: 'q1',
+        domain: 'Conceitos',
+        question: 'Uma empresa de varejo migrou seu e-commerce para a AWS e agora paga apenas pelos servidores utilizados durante cada hora, sem ter comprado hardware antecipadamente. Qual vantagem da computação em nuvem isso ilustra?',
+        options: [
+          'Trocar despesas de capital (CapEx) por despesas variáveis (OpEx)',
+          'Aumentar a capacidade fixa do data center local',
+          'Eliminar a necessidade de segurança de dados',
+          'Garantir latência zero sem configurar rede'
+        ],
+        correct: 0,
+        explanation: 'Na nuvem, você evita gastos iniciais com hardware (CapEx) e paga conforme o consumo (OpEx).'
+      },
+      {
+        id: 'q2',
+        domain: 'Conceitos',
+        question: 'Qual pilar do AWS Well-Architected Framework recomenda o uso de recursos gerenciados e o dimensionamento adequado para minimizar o impacto ambiental e o consumo de energia?',
+        options: ['Excelência Operacional', 'Sustentabilidade', 'Confiabilidade', 'Segurança'],
+        correct: 1,
+        explanation: 'O pilar de Sustentabilidade foca na redução do consumo energético e eficiência ambiental das cargas na nuvem.'
+      },
+      {
+        id: 'q3',
+        domain: 'Conceitos',
+        question: 'Uma equipe de desenvolvimento deseja implantar rapidamente uma aplicação web sem precisar configurar sistemas operacionais, servidores web ou balanceadores de carga. Qual modelo de serviço em nuvem atende melhor?',
+        options: ['IaaS (Infrastructure as a Service)', 'PaaS (Platform as a Service)', 'Colocation Físico', 'Network as a Service'],
+        correct: 1,
+        explanation: 'PaaS (como o AWS Elastic Beanstalk) abstrai o SO e a infraestrutura, permitindo focar apenas no código.'
+      },
+      {
+        id: 'q4',
+        domain: 'Conceitos',
+        question: 'O que compõe uma Região da AWS?',
+        options: [
+          'Apenas um único data center isolado',
+          'Um conjunto de Edge Locations do CloudFront',
+          'Uma localização geográfica física que contém múltiplas Zonas de Disponibilidade (AZs) isoladas',
+          'Uma rede privada virtual (VPC) global'
+        ],
+        correct: 2,
+        explanation: 'Cada Região AWS é uma área geográfica distinta composta por múltiplas Zonas de Disponibilidade (mínimo de 3 nas regiões modernas).'
+      },
+      {
+        id: 'q5',
+        domain: 'Conceitos',
+        question: 'Qual princípio de design do AWS Well-Architected Framework sugere testar sistemas em escala de produção e automatizar a resposta a falhas?',
+        options: ['Confiabilidade', 'Otimização de Custos', 'Sustentabilidade', 'Licenciamento Estático'],
+        correct: 0,
+        explanation: 'O pilar de Confiabilidade garante que a carga de trabalho se recupere automaticamente de falhas e suporte picos de demanda.'
+      },
+      {
+        id: 'q6',
+        domain: 'Conceitos',
+        question: 'Uma hospitalidade mantém prontuários médicos em servidores locais por exigência regulatória, mas utiliza a AWS para hospedar seu portal de agendamento online. Qual estratégia de implantação é essa?',
+        options: ['100% Nuvem Pública', 'Nuvem Híbrida', 'Multi-Region Isolada', 'Software as a Service'],
+        correct: 1,
+        explanation: 'Nuvem Híbrida combina infraestrutura local (on-premises) integrada aos serviços da nuvem AWS.'
+      },
+      {
+        id: 'q7',
+        domain: 'Conceitos',
+        question: 'Qual serviço AWS permite provisionar toda a infraestrutura da nuvem usando arquivos de texto JSON ou YAML (Infraestrutura como Código)?',
+        options: ['AWS CloudFormation', 'AWS CloudTrail', 'Amazon CloudFront', 'AWS Artifact'],
+        correct: 0,
+        explanation: 'O AWS CloudFormation permite modelar e provisionar recursos AWS de forma repetível como código (IaC).'
+      },
+
+      // Domain 2: Segurança (8 questions ~ 29%)
+      {
+        id: 'q8',
+        domain: 'Segurança',
+        question: 'Segundo o Modelo de Responsabilidade Compartilhada da AWS, qual atividade é responsabilidade exclusiva da AWS?',
+        options: [
+          'Configurar regras de Security Group nas instâncias EC2',
+          'Criptografar objetos confidenciais enviados ao Amazon S3',
+          'Proteger fisicamente os prédios e o hardware dos data centers',
+          'Gerenciar permissões de usuários no AWS IAM'
+        ],
+        correct: 2,
+        explanation: 'A segurança física dos data centers e do hardware faz parte da Segurança DA Nuvem (responsabilidade da AWS).'
+      },
+      {
+        id: 'q9',
+        domain: 'Segurança',
+        question: 'Uma aplicação rodando em uma instância Amazon EC2 precisa ler mensagens de uma fila Amazon SQS. Qual é a forma mais segura de conceder essa permissão?',
+        options: [
+          'Gravar as Access Keys de um usuário IAM em um arquivo de configuração no EC2',
+          'Criar uma IAM Role com permissão SQS e associá-la à instância EC2',
+          'Usar as credenciais da conta Root',
+          'Tornar a fila SQS pública na internet'
+        ],
+        correct: 1,
+        explanation: 'IAM Roles fornecem credenciais temporárias e seguras para instâncias EC2 sem expor chaves estáticas.'
+      },
+      {
+        id: 'q10',
+        domain: 'Segurança',
+        question: 'Um auditor externo solicita uma cópia do relatório SOC 2 e da certificação ISO 27001 da AWS. Onde o administrador deve baixar esses documentos?',
+        options: ['AWS Shield', 'AWS Artifact', 'Amazon Inspector', 'AWS Trusted Advisor'],
+        correct: 1,
+        explanation: 'O AWS Artifact é o repositório central sob demanda para relatórios de conformidade e acordos da AWS.'
+      },
+      {
+        id: 'q11',
+        domain: 'Segurança',
+        question: 'Qual serviço AWS utiliza Machine Learning para identificar automaticamente dados pessoais identificáveis (PII), como números de CPF e cartões de crédito, armazenados no Amazon S3?',
+        options: ['Amazon Macie', 'AWS WAF', 'Amazon Inspector', 'AWS KMS'],
+        correct: 0,
+        explanation: 'O Amazon Macie descobre e protege dados sensíveis (PII) armazenados em buckets do Amazon S3.'
+      },
+      {
+        id: 'q12',
+        domain: 'Segurança',
+        question: 'Qual serviço registra todas as chamadas de API feitas na sua conta AWS, permitindo descobrir qual usuário excluiu uma instância EC2 ontem?',
+        options: ['Amazon CloudWatch', 'AWS CloudTrail', 'AWS Shield', 'Amazon VPC Flow Logs'],
+        correct: 1,
+        explanation: 'O AWS CloudTrail audita todas as ações e chamadas de API na conta (quem fez o quê, quando e de onde).'
+      },
+      {
+        id: 'q13',
+        domain: 'Segurança',
+        question: 'Qual serviço protege automaticamente aplicações na AWS contra ataques comuns de negação de serviço distribuída (DDoS) sem custo adicional?',
+        options: ['AWS Shield Standard', 'AWS WAF', 'Amazon GuardDuty', 'AWS Secrets Manager'],
+        correct: 0,
+        explanation: 'O AWS Shield Standard é ativado gratuitamente para todos os clientes AWS contra ataques DDoS de rede e transporte.'
+      },
+      {
+        id: 'q14',
+        domain: 'Segurança',
+        question: 'Qual serviço realiza avaliações automatizadas de vulnerabilidades de software (CVEs) e exposição de rede em instâncias EC2 e imagens de containers?',
+        options: ['Amazon Inspector', 'AWS Artifact', 'AWS Organizations', 'Amazon Route 53'],
+        correct: 0,
+        explanation: 'O Amazon Inspector verifica continuamente instâncias EC2, funções Lambda e containers no ECR em busca de vulnerabilidades.'
+      },
+      {
+        id: 'q15',
+        domain: 'Segurança',
+        question: 'Você precisa bloquear um endereço IP específico malicioso de acessar qualquer instância dentro de uma Subnet da sua VPC. Qual recurso permite criar uma regra explícita de NEGAR (Deny)?',
+        options: ['Security Group', 'Network ACL (NACL)', 'IAM Policy', 'AWS KMS'],
+        correct: 1,
+        explanation: 'Network ACLs (NACLs) atuam no nível da Subnet e suportam regras explícitas de Allow e Deny (Security Groups só suportam Allow).'
+      },
+
+      // Domain 3: Tecnologia (9 questions ~ 32%)
+      {
+        id: 'q16',
+        domain: 'Tecnologia',
+        question: 'Uma empresa precisa de um banco de dados NoSQL totalmente gerenciado, serverless, capaz de entregar tempos de resposta de milissegundos em qualquer escala. Qual serviço escolher?',
+        options: ['Amazon RDS', 'Amazon DynamoDB', 'Amazon Redshift', 'Amazon Aurora'],
+        correct: 1,
+        explanation: 'O Amazon DynamoDB é o banco NoSQL chave-valor serverless com performance de milissegundos.'
+      },
+      {
+        id: 'q17',
+        domain: 'Tecnologia',
+        question: 'Qual serviço da AWS funciona como uma Rede de Entrega de Conteúdo (CDN), armazenando cópias em cache nas Edge Locations para reduzir a latência para usuários globais?',
+        options: ['Amazon CloudFront', 'AWS Direct Connect', 'Amazon EBS', 'AWS Snowball'],
+        correct: 0,
+        explanation: 'O Amazon CloudFront acelera a entrega de conteúdo estático e dinâmico usando Edge Locations globais.'
+      },
+      {
+        id: 'q18',
+        domain: 'Tecnologia',
+        question: 'Uma aplicação em cluster Linux rodando em 20 instâncias EC2 em diferentes Zonas de Disponibilidade precisa compartilhar o mesmo sistema de arquivos simultaneamente. Qual serviço usar?',
+        options: ['Amazon EBS', 'Amazon EFS', 'Amazon S3 Glacier', 'AWS Storage Gateway'],
+        correct: 1,
+        explanation: 'O Amazon EFS é um sistema de arquivos NFS elástico compartilhado entre dezenas/centenas de instâncias EC2 Multi-AZ.'
+      },
+      {
+        id: 'q19',
+        domain: 'Tecnologia',
+        question: 'Um hospital precisa arquivar exames de imagem por 10 anos por obrigação legal. Os arquivos quase nunca serão acessados e o custo deve ser o menor possível. Qual classe S3 escolher?',
+        options: ['S3 Standard', 'S3 Standard-IA', 'S3 Glacier Deep Archive', 'S3 One Zone-IA'],
+        correct: 2,
+        explanation: 'S3 Glacier Deep Archive oferece o menor custo de armazenamento da AWS para retenção de longo prazo.'
+      },
+      {
+        id: 'q20',
+        domain: 'Tecnologia',
+        question: 'Qual serviço permite executar código em resposta a eventos (como upload de arquivo ou requisição HTTP) sem provisionar ou gerenciar servidores, cobrando apenas pelos milissegundos de execução?',
+        options: ['Amazon EC2', 'AWS Lambda', 'Amazon Lightsail', 'AWS Outposts'],
+        correct: 1,
+        explanation: 'AWS Lambda é o serviço de computação serverless orientado a eventos.'
+      },
+      {
+        id: 'q21',
+        domain: 'Tecnologia',
+        question: 'Uma empresa deseja estabelecer uma conexão de rede privada, física e dedicada entre seu data center corporativo e a AWS, sem trafegar pela internet pública. Qual serviço utilizar?',
+        options: ['AWS Site-to-Site VPN', 'AWS Direct Connect', 'Internet Gateway', 'Amazon Route 53'],
+        correct: 1,
+        explanation: 'O AWS Direct Connect cria um enlace físico dedicado e privado entre o ambiente local e a AWS.'
+      },
+      {
+        id: 'q22',
+        domain: 'Tecnologia',
+        question: 'Qual serviço AWS é um Data Warehouse otimizado para executar consultas analíticas complexas (OLAP) e Business Intelligence sobre petabytes de dados?',
+        options: ['Amazon Redshift', 'Amazon ElastiCache', 'Amazon DynamoDB', 'Amazon RDS'],
+        correct: 0,
+        explanation: 'O Amazon Redshift é o Data Warehouse gerenciado para análises pesadas e BI.'
+      },
+      {
+        id: 'q23',
+        domain: 'Tecnologia',
+        question: 'Qual serviço DNS altamente disponível da AWS traduz nomes de domínio amigáveis (ex: www.exemplo.com.br) em endereços IP e verifica a integridade dos endpoints?',
+        options: ['Amazon Route 53', 'Amazon VPC', 'AWS Direct Connect', 'Amazon CloudWatch'],
+        correct: 0,
+        explanation: 'O Amazon Route 53 é o serviço de DNS na nuvem escalável e de alta disponibilidade da AWS.'
+      },
+      {
+        id: 'q24',
+        domain: 'Tecnologia',
+        question: 'Para desacoplar dois microsserviços de um e-commerce garantindo que nenhum pedido seja perdido caso o serviço de pagamento fique temporariamente lento, qual serviço usar?',
+        options: ['Amazon SQS', 'AWS CloudFormation', 'Amazon EFS', 'AWS Artifact'],
+        correct: 0,
+        explanation: 'O Amazon SQS (Simple Queue Service) enfileira mensagens e desacopla componentes distribuídos.'
+      },
+
+      // Domain 4: Cobrança (4 questions ~ 14%)
+      {
+        id: 'q25',
+        domain: 'Cobrança',
+        question: 'Uma empresa precisa processar uma análise genômica em lote que pode ser interrompida e retomada a qualquer momento sem impacto. Qual modelo de compra EC2 oferece até 90% de desconto?',
+        options: ['On-Demand Instances', 'Spot Instances', 'Dedicated Hosts', 'Standard Reserved Instances'],
+        correct: 1,
+        explanation: 'Spot Instances aproveitam capacidade ociosa da AWS com até 90% de desconto para cargas tolerantes a falhas.'
+      },
+      {
+        id: 'q26',
+        domain: 'Cobrança',
+        question: 'Qual ferramenta permite que um gerente de projetos receba um alerta por e-mail assim que os custos previstos da conta AWS ultrapassarem R$ 5.000 no mês?',
+        options: ['AWS Budgets', 'AWS Pricing Calculator', 'AWS Cost Explorer', 'AWS Artifact'],
+        correct: 0,
+        explanation: 'O AWS Budgets permite criar orçamentos personalizados e disparar alertas quando o gasto real ou previsto ultrapassa o limite.'
+      },
+      {
+        id: 'q27',
+        domain: 'Cobrança',
+        question: 'Qual plano de suporte da AWS é o nível mais barato que fornece acesso a um Technical Account Manager (TAM) dedicado e tempo de resposta inferior a 15 minutos para sistemas críticos indisponíveis?',
+        options: ['AWS Basic Support', 'AWS Developer Support', 'AWS Business Support', 'AWS Enterprise Support'],
+        correct: 3,
+        explanation: 'O AWS Enterprise Support é o plano que inclui um TAM dedicado e SLA < 15 minutos.'
+      },
+      {
+        id: 'q28',
+        domain: 'Cobrança',
+        question: 'Uma holding possui 15 contas AWS separadas para suas subsidiárias e deseja receber uma única fatura consolidada e aproveitar descontos por volume somado. Qual serviço usar?',
+        options: ['AWS Organizations', 'AWS Trusted Advisor', 'AWS Config', 'Amazon Inspector'],
+        correct: 0,
+        explanation: 'O AWS Organizations oferece Faturamento Consolidado (Consolidated Billing) e descontos agregados entre múltiplas contas.'
+      }
+    ];
+
+    // =========================================================================
+    // 2. ESTADO GLOBAL & PERSISTÊNCIA (LOCALSTORAGE)
+    // =========================================================================
+    const STORAGE_KEY = 'aws_cloud_quest_clf_c02_v1';
+
+    const defaultState = {
+      xp: 0,
+      completedLessons: [],     // array of lesson IDs
+      masteredFlashcards: [],   // array of flashcard IDs
+      soundEnabled: true,
+      activeMainTab: 'trail',   // 'trail' | 'cram' | 'exam'
+      activeCramSubTab: 'flashcards', // 'flashcards' | 'radar' | 'battles'
+      lastExamResult: null,     // { date, scaledScore, correctCount, totalCount, domainBreakdown }
+      wrongQuestionIds: []      // array of question IDs missed in last/recent exams
+    };
+
+    let state = loadState();
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return { ...defaultState };
+        const parsed = JSON.parse(raw);
+        return { ...defaultState, ...parsed };
+      } catch (e) {
+        return { ...defaultState };
+      }
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (e) {
+        console.warn('Erro ao salvar no localStorage:', e);
+      }
+      updateHeaderUI();
+    }
+
+    // =========================================================================
+    // 3. EFEITOS SONOROS SINTETIZADOS (WEB AUDIO API - ZERO URLS EXTERNAS)
+    // =========================================================================
+    let audioCtx = null;
+
+    function playSound(type) {
+      if (!state.soundEnabled) return;
+      try {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        const now = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        if (type === 'correct') {
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(523.25, now);       // C5
+          osc.frequency.setValueAtTime(659.25, now + 0.08); // E5
+          gain.gain.setValueAtTime(0.12, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.28);
+          osc.start(now);
+          osc.stop(now + 0.28);
+        } else if (type === 'wrong') {
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(220, now);
+          osc.frequency.setValueAtTime(175, now + 0.1);
+          gain.gain.setValueAtTime(0.08, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+          osc.start(now);
+          osc.stop(now + 0.25);
+        } else if (type === 'levelup') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(523.25, now);        // C5
+          osc.frequency.setValueAtTime(659.25, now + 0.09); // E5
+          osc.frequency.setValueAtTime(783.99, now + 0.18); // G5
+          osc.frequency.setValueAtTime(1046.5, now + 0.27); // C6
+          gain.gain.setValueAtTime(0.14, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.55);
+          osc.start(now);
+          osc.stop(now + 0.55);
+        } else if (type === 'flip') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(360, now);
+          gain.gain.setValueAtTime(0.05, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
+          osc.start(now);
+          osc.stop(now + 0.09);
+        }
+      } catch (e) {
+        // Ignore audio errors on restricted devices
+      }
+    }
+
+    function toggleSound() {
+      state.soundEnabled = !state.soundEnabled;
+      saveState();
+      showToast(state.soundEnabled ? '🔊 Sons ativados' : '🔇 Sons silenciados', 'cyan');
+    }
+
+    // =========================================================================
+    // 4. UTILITÁRIOS DE GAMIFICAÇÃO, CONFETE E TOASTS
+    // =========================================================================
+    function addXP(amount, reason = '') {
+      state.xp += amount;
+      saveState();
+      if (reason) {
+        showToast(`⚡ +${amount} XP • ${reason}`, 'amber');
+      }
+    }
+
+    function getLevelInfo(xp) {
+      if (xp < 150) return { level: 1, title: 'Explorador da Nuvem' };
+      if (xp < 350) return { level: 2, title: 'Aprendiz AWS' };
+      if (xp < 600) return { level: 3, title: 'Arquiteto Iniciante' };
+      if (xp < 900) return { level: 4, title: 'Especialista em Nuvem' };
+      return { level: 5, title: 'Mestre Cloud Practitioner' };
+    }
+
+    function calculateOverallProgress() {
+      const totalLessons = MODULES.reduce((acc, m) => acc + m.lessons.length, 0); // 13
+      const totalCards = FLASHCARDS.length; // 24
+      const lessonRatio = state.completedLessons.length / totalLessons;
+      const cardRatio = state.masteredFlashcards.length / totalCards;
+      // 70% weight for lessons, 30% weight for flashcards
+      const pct = Math.round((lessonRatio * 0.7 + cardRatio * 0.3) * 100);
+      return Math.min(100, Math.max(0, pct));
+    }
+
+    function updateHeaderUI() {
+      const pct = calculateOverallProgress();
+      const lvl = getLevelInfo(state.xp);
+
+      document.getElementById('header-progress-text').textContent = `${pct}%`;
+      document.getElementById('header-progress-bar').style.width = `${pct}%`;
+      document.getElementById('header-xp-value').textContent = `${state.xp} XP`;
+      document.getElementById('header-level-label').textContent = `Nível ${lvl.level} • ${lvl.title}`;
+      document.getElementById('sound-icon').textContent = state.soundEnabled ? '🔊' : '🔇';
+
+      // Update main tab button active styles
+      const tabs = ['trail', 'cram', 'exam'];
+      tabs.forEach((t) => {
+        const btn = document.getElementById(`tab-btn-${t}`);
+        if (!btn) return;
+        if (state.activeMainTab === t) {
+          btn.className =
+            'main-tab-btn flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 px-2 sm:px-4 rounded-xl text-xs sm:text-sm font-bold transition border bg-amber-500/15 border-amber-500 text-amber-300 shadow-sm shadow-amber-500/10';
+        } else {
+          btn.className =
+            'main-tab-btn flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 px-2 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold transition border bg-[#1e293b]/70 border-[#334155] text-slate-400 hover:text-slate-200 hover:border-slate-500';
+        }
+      });
+    }
+
+    function showToast(message, accent = 'emerald') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      const borderClass =
+        accent === 'amber'
+          ? 'border-amber-500/60 text-amber-200'
+          : accent === 'cyan'
+          ? 'border-cyan-500/60 text-cyan-200'
+          : 'border-emerald-500/60 text-emerald-200';
+
+      toast.className = `px-4 py-2.5 rounded-xl bg-[#1e293b] border ${borderClass} shadow-xl text-xs sm:text-sm font-bold animate-fade-up`;
+      toast.textContent = message;
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transition = 'opacity 0.25s ease';
+        setTimeout(() => toast.remove(), 260);
+      }, 2400);
+    }
+
+    function triggerConfettiBurst() {
+      const colors = ['#f59e0b', '#38bdf8', '#10b981', '#fbbf24', '#34d399'];
+      for (let i = 0; i < 32; i++) {
+        const piece = document.createElement('div');
+        piece.className = 'confetti-piece';
+        piece.style.left = `${Math.random() * 100}vw`;
+        piece.style.top = `${Math.random() * 20}vh`;
+        piece.style.backgroundColor = colors[i % colors.length];
+        piece.style.animationDuration = `${1.1 + Math.random() * 0.9}s`;
+        document.body.appendChild(piece);
+        setTimeout(() => piece.remove(), 2100);
+      }
+    }
+
+    // Custom Confirmation Modal (replaces browser confirm())
+    let pendingConfirmCallback = null;
+
+    function openConfirmModal(title, message, btnText, callback) {
+      document.getElementById('confirm-title').textContent = title;
+      document.getElementById('confirm-message').textContent = message;
+      const btn = document.getElementById('confirm-action-btn');
+      btn.textContent = btnText;
+      pendingConfirmCallback = callback;
+      btn.onclick = () => {
+        closeConfirmModal();
+        if (pendingConfirmCallback) pendingConfirmCallback();
+      };
+      document.getElementById('confirm-modal').classList.remove('hidden');
+    }
+
+    function closeConfirmModal() {
+      document.getElementById('confirm-modal').classList.add('hidden');
+      pendingConfirmCallback = null;
+    }
+
+    function openResetModal() {
+      openConfirmModal(
+        'Resetar Todo o Progresso?',
+        'Isso vai zerar seu XP acumulado, aulas concluídas, flashcards dominados e histórico de simulados salvos neste navegador.',
+        'Sim, Zerar Tudo',
+        () => {
+          localStorage.removeItem(STORAGE_KEY);
+          state = { ...defaultState };
+          saveState();
+          renderActiveMainTab();
+          showToast('Progresso reiniciado com sucesso', 'cyan');
+        }
+      );
+    }
+
+    // =========================================================================
+    // 5. NAVEGAÇÃO PRINCIPAL
+    // =========================================================================
+    function switchMainTab(tabName) {
+      if (examState.active && examState.timerInterval && tabName !== 'exam') {
+        clearInterval(examState.timerInterval);
+        examState.timerInterval = null;
+      }
+      state.activeMainTab = tabName;
+      saveState();
+      renderActiveMainTab();
+    }
+
+    function renderActiveMainTab() {
+      updateHeaderUI();
+      const main = document.getElementById('app-main');
+      if (state.activeMainTab === 'trail') {
+        renderTrailView(main);
+      } else if (state.activeMainTab === 'cram') {
+        renderCramView(main);
+      } else if (state.activeMainTab === 'exam') {
+        renderExamView(main);
+      }
+    }
+
+    // =========================================================================
+    // 6. ABA 1: TRILHA DO CURSO (MICROMÓDULOS INTERATIVOS ESTILO DUOLINGO)
+    // =========================================================================
+    function getAllLessonsFlat() {
+      const list = [];
+      MODULES.forEach((mod) => {
+        mod.lessons.forEach((lesson) => {
+          list.push({ ...lesson, moduleId: mod.id, moduleNumber: mod.number, moduleTitle: mod.title, moduleWeight: mod.weight });
+        });
+      });
+      return list;
+    }
+
+    function renderTrailView(container) {
+      const allLessons = getAllLessonsFlat();
+      const completedCount = state.completedLessons.length;
+      const totalCount = allLessons.length;
+      const nextLesson = allLessons.find((l) => !state.completedLessons.includes(l.id)) || allLessons[0];
+
+      let html = `
+        <div class="animate-fade-up space-y-6">
+          <!-- Hero Resume / Status Banner -->
+          <div class="bg-gradient-to-r from-[#1e293b] via-[#1e293b] to-slate-800 border border-[#334155] rounded-2xl p-5 sm:p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-lg">
+            <div class="space-y-1.5">
+              <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-bold">
+                <span>🎯 Trilha Guiada CLF-C02</span>
+                <span>•</span>
+                <span>${completedCount}/${totalCount} Aulas Concluídas</span>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-extrabold text-white">
+                ${completedCount === totalCount ? 'Parabéns! Você completou toda a trilha!' : `Próxima Missão: ${nextLesson.title}`}
+              </h2>
+              <p class="text-sm text-slate-400">
+                Aulas curtas de 2-3 minutos sem textões: <span class="text-cyan-400 font-semibold">Conceito</span> → <span class="text-amber-400 font-semibold">Regra de Ouro</span> → <span class="text-emerald-400 font-semibold">Desafio Relâmpago</span>.
+              </p>
+            </div>
+            <button onclick="openLesson('${nextLesson.id}')" class="w-full md:w-auto shrink-0 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 font-extrabold text-sm shadow-lg shadow-amber-500/25 transition transform active:scale-95 flex items-center justify-center gap-2">
+              <span>${completedCount === 0 ? 'Começar Aula 1' : completedCount === totalCount ? 'Revisar Trilha' : 'Continuar Aula'}</span>
+              <span>→</span>
+            </button>
+          </div>
+
+          <!-- 4 Official AWS Modules -->
+          <div class="space-y-6">
+      `;
+
+      MODULES.forEach((mod) => {
+        const modDone = mod.lessons.filter((l) => state.completedLessons.includes(l.id)).length;
+        const modTotal = mod.lessons.length;
+        const modPct = Math.round((modDone / modTotal) * 100);
+
+        const badgeColor =
+          mod.color === 'cyan'
+            ? 'bg-cyan-500/15 text-cyan-300 border-cyan-500/40'
+            : mod.color === 'emerald'
+            ? 'bg-emerald-500/15 text-emerald-300 border-emerald-500/40'
+            : 'bg-amber-500/15 text-amber-300 border-amber-500/40';
+
+        html += `
+          <section class="bg-[#1e293b]/70 border border-[#334155] rounded-2xl p-4 sm:p-6 shadow-md">
+            <!-- Module Header -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#334155]/80">
+              <div>
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <span class="px-2.5 py-0.5 rounded-lg text-xs font-mono font-bold border ${badgeColor}">
+                    Domínio ${mod.number} • Peso ${mod.weight}
+                  </span>
+                  <span class="text-xs font-semibold text-slate-400">${modDone}/${modTotal} concluídas</span>
+                </div>
+                <h3 class="text-lg sm:text-xl font-extrabold text-white">${mod.title}</h3>
+                <p class="text-xs sm:text-sm text-slate-400 mt-0.5">${mod.description}</p>
+              </div>
+
+              <!-- Module Mini Progress -->
+              <div class="w-full sm:w-36 shrink-0">
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-slate-400">Domínio</span>
+                  <span class="font-mono font-bold ${modPct === 100 ? 'text-emerald-400' : 'text-slate-200'}">${modPct}%</span>
+                </div>
+                <div class="h-2 bg-[#0f172a] rounded-full overflow-hidden border border-[#334155]">
+                  <div class="h-full ${modPct === 100 ? 'bg-emerald-400' : 'bg-amber-400'} transition-all duration-500" style="width: ${modPct}%"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Duolingo-Style Interactive Lesson Nodes Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${mod.lessons.length === 4 ? '4' : '3'} gap-3.5 mt-4">
+        `;
+
+        mod.lessons.forEach((lesson, idx) => {
+          const isDone = state.completedLessons.includes(lesson.id);
+          const isNext = nextLesson && nextLesson.id === lesson.id && !isDone;
+
+          const cardBorder = isDone
+            ? 'border-emerald-500/60 bg-emerald-950/20 hover:bg-emerald-950/35'
+            : isNext
+            ? 'border-amber-500 bg-[#0f172a] node-active-pulse hover:bg-slate-900'
+            : 'border-[#334155] bg-[#0f172a]/80 hover:border-cyan-500/50 hover:bg-[#0f172a]';
+
+          html += `
+            <button onclick="openLesson('${lesson.id}')" class="group text-left p-4 rounded-2xl border ${cardBorder} transition flex flex-col justify-between gap-3 relative overflow-hidden">
+              <div class="flex items-start justify-between gap-2">
+                <div class="w-11 h-11 rounded-xl ${
+                  isDone
+                    ? 'bg-emerald-500/20 border border-emerald-500/40 text-emerald-300'
+                    : isNext
+                    ? 'bg-amber-500/20 border border-amber-500/50 text-amber-300'
+                    : 'bg-[#1e293b] border border-[#334155] text-slate-200'
+                } flex items-center justify-center text-xl shrink-0 group-hover:scale-105 transition">
+                  ${isDone ? '✓' : lesson.icon}
+                </div>
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-bold ${
+                  isDone
+                    ? 'bg-emerald-500/20 text-emerald-300'
+                    : isNext
+                    ? 'bg-amber-500 text-slate-950'
+                    : 'bg-[#1e293b] text-slate-400'
+                }">
+                  ${isDone ? 'CONCLUÍDA' : isNext ? 'PRÓXIMA' : `AULA ${mod.number}.${idx + 1}`}
+                </span>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-sm sm:text-base text-white group-hover:text-amber-300 transition leading-snug">
+                  ${lesson.title}
+                </h4>
+                <div class="flex items-center gap-2 mt-2 text-xs text-slate-400">
+                  <span>⏱️ ${lesson.duration}</span>
+                  <span>•</span>
+                  <span class="text-amber-400 font-semibold">+50 XP</span>
+                </div>
+              </div>
+            </button>
+          `;
+        });
+
+        html += `
+            </div>
+          </section>
+        `;
+      });
+
+      html += `</div></div>`;
+      container.innerHTML = html;
+    }
+
+    // =========================================================================
+    // 7. PLAYER DE AULA INTERATIVO EM 4 ETAPAS
+    // =========================================================================
+    let currentLessonPlayer = {
+      lesson: null,
+      step: 1, // 1: Conceito, 2: Regra de Ouro, 3: Desafio Relâmpago, 4: Conclusão
+      quizAnswers: [null, null], // selected index for Q0 and Q1
+      xpAwardedThisSession: 0
+    };
+
+    function openLesson(lessonId) {
+      const all = getAllLessonsFlat();
+      const found = all.find((l) => l.id === lessonId);
+      if (!found) return;
+
+      currentLessonPlayer = {
+        lesson: found,
+        step: 1,
+        quizAnswers: [null, null],
+        xpAwardedThisSession: 0
+      };
+
+      document.getElementById('lesson-modal').classList.remove('hidden');
+      renderLessonStep();
+    }
+
+    function closeLessonModal() {
+      document.getElementById('lesson-modal').classList.add('hidden');
+      currentLessonPlayer.lesson = null;
+      if (state.activeMainTab === 'trail') {
+        renderTrailView(document.getElementById('app-main'));
+      }
+    }
+
+    function renderLessonStep() {
+      const { lesson, step, quizAnswers } = currentLessonPlayer;
+      if (!lesson) return;
+
+      const stepTitles = {
+        1: 'Etapa 1 de 4 • Conceito em 30s',
+        2: 'Etapa 2 de 4 • Regra de Ouro Visual',
+        3: 'Etapa 3 de 4 • Desafio Relâmpago (2 Questões)',
+        4: 'Etapa 4 de 4 • Missão Concluída!'
+      };
+
+      document.getElementById('lesson-step-label').textContent = stepTitles[step];
+      document.getElementById('lesson-module-badge').textContent = `Módulo ${lesson.moduleNumber} (${lesson.moduleWeight})`;
+
+      // Update 4-segment progress bar
+      for (let i = 1; i <= 4; i++) {
+        const bar = document.getElementById(`step-bar-${i}`);
+        if (i < step) {
+          bar.className = 'h-2 rounded-full bg-emerald-400 transition-all';
+        } else if (i === step) {
+          bar.className = 'h-2 rounded-full bg-amber-400 transition-all';
+        } else {
+          bar.className = 'h-2 rounded-full bg-[#334155] transition-all';
+        }
+      }
+
+      const body = document.getElementById('lesson-modal-body');
+      const footer = document.getElementById('lesson-modal-footer');
+
+      if (step === 1) {
+        // STEP 1: CONCEITO EM 30s
+        body.innerHTML = `
+          <div class="animate-fade-up space-y-5">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-2xl shrink-0">
+                ${lesson.icon}
+              </div>
+              <div>
+                <span class="text-xs font-mono font-bold text-cyan-400 uppercase">Resumo Direto ao Ponto</span>
+                <h2 class="text-xl sm:text-2xl font-extrabold text-white">${lesson.title}</h2>
+              </div>
+            </div>
+
+            <!-- Analogia Visual -->
+            <div class="p-4 rounded-2xl bg-cyan-950/30 border border-cyan-500/40 flex items-start gap-3">
+              <span class="text-2xl shrink-0">💡</span>
+              <div>
+                <div class="text-xs font-bold uppercase tracking-wider text-cyan-300 mb-1">Analogia para Nunca Esquecer</div>
+                <p class="text-sm sm:text-base text-slate-100 leading-relaxed font-medium">${lesson.analogy}</p>
+              </div>
+            </div>
+
+            <!-- Bullet Points Curtos -->
+            <div class="space-y-2.5">
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-400">O que você precisa saber em 30 segundos:</div>
+              ${lesson.bullets
+                .map(
+                  (b) => `
+                <div class="p-3.5 rounded-xl bg-[#0f172a] border border-[#334155] flex items-start gap-3">
+                  <span class="text-amber-400 font-bold mt-0.5">▸</span>
+                  <p class="text-sm sm:text-base text-slate-200 leading-snug">${b}</p>
+                </div>
+              `
+                )
+                .join('')}
+            </div>
+          </div>
+        `;
+
+        footer.innerHTML = `
+          <button onclick="closeLessonModal()" class="px-4 py-2.5 rounded-xl bg-[#1e293b] hover:bg-slate-700 text-xs sm:text-sm font-semibold text-slate-300 transition">
+            Sair
+          </button>
+          <button onclick="goToLessonStep(2)" class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm shadow-lg shadow-amber-500/20 transition flex items-center gap-2">
+            <span>Ver Regra de Ouro</span>
+            <span>→</span>
+          </button>
+        `;
+      } else if (step === 2) {
+        // STEP 2: REGRA DE OURO / RESUMO VISUAL
+        body.innerHTML = `
+          <div class="animate-fade-up space-y-5">
+            <div>
+              <span class="text-xs font-mono font-bold text-amber-400 uppercase">Fixação Fotográfica</span>
+              <h2 class="text-xl sm:text-2xl font-extrabold text-white">${lesson.goldenRuleTitle}</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              ${lesson.goldenRuleCards
+                .map((card) => {
+                  const borderMap = {
+                    amber: 'border-amber-500/50 bg-amber-950/20',
+                    cyan: 'border-cyan-500/50 bg-cyan-950/20',
+                    emerald: 'border-emerald-500/50 bg-emerald-950/20',
+                    rose: 'border-rose-500/50 bg-rose-950/20'
+                  };
+                  const badgeMap = {
+                    amber: 'bg-amber-500/20 text-amber-300',
+                    cyan: 'bg-cyan-500/20 text-cyan-300',
+                    emerald: 'bg-emerald-500/20 text-emerald-300',
+                    rose: 'bg-rose-500/20 text-rose-300'
+                  };
+                  return `
+                    <div class="p-4 rounded-2xl border ${borderMap[card.color] || borderMap.cyan} space-y-3">
+                      <span class="inline-block px-3 py-1 rounded-lg text-xs font-extrabold ${badgeMap[card.color] || badgeMap.cyan}">
+                        ${card.badge}
+                      </span>
+                      <ul class="space-y-2">
+                        ${card.points
+                          .map(
+                            (pt) => `
+                          <li class="flex items-start gap-2 text-sm text-slate-200">
+                            <span class="text-emerald-400 font-bold">✓</span>
+                            <span>${pt}</span>
+                          </li>
+                        `
+                          )
+                          .join('')}
+                      </ul>
+                    </div>
+                  `;
+                })
+                .join('')}
+            </div>
+
+            <!-- Mnemônico / Macete de Prova -->
+            <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-500/15 to-orange-500/10 border border-amber-500/40">
+              <div class="text-xs font-extrabold uppercase tracking-wider text-amber-400 mb-1">🧠 Mnemônico & Macete de Prova</div>
+              <p class="text-sm sm:text-base font-bold text-white">${lesson.mnemonic}</p>
+            </div>
+          </div>
+        `;
+
+        footer.innerHTML = `
+          <button onclick="goToLessonStep(1)" class="px-4 py-2.5 rounded-xl bg-[#1e293b] hover:bg-slate-700 text-xs sm:text-sm font-semibold text-slate-300 transition">
+            ← Voltar
+          </button>
+          <button onclick="goToLessonStep(3)" class="px-6 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold text-sm shadow-lg shadow-cyan-500/20 transition flex items-center gap-2">
+            <span>Desafio Relâmpago (2 Questões)</span>
+            <span>⚡</span>
+          </button>
+        `;
+      } else if (step === 3) {
+        // STEP 3: DESAFIO RELÂMPAGO (2 MINI-QUESTÕES)
+        const bothAnswered = quizAnswers[0] !== null && quizAnswers[1] !== null;
+
+        body.innerHTML = `
+          <div class="animate-fade-up space-y-6">
+            <div>
+              <span class="text-xs font-mono font-bold text-emerald-400 uppercase">Prática Ativa</span>
+              <h2 class="text-xl font-extrabold text-white">Desafio Relâmpago • Teste o que acabou de ver</h2>
+            </div>
+
+            ${lesson.quiz
+              .map((qItem, qIdx) => {
+                const chosen = quizAnswers[qIdx];
+                const isAnswered = chosen !== null;
+                return `
+                  <div class="p-4 sm:p-5 rounded-2xl bg-[#0f172a] border border-[#334155] space-y-3">
+                    <div class="flex items-center gap-2">
+                      <span class="px-2 py-0.5 rounded-md bg-slate-800 text-amber-400 font-mono text-xs font-bold">
+                        Questão ${qIdx + 1}/2
+                      </span>
+                    </div>
+                    <p class="text-sm sm:text-base font-bold text-white leading-snug">${qItem.question}</p>
+
+                    <div class="space-y-2">
+                      ${qItem.options
+                        .map((opt, oIdx) => {
+                          let optStyle =
+                            'bg-[#1e293b] border-[#334155] text-slate-200 hover:border-cyan-400 hover:bg-slate-800 cursor-pointer';
+                          let badge = String.fromCharCode(65 + oIdx);
+
+                          if (isAnswered) {
+                            if (oIdx === qItem.correct) {
+                              optStyle = 'bg-emerald-950/50 border-emerald-500 text-emerald-200 font-bold';
+                              badge = '✓';
+                            } else if (oIdx === chosen) {
+                              optStyle = 'bg-rose-950/50 border-rose-500 text-rose-200';
+                              badge = '✕';
+                            } else {
+                              optStyle = 'bg-[#1e293b]/40 border-[#334155]/50 text-slate-500';
+                            }
+                          }
+
+                          return `
+                            <button ${isAnswered ? 'disabled' : ''} onclick="answerLessonQuiz(${qIdx}, ${oIdx})" class="w-full text-left p-3 rounded-xl border ${optStyle} transition flex items-center gap-3 text-xs sm:text-sm">
+                              <span class="w-7 h-7 rounded-lg bg-slate-900/80 border border-slate-700 flex items-center justify-center font-mono font-bold text-xs shrink-0">
+                                ${badge}
+                              </span>
+                              <span>${opt}</span>
+                            </button>
+                          `;
+                        })
+                        .join('')}
+                    </div>
+
+                    ${
+                      isAnswered
+                        ? `
+                      <div class="p-3 rounded-xl ${
+                        chosen === qItem.correct
+                          ? 'bg-emerald-500/15 border border-emerald-500/40 text-emerald-200'
+                          : 'bg-amber-500/15 border border-amber-500/40 text-amber-200'
+                      } text-xs sm:text-sm animate-fade-up">
+                        <span class="font-extrabold">${chosen === qItem.correct ? '🎉 Mandou bem!' : '💡 Atenção ao detalhe:'}</span>
+                        ${qItem.explanation}
+                      </div>
+                    `
+                        : ''
+                    }
+                  </div>
+                `;
+              })
+              .join('')}
+          </div>
+        `;
+
+        footer.innerHTML = `
+          <button onclick="goToLessonStep(2)" class="px-4 py-2.5 rounded-xl bg-[#1e293b] hover:bg-slate-700 text-xs sm:text-sm font-semibold text-slate-300 transition">
+            ← Revisar Regra
+          </button>
+          <button ${bothAnswered ? '' : 'disabled'} onclick="completeLessonStep()" class="px-6 py-3 rounded-xl ${
+          bothAnswered
+            ? 'bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 shadow-lg shadow-emerald-500/25 cursor-pointer'
+            : 'bg-slate-700 text-slate-400 cursor-not-allowed'
+        } font-extrabold text-sm transition flex items-center gap-2">
+            <span>${bothAnswered ? 'Concluir Aula (+50 XP)' : 'Responda as 2 questões'}</span>
+            <span>🏆</span>
+          </button>
+        `;
+      } else if (step === 4) {
+        // STEP 4: CONCLUSÃO & RECOMPENSA
+        const all = getAllLessonsFlat();
+        const currIndex = all.findIndex((l) => l.id === lesson.id);
+        const nextLesson = currIndex >= 0 && currIndex < all.length - 1 ? all[currIndex + 1] : null;
+        const correctInQuiz =
+          (quizAnswers[0] === lesson.quiz[0].correct ? 1 : 0) + (quizAnswers[1] === lesson.quiz[1].correct ? 1 : 0);
+
+        body.innerHTML = `
+          <div class="animate-fade-up text-center py-4 space-y-5">
+            <div class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center text-4xl shadow-xl shadow-emerald-500/30">
+              🏆
+            </div>
+
+            <div>
+              <span class="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-300 font-mono font-extrabold text-xs">
+                +${currentLessonPlayer.xpAwardedThisSession} XP CONQUISTADOS!
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-black text-white mt-3">Aula Concluída!</h2>
+              <p class="text-sm text-slate-300 mt-1">
+                Você dominou <span class="text-amber-300 font-bold">${lesson.title}</span> e acertou <span class="text-emerald-400 font-bold">${correctInQuiz}/2</span> no desafio relâmpago.
+              </p>
+            </div>
+
+            <div class="max-w-md mx-auto p-4 rounded-2xl bg-[#0f172a] border border-[#334155] text-left">
+              <div class="text-xs font-bold uppercase text-cyan-400 mb-1">📌 Resumo para levar para a prova:</div>
+              <p class="text-xs sm:text-sm text-slate-200 font-medium">${lesson.mnemonic}</p>
+            </div>
+          </div>
+        `;
+
+        footer.innerHTML = `
+          <button onclick="closeLessonModal()" class="px-4 py-2.5 rounded-xl bg-[#1e293b] hover:bg-slate-700 text-xs sm:text-sm font-semibold text-slate-300 transition">
+            Voltar para Trilha
+          </button>
+          ${
+            nextLesson
+              ? `
+            <button onclick="openLesson('${nextLesson.id}')" class="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 font-extrabold text-sm shadow-lg shadow-amber-500/25 transition flex items-center gap-2">
+              <span>Próxima Aula: ${nextLesson.title}</span>
+              <span>→</span>
+            </button>
+          `
+              : `
+            <button onclick="closeLessonModal(); switchMainTab('exam');" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 font-extrabold text-sm shadow-lg transition">
+              Ir para Simulado Express 🎯
+            </button>
+          `
+          }
+        `;
+      }
+    }
+
+    function goToLessonStep(stepNum) {
+      currentLessonPlayer.step = stepNum;
+      renderLessonStep();
+    }
+
+    function answerLessonQuiz(qIdx, optionIdx) {
+      if (currentLessonPlayer.quizAnswers[qIdx] !== null) return;
+      currentLessonPlayer.quizAnswers[qIdx] = optionIdx;
+      const isCorrect = optionIdx === currentLessonPlayer.lesson.quiz[qIdx].correct;
+      playSound(isCorrect ? 'correct' : 'wrong');
+      renderLessonStep();
+    }
+
+    function completeLessonStep() {
+      const lessonId = currentLessonPlayer.lesson.id;
+      const alreadyDone = state.completedLessons.includes(lessonId);
+
+      if (!alreadyDone) {
+        state.completedLessons.push(lessonId);
+        currentLessonPlayer.xpAwardedThisSession = 50;
+        addXP(50, 'Aula concluída!');
+      } else {
+        currentLessonPlayer.xpAwardedThisSession = 15;
+        addXP(15, 'Revisão concluída!');
+      }
+
+      playSound('levelup');
+      triggerConfettiBurst();
+      currentLessonPlayer.step = 4;
+      renderLessonStep();
+    }
+
+    // =========================================================================
+    // 8. ABA 2: COLA RÁPIDA & FLASHCARDS (MEMORIZAÇÃO ACELERADA)
+    // =========================================================================
+    let flashcardUI = {
+      domainFilter: 'Todos',
+      currentIndex: 0,
+      isFlipped: false
+    };
+
+    let radarUI = {
+      searchQuery: '',
+      categoryFilter: 'Todos'
+    };
+
+    function switchCramSubTab(subTab) {
+      state.activeCramSubTab = subTab;
+      saveState();
+      renderCramView(document.getElementById('app-main'));
+    }
+
+    function renderCramView(container) {
+      const sub = state.activeCramSubTab;
+      const masteredCount = state.masteredFlashcards.length;
+
+      let html = `
+        <div class="animate-fade-up space-y-6">
+          <!-- Sub-Tabs Navigation -->
+          <div class="bg-[#1e293b] border border-[#334155] rounded-2xl p-2 grid grid-cols-1 sm:grid-cols-3 gap-2 shadow-md">
+            <button onclick="switchCramSubTab('flashcards')" class="py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition flex items-center justify-center gap-2 ${
+              sub === 'flashcards'
+                ? 'bg-cyan-500/20 border border-cyan-500 text-cyan-300'
+                : 'text-slate-400 hover:text-white hover:bg-slate-800'
+            }">
+              <span>🃏 Flashcards 3D</span>
+              <span class="px-2 py-0.5 rounded-full text-[11px] font-mono bg-slate-900 text-emerald-400">${masteredCount}/${FLASHCARDS.length}</span>
+            </button>
+
+            <button onclick="switchCramSubTab('radar')" class="py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition flex items-center justify-center gap-2 ${
+              sub === 'radar'
+                ? 'bg-amber-500/20 border border-amber-500 text-amber-300'
+                : 'text-slate-400 hover:text-white hover:bg-slate-800'
+            }">
+              <span>📡 Radar de Palavras-Chave</span>
+              <span class="px-2 py-0.5 rounded-full text-[11px] font-mono bg-slate-900 text-amber-300">${KEYWORD_RADAR.length}</span>
+            </button>
+
+            <button onclick="switchCramSubTab('battles')" class="py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition flex items-center justify-center gap-2 ${
+              sub === 'battles'
+                ? 'bg-emerald-500/20 border border-emerald-500 text-emerald-300'
+                : 'text-slate-400 hover:text-white hover:bg-slate-800'
+            }">
+              <span>⚔️ Batalha de Conceitos</span>
+              <span class="px-2 py-0.5 rounded-full text-[11px] font-mono bg-slate-900 text-emerald-300">X vs Y</span>
+            </button>
+          </div>
+
+          <div id="cram-subview-content"></div>
+        </div>
+      `;
+
+      container.innerHTML = html;
+      const subContainer = document.getElementById('cram-subview-content');
+
+      if (sub === 'flashcards') {
+        renderFlashcardsSubView(subContainer);
+      } else if (sub === 'radar') {
+        renderRadarSubView(subContainer);
+      } else if (sub === 'battles') {
+        renderBattlesSubView(subContainer);
+      }
+    }
+
+    // --- Sub-aba 1: Flashcards 3D Interativos ---
+    function getFilteredFlashcards() {
+      if (flashcardUI.domainFilter === 'Todos') return FLASHCARDS;
+      return FLASHCARDS.filter((f) => f.domain === flashcardUI.domainFilter);
+    }
+
+    function setFlashcardFilter(domain) {
+      flashcardUI.domainFilter = domain;
+      flashcardUI.currentIndex = 0;
+      flashcardUI.isFlipped = false;
+      renderFlashcardsSubView(document.getElementById('cram-subview-content'));
+    }
+
+    function flipFlashcard() {
+      flashcardUI.isFlipped = !flashcardUI.isFlipped;
+      playSound('flip');
+      const inner = document.getElementById('flashcard-3d-inner');
+      if (inner) {
+        if (flashcardUI.isFlipped) {
+          inner.classList.add('rotate-y-180');
+        } else {
+          inner.classList.remove('rotate-y-180');
+        }
+      }
+    }
+
+    function navigateFlashcard(delta) {
+      const deck = getFilteredFlashcards();
+      if (deck.length === 0) return;
+      flashcardUI.currentIndex = (flashcardUI.currentIndex + delta + deck.length) % deck.length;
+      flashcardUI.isFlipped = false;
+      renderFlashcardsSubView(document.getElementById('cram-subview-content'));
+    }
+
+    function toggleMasterFlashcard(cardId) {
+      const idx = state.masteredFlashcards.indexOf(cardId);
+      if (idx === -1) {
+        state.masteredFlashcards.push(cardId);
+        addXP(15, 'Flashcard dominado!');
+        playSound('correct');
+      } else {
+        state.masteredFlashcards.splice(idx, 1);
+        saveState();
+      }
+      renderCramView(document.getElementById('app-main'));
+    }
+
+    function renderFlashcardsSubView(container) {
+      const domains = ['Todos', 'Conceitos', 'Segurança', 'Tecnologia', 'Cobrança'];
+      const deck = getFilteredFlashcards();
+      if (flashcardUI.currentIndex >= deck.length) flashcardUI.currentIndex = 0;
+      const card = deck[flashcardUI.currentIndex];
+      const isMastered = state.masteredFlashcards.includes(card.id);
+
+      container.innerHTML = `
+        <div class="space-y-5 max-w-3xl mx-auto">
+          <!-- Domain Filter Pills -->
+          <div class="flex flex-wrap items-center justify-center gap-2">
+            ${domains
+              .map(
+                (d) => `
+              <button onclick="setFlashcardFilter('${d}')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold border transition ${
+                  flashcardUI.domainFilter === d
+                    ? 'bg-cyan-500 text-slate-950 border-cyan-400'
+                    : 'bg-[#1e293b] text-slate-300 border-[#334155] hover:border-slate-500'
+                }">
+                ${d}
+              </button>
+            `
+              )
+              .join('')}
+          </div>
+
+          <!-- Deck Counter -->
+          <div class="flex items-center justify-between text-xs text-slate-400 px-1">
+            <span>Card <strong class="text-white">${flashcardUI.currentIndex + 1}</strong> de <strong class="text-white">${deck.length}</strong></span>
+            <span>Clique no card para virar 🔄</span>
+          </div>
+
+          <!-- 3D Flip Card -->
+          <div onclick="flipFlashcard()" class="perspective-1000 w-full h-80 sm:h-72 cursor-pointer select-none">
+            <div id="flashcard-3d-inner" class="relative w-full h-full transform-style-3d ${flashcardUI.isFlipped ? 'rotate-y-180' : ''}">
+              
+              <!-- FRONT -->
+              <div class="absolute inset-0 backface-hidden bg-gradient-to-br from-[#1e293b] to-slate-900 border-2 ${
+                isMastered ? 'border-emerald-500/70' : 'border-[#334155] hover:border-cyan-500/60'
+              } rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl">
+                <div class="flex items-center justify-between">
+                  <span class="px-3 py-1 rounded-lg bg-cyan-500/15 border border-cyan-500/40 text-cyan-300 font-mono text-xs font-bold">
+                    ${card.domain}
+                  </span>
+                  <span class="text-xs font-bold ${isMastered ? 'text-emerald-400' : 'text-slate-500'}">
+                    ${isMastered ? '✓ Memorizado' : 'FRENTE • PERGUNTA'}
+                  </span>
+                </div>
+
+                <div class="my-auto text-center px-2">
+                  <p class="text-lg sm:text-2xl font-extrabold text-white leading-snug">
+                    ${card.front}
+                  </p>
+                </div>
+
+                <div class="text-center text-xs text-slate-400">
+                  Toque para revelar a resposta + macete
+                </div>
+              </div>
+
+              <!-- BACK -->
+              <div class="absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-slate-900 via-[#1e293b] to-emerald-950/30 border-2 border-amber-500/70 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl">
+                <div class="flex items-center justify-between">
+                  <span class="px-3 py-1 rounded-lg bg-amber-500/20 border border-amber-500/40 text-amber-300 font-mono text-xs font-bold">
+                    RESPOSTA DIRETA
+                  </span>
+                  <span class="text-xs text-slate-400">VERSO</span>
+                </div>
+
+                <div class="my-auto space-y-3">
+                  <p class="text-sm sm:text-lg font-bold text-white leading-relaxed">
+                    ${card.back}
+                  </p>
+                  <div class="p-3 rounded-xl bg-amber-500/15 border border-amber-500/40 text-xs sm:text-sm text-amber-200 font-semibold">
+                    💡 ${card.mnemonic}
+                  </div>
+                </div>
+
+                <div class="text-center text-xs text-slate-400">
+                  Toque novamente para voltar à pergunta
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Flashcard Control Buttons -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+            <button onclick="navigateFlashcard(-1)" class="py-3 px-4 rounded-xl bg-[#1e293b] hover:bg-slate-700 border border-[#334155] text-sm font-bold text-slate-200 transition">
+              ← Anterior
+            </button>
+            <button onclick="flipFlashcard()" class="py-3 px-4 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/50 text-sm font-bold text-cyan-300 transition">
+              🔄 Virar Card
+            </button>
+            <button onclick="navigateFlashcard(1)" class="py-3 px-4 rounded-xl bg-[#1e293b] hover:bg-slate-700 border border-[#334155] text-sm font-bold text-slate-200 transition">
+              Próximo →
+            </button>
+            <button onclick="toggleMasterFlashcard('${card.id}')" class="py-3 px-4 rounded-xl ${
+              isMastered
+                ? 'bg-emerald-500 text-slate-950 font-extrabold shadow-lg shadow-emerald-500/20'
+                : 'bg-[#1e293b] hover:bg-emerald-950/50 border border-emerald-500/50 text-emerald-300 font-bold'
+            } text-xs sm:text-sm transition">
+              ${isMastered ? 'Memorizado ✓' : 'Marcar Memorizado ✓'}
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    // --- Sub-aba 2: Radar de Palavras-Chave ("Se a prova disser... Marque...") ---
+    function updateRadarSearch(val) {
+      radarUI.searchQuery = val;
+      renderRadarTableOnly();
+    }
+
+    function setRadarCategory(cat) {
+      radarUI.categoryFilter = cat;
+      renderRadarSubView(document.getElementById('cram-subview-content'));
+    }
+
+    function renderRadarSubView(container) {
+      const cats = ['Todos', 'Segurança', 'Tecnologia', 'Cobrança'];
+
+      container.innerHTML = `
+        <div class="space-y-4">
+          <div class="bg-[#1e293b] border border-[#334155] rounded-2xl p-4 sm:p-5 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+            <div class="relative flex-1">
+              <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400">🔍</span>
+              <input
+                type="text"
+                value="${radarUI.searchQuery.replace(/"/g, '&quot;')}"
+                oninput="updateRadarSearch(this.value)"
+                placeholder="Busque por palavra-chave (ex: DDoS, CPF, NoSQL, TAM, DNS, API...)"
+                class="w-full pl-10 pr-4 py-3 rounded-xl bg-[#0f172a] border border-[#334155] focus:border-amber-500 focus:outline-none text-sm text-white placeholder-slate-500"
+              />
+            </div>
+
+            <div class="flex flex-wrap gap-1.5">
+              ${cats
+                .map(
+                  (c) => `
+                <button onclick="setRadarCategory('${c}')" class="px-3 py-2 rounded-xl text-xs font-bold border transition ${
+                    radarUI.categoryFilter === c
+                      ? 'bg-amber-500 text-slate-950 border-amber-400'
+                      : 'bg-[#0f172a] text-slate-300 border-[#334155] hover:border-slate-500'
+                  }">
+                  ${c}
+                </button>
+              `
+                )
+                .join('')}
+            </div>
+          </div>
+
+          <div id="radar-results-container"></div>
+        </div>
+      `;
+
+      renderRadarTableOnly();
+    }
+
+    function renderRadarTableOnly() {
+      const target = document.getElementById('radar-results-container');
+      if (!target) return;
+
+      const q = radarUI.searchQuery.trim().toLowerCase();
+      const filtered = KEYWORD_RADAR.filter((item) => {
+        const matchCat = radarUI.categoryFilter === 'Todos' || item.category === radarUI.categoryFilter;
+        const matchText =
+          !q ||
+          item.trigger.toLowerCase().includes(q) ||
+          item.service.toLowerCase().includes(q) ||
+          item.tip.toLowerCase().includes(q);
+        return matchCat && matchText;
+      });
+
+      if (filtered.length === 0) {
+        target.innerHTML = `
+          <div class="p-8 text-center rounded-2xl bg-[#1e293b] border border-[#334155] text-slate-400 text-sm">
+            Nenhum gatilho encontrado para "<strong class="text-white">${radarUI.searchQuery}</strong>". Tente outro termo!
+          </div>
+        `;
+        return;
+      }
+
+      target.innerHTML = `
+        <div class="bg-[#1e293b] border border-[#334155] rounded-2xl overflow-hidden shadow-lg">
+          <div class="hidden md:grid grid-cols-12 gap-4 px-5 py-3 bg-[#0f172a] border-b border-[#334155] text-xs font-extrabold uppercase tracking-wider text-slate-400">
+            <div class="col-span-5">Se a prova disser...</div>
+            <div class="col-span-3">Marque na hora</div>
+            <div class="col-span-4">Dica Rápida</div>
+          </div>
+          <div class="divide-y divide-[#334155]/70">
+            ${filtered
+              .map(
+                (row) => `
+              <div class="p-4 sm:px-5 sm:py-3.5 grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 items-center hover:bg-slate-800/50 transition">
+                <div class="md:col-span-5 text-sm font-semibold text-slate-100">
+                  <span class="md:hidden text-xs text-slate-500 block">Se a prova disser:</span>
+                  "${row.trigger}"
+                </div>
+                <div class="md:col-span-3">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-amber-500/15 border border-amber-500/40 text-amber-300 font-mono text-xs sm:text-sm font-extrabold">
+                    → ${row.service}
+                  </span>
+                </div>
+                <div class="md:col-span-4 text-xs text-slate-400 leading-relaxed">
+                  ${row.tip}
+                </div>
+              </div>
+            `
+              )
+              .join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    // --- Sub-aba 3: Batalha de Conceitos ("X vs. Y") ---
+    function renderBattlesSubView(container) {
+      container.innerHTML = `
+        <div class="space-y-5">
+          <div class="text-center max-w-2xl mx-auto">
+            <h3 class="text-lg sm:text-xl font-extrabold text-white">⚔️ Batalha de Conceitos (X vs. Y)</h3>
+            <p class="text-xs sm:text-sm text-slate-400 mt-1">Compare lado a lado as duplas de serviços que a banca mais mistura nas alternativas.</p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-5">
+            ${CONCEPT_BATTLES.map(
+              (battle) => `
+              <div class="bg-[#1e293b] border border-[#334155] rounded-2xl p-4 sm:p-6 shadow-md space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-[#334155] pb-3">
+                  <h4 class="text-base sm:text-lg font-extrabold text-white">${battle.title}</h4>
+                  <span class="text-xs text-amber-400 font-semibold">${battle.subtitle}</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 relative">
+                  <!-- Left Fighter -->
+                  <div class="p-4 rounded-xl bg-[#0f172a] border border-cyan-500/40 space-y-2.5">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="font-extrabold text-cyan-300 text-base">${battle.left.name}</span>
+                      <span class="px-2 py-0.5 rounded-md bg-cyan-500/15 text-cyan-300 font-mono text-[11px] font-bold">${battle.left.badge}</span>
+                    </div>
+                    <ul class="space-y-1.5">
+                      ${battle.left.bullets
+                        .map(
+                          (b) => `
+                        <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-200">
+                          <span class="text-cyan-400 font-bold">•</span>
+                          <span>${b}</span>
+                        </li>
+                      `
+                        )
+                        .join('')}
+                    </ul>
+                  </div>
+
+                  <!-- Right Fighter -->
+                  <div class="p-4 rounded-xl bg-[#0f172a] border border-amber-500/40 space-y-2.5">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="font-extrabold text-amber-300 text-base">${battle.right.name}</span>
+                      <span class="px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-300 font-mono text-[11px] font-bold">${battle.right.badge}</span>
+                    </div>
+                    <ul class="space-y-1.5">
+                      ${battle.right.bullets
+                        .map(
+                          (b) => `
+                        <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-200">
+                          <span class="text-amber-400 font-bold">•</span>
+                          <span>${b}</span>
+                        </li>
+                      `
+                        )
+                        .join('')}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            `
+            ).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // 9. ABA 3: SIMULADO EXPRESS (TREINO & PROVA + ESCALA AWS 100-1000)
+    // =========================================================================
+    let examConfig = {
+      mode: 'treino', // 'treino' | 'prova'
+      size: 10        // 10 | 25
+    };
+
+    let examState = {
+      active: false,
+      finished: false,
+      mode: 'treino',
+      questions: [],
+      userAnswers: {}, // { questionIndex: optionIndex }
+      currentIndex: 0,
+      secondsRemaining: 0,
+      timerInterval: null,
+      reviewFilter: 'all' // 'all' | 'wrong' | 'correct'
+    };
+
+    function setExamMode(mode) {
+      examConfig.mode = mode;
+      renderExamView(document.getElementById('app-main'));
+    }
+
+    function setExamSize(size) {
+      examConfig.size = size;
+      renderExamView(document.getElementById('app-main'));
+    }
+
+    function shuffleArray(arr) {
+      const copy = [...arr];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    function buildBalancedExamDeck(count) {
+      if (count >= EXAM_QUESTIONS.length) {
+        return shuffleArray(EXAM_QUESTIONS);
+      }
+      // Proportionally sample across the 4 domains
+      const byDomain = {
+        Conceitos: shuffleArray(EXAM_QUESTIONS.filter((q) => q.domain === 'Conceitos')),
+        Segurança: shuffleArray(EXAM_QUESTIONS.filter((q) => q.domain === 'Segurança')),
+        Tecnologia: shuffleArray(EXAM_QUESTIONS.filter((q) => q.domain === 'Tecnologia')),
+        Cobrança: shuffleArray(EXAM_QUESTIONS.filter((q) => q.domain === 'Cobrança'))
+      };
+
+      if (count === 10) {
+        const picked = [
+          ...byDomain.Conceitos.slice(0, 2),
+          ...byDomain.Segurança.slice(0, 3),
+          ...byDomain.Tecnologia.slice(0, 4),
+          ...byDomain.Cobrança.slice(0, 1)
+        ];
+        return shuffleArray(picked);
+      }
+
+      // 25 questions balanced (~24%, 30%, 34%, 12%)
+      const picked25 = [
+        ...byDomain.Conceitos.slice(0, 6),
+        ...byDomain.Segurança.slice(0, 7),
+        ...byDomain.Tecnologia.slice(0, 9),
+        ...byDomain.Cobrança.slice(0, 3)
+      ];
+      return shuffleArray(picked25);
+    }
+
+    function startExam(customQuestions = null, forcedMode = null) {
+      if (examState.timerInterval) {
+        clearInterval(examState.timerInterval);
+        examState.timerInterval = null;
+      }
+
+      const mode = forcedMode || examConfig.mode;
+      const deck = customQuestions ? shuffleArray(customQuestions) : buildBalancedExamDeck(examConfig.size);
+      const durationSeconds = deck.length <= 10 ? 15 * 60 : 35 * 60;
+
+      examState = {
+        active: true,
+        finished: false,
+        mode,
+        questions: deck,
+        userAnswers: {},
+        currentIndex: 0,
+        secondsRemaining: durationSeconds,
+        timerInterval: null,
+        reviewFilter: 'all'
+      };
+
+      if (mode === 'prova') {
+        examState.timerInterval = setInterval(() => {
+          examState.secondsRemaining--;
+          const timerEl = document.getElementById('exam-timer-display');
+          if (timerEl) {
+            timerEl.textContent = formatTime(examState.secondsRemaining);
+            if (examState.secondsRemaining <= 60) {
+              timerEl.classList.add('text-rose-400', 'animate-pulse');
+            }
+          }
+          if (examState.secondsRemaining <= 0) {
+            finishExam();
+          }
+        }, 1000);
+      }
+
+      renderExamView(document.getElementById('app-main'));
+    }
+
+    function retryWrongQuestions(questionIds) {
+      const subset = EXAM_QUESTIONS.filter((q) => questionIds.includes(q.id));
+      if (subset.length === 0) return;
+      startExam(subset, 'treino');
+      showToast(`🎯 Revisando ${subset.length} questão(ões) errada(s)!`, 'amber');
+    }
+
+    function formatTime(sec) {
+      const s = Math.max(0, sec);
+      const m = Math.floor(s / 60);
+      const rem = s % 60;
+      return `${String(m).padStart(2, '0')}:${String(rem).padStart(2, '0')}`;
+    }
+
+    function selectExamAnswer(optionIdx) {
+      const idx = examState.currentIndex;
+      // In Treino mode, lock once answered so feedback is immediate and clear
+      if (examState.mode === 'treino' && examState.userAnswers[idx] !== undefined) return;
+
+      examState.userAnswers[idx] = optionIdx;
+
+      if (examState.mode === 'treino') {
+        const isCorrect = optionIdx === examState.questions[idx].correct;
+        playSound(isCorrect ? 'correct' : 'wrong');
+      } else {
+        playSound('flip');
+      }
+
+      renderExamView(document.getElementById('app-main'));
+    }
+
+    function goToExamQuestion(index) {
+      if (index < 0 || index >= examState.questions.length) return;
+      examState.currentIndex = index;
+      renderExamView(document.getElementById('app-main'));
+    }
+
+    function requestFinishExam() {
+      const answeredCount = Object.keys(examState.userAnswers).length;
+      const total = examState.questions.length;
+
+      if (answeredCount < total) {
+        openConfirmModal(
+          'Finalizar Simulado Agora?',
+          `Você respondeu ${answeredCount} de ${total} questões. As questões em branco serão contabilizadas como erradas.`,
+          'Finalizar e Ver Nota',
+          () => finishExam()
+        );
+      } else {
+        finishExam();
+      }
+    }
+
+    function finishExam() {
+      if (examState.timerInterval) {
+        clearInterval(examState.timerInterval);
+        examState.timerInterval = null;
+      }
+
+      examState.active = false;
+      examState.finished = true;
+
+      // Calculate score on AWS Scale (100 to 1000, passing 700)
+      let correctCount = 0;
+      const domainStats = {
+        Conceitos: { correct: 0, total: 0, weight: '24%' },
+        Segurança: { correct: 0, total: 0, weight: '30%' },
+        Tecnologia: { correct: 0, total: 0, weight: '34%' },
+        Cobrança: { correct: 0, total: 0, weight: '12%' }
+      };
+      const missedIds = [];
+
+      examState.questions.forEach((q, idx) => {
+        const chosen = examState.userAnswers[idx];
+        const isRight = chosen === q.correct;
+        if (domainStats[q.domain]) {
+          domainStats[q.domain].total++;
+          if (isRight) domainStats[q.domain].correct++;
+        }
+        if (isRight) {
+          correctCount++;
+        } else {
+          missedIds.push(q.id);
+        }
+      });
+
+      const total = examState.questions.length;
+      const ratio = total > 0 ? correctCount / total : 0;
+      const scaledScore = Math.round(100 + ratio * 900);
+      const passed = scaledScore >= 700;
+
+      // XP reward proportional to correct answers
+      const xpEarned = Math.max(10, correctCount * 10);
+      addXP(xpEarned, `Simulado finalizado (${scaledScore} pts)`);
+
+      if (passed) {
+        playSound('levelup');
+        triggerConfettiBurst();
+      }
+
+      state.lastExamResult = {
+        scaledScore,
+        correctCount,
+        totalCount: total,
+        passed
+      };
+      state.wrongQuestionIds = missedIds;
+      saveState();
+
+      renderExamView(document.getElementById('app-main'));
+    }
+
+    function resetExamToLobby() {
+      if (examState.timerInterval) {
+        clearInterval(examState.timerInterval);
+        examState.timerInterval = null;
+      }
+      examState.active = false;
+      examState.finished = false;
+      renderExamView(document.getElementById('app-main'));
+    }
+
+    function setExamReviewFilter(filter) {
+      examState.reviewFilter = filter;
+      renderExamView(document.getElementById('app-main'));
+    }
+
+    function renderExamView(container) {
+      // VIEW A: ACTIVE EXAM / QUIZ
+      if (examState.active) {
+        const idx = examState.currentIndex;
+        const total = examState.questions.length;
+        const q = examState.questions[idx];
+        const chosen = examState.userAnswers[idx];
+        const isAnswered = chosen !== undefined;
+        const isTreino = examState.mode === 'treino';
+
+        container.innerHTML = `
+          <div class="animate-fade-up max-w-4xl mx-auto space-y-5">
+            <!-- Top Exam Status Bar -->
+            <div class="bg-[#1e293b] border border-[#334155] rounded-2xl p-4 flex flex-wrap items-center justify-between gap-3 shadow-md">
+              <div class="flex items-center gap-3">
+                <span class="px-3 py-1 rounded-lg font-mono text-xs font-extrabold ${
+                  isTreino
+                    ? 'bg-cyan-500/20 border border-cyan-500/40 text-cyan-300'
+                    : 'bg-amber-500/20 border border-amber-500/40 text-amber-300'
+                }">
+                  ${isTreino ? '🎯 MODO TREINO' : '⏱️ MODO PROVA'}
+                </span>
+                <span class="text-sm font-bold text-white">
+                  Questão <span class="text-amber-400">${idx + 1}</span> de ${total}
+                </span>
+                ${
+                  isTreino
+                    ? `<span class="hidden sm:inline-block px-2.5 py-0.5 rounded-md bg-[#0f172a] text-xs text-slate-400 border border-[#334155]">${q.domain}</span>`
+                    : ''
+                }
+              </div>
+
+              <div class="flex items-center gap-3">
+                ${
+                  !isTreino
+                    ? `
+                  <div class="px-3 py-1.5 rounded-xl bg-[#0f172a] border border-[#334155] font-mono text-sm font-bold text-amber-300 flex items-center gap-1.5">
+                    <span>⏳</span>
+                    <span id="exam-timer-display">${formatTime(examState.secondsRemaining)}</span>
+                  </div>
+                `
+                    : ''
+                }
+                <button onclick="requestFinishExam()" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-xs sm:text-sm font-extrabold text-white transition shadow-md">
+                  Finalizar
+                </button>
+              </div>
+            </div>
+
+            <!-- Question Navigation Strip -->
+            <div class="bg-[#1e293b]/70 border border-[#334155] rounded-2xl p-3 flex flex-wrap gap-1.5 justify-center">
+              ${examState.questions
+                .map((item, qI) => {
+                  const ans = examState.userAnswers[qI];
+                  let pillClass = 'bg-[#0f172a] border-[#334155] text-slate-400 hover:border-slate-500';
+                  if (qI === idx) {
+                    pillClass = 'bg-amber-500 text-slate-950 border-amber-400 font-black scale-105';
+                  } else if (ans !== undefined) {
+                    if (isTreino) {
+                      pillClass =
+                        ans === item.correct
+                          ? 'bg-emerald-500/25 border-emerald-500 text-emerald-300 font-bold'
+                          : 'bg-rose-500/25 border-rose-500 text-rose-300 font-bold';
+                    } else {
+                      pillClass = 'bg-cyan-500/25 border-cyan-500 text-cyan-300 font-bold';
+                    }
+                  }
+                  return `
+                    <button onclick="goToExamQuestion(${qI})" class="w-8 h-8 rounded-lg border text-xs font-mono transition ${pillClass}">
+                      ${qI + 1}
+                    </button>
+                  `;
+                })
+                .join('')}
+            </div>
+
+            <!-- Question Card -->
+            <div class="bg-[#1e293b] border border-[#334155] rounded-2xl p-5 sm:p-8 shadow-xl space-y-5">
+              <p class="text-base sm:text-xl font-bold text-white leading-relaxed">
+                ${q.question}
+              </p>
+
+              <div class="space-y-3">
+                ${q.options
+                  .map((opt, oIdx) => {
+                    const letter = String.fromCharCode(65 + oIdx);
+                    let btnStyle =
+                      'bg-[#0f172a] border-[#334155] text-slate-200 hover:border-amber-400 hover:bg-slate-900 cursor-pointer';
+                    let badgeStyle = 'bg-[#1e293b] border-[#334155] text-slate-300';
+
+                    if (isTreino && isAnswered) {
+                      if (oIdx === q.correct) {
+                        btnStyle = 'bg-emerald-950/50 border-emerald-500 text-emerald-100 font-bold';
+                        badgeStyle = 'bg-emerald-500 text-slate-950 border-emerald-400';
+                      } else if (oIdx === chosen) {
+                        btnStyle = 'bg-rose-950/50 border-rose-500 text-rose-200';
+                        badgeStyle = 'bg-rose-500 text-white border-rose-400';
+                      } else {
+                        btnStyle = 'bg-[#0f172a]/50 border-[#334155]/50 text-slate-500';
+                      }
+                    } else if (!isTreino && chosen === oIdx) {
+                      btnStyle = 'bg-cyan-950/50 border-cyan-400 text-white font-semibold';
+                      badgeStyle = 'bg-cyan-400 text-slate-950 border-cyan-300';
+                    }
+
+                    return `
+                      <button ${isTreino && isAnswered ? 'disabled' : ''} onclick="selectExamAnswer(${oIdx})" class="w-full text-left p-3.5 sm:p-4 rounded-xl border ${btnStyle} transition flex items-center gap-3.5 text-sm sm:text-base">
+                        <span class="w-8 h-8 rounded-lg border ${badgeStyle} flex items-center justify-center font-mono font-extrabold text-xs shrink-0">
+                          ${letter}
+                        </span>
+                        <span class="leading-snug">${opt}</span>
+                      </button>
+                    `;
+                  })
+                  .join('')}
+              </div>
+
+              <!-- Immediate Explanation in Treino Mode -->
+              ${
+                isTreino && isAnswered
+                  ? `
+                <div class="p-4 rounded-2xl ${
+                  chosen === q.correct
+                    ? 'bg-emerald-500/15 border border-emerald-500/40 text-emerald-200'
+                    : 'bg-amber-500/15 border border-amber-500/40 text-amber-200'
+                } text-xs sm:text-sm leading-relaxed animate-fade-up">
+                  <span class="font-extrabold block mb-1">${
+                    chosen === q.correct ? '✅ Resposta Correta!' : `❌ Resposta Correta: Alternativa ${String.fromCharCode(65 + q.correct)}`
+                  }</span>
+                  ${q.explanation}
+                </div>
+              `
+                  : ''
+              }
+            </div>
+
+            <!-- Bottom Navigation & Keyboard Shortcut Hint -->
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <button ${idx === 0 ? 'disabled' : ''} onclick="goToExamQuestion(${idx - 1})" class="px-5 py-3 rounded-xl bg-[#1e293b] hover:bg-slate-700 disabled:opacity-40 border border-[#334155] text-sm font-bold text-slate-200 transition">
+                ← Anterior
+              </button>
+
+              <span class="hidden sm:inline text-xs text-slate-500 font-mono">
+                Atalhos: [A-D] Responder • [Enter] Avançar
+              </span>
+
+              ${
+                idx < total - 1
+                  ? `
+                <button onclick="goToExamQuestion(${idx + 1})" class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm shadow-lg shadow-amber-500/20 transition">
+                  Próxima Questão →
+                </button>
+              `
+                  : `
+                <button onclick="requestFinishExam()" class="px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-extrabold text-sm shadow-lg shadow-emerald-500/25 transition">
+                  Concluir Simulado 🏆
+                </button>
+              `
+              }
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      // VIEW B: FINAL EXAM SCORE & DOMAIN ANALYTICS
+      if (examState.finished) {
+        let correctCount = 0;
+        const domainStats = {
+          Conceitos: { correct: 0, total: 0, weight: '24%' },
+          Segurança: { correct: 0, total: 0, weight: '30%' },
+          Tecnologia: { correct: 0, total: 0, weight: '34%' },
+          Cobrança: { correct: 0, total: 0, weight: '12%' }
+        };
+        const missedIds = [];
+
+        examState.questions.forEach((q, idx) => {
+          const chosen = examState.userAnswers[idx];
+          const isRight = chosen === q.correct;
+          if (domainStats[q.domain]) {
+            domainStats[q.domain].total++;
+            if (isRight) domainStats[q.domain].correct++;
+          }
+          if (isRight) {
+            correctCount++;
+          } else {
+            missedIds.push(q.id);
+          }
+        });
+
+        const total = examState.questions.length;
+        const scaledScore = Math.round(100 + (correctCount / total) * 900);
+        const passed = scaledScore >= 700;
+
+        const reviewList = examState.questions
+          .map((q, idx) => ({ q, idx, chosen: examState.userAnswers[idx], isRight: examState.userAnswers[idx] === q.correct }))
+          .filter((item) => {
+            if (examState.reviewFilter === 'wrong') return !item.isRight;
+            if (examState.reviewFilter === 'correct') return item.isRight;
+            return true;
+          });
+
+        container.innerHTML = `
+          <div class="animate-fade-up max-w-4xl mx-auto space-y-6">
+            <!-- Score Hero Card -->
+            <div class="bg-gradient-to-br from-[#1e293b] to-slate-900 border-2 ${
+              passed ? 'border-emerald-500/70' : 'border-amber-500/70'
+            } rounded-3xl p-6 sm:p-8 text-center shadow-2xl space-y-4">
+              <span class="inline-block px-4 py-1 rounded-full text-xs font-mono font-extrabold ${
+                passed
+                  ? 'bg-emerald-500/20 border border-emerald-500/50 text-emerald-300'
+                  : 'bg-amber-500/20 border border-amber-500/50 text-amber-300'
+              }">
+                ${passed ? '🎉 APROVADO NA SIMULAÇÃO (CORTE: 700)' : '💪 QUASE LÁ! CORTE OFICIAL AWS: 700'}
+              </span>
+
+              <div>
+                <div class="text-xs uppercase tracking-widest text-slate-400 font-bold">Pontuação Estimada (Escala AWS 100 – 1000)</div>
+                <div class="text-5xl sm:text-6xl font-black font-mono mt-1 ${passed ? 'text-emerald-400' : 'text-amber-400'}">
+                  ${scaledScore}
+                </div>
+                <p class="text-sm text-slate-300 mt-2">
+                  Você acertou <strong class="text-white">${correctCount} de ${total}</strong> questões (${Math.round((correctCount / total) * 100)}%).
+                </p>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+                ${
+                  missedIds.length > 0
+                    ? `
+                  <button onclick='retryWrongQuestions(${JSON.stringify(missedIds)})' class="px-5 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 font-extrabold text-sm shadow-lg shadow-amber-500/25 transition">
+                    🔁 Refazer apenas as questões que errei (${missedIds.length})
+                  </button>
+                `
+                    : ''
+                }
+                <button onclick="resetExamToLobby()" class="px-5 py-3 rounded-xl bg-[#0f172a] hover:bg-slate-800 border border-[#334155] text-sm font-bold text-slate-200 transition">
+                  Novo Simulado
+                </button>
+              </div>
+            </div>
+
+            <!-- Domain Performance Bar Chart -->
+            <div class="bg-[#1e293b] border border-[#334155] rounded-2xl p-5 sm:p-6 space-y-4">
+              <h3 class="text-base sm:text-lg font-extrabold text-white">📊 Desempenho por Domínio Oficial</h3>
+              <div class="space-y-3.5">
+                ${Object.entries(domainStats)
+                  .filter(([, st]) => st.total > 0)
+                  .map(([domName, st]) => {
+                    const pct = Math.round((st.correct / st.total) * 100);
+                    const barColor = pct >= 70 ? 'bg-emerald-400' : pct >= 50 ? 'bg-amber-400' : 'bg-rose-400';
+                    return `
+                      <div class="space-y-1">
+                        <div class="flex items-center justify-between text-xs sm:text-sm">
+                          <span class="font-bold text-slate-200">${domName} <span class="text-slate-500 font-mono text-xs">(Peso ${st.weight})</span></span>
+                          <span class="font-mono font-bold ${pct >= 70 ? 'text-emerald-400' : 'text-amber-300'}">${st.correct}/${st.total} (${pct}%)</span>
+                        </div>
+                        <div class="h-3 bg-[#0f172a] rounded-full overflow-hidden border border-[#334155]">
+                          <div class="h-full ${barColor} rounded-full transition-all duration-700" style="width: ${pct}%"></div>
+                        </div>
+                      </div>
+                    `;
+                  })
+                  .join('')}
+              </div>
+            </div>
+
+            <!-- Detailed Question-by-Question Review -->
+            <div class="space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h3 class="text-base sm:text-lg font-extrabold text-white">📝 Revisão das Questões</h3>
+                <div class="flex gap-1.5">
+                  <button onclick="setExamReviewFilter('all')" class="px-3 py-1.5 rounded-lg text-xs font-bold border ${
+                    examState.reviewFilter === 'all' ? 'bg-cyan-500 text-slate-950 border-cyan-400' : 'bg-[#1e293b] text-slate-300 border-[#334155]'
+                  }">Todas (${total})</button>
+                  <button onclick="setExamReviewFilter('wrong')" class="px-3 py-1.5 rounded-lg text-xs font-bold border ${
+                    examState.reviewFilter === 'wrong' ? 'bg-rose-500 text-white border-rose-400' : 'bg-[#1e293b] text-slate-300 border-[#334155]'
+                  }">Erradas (${missedIds.length})</button>
+                  <button onclick="setExamReviewFilter('correct')" class="px-3 py-1.5 rounded-lg text-xs font-bold border ${
+                    examState.reviewFilter === 'correct' ? 'bg-emerald-500 text-slate-950 border-emerald-400' : 'bg-[#1e293b] text-slate-300 border-[#334155]'
+                  }">Corretas (${correctCount})</button>
+                </div>
+              </div>
+
+              <div class="space-y-3">
+                ${reviewList
+                  .map(
+                    ({ q, idx, chosen, isRight }) => `
+                  <div class="p-4 sm:p-5 rounded-2xl bg-[#1e293b] border ${
+                    isRight ? 'border-emerald-500/40' : 'border-rose-500/40'
+                  } space-y-2.5">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="text-xs font-mono font-bold ${isRight ? 'text-emerald-400' : 'text-rose-400'}">
+                        ${isRight ? '✓ ACERTOU' : '✕ ERROU'} • Questão ${idx + 1} (${q.domain})
+                      </span>
+                    </div>
+                    <p class="text-sm sm:text-base font-bold text-white">${q.question}</p>
+                    <div class="text-xs sm:text-sm space-y-1">
+                      <div class="${isRight ? 'text-emerald-300' : 'text-rose-300'}">
+                        <strong>Sua resposta:</strong> ${chosen !== undefined ? q.options[chosen] : 'Em branco'}
+                      </div>
+                      ${
+                        !isRight
+                          ? `<div class="text-emerald-300"><strong>Correta:</strong> ${q.options[q.correct]}</div>`
+                          : ''
+                      }
+                    </div>
+                    <div class="p-3 rounded-xl bg-[#0f172a] border border-[#334155] text-xs text-slate-300">
+                      💡 <strong>Macete:</strong> ${q.explanation}
+                    </div>
+                  </div>
+                `
+                  )
+                  .join('')}
+              </div>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      // VIEW C: EXAM LOBBY / SETUP SCREEN
+      const savedWrongs = state.wrongQuestionIds || [];
+
+      container.innerHTML = `
+        <div class="animate-fade-up max-w-3xl mx-auto space-y-6">
+          <div class="bg-[#1e293b] border border-[#334155] rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
+            <div class="space-y-1.5">
+              <span class="px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/40 text-amber-300 font-mono text-xs font-bold">
+                SIMULADO EXPRESS • ESTILO OFICIAL CLF-C02
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-black text-white">Pronto para testar seus reflexos?</h2>
+              <p class="text-sm text-slate-400">
+                Questões situacionais inéditas nos 4 domínios oficiais com pontuação na escala AWS (100 a 1000, corte 700).
+              </p>
+            </div>
+
+            <!-- Step 1: Choose Mode -->
+            <div class="space-y-2.5">
+              <label class="text-xs font-extrabold uppercase tracking-wider text-slate-400">1. Escolha o Modo</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <button onclick="setExamMode('treino')" class="p-4 rounded-2xl border-2 text-left transition ${
+                  examConfig.mode === 'treino'
+                    ? 'bg-cyan-950/30 border-cyan-400 shadow-lg shadow-cyan-500/10'
+                    : 'bg-[#0f172a] border-[#334155] hover:border-slate-500'
+                }">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="font-extrabold text-base text-white">🎯 Modo Treino</span>
+                    <span class="text-xs font-mono text-cyan-300 font-bold">Sem Relógio</span>
+                  </div>
+                  <p class="text-xs text-slate-400">Correção imediata e macete explicativo logo após responder cada questão.</p>
+                </button>
+
+                <button onclick="setExamMode('prova')" class="p-4 rounded-2xl border-2 text-left transition ${
+                  examConfig.mode === 'prova'
+                    ? 'bg-amber-950/30 border-amber-400 shadow-lg shadow-amber-500/10'
+                    : 'bg-[#0f172a] border-[#334155] hover:border-slate-500'
+                }">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="font-extrabold text-base text-white">⏱️ Modo Prova</span>
+                    <span class="text-xs font-mono text-amber-300 font-bold">Cronometrado</span>
+                  </div>
+                  <p class="text-xs text-slate-400">Simula o exame real com contagem regressiva e gabarito revelado só no final.</p>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: Choose Size -->
+            <div class="space-y-2.5">
+              <label class="text-xs font-extrabold uppercase tracking-wider text-slate-400">2. Escolha o Tamanho</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <button onclick="setExamSize(10)" class="p-4 rounded-2xl border-2 text-left transition ${
+                  examConfig.size === 10
+                    ? 'bg-emerald-950/30 border-emerald-400 shadow-lg shadow-emerald-500/10'
+                    : 'bg-[#0f172a] border-[#334155] hover:border-slate-500'
+                }">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="font-extrabold text-base text-white">⚡ 10 Questões Rápidas</span>
+                    <span class="text-xs font-mono text-emerald-300 font-bold">15 min</span>
+                  </div>
+                  <p class="text-xs text-slate-400">Sprint rápido equilibrado nos 4 domínios para treino diário.</p>
+                </button>
+
+                <button onclick="setExamSize(25)" class="p-4 rounded-2xl border-2 text-left transition ${
+                  examConfig.size === 25
+                    ? 'bg-emerald-950/30 border-emerald-400 shadow-lg shadow-emerald-500/10'
+                    : 'bg-[#0f172a] border-[#334155] hover:border-slate-500'
+                }">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="font-extrabold text-base text-white">🏆 25 Questões Completas</span>
+                    <span class="text-xs font-mono text-emerald-300 font-bold">35 min</span>
+                  </div>
+                  <p class="text-xs text-slate-400">Simulação aprofundada seguindo os pesos oficiais da certificação.</p>
+                </button>
+              </div>
+            </div>
+
+            <!-- Start CTA -->
+            <div class="pt-2 flex flex-col sm:flex-row gap-3">
+              <button onclick="startExam()" class="flex-1 py-4 px-6 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 font-black text-base shadow-xl shadow-amber-500/25 transition transform active:scale-98">
+                Iniciar Simulado Express 🚀
+              </button>
+
+              ${
+                savedWrongs.length > 0
+                  ? `
+                <button onclick='retryWrongQuestions(${JSON.stringify(savedWrongs)})' class="py-4 px-5 rounded-2xl bg-[#0f172a] hover:bg-slate-800 border border-rose-500/50 text-rose-300 font-bold text-xs sm:text-sm transition">
+                  🔁 Revisar ${savedWrongs.length} Erro(s) Salvo(s)
+                </button>
+              `
+                  : ''
+              }
+            </div>
+          </div>
+
+          ${
+            state.lastExamResult
+              ? `
+            <div class="p-4 rounded-2xl bg-[#1e293b]/70 border border-[#334155] flex items-center justify-between text-xs sm:text-sm">
+              <span class="text-slate-400">Última nota registrada:</span>
+              <span class="font-mono font-extrabold ${state.lastExamResult.passed ? 'text-emerald-400' : 'text-amber-300'}">
+                ${state.lastExamResult.scaledScore} pts (${state.lastExamResult.correctCount}/${state.lastExamResult.totalCount} acertos)
+              </span>
+            </div>
+          `
+              : ''
+          }
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // 10. ATALHOS DE TECLADO (A-D, ENTER, SETAS, ESC)
+    // =========================================================================
+    document.addEventListener('keydown', (e) => {
+      // Close modals on Escape
+      if (e.key === 'Escape') {
+        if (!document.getElementById('confirm-modal').classList.contains('hidden')) {
+          closeConfirmModal();
+          return;
+        }
+        if (!document.getElementById('lesson-modal').classList.contains('hidden')) {
+          closeLessonModal();
+          return;
+        }
+      }
+
+      // Keyboard shortcuts inside Active Exam
+      if (state.activeMainTab === 'exam' && examState.active && document.getElementById('confirm-modal').classList.contains('hidden')) {
+        const key = e.key.toUpperCase();
+        if (key === 'A' || key === '1') selectExamAnswer(0);
+        else if (key === 'B' || key === '2') selectExamAnswer(1);
+        else if (key === 'C' || key === '3') selectExamAnswer(2);
+        else if (key === 'D' || key === '4') selectExamAnswer(3);
+        else if (e.key === 'Enter' || e.key === 'ArrowRight') {
+          if (examState.currentIndex < examState.questions.length - 1) {
+            goToExamQuestion(examState.currentIndex + 1);
+          }
+        } else if (e.key === 'ArrowLeft') {
+          if (examState.currentIndex > 0) {
+            goToExamQuestion(examState.currentIndex - 1);
+          }
+        }
+      }
+    });
+
+    // =========================================================================
+    // 11. INICIALIZAÇÃO
+    // =========================================================================
+    window.addEventListener('DOMContentLoaded', () => {
+      renderActiveMainTab();
+    });
+  </script>
+</body>
+</html>

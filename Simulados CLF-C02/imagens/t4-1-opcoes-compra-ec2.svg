@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 680 370" role="img"><title>Opções de compra do EC2: do que você abre mão e quanto desconto ganha</title><desc>Três degraus na loja-da-ana. On-Demand não abre mão de nada e não tem desconto, serve para pico imprevisível. Reservada ou Savings Plans abre mão da liberdade por 1 ou 3 anos e dá desconto grande, serve para banco ligado 24x7. Spot abre mão da garantia, pode ser interrompida e dá o maior desconto, serve para fotos em lote à noite.</desc>
+<style>
+svg{font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif}
+.bg{fill:#ffffff}
+.t{font-size:14px;fill:#2C2C2A}.ts{font-size:12px;fill:#5F5E5A}.th{font-size:14px;font-weight:500;fill:#2C2C2A}
+.arr{stroke:#888780;stroke-width:1.5;fill:none}
+.c-gray rect{fill:#F1EFE8;stroke:#5F5E5A}.c-gray .th{fill:#444441}.c-gray .ts{fill:#5F5E5A}
+.c-teal rect{fill:#E1F5EE;stroke:#0F6E56}.c-teal .th{fill:#085041}.c-teal .ts{fill:#0F6E56}
+.c-amber rect{fill:#FAEEDA;stroke:#854F0B}.c-amber .th{fill:#633806}.c-amber .ts{fill:#854F0B}
+@media (prefers-color-scheme:dark){
+.bg{fill:#1b1b1a}.arr{stroke:#B4B2A9}
+.t{fill:#F1EFE8}.ts{fill:#D3D1C7}.th{fill:#F1EFE8}
+.c-gray rect{fill:#444441;stroke:#B4B2A9}.c-gray .th{fill:#F1EFE8}.c-gray .ts{fill:#D3D1C7}
+.c-teal rect{fill:#085041;stroke:#5DCAA5}.c-teal .th{fill:#E1F5EE}.c-teal .ts{fill:#9FE1CB}
+.c-amber rect{fill:#633806;stroke:#EF9F27}.c-amber .th{fill:#FAEEDA}.c-amber .ts{fill:#FAC775}
+}
+</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect class="bg" x="0" y="0" width="680" height="370"/>
+<text class="th" x="115" y="40" text-anchor="middle" dominant-baseline="central">Opção de compra</text>
+<text class="th" x="335" y="40" text-anchor="middle" dominant-baseline="central">Do que você abre mão</text>
+<text class="th" x="560" y="40" text-anchor="middle" dominant-baseline="central">Exemplo na loja-da-ana</text>
+<g class="c-gray"><rect x="20" y="60" width="190" height="72" rx="8" stroke-width="0.5"/><text class="th" x="115" y="84" text-anchor="middle" dominant-baseline="central">On-Demand</text><text class="ts" x="115" y="108" text-anchor="middle" dominant-baseline="central">Sem contrato, paga o uso</text></g>
+<line x1="210" y1="96" x2="238" y2="96" class="arr" marker-end="url(#arrow)"/>
+<g class="c-gray"><rect x="240" y="60" width="190" height="72" rx="8" stroke-width="0.5"/><text class="th" x="335" y="84" text-anchor="middle" dominant-baseline="central">Abre mão: nada</text><text class="ts" x="335" y="108" text-anchor="middle" dominant-baseline="central">Desconto: nenhum</text></g>
+<line x1="430" y1="96" x2="458" y2="96" class="arr" marker-end="url(#arrow)"/>
+<g class="c-gray"><rect x="460" y="60" width="200" height="72" rx="8" stroke-width="0.5"/><text class="th" x="560" y="84" text-anchor="middle" dominant-baseline="central">Pico imprevisível</text><text class="ts" x="560" y="108" text-anchor="middle" dominant-baseline="central">Promoção relâmpago</text></g>
+<g class="c-teal"><rect x="20" y="150" width="190" height="72" rx="8" stroke-width="0.5"/><text class="th" x="115" y="168" text-anchor="middle" dominant-baseline="central">Reservada (RI)</text><text class="ts" x="115" y="190" text-anchor="middle" dominant-baseline="central">ou Savings Plans</text><text class="ts" x="115" y="208" text-anchor="middle" dominant-baseline="central">Compromisso 1 ou 3 anos</text></g>
+<line x1="210" y1="186" x2="238" y2="186" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="240" y="150" width="190" height="72" rx="8" stroke-width="0.5"/><text class="th" x="335" y="174" text-anchor="middle" dominant-baseline="central">Abre mão: liberdade</text><text class="ts" x="335" y="198" text-anchor="middle" dominant-baseline="central">Desconto grande</text></g>
+<line x1="430" y1="186" x2="458" y2="186" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="460" y="150" width="200" height="72" rx="8" stroke-width="0.5"/><text class="th" x="560" y="174" text-anchor="middle" dominant-baseline="central">Banco ligado 24x7</text><text class="ts" x="560" y="198" text-anchor="middle" dominant-baseline="central">Uso estável e previsível</text></g>
+<g class="c-amber"><rect x="20" y="240" width="190" height="72" rx="8" stroke-width="0.5"/><text class="th" x="115" y="258" text-anchor="middle" dominant-baseline="central">Spot</text><text class="ts" x="115" y="280" text-anchor="middle" dominant-baseline="central">Capacidade que sobra</text><text class="ts" x="115" y="298" text-anchor="middle" dominant-baseline="central">Pode ser interrompida</text></g>
+<line x1="210" y1="276" x2="238" y2="276" class="arr" marker-end="url(#arrow)"/>
+<g class="c-amber"><rect x="240" y="240" width="190" height="72" rx="8" stroke-width="0.5"/><text class="th" x="335" y="264" text-anchor="middle" dominant-baseline="central">Abre mão: garantia</text><text class="ts" x="335" y="288" text-anchor="middle" dominant-baseline="central">Maior desconto de todos</text></g>
+<line x1="430" y1="276" x2="458" y2="276" class="arr" marker-end="url(#arrow)"/>
+<g class="c-amber"><rect x="460" y="240" width="200" height="72" rx="8" stroke-width="0.5"/><text class="th" x="560" y="264" text-anchor="middle" dominant-baseline="central">Fotos em lote à noite</text><text class="ts" x="560" y="288" text-anchor="middle" dominant-baseline="central">Se parar, recomeça</text></g>
+<text class="t" x="340" y="345" text-anchor="middle" dominant-baseline="central">Quanto mais você abre mão, maior o desconto</text>
+</svg>

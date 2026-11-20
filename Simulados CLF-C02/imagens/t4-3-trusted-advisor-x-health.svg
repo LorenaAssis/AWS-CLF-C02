@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 680 350" role="img"><title>Trusted Advisor x AWS Health Dashboard</title><desc>À esquerda, o Trusted Advisor olha a configuração da conta loja-da-ana, acha porta 22 aberta para 0.0.0.0/0 e EC2 ociosa há 3 meses, e só recomenda; as verificações dependem do plano de suporte. À direita, o Health Dashboard olha eventos da AWS na conta, avisa de manutenção programada no EC2 que afeta 2 instâncias, e a API do Health envia o alerta para o EventBridge.</desc>
+<style>
+svg{font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif}
+.bg{fill:#ffffff}
+.t{font-size:14px;fill:#2C2C2A}.ts{font-size:12px;fill:#5F5E5A}.th{font-size:14px;font-weight:500;fill:#2C2C2A}
+.arr{stroke:#888780;stroke-width:1.5;fill:none}
+.c-gray rect{fill:#F1EFE8;stroke:#5F5E5A}.c-gray .th{fill:#444441}.c-gray .ts{fill:#5F5E5A}
+.c-teal rect{fill:#E1F5EE;stroke:#0F6E56}.c-teal .th{fill:#085041}.c-teal .ts{fill:#0F6E56}
+.c-amber rect{fill:#FAEEDA;stroke:#854F0B}.c-amber .th{fill:#633806}.c-amber .ts{fill:#854F0B}
+@media (prefers-color-scheme:dark){
+.bg{fill:#1b1b1a}.arr{stroke:#B4B2A9}
+.t{fill:#F1EFE8}.ts{fill:#D3D1C7}.th{fill:#F1EFE8}
+.c-gray rect{fill:#444441;stroke:#B4B2A9}.c-gray .th{fill:#F1EFE8}.c-gray .ts{fill:#D3D1C7}
+.c-teal rect{fill:#085041;stroke:#5DCAA5}.c-teal .th{fill:#E1F5EE}.c-teal .ts{fill:#9FE1CB}
+.c-amber rect{fill:#633806;stroke:#EF9F27}.c-amber .th{fill:#FAEEDA}.c-amber .ts{fill:#FAC775}
+}
+</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect class="bg" x="0" y="0" width="680" height="350"/>
+<g class="c-teal"><rect x="30" y="30" width="290" height="60" rx="8" stroke-width="0.5"/><text class="th" x="175" y="50" text-anchor="middle" dominant-baseline="central">AWS Trusted Advisor</text><text class="ts" x="175" y="72" text-anchor="middle" dominant-baseline="central">Olha a sua configuração</text></g>
+<g class="c-amber"><rect x="360" y="30" width="290" height="60" rx="8" stroke-width="0.5"/><text class="th" x="505" y="50" text-anchor="middle" dominant-baseline="central">AWS Health Dashboard</text><text class="ts" x="505" y="72" text-anchor="middle" dominant-baseline="central">Olha eventos da AWS na sua conta</text></g>
+<line x1="175" y1="90" x2="175" y2="117" class="arr" marker-end="url(#arrow)"/>
+<line x1="505" y1="90" x2="505" y2="117" class="arr" marker-end="url(#arrow)"/>
+<g class="c-gray"><rect x="30" y="120" width="290" height="78" rx="8" stroke-width="0.5"/><text class="th" x="175" y="140" text-anchor="middle" dominant-baseline="central">Achado na loja-da-ana</text><text class="ts" x="175" y="164" text-anchor="middle" dominant-baseline="central">Porta 22 aberta para 0.0.0.0/0</text><text class="ts" x="175" y="184" text-anchor="middle" dominant-baseline="central">EC2 ociosa há 3 meses</text></g>
+<g class="c-gray"><rect x="360" y="120" width="290" height="78" rx="8" stroke-width="0.5"/><text class="th" x="505" y="140" text-anchor="middle" dominant-baseline="central">Evento na sua Região</text><text class="ts" x="505" y="164" text-anchor="middle" dominant-baseline="central">Manutenção programada no EC2</text><text class="ts" x="505" y="184" text-anchor="middle" dominant-baseline="central">Dia 25/11, afeta 2 instâncias</text></g>
+<line x1="175" y1="198" x2="175" y2="227" class="arr" marker-end="url(#arrow)"/>
+<line x1="505" y1="198" x2="505" y2="227" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="30" y="230" width="290" height="72" rx="8" stroke-width="0.5"/><text class="th" x="175" y="248" text-anchor="middle" dominant-baseline="central">Só recomenda</text><text class="ts" x="175" y="270" text-anchor="middle" dominant-baseline="central">Você decide e corrige</text><text class="ts" x="175" y="290" text-anchor="middle" dominant-baseline="central">Verificações dependem do plano</text></g>
+<g class="c-amber"><rect x="360" y="230" width="290" height="72" rx="8" stroke-width="0.5"/><text class="th" x="505" y="248" text-anchor="middle" dominant-baseline="central">Avisa você</text><text class="ts" x="505" y="270" text-anchor="middle" dominant-baseline="central">API do Health: alerta automático</text><text class="ts" x="505" y="290" text-anchor="middle" dominant-baseline="central">Ex.: envia para o EventBridge</text></g>
+<text class="t" x="340" y="330" text-anchor="middle" dominant-baseline="central">Problema na sua conta: Trusted Advisor. Da AWS: Health.</text>
+</svg>

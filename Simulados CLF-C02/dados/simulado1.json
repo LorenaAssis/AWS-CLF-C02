@@ -1,0 +1,1131 @@
+{
+  "simulado": 1,
+  "titulo": "Simulado 1",
+  "questions": [
+    {
+      "id": "S1-001",
+      "domain": 1,
+      "task": "1.1",
+      "type": "single",
+      "question": "Uma startup quer evitar a compra antecipada de servidores e passar a pagar apenas pelos recursos que realmente consumir. Qual vantagem da computação em nuvem isso representa?",
+      "options": [
+        "Aumentar a velocidade e a agilidade da equipe",
+        "Parar de gastar dinheiro com a operação de data centers",
+        "Implantar globalmente em poucos minutos",
+        "Trocar despesa de capital por despesa variável"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "Em vez de investir antecipadamente em hardware (CapEx), a empresa paga conforme o consumo, o que é despesa variável (OpEx). As outras vantagens existem, mas não descrevem a troca do modelo de pagamento citada no cenário."
+    },
+    {
+      "id": "S1-002",
+      "domain": 1,
+      "task": "1.1",
+      "type": "single",
+      "question": "Por que a AWS consegue oferecer preços por uso menores do que a maioria das empresas conseguiria obter sozinha?",
+      "options": [
+        "Porque a AWS vende hardware usado sem margem",
+        "Porque os clientes aceitam menos segurança",
+        "Porque o uso agregado de milhares de clientes gera economia de escala",
+        "Porque a AWS não paga pela energia dos data centers"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "Ao agregar a demanda de um enorme número de clientes, a AWS compra e opera infraestrutura em grande escala e repassa custos menores por unidade de uso. Isso é a vantagem 'beneficiar-se de grandes economias de escala'."
+    },
+    {
+      "id": "S1-003",
+      "domain": 1,
+      "task": "1.1",
+      "type": "single",
+      "question": "Uma empresa lançava produtos e frequentemente superdimensionava ou subdimensionava a infraestrutura por estimar mal a demanda. Qual vantagem da nuvem elimina esse problema?",
+      "options": [
+        "Beneficiar-se de grandes economias de escala",
+        "Ganhar agilidade para lançar novos recursos",
+        "Parar de adivinhar a capacidade necessária",
+        "Trocar despesa variável por despesa de capital"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "Na nuvem a capacidade pode ser aumentada ou reduzida conforme a demanda real, então não é preciso prever o consumo com antecedência. A troca citada na última opção está invertida: a nuvem troca CapEx por despesa variável."
+    },
+    {
+      "id": "S1-004",
+      "domain": 1,
+      "task": "1.2",
+      "type": "single",
+      "question": "Uma equipe quer automatizar implantações e procedimentos operacionais usando scripts versionados, reduzindo erros humanos. Qual pilar do AWS Well-Architected Framework essa prática reforça?",
+      "options": [
+        "Otimização de custos",
+        "Excelência operacional",
+        "Sustentabilidade",
+        "Confiabilidade"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "'Executar operações como código' é um princípio de design do pilar Excelência operacional. Os demais pilares tratam de custo, impacto ambiental e recuperação de falhas, não da automação dos procedimentos operacionais."
+    },
+    {
+      "id": "S1-005",
+      "domain": 1,
+      "task": "1.2",
+      "type": "single",
+      "question": "Qual princípio de design do pilar Segurança do Well-Architected Framework recomenda conceder a usuários e sistemas somente as permissões necessárias?",
+      "options": [
+        "Parar de adivinhar a capacidade necessária",
+        "Experimentar com mais frequência",
+        "Adotar um modelo de consumo sob demanda",
+        "Implementar uma base de identidade forte com privilégio mínimo"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O pilar Segurança pede uma base de identidade forte, com privilégio mínimo e separação de funções. As outras opções são princípios de Confiabilidade, Eficiência de performance e Otimização de custos."
+    },
+    {
+      "id": "S1-006",
+      "domain": 1,
+      "task": "1.2",
+      "type": "single",
+      "question": "Qual pilar do Well-Architected Framework incentiva fazer mudanças pequenas, frequentes e reversíveis, além de aprender com as falhas operacionais?",
+      "options": [
+        "Excelência operacional",
+        "Segurança",
+        "Eficiência de performance",
+        "Otimização de custos"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "Mudanças incrementais e reversíveis e o aprendizado com falhas operacionais são princípios de Excelência operacional. Segurança foca proteção de dados e identidades; os outros pilares focam desempenho e custo."
+    },
+    {
+      "id": "S1-007",
+      "domain": 1,
+      "task": "1.2",
+      "type": "multi",
+      "question": "Quais são princípios de design do pilar Segurança do Well-Architected Framework? Escolha duas.",
+      "options": [
+        "Habilitar a rastreabilidade",
+        "Parar de adivinhar a capacidade necessária",
+        "Proteger os dados em trânsito e em repouso",
+        "Usar tecnologias serverless",
+        "Analisar e atribuir despesas ao longo do tempo"
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explanation": "Rastreabilidade (registrar e monitorar ações) e proteção de dados em trânsito e em repouso são princípios do pilar Segurança. Parar de adivinhar a capacidade é de Confiabilidade, serverless de Eficiência de performance e atribuir despesas de Otimização de custos."
+    },
+    {
+      "id": "S1-008",
+      "domain": 1,
+      "task": "1.2",
+      "type": "single",
+      "question": "Qual ferramenta da AWS ajuda a revisar uma carga de trabalho em relação às melhores práticas do Well-Architected Framework e sugere melhorias?",
+      "options": [
+        "AWS Config",
+        "AWS Well-Architected Tool",
+        "Amazon Inspector",
+        "AWS Artifact"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "A AWS Well-Architected Tool guia a revisão da carga de trabalho pelos pilares e gera um plano de melhoria. AWS Config avalia configurações, Inspector procura vulnerabilidades e Artifact entrega relatórios de conformidade."
+    },
+    {
+      "id": "S1-009",
+      "domain": 1,
+      "task": "1.3",
+      "type": "single",
+      "question": "Qual perspectiva do AWS CAF se concentra em alinhar os investimentos em nuvem às necessidades do negócio e em gerar valor e receita?",
+      "options": [
+        "Plataforma",
+        "Operações",
+        "Segurança",
+        "Negócios"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "A perspectiva Negócios garante que os investimentos em TI e nuvem estejam ligados aos resultados e à estratégia da empresa. Plataforma, Operações e Segurança tratam de arquitetura, execução e proteção."
+    },
+    {
+      "id": "S1-010",
+      "domain": 1,
+      "task": "1.3",
+      "type": "single",
+      "question": "Uma empresa percebe que suas equipes não têm as habilidades necessárias para adotar a nuvem e precisa planejar treinamento e mudança cultural. Qual perspectiva do AWS CAF trata disso?",
+      "options": [
+        "Governança",
+        "Plataforma",
+        "Operações",
+        "Pessoas"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "A perspectiva Pessoas cuida de cultura, estrutura organizacional, liderança e desenvolvimento de habilidades. Governança trata de gestão de portfólio e risco, Plataforma de arquitetura e Operações de monitoramento e continuidade."
+    },
+    {
+      "id": "S1-011",
+      "domain": 1,
+      "task": "1.3",
+      "type": "single",
+      "question": "Qual perspectiva do AWS CAF ajuda a gerenciar riscos, priorizar iniciativas de nuvem e medir os benefícios para o negócio?",
+      "options": [
+        "Pessoas",
+        "Segurança",
+        "Governança",
+        "Negócios"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "A perspectiva Governança foca em gerenciar iniciativas de nuvem, riscos e conformidade, maximizando os benefícios. Pessoas lida com cultura e habilidades, Segurança com proteção de dados e Negócios com o alinhamento estratégico."
+    },
+    {
+      "id": "S1-012",
+      "domain": 1,
+      "task": "1.3",
+      "type": "multi",
+      "question": "Quais das opções a seguir são perspectivas do AWS Cloud Adoption Framework (AWS CAF)? Escolha duas.",
+      "options": [
+        "Plataforma",
+        "Redes",
+        "Operações",
+        "Custos",
+        "Desenvolvimento"
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explanation": "As seis perspectivas do AWS CAF são Negócios, Pessoas, Governança, Plataforma, Segurança e Operações. Redes, Custos e Desenvolvimento não são perspectivas do framework."
+    },
+    {
+      "id": "S1-013",
+      "domain": 1,
+      "task": "1.4",
+      "type": "single",
+      "question": "Qual opção descreve despesa de capital (CapEx) no contexto de TI?",
+      "options": [
+        "Pagamento mensal proporcional ao consumo de recursos",
+        "Investimento antecipado em ativos físicos, como servidores e equipamentos de rede",
+        "Cobrança por hora pelo uso de instâncias de computação",
+        "Taxa recorrente de assinatura de um serviço gerenciado"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "CapEx é o dinheiro gasto antecipadamente em ativos duráveis, como servidores. As demais opções são despesas operacionais (OpEx), pagas conforme o uso ou por assinatura."
+    },
+    {
+      "id": "S1-014",
+      "domain": 1,
+      "task": "1.4",
+      "type": "single",
+      "question": "O que o custo total de propriedade (TCO) leva em conta ao comparar a infraestrutura on-premises com a nuvem?",
+      "options": [
+        "Somente o custo inicial de compra dos servidores",
+        "Custos diretos e indiretos ao longo do tempo, como hardware, energia, instalações e mão de obra",
+        "Somente o valor das licenças de software utilizadas",
+        "Somente o custo de largura de banda da conexão"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "O TCO soma todos os custos diretos e indiretos de manter uma solução ao longo do tempo, não só a compra inicial. Olhar apenas um componente subestima o custo real do ambiente on-premises."
+    },
+    {
+      "id": "S1-015",
+      "domain": 1,
+      "task": "1.4",
+      "type": "single",
+      "question": "Qual é uma característica do modelo de despesa operacional (OpEx) na nuvem?",
+      "options": [
+        "O custo é fixo e pago antecipadamente por todo o período",
+        "A empresa compra e deprecia os servidores físicos",
+        "O custo é pago conforme o consumo, sem investimento inicial em hardware",
+        "A empresa precisa estimar a capacidade para os próximos anos"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "Na nuvem o cliente paga pelo que usa, como uma despesa recorrente, sem grandes desembolsos iniciais. Comprar hardware, depreciar ativos e prever capacidade de longo prazo são características do CapEx."
+    },
+    {
+      "id": "S1-016",
+      "domain": 1,
+      "task": "1.4",
+      "type": "single",
+      "question": "Uma empresa vai encerrar seu data center ao migrar para a AWS. Qual categoria de custo deixará de existir para ela?",
+      "options": [
+        "Gerenciamento de usuários e permissões no IAM",
+        "Configuração de grupos de segurança das instâncias",
+        "Energia, refrigeração e espaço físico dos servidores",
+        "Pagamento pela transferência de dados de saída"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "Os custos de energia, refrigeração e instalações físicas passam a ser responsabilidade da AWS. Gerenciar identidades, regras de segurança e a transferência de dados continuam como custos ou tarefas do cliente."
+    },
+    {
+      "id": "S1-017",
+      "domain": 2,
+      "task": "2.1",
+      "type": "single",
+      "question": "No modelo de responsabilidade compartilhada, quem é responsável por aplicar patches no sistema operacional convidado de uma instância Amazon EC2?",
+      "options": [
+        "A AWS",
+        "A AWS e o cliente, igualmente",
+        "O cliente",
+        "O provedor do sistema operacional"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "No EC2 (IaaS) o cliente gerencia o sistema operacional convidado, incluindo patches, atualizações e a configuração das aplicações. A AWS cuida da infraestrutura física e da virtualização."
+    },
+    {
+      "id": "S1-018",
+      "domain": 2,
+      "task": "2.1",
+      "type": "single",
+      "question": "Qual tarefa é responsabilidade da AWS no modelo de responsabilidade compartilhada ao usar o Amazon EC2?",
+      "options": [
+        "Aplicar patches no sistema operacional da instância",
+        "Instalar atualizações nas aplicações do cliente",
+        "Manter o hardware dos hosts e a camada de virtualização",
+        "Definir as regras de entrada dos grupos de segurança"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "A AWS é responsável pela segurança 'da' nuvem: hardware, instalações, rede e hipervisor. Sistema operacional, aplicações e regras de segurança ficam com o cliente."
+    },
+    {
+      "id": "S1-019",
+      "domain": 2,
+      "task": "2.1",
+      "type": "single",
+      "question": "Qual tarefa é responsabilidade do cliente ao executar uma carga de trabalho no Amazon EC2?",
+      "options": [
+        "Configurar as regras dos grupos de segurança",
+        "Substituir discos defeituosos no data center",
+        "Proteger fisicamente as instalações da Região",
+        "Aplicar patches no hipervisor"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "A configuração de grupos de segurança é uma responsabilidade do cliente, parte da segurança 'na' nuvem. Hardware, segurança física e hipervisor são mantidos pela AWS."
+    },
+    {
+      "id": "S1-020",
+      "domain": 2,
+      "task": "2.1",
+      "type": "multi",
+      "question": "Quais são responsabilidades do cliente ao usar instâncias Amazon EC2? Escolha duas.",
+      "options": [
+        "Atualizar o sistema operacional convidado",
+        "Garantir a energia elétrica dos data centers",
+        "Gerenciar as aplicações instaladas nas instâncias",
+        "Operar a virtualização do hardware",
+        "Controlar o acesso físico às instalações"
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explanation": "No EC2, o cliente cuida do sistema operacional convidado e das aplicações. Energia, virtualização e acesso físico fazem parte da infraestrutura gerenciada pela AWS."
+    },
+    {
+      "id": "S1-021",
+      "domain": 2,
+      "task": "2.1",
+      "type": "single",
+      "question": "Qual afirmação descreve corretamente o modelo de responsabilidade compartilhada para o Amazon EC2?",
+      "options": [
+        "A AWS protege tudo, incluindo os dados dentro das instâncias",
+        "O cliente protege o hardware, e a AWS protege as aplicações",
+        "O cliente e a AWS compartilham igualmente cada tarefa de segurança",
+        "A AWS protege a infraestrutura global, e o cliente protege o que roda nas instâncias"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "A AWS é responsável pela segurança da nuvem (infraestrutura), enquanto o cliente é responsável pela segurança na nuvem (SO, aplicações, dados e acessos). As responsabilidades não se dividem igualmente em cada tarefa."
+    },
+    {
+      "id": "S1-022",
+      "domain": 2,
+      "task": "2.2",
+      "type": "single",
+      "question": "Qual serviço da AWS cria e gerencia chaves criptográficas e se integra a serviços como S3, EBS e RDS?",
+      "options": [
+        "AWS Key Management Service (AWS KMS)",
+        "AWS Certificate Manager",
+        "AWS Secrets Manager",
+        "AWS Artifact"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O AWS KMS cria, armazena e controla chaves de criptografia usadas pelos serviços integrados. O Certificate Manager cuida de certificados TLS, o Secrets Manager de segredos como senhas e o Artifact de relatórios de conformidade."
+    },
+    {
+      "id": "S1-023",
+      "domain": 2,
+      "task": "2.2",
+      "type": "single",
+      "question": "Qual mecanismo protege os dados em trânsito entre o navegador de um usuário e um site hospedado na AWS?",
+      "options": [
+        "HTTPS com TLS",
+        "Criptografia de volumes do Amazon EBS",
+        "Versionamento de objetos no Amazon S3",
+        "Snapshots automáticos de banco de dados"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O TLS (usado pelo HTTPS) criptografa os dados enquanto trafegam pela rede. Criptografia de volumes protege dados em repouso, e versionamento e snapshots tratam de recuperação, não de criptografia em trânsito."
+    },
+    {
+      "id": "S1-024",
+      "domain": 2,
+      "task": "2.2",
+      "type": "single",
+      "question": "Uma empresa precisa que os objetos do Amazon S3 sejam criptografados em repouso, com chaves controladas por ela no AWS KMS. Qual opção atende?",
+      "options": [
+        "Criptografia do lado do servidor com chaves do KMS (SSE-KMS)",
+        "Habilitar o versionamento do bucket",
+        "Usar uma ACL privada no bucket",
+        "Habilitar o MFA Delete no bucket"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "SSE-KMS criptografa os objetos em repouso usando chaves gerenciadas no KMS, com trilha de auditoria. Versionamento, ACL e MFA Delete controlam histórico e acesso, mas não criptografam os dados."
+    },
+    {
+      "id": "S1-025",
+      "domain": 2,
+      "task": "2.2",
+      "type": "multi",
+      "question": "Quais das opções a seguir são exemplos de criptografia de dados em repouso na AWS? Escolha duas.",
+      "options": [
+        "Conexão HTTPS ao endpoint de uma API",
+        "Volumes do Amazon EBS criptografados",
+        "VPN entre a empresa e a VPC",
+        "Objetos do Amazon S3 com SSE habilitado",
+        "Certificado TLS em um balanceador de carga"
+      ],
+      "answer": [
+        1,
+        3
+      ],
+      "explanation": "Volumes EBS criptografados e objetos S3 com criptografia do lado do servidor protegem dados armazenados (em repouso). HTTPS, VPN e certificados TLS protegem dados em trânsito."
+    },
+    {
+      "id": "S1-026",
+      "domain": 2,
+      "task": "2.2",
+      "type": "single",
+      "question": "Uma empresa quer controlar quem pode administrar e usar as chaves de criptografia de seus dados no AWS KMS. Qual tipo de chave deve usar?",
+      "options": [
+        "Chave gerenciada pelo cliente",
+        "Chave de propriedade da AWS",
+        "Chave de acesso do IAM",
+        "Par de chaves do Amazon EC2"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "Na chave gerenciada pelo cliente, a empresa define as políticas de chave e controla uso, rotação e administração. Chaves de propriedade da AWS são invisíveis ao cliente, e as chaves de acesso e pares de chaves EC2 servem a outros fins."
+    },
+    {
+      "id": "S1-027",
+      "domain": 2,
+      "task": "2.3",
+      "type": "single",
+      "question": "Qual das tarefas a seguir só pode ser realizada pelo usuário-raiz da conta AWS?",
+      "options": [
+        "Criar um usuário do IAM",
+        "Iniciar uma instância do Amazon EC2",
+        "Fechar a conta AWS",
+        "Criar um bucket do Amazon S3"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "Fechar a conta é uma das poucas tarefas que exigem o usuário-raiz. Criar usuários IAM, iniciar instâncias e criar buckets podem ser feitos por identidades com as permissões adequadas."
+    },
+    {
+      "id": "S1-028",
+      "domain": 2,
+      "task": "2.3",
+      "type": "single",
+      "question": "Qual é a prática recomendada para o uso do usuário-raiz de uma conta AWS?",
+      "options": [
+        "Criar chaves de acesso e compartilhá-las com a equipe",
+        "Habilitar o MFA e usá-lo apenas nas tarefas que exigem esse usuário",
+        "Usá-lo nas operações diárias de administração",
+        "Compartilhar a senha com os administradores da conta"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "O usuário-raiz tem acesso irrestrito, então deve ter MFA e ser reservado às tarefas que só ele pode fazer. O dia a dia deve usar identidades com privilégios limitados."
+    },
+    {
+      "id": "S1-029",
+      "domain": 2,
+      "task": "2.3",
+      "type": "multi",
+      "question": "Quais das tarefas a seguir exigem o uso do usuário-raiz da conta AWS? Escolha duas.",
+      "options": [
+        "Fechar a conta AWS",
+        "Criar uma política do IAM",
+        "Ativar o acesso de usuários do IAM às informações de cobrança (Billing) da conta",
+        "Iniciar uma instância do Amazon EC2",
+        "Criar um grupo do IAM"
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explanation": "Fechar a conta e ativar o acesso de usuários do IAM às informações de cobrança exigem o usuário-raiz. Criar políticas e grupos do IAM e iniciar instâncias EC2 podem ser feitos por usuários do IAM que tenham permissão."
+    },
+    {
+      "id": "S1-030",
+      "domain": 2,
+      "task": "2.3",
+      "type": "single",
+      "question": "Qual das opções a seguir é um método de autenticação multifator (MFA) compatível com a AWS?",
+      "options": [
+        "Pergunta de segurança pessoal",
+        "Aplicativo autenticador virtual",
+        "Segunda senha estática",
+        "Par de chaves SSH"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "Aplicativos autenticadores virtuais, chaves de segurança FIDO e tokens de hardware são métodos de MFA da AWS. Perguntas de segurança, segunda senha fixa e pares de chaves SSH não são MFA."
+    },
+    {
+      "id": "S1-031",
+      "domain": 2,
+      "task": "2.3",
+      "type": "single",
+      "question": "Quando uma conta AWS é aberta, qual identidade é criada inicialmente, com acesso completo a todos os recursos da conta?",
+      "options": [
+        "Usuário administrador do IAM",
+        "Usuário-raiz",
+        "Perfil do IAM",
+        "Grupo Admins do IAM"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "Ao criar a conta, a identidade inicial é o usuário-raiz, acessado com o e-mail e a senha de cadastro. Usuários, perfis e grupos do IAM precisam ser criados depois."
+    },
+    {
+      "id": "S1-032",
+      "domain": 2,
+      "task": "2.4",
+      "type": "single",
+      "question": "Qual serviço ajuda a proteger aplicações web contra ataques comuns, como injeção de SQL e cross-site scripting?",
+      "options": [
+        "AWS Shield Standard",
+        "AWS WAF",
+        "Amazon GuardDuty",
+        "AWS Artifact"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "O AWS WAF permite criar regras que filtram requisições HTTP/HTTPS maliciosas, como SQL injection e XSS. O Shield protege contra DDoS, o GuardDuty detecta ameaças e o Artifact fornece relatórios de conformidade."
+    },
+    {
+      "id": "S1-033",
+      "domain": 2,
+      "task": "2.4",
+      "type": "single",
+      "question": "Qual serviço oferece proteção contra ataques DDoS ativada automaticamente para todos os clientes AWS, sem custo adicional?",
+      "options": [
+        "AWS Shield Advanced",
+        "AWS WAF",
+        "AWS Firewall Manager",
+        "AWS Shield Standard"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O Shield Standard é incluído automaticamente para todos os clientes. O Shield Advanced é opcional e pago, o WAF filtra requisições web e o Firewall Manager gerencia regras centralmente."
+    },
+    {
+      "id": "S1-034",
+      "domain": 2,
+      "task": "2.4",
+      "type": "single",
+      "question": "Uma empresa quer proteção DDoS avançada, com acesso à equipe de resposta da AWS durante ataques e proteção contra picos de custo. Qual serviço atende?",
+      "options": [
+        "AWS Shield Advanced",
+        "AWS Shield Standard",
+        "AWS WAF",
+        "Amazon Inspector"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O Shield Advanced oferece detecção e mitigação avançadas, suporte da equipe de resposta a DDoS e proteção de custos. O Shield Standard é a camada básica e o WAF não mitiga DDoS volumétrico."
+    },
+    {
+      "id": "S1-035",
+      "domain": 2,
+      "task": "2.4",
+      "type": "multi",
+      "question": "Uma empresa quer proteger uma aplicação web contra requisições maliciosas e ataques DDoS. Quais serviços devem ser usados? Escolha duas.",
+      "options": [
+        "AWS Shield",
+        "AWS KMS",
+        "AWS WAF",
+        "AWS Artifact",
+        "AWS IAM Identity Center"
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explanation": "O AWS Shield mitiga ataques DDoS e o AWS WAF bloqueia requisições web maliciosas. KMS gerencia chaves, Artifact fornece relatórios de conformidade e o IAM Identity Center gerencia acesso de pessoas."
+    },
+    {
+      "id": "S1-036",
+      "domain": 3,
+      "task": "3.1",
+      "type": "single",
+      "question": "Um desenvolvedor quer interagir com serviços da AWS diretamente a partir do código Python de uma aplicação. O que ele deve usar?",
+      "options": [
+        "AWS Management Console",
+        "AWS SDK",
+        "AWS Artifact",
+        "AWS Marketplace"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "Os SDKs da AWS (como o Boto3 para Python) permitem chamar as APIs dos serviços a partir do código da aplicação. O Console é uma interface web manual, e Artifact e Marketplace têm outros propósitos."
+    },
+    {
+      "id": "S1-037",
+      "domain": 3,
+      "task": "3.1",
+      "type": "single",
+      "question": "Qual ferramenta permite automatizar tarefas na AWS executando comandos em scripts de shell?",
+      "options": [
+        "AWS Management Console",
+        "AWS CLI",
+        "AWS Artifact",
+        "AWS Marketplace"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "A AWS CLI permite gerenciar serviços por comandos no terminal e automatizar tarefas com scripts. O Console é uma interface gráfica, e Artifact e Marketplace não executam automação de recursos."
+    },
+    {
+      "id": "S1-038",
+      "domain": 3,
+      "task": "3.2",
+      "type": "single",
+      "question": "O que é uma Zona de Disponibilidade (AZ) da AWS?",
+      "options": [
+        "Um grupo de Regiões vizinhas conectadas por uma rede dedicada de alta velocidade",
+        "Um ou mais data centers separados, com energia, rede e conectividade redundantes dentro de uma Região",
+        "Um ponto de presença usado para entregar conteúdo em cache aos usuários finais",
+        "Uma sub-rede privada criada pelo cliente dentro de uma VPC da conta"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "Uma AZ é composta por um ou mais data centers isolados dentro de uma Região. Regiões contêm várias AZs, pontos de presença servem a entrega de conteúdo e sub-redes são divisões de uma VPC."
+    },
+    {
+      "id": "S1-039",
+      "domain": 3,
+      "task": "3.2",
+      "type": "single",
+      "question": "Uma empresa quer reduzir a latência para seus usuários finais ao executar uma aplicação na AWS. Qual é o principal fator para escolher a Região?",
+      "options": [
+        "O plano de suporte contratado pela empresa",
+        "A quantidade de contas na AWS Organizations",
+        "O tipo de instância EC2 usado na aplicação",
+        "A proximidade geográfica da Região em relação aos usuários"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "Quanto mais perto a Região estiver dos usuários, menor tende a ser a latência. Plano de suporte, número de contas e tipo de instância não alteram a distância de rede."
+    },
+    {
+      "id": "S1-040",
+      "domain": 3,
+      "task": "3.2",
+      "type": "single",
+      "question": "Qual afirmação sobre Regiões e Zonas de Disponibilidade da AWS é correta?",
+      "options": [
+        "Cada AZ contém várias Regiões independentes",
+        "Cada Região é composta por várias Zonas de Disponibilidade isoladas entre si",
+        "Os recursos são replicados entre todas as Regiões por padrão",
+        "Todas as AZs de uma Região compartilham o mesmo data center"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "Uma Região é formada por várias AZs isoladas, o que permite criar arquiteturas resilientes. Os dados não saem de uma Região por padrão, e as AZs são data centers distintos."
+    },
+    {
+      "id": "S1-041",
+      "domain": 3,
+      "task": "3.3",
+      "type": "single",
+      "question": "Uma empresa executa um banco de dados em memória que exige grande quantidade de RAM. Qual família de instâncias EC2 é mais indicada?",
+      "options": [
+        "Otimizadas para computação",
+        "Otimizadas para memória",
+        "De uso geral",
+        "Computação acelerada"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "As instâncias otimizadas para memória são projetadas para cargas que processam grandes conjuntos de dados em RAM. Otimizadas para computação focam CPU, uso geral equilibra recursos e computação acelerada usa GPUs."
+    },
+    {
+      "id": "S1-042",
+      "domain": 3,
+      "task": "3.3",
+      "type": "single",
+      "question": "Qual família de instâncias EC2 é indicada para processamento em lote, modelagem científica e servidores web de alto desempenho que exigem muita CPU?",
+      "options": [
+        "Otimizadas para memória",
+        "Otimizadas para computação",
+        "Otimizadas para armazenamento",
+        "De uso geral"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "As instâncias otimizadas para computação oferecem processadores de alto desempenho para cargas com uso intenso de CPU. As otimizadas para memória e armazenamento atendem a outros perfis, e as de uso geral são equilibradas."
+    },
+    {
+      "id": "S1-043",
+      "domain": 3,
+      "task": "3.3",
+      "type": "multi",
+      "question": "Quais cargas de trabalho se beneficiam de instâncias EC2 otimizadas para armazenamento? Escolha duas.",
+      "options": [
+        "Bancos de dados NoSQL com alta taxa de leitura e gravação",
+        "Servidores web de uso geral com tráfego moderado",
+        "Data warehouses e sistemas de arquivos distribuídos",
+        "Renderização gráfica com GPU",
+        "Modelagem científica com uso intenso de CPU"
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explanation": "Instâncias otimizadas para armazenamento oferecem alto desempenho de E/S em disco local, ideal para bancos NoSQL, data warehouses e sistemas de arquivos distribuídos. GPU e uso intenso de CPU pertencem a outras famílias."
+    },
+    {
+      "id": "S1-044",
+      "domain": 3,
+      "task": "3.4",
+      "type": "single",
+      "question": "Uma empresa quer um banco de dados relacional gerenciado, compatível com MySQL e PostgreSQL, com alta disponibilidade e armazenamento que cresce automaticamente. Qual serviço atende?",
+      "options": [
+        "Amazon DynamoDB",
+        "Amazon Redshift",
+        "Amazon ElastiCache",
+        "Amazon Aurora"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O Amazon Aurora é um banco relacional gerenciado compatível com MySQL e PostgreSQL. DynamoDB é NoSQL, Redshift é data warehouse e ElastiCache é cache em memória."
+    },
+    {
+      "id": "S1-045",
+      "domain": 3,
+      "task": "3.4",
+      "type": "single",
+      "question": "Quais tarefas administrativas o Amazon RDS automatiza para o cliente?",
+      "options": [
+        "Provisionamento, backups e aplicação de patches no software do banco",
+        "Modelagem do esquema e das tabelas do banco",
+        "Escrita e otimização das consultas SQL",
+        "Ajuste do código da aplicação que usa o banco"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O RDS automatiza provisionamento, backups, patches e failover. O desenho do esquema, as consultas e o código da aplicação continuam sendo responsabilidade do cliente."
+    },
+    {
+      "id": "S1-046",
+      "domain": 3,
+      "task": "3.4",
+      "type": "single",
+      "question": "Uma empresa quer que seu banco de dados no Amazon RDS faça failover automático para outra Zona de Disponibilidade em caso de falha. O que ela deve habilitar?",
+      "options": [
+        "Réplicas de leitura",
+        "Snapshots manuais",
+        "Implantação Multi-AZ",
+        "Uma classe de instância maior"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "A implantação Multi-AZ mantém uma réplica síncrona em outra AZ e faz failover automático. Réplicas de leitura servem para escalar leituras, e snapshots e instâncias maiores não oferecem failover."
+    },
+    {
+      "id": "S1-047",
+      "domain": 3,
+      "task": "3.5",
+      "type": "single",
+      "question": "Qual componente da VPC permite a comunicação entre as instâncias de uma sub-rede pública e a internet?",
+      "options": [
+        "Peering de VPC",
+        "Virtual private gateway",
+        "Network ACL",
+        "Internet gateway"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O internet gateway é anexado à VPC e viabiliza o tráfego entre ela e a internet. Peering conecta VPCs, o virtual private gateway atende VPNs e a network ACL filtra tráfego."
+    },
+    {
+      "id": "S1-048",
+      "domain": 3,
+      "task": "3.5",
+      "type": "single",
+      "question": "Instâncias em uma sub-rede privada precisam baixar atualizações da internet sem aceitar conexões iniciadas de fora. Qual recurso deve ser usado?",
+      "options": [
+        "Internet gateway anexado à sub-rede privada",
+        "Grupo de segurança aberto para a internet",
+        "NAT gateway",
+        "Endereço IP elástico em cada instância"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "O NAT gateway permite saída para a internet a partir de sub-redes privadas e bloqueia conexões iniciadas externamente. As outras opções expõem as instâncias diretamente à internet."
+    },
+    {
+      "id": "S1-049",
+      "domain": 3,
+      "task": "3.5",
+      "type": "multi",
+      "question": "Quais dos itens a seguir são componentes de rede que o cliente configura dentro de uma VPC? Escolha duas.",
+      "options": [
+        "Sub-redes",
+        "Pares de chaves do EC2",
+        "Tabelas de rotas",
+        "Políticas de bucket do S3",
+        "Perfis de instância do IAM"
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explanation": "Sub-redes e tabelas de rotas são componentes de rede de uma VPC. Pares de chaves, políticas de bucket e perfis de instância pertencem a EC2, S3 e IAM."
+    },
+    {
+      "id": "S1-050",
+      "domain": 3,
+      "task": "3.6",
+      "type": "single",
+      "question": "Uma empresa guarda dados acessados raramente, mas que precisam estar disponíveis em milissegundos e armazenados em várias Zonas de Disponibilidade. Qual classe do Amazon S3 é a mais adequada?",
+      "options": [
+        "S3 One Zone-IA",
+        "S3 Glacier Deep Archive",
+        "S3 Standard-IA",
+        "S3 Standard"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "O S3 Standard-IA tem custo menor para acessos raros, recupera em milissegundos e armazena em várias AZs. O One Zone-IA usa só uma AZ, o Deep Archive tem recuperação demorada e o Standard custa mais para dados raramente acessados."
+    },
+    {
+      "id": "S1-051",
+      "domain": 3,
+      "task": "3.6",
+      "type": "single",
+      "question": "Uma empresa precisa arquivar dados de conformidade por muitos anos, quase nunca os acessa e aceita esperar horas para recuperá-los. Qual classe do S3 tem o menor custo?",
+      "options": [
+        "S3 Glacier Deep Archive",
+        "S3 Standard-IA",
+        "S3 Intelligent-Tiering",
+        "S3 Glacier Instant Retrieval"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O S3 Glacier Deep Archive é a classe de menor custo, voltada a arquivamento de longo prazo com recuperação em horas. As demais classes cobram mais por oferecerem acesso mais rápido."
+    },
+    {
+      "id": "S1-052",
+      "domain": 3,
+      "task": "3.6",
+      "type": "single",
+      "question": "Uma empresa armazena dados no S3 cujos padrões de acesso são desconhecidos ou mudam com frequência. Qual classe move os objetos automaticamente entre camadas conforme o uso?",
+      "options": [
+        "S3 Intelligent-Tiering",
+        "S3 One Zone-IA",
+        "S3 Glacier Flexible Retrieval",
+        "S3 Standard-IA"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O S3 Intelligent-Tiering monitora o acesso e move objetos entre camadas de forma automática. As outras classes exigem que o cliente decida onde guardar os dados."
+    },
+    {
+      "id": "S1-053",
+      "domain": 3,
+      "task": "3.7",
+      "type": "single",
+      "question": "Uma empresa quer extrair automaticamente texto e dados de formulários e tabelas em documentos digitalizados. Qual serviço deve usar?",
+      "options": [
+        "Amazon Rekognition",
+        "Amazon Polly",
+        "Amazon Translate",
+        "Amazon Textract"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O Amazon Textract extrai texto, formulários e tabelas de documentos digitalizados. Rekognition analisa imagens e vídeos, Polly converte texto em fala e Translate traduz texto."
+    },
+    {
+      "id": "S1-054",
+      "domain": 3,
+      "task": "3.7",
+      "type": "single",
+      "question": "Uma central de atendimento quer transformar gravações de chamadas em texto. Qual serviço atende a essa necessidade?",
+      "options": [
+        "Amazon Transcribe",
+        "Amazon Polly",
+        "Amazon Comprehend",
+        "Amazon Translate"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O Amazon Transcribe converte fala em texto. O Polly faz o inverso (texto em fala), o Comprehend analisa sentimento e entidades em texto, e o Translate traduz idiomas."
+    },
+    {
+      "id": "S1-055",
+      "domain": 3,
+      "task": "3.8",
+      "type": "single",
+      "question": "Qual serviço oferece filas de mensagens totalmente gerenciadas para desacoplar os componentes de uma aplicação?",
+      "options": [
+        "Amazon SQS",
+        "Amazon SNS",
+        "AWS Step Functions",
+        "Amazon EventBridge"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O Amazon SQS armazena mensagens em filas para que produtores e consumidores operem de forma independente. SNS faz publicação e assinatura, Step Functions orquestra fluxos e EventBridge roteia eventos."
+    },
+    {
+      "id": "S1-056",
+      "domain": 3,
+      "task": "3.8",
+      "type": "multi",
+      "question": "Uma empresa quer notificar vários assinantes por e-mail e SMS quando um evento ocorre e orquestrar um fluxo de trabalho com várias etapas. Quais serviços atendem a esses requisitos? Escolha duas.",
+      "options": [
+        "Amazon SNS",
+        "AWS Config",
+        "Amazon Inspector",
+        "AWS Step Functions",
+        "AWS Artifact"
+      ],
+      "answer": [
+        0,
+        3
+      ],
+      "explanation": "O Amazon SNS envia notificações a vários assinantes e o AWS Step Functions orquestra fluxos com várias etapas. Config, Inspector e Artifact tratam de conformidade, vulnerabilidades e relatórios."
+    },
+    {
+      "id": "S1-057",
+      "domain": 3,
+      "task": "3.8",
+      "type": "single",
+      "question": "Qual serviço roteia eventos de serviços da AWS e de aplicações SaaS para destinos diferentes com base em regras?",
+      "options": [
+        "AWS Step Functions",
+        "Amazon SQS",
+        "AWS Config",
+        "Amazon EventBridge"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O Amazon EventBridge é um barramento de eventos que usa regras para encaminhar eventos aos destinos certos. Step Functions orquestra tarefas, SQS enfileira mensagens e Config avalia configurações."
+    },
+    {
+      "id": "S1-058",
+      "domain": 4,
+      "task": "4.1",
+      "type": "single",
+      "question": "Uma empresa executa processamento em lote que tolera interrupções e quer o menor custo possível com instâncias EC2. Qual modelo de preço deve usar?",
+      "options": [
+        "Instâncias On-Demand",
+        "Instâncias Reservadas",
+        "Instâncias Spot",
+        "Nível gratuito"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "As Instâncias Spot usam capacidade ociosa com grandes descontos, mas podem ser interrompidas, o que serve a cargas tolerantes a falhas. On-Demand e Reservadas custam mais, e o nível gratuito é limitado."
+    },
+    {
+      "id": "S1-059",
+      "domain": 4,
+      "task": "4.1",
+      "type": "single",
+      "question": "Qual modelo de preço do EC2 oferece desconto em troca do compromisso de usar uma configuração de instância por 1 ou 3 anos?",
+      "options": [
+        "Instâncias On-Demand",
+        "Instâncias Spot",
+        "Nível gratuito",
+        "Instâncias Reservadas"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "As Instâncias Reservadas dão desconto em troca de compromisso de 1 ou 3 anos, indicadas para cargas estáveis e previsíveis. On-Demand não tem compromisso e Spot pode ser interrompida."
+    },
+    {
+      "id": "S1-060",
+      "domain": 4,
+      "task": "4.1",
+      "type": "multi",
+      "question": "Quais afirmações sobre as instâncias EC2 On-Demand são corretas? Escolha duas.",
+      "options": [
+        "Não exigem compromisso de longo prazo",
+        "Exigem compromisso mínimo de um ano",
+        "Pagam-se apenas pelo tempo em que a instância executa",
+        "Podem ser interrompidas pela AWS com aviso prévio",
+        "Oferecem o maior desconto entre todos os modelos"
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explanation": "No modelo On-Demand não há compromisso nem pagamento antecipado e a cobrança é pelo tempo de uso. Compromisso de um ano é de Reservadas, e a interrupção pela AWS e o maior desconto são de Spot."
+    },
+    {
+      "id": "S1-061",
+      "domain": 4,
+      "task": "4.2",
+      "type": "single",
+      "question": "Uma empresa quer receber um e-mail quando seu gasto mensal real atingir 80% de um valor definido por ela. Qual serviço deve usar?",
+      "options": [
+        "AWS Cost Explorer",
+        "AWS Pricing Calculator",
+        "AWS Budgets",
+        "AWS Trusted Advisor"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "O AWS Budgets permite definir limites de custo ou uso e enviar alertas ao atingir percentuais. O Cost Explorer analisa gastos, a Pricing Calculator estima custos futuros e o Trusted Advisor dá recomendações."
+    },
+    {
+      "id": "S1-062",
+      "domain": 4,
+      "task": "4.2",
+      "type": "single",
+      "question": "Uma equipe financeira quer visualizar em gráficos os custos dos últimos meses, filtrados por serviço. Qual ferramenta deve usar?",
+      "options": [
+        "AWS Cost Explorer",
+        "AWS Budgets",
+        "AWS Artifact",
+        "AWS Config"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O AWS Cost Explorer permite visualizar e analisar custos e uso ao longo do tempo, filtrando por serviço, conta e tags. Budgets define alertas, Artifact entrega relatórios de conformidade e Config registra configurações."
+    },
+    {
+      "id": "S1-063",
+      "domain": 4,
+      "task": "4.2",
+      "type": "single",
+      "question": "Qual recurso do AWS Budgets permite aplicar automaticamente uma política restritiva quando um orçamento é excedido?",
+      "options": [
+        "Relatórios de custo e uso",
+        "Painel do Cost Explorer",
+        "Recomendações do Trusted Advisor",
+        "Ações de orçamento (Budget Actions)"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "Com as ações de orçamento, o AWS Budgets pode aplicar políticas do IAM ou controles de serviço automaticamente ao ultrapassar o limite. Os demais recursos apenas informam ou recomendam."
+    },
+    {
+      "id": "S1-064",
+      "domain": 4,
+      "task": "4.3",
+      "type": "single",
+      "question": "Qual é o plano de suporte da AWS de menor custo que oferece suporte 24 horas por dia, 7 dias por semana, por telefone, chat e e-mail com engenheiros de nuvem?",
+      "options": [
+        "Business",
+        "Basic",
+        "Developer",
+        "Enterprise"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O plano Business é o primeiro a oferecer suporte técnico 24x7 por telefone, chat e e-mail. O Basic não inclui suporte técnico, o Developer atende em horário comercial por e-mail e o Enterprise é mais caro."
+    },
+    {
+      "id": "S1-065",
+      "domain": 4,
+      "task": "4.3",
+      "type": "single",
+      "question": "Uma pequena empresa em fase de testes quer orientação por e-mail de engenheiros de suporte em horário comercial, pelo menor custo. Qual plano é o mais indicado?",
+      "options": [
+        "Basic",
+        "Business",
+        "Developer",
+        "Enterprise On-Ramp"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "O plano Developer oferece suporte técnico por e-mail em horário comercial e é o mais barato com acesso a engenheiros. O Basic não tem suporte técnico, e Business e Enterprise On-Ramp custam mais."
+    }
+  ]
+}

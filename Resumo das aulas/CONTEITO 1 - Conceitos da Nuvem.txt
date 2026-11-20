@@ -1,0 +1,23 @@
+CONTEITO 1 - Conceitos da Nuvem
+
+> Computação em nuvem: É a entrega sob demanda de recursos computacionais, através de uma plataforma de serviços via internet, sem o gerenciamento ativo do usuário.
+
+> 6 vantagens da computação em nuvem: 
+Economize
+Despesas Variáveis
+Aumente a velocidade e agilidade
+Pare de fazer suposições
+Grades economias em escala
+Torne-se global
+
+>Well-Architected 
+
+Operational Excellence: Executar e monitorar para entregar valor
+Security: Proteger informações e sistemas
+Reliability: Garantir que uma carga de trabalho excecute sua função pretendida corretamente e de modo consistente
+Performace Efficiency: Uso eficiente de recursos e computação
+Cost Optimization: Compreensão e controle de onde o dinheiro está sendo gasto, ajustando os recursos e serviços
+Sustentabilidade: Minimizar os impactos ambientais da execução da carga de trabalho na nuvem
+
+
+so isso? não. princípios de desingn

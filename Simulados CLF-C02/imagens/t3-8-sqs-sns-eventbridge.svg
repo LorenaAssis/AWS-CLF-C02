@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 680 366" role="img"><title>SQS, SNS e EventBridge no pedido de uma loja</title><desc>O site cria o pedido 1234. Pelo SQS, o pedido espera na fila até a cobrança buscar no seu ritmo. Pelo SNS, um aviso vai ao mesmo tempo para e-mail e SMS. Pelo EventBridge, uma regra manda só pedidos acima de 500 reais para a Lambda antifraude.</desc>
+<style>
+svg{font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif}
+.bg{fill:#ffffff}
+.t{font-size:14px;fill:#2C2C2A}.ts{font-size:12px;fill:#5F5E5A}.th{font-size:14px;font-weight:500;fill:#2C2C2A}
+.arr{stroke:#888780;stroke-width:1.5;fill:none}
+.c-gray rect{fill:#F1EFE8;stroke:#5F5E5A}.c-gray .th{fill:#444441}.c-gray .ts{fill:#5F5E5A}
+.c-teal rect{fill:#E1F5EE;stroke:#0F6E56}.c-teal .th{fill:#085041}.c-teal .ts{fill:#0F6E56}
+.c-amber rect{fill:#FAEEDA;stroke:#854F0B}.c-amber .th{fill:#633806}.c-amber .ts{fill:#854F0B}
+.c-blue rect{fill:#E6F1FB;stroke:#185FA5}.c-blue .th{fill:#0C447C}.c-blue .ts{fill:#185FA5}
+@media (prefers-color-scheme:dark){
+.bg{fill:#1b1b1a}.arr{stroke:#B4B2A9}
+.t,.th{fill:#F1EFE8}.ts{fill:#D3D1C7}
+.c-gray rect{fill:#444441;stroke:#B4B2A9}.c-gray .th{fill:#F1EFE8}.c-gray .ts{fill:#D3D1C7}
+.c-teal rect{fill:#085041;stroke:#5DCAA5}.c-teal .th{fill:#E1F5EE}.c-teal .ts{fill:#9FE1CB}
+.c-amber rect{fill:#633806;stroke:#EF9F27}.c-amber .th{fill:#FAEEDA}.c-amber .ts{fill:#FAC775}
+.c-blue rect{fill:#0C447C;stroke:#85B7EB}.c-blue .th{fill:#E6F1FB}.c-blue .ts{fill:#85B7EB}
+}
+</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect class="bg" x="0" y="0" width="680" height="366"/>
+<g class="c-gray"><rect x="20" y="148" width="150" height="60" rx="8" stroke-width="0.5"/><text class="th" x="95" y="168" text-anchor="middle" dominant-baseline="central">Site da loja</text><text class="ts" x="95" y="188" text-anchor="middle" dominant-baseline="central">pedido 1234 criado</text></g>
+<g class="c-teal"><rect x="230" y="36" width="190" height="64" rx="8" stroke-width="0.5"/><text class="th" x="325" y="56" text-anchor="middle" dominant-baseline="central">SQS: fila</text><text class="ts" x="325" y="78" text-anchor="middle" dominant-baseline="central">guarda até alguém buscar</text></g>
+<g class="c-amber"><rect x="230" y="146" width="190" height="64" rx="8" stroke-width="0.5"/><text class="th" x="325" y="166" text-anchor="middle" dominant-baseline="central">SNS: aviso</text><text class="ts" x="325" y="188" text-anchor="middle" dominant-baseline="central">empurra para todos</text></g>
+<g class="c-blue"><rect x="230" y="256" width="190" height="64" rx="8" stroke-width="0.5"/><text class="th" x="325" y="276" text-anchor="middle" dominant-baseline="central">EventBridge: evento</text><text class="ts" x="325" y="298" text-anchor="middle" dominant-baseline="central">regra escolhe o destino</text></g>
+<line x1="170" y1="160" x2="228" y2="76" class="arr" marker-end="url(#arrow)"/>
+<line x1="170" y1="178" x2="228" y2="178" class="arr" marker-end="url(#arrow)"/>
+<line x1="170" y1="196" x2="228" y2="284" class="arr" marker-end="url(#arrow)"/>
+<g class="c-gray"><rect x="480" y="36" width="180" height="64" rx="8" stroke-width="0.5"/><text class="th" x="570" y="56" text-anchor="middle" dominant-baseline="central">Cobrança</text><text class="ts" x="570" y="78" text-anchor="middle" dominant-baseline="central">busca no seu ritmo</text></g>
+<g class="c-gray"><rect x="480" y="146" width="180" height="64" rx="8" stroke-width="0.5"/><text class="th" x="570" y="166" text-anchor="middle" dominant-baseline="central">E-mail e SMS</text><text class="ts" x="570" y="188" text-anchor="middle" dominant-baseline="central">cliente e estoque</text></g>
+<g class="c-gray"><rect x="480" y="256" width="180" height="64" rx="8" stroke-width="0.5"/><text class="th" x="570" y="276" text-anchor="middle" dominant-baseline="central">Lambda antifraude</text><text class="ts" x="570" y="298" text-anchor="middle" dominant-baseline="central">se valor &gt; R$ 500</text></g>
+<line x1="420" y1="68" x2="478" y2="68" class="arr" marker-end="url(#arrow)"/>
+<line x1="420" y1="178" x2="478" y2="178" class="arr" marker-end="url(#arrow)"/>
+<line x1="420" y1="288" x2="478" y2="288" class="arr" marker-end="url(#arrow)"/>
+<text class="ts" x="20" y="348" dominant-baseline="central">Fila: espera ser buscada. Aviso: vai para todos. Evento: a regra decide.</text>
+</svg>

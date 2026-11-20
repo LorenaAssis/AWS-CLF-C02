@@ -1,0 +1,1133 @@
+{
+  "simulado": 4,
+  "titulo": "Simulado 4",
+  "questions": [
+    {
+      "id": "S4-001",
+      "domain": 1,
+      "task": "1.1",
+      "type": "single",
+      "question": "Uma empresa quer que sua aplicação continue operando mesmo que um componente da infraestrutura falhe, por exemplo, distribuindo instâncias em várias Zonas de Disponibilidade. Qual benefício da nuvem essa abordagem representa?",
+      "options": [
+        "Economia de escala",
+        "Agilidade na implantação",
+        "Tolerância a falhas",
+        "Alcance global em minutos"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "Distribuir recursos em várias AZs permite que a aplicação continue funcionando quando um componente ou datacenter falha, o que é tolerância a falhas. Economia de escala, agilidade e alcance global são benefícios diferentes e não descrevem a continuidade diante de falhas."
+    },
+    {
+      "id": "S4-002",
+      "domain": 1,
+      "task": "1.1",
+      "type": "single",
+      "question": "Uma empresa mantém um segundo datacenter físico apenas para recuperação de desastres e quer reduzir esse custo. Qual vantagem da nuvem AWS ajuda nesse cenário?",
+      "options": [
+        "Manter o ambiente de recuperação em outra Região da AWS, sem comprar um site físico secundário",
+        "Comprar servidores extras para deixar ociosos em outro prédio da empresa",
+        "Concentrar todos os recursos em uma única Zona de Disponibilidade",
+        "Transferir à AWS toda a responsabilidade pela estratégia de recuperação"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "Na nuvem é possível replicar dados e recursos para outra Região e pagar pela capacidade de recuperação conforme a necessidade, evitando o investimento em um site físico. Concentrar tudo em uma única AZ piora a resiliência, e a estratégia de recuperação continua sendo responsabilidade do cliente."
+    },
+    {
+      "id": "S4-003",
+      "domain": 1,
+      "task": "1.1",
+      "type": "single",
+      "question": "Uma startup tem tráfego imprevisível e não quer pagar por capacidade ociosa. Qual característica da nuvem AWS atende a esse objetivo?",
+      "options": [
+        "Investimento inicial em capacidade máxima prevista",
+        "Contrato obrigatório de capacidade fixa por três anos",
+        "Compra de licenças perpétuas para cada servidor",
+        "Pagamento conforme o uso (pay-as-you-go)"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "No modelo pay-as-you-go, a empresa paga apenas pelos recursos que consome, sem comprometer capital com capacidade ociosa. As demais opções descrevem compromissos fixos ou gastos antecipados, típicos de ambientes tradicionais."
+    },
+    {
+      "id": "S4-004",
+      "domain": 1,
+      "task": "1.2",
+      "type": "single",
+      "question": "Uma equipe automatiza a recuperação de falhas, testa seus procedimentos de recuperação e escala horizontalmente para aumentar a disponibilidade. Qual pilar do AWS Well-Architected Framework essas práticas representam?",
+      "options": [
+        "Excelência operacional",
+        "Confiabilidade",
+        "Eficiência de performance",
+        "Otimização de custos"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "Recuperar-se automaticamente de falhas, testar procedimentos de recuperação e escalar horizontalmente são princípios de design do pilar Confiabilidade. Excelência operacional foca em operar e melhorar processos, e os outros pilares tratam de uso eficiente de recursos e de custos."
+    },
+    {
+      "id": "S4-005",
+      "domain": 1,
+      "task": "1.2",
+      "type": "single",
+      "question": "Uma empresa desliga ambientes de desenvolvimento fora do horário comercial e atribui as despesas de cada carga de trabalho à equipe responsável. Qual pilar do Well-Architected Framework essas práticas representam?",
+      "options": [
+        "Segurança",
+        "Confiabilidade",
+        "Otimização de custos",
+        "Excelência operacional"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "Adotar um modelo de consumo, evitar gastos desnecessários e atribuir despesas às cargas de trabalho são princípios do pilar Otimização de custos. Segurança, Confiabilidade e Excelência operacional tratam de outros objetivos."
+    },
+    {
+      "id": "S4-006",
+      "domain": 1,
+      "task": "1.2",
+      "type": "single",
+      "question": "Uma empresa revisa periodicamente suas cargas de trabalho, escolhe tipos de recurso de acordo com a necessidade e adota novas tecnologias que atendem melhor aos requisitos de desempenho para manter a eficiência conforme a demanda muda. Qual pilar do Well-Architected Framework isso descreve?",
+      "options": [
+        "Eficiência de performance",
+        "Otimização de custos",
+        "Confiabilidade",
+        "Sustentabilidade"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O pilar Eficiência de performance trata de usar recursos computacionais com eficiência para atender aos requisitos e de manter essa eficiência com a evolução da demanda e das tecnologias. Otimização de custos foca em gastar menos, e Sustentabilidade em reduzir o impacto ambiental."
+    },
+    {
+      "id": "S4-007",
+      "domain": 1,
+      "task": "1.2",
+      "type": "single",
+      "question": "Qual das práticas a seguir é um princípio de design recomendado pelo AWS Well-Architected Framework?",
+      "options": [
+        "Concentrar as alterações em grandes mudanças manuais, raras e planejadas",
+        "Provisionar sempre a capacidade para o pico máximo possível",
+        "Evitar a automação para reduzir a complexidade do ambiente",
+        "Fazer mudanças pequenas, frequentes e reversíveis"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "Fazer mudanças pequenas, frequentes e reversíveis é um princípio de Excelência operacional, pois reduz o risco de cada alteração. Grandes mudanças manuais, capacidade fixa de pico e ausência de automação contrariam as práticas recomendadas."
+    },
+    {
+      "id": "S4-008",
+      "domain": 1,
+      "task": "1.2",
+      "type": "multi",
+      "question": "Quais dos itens a seguir são princípios de design do pilar Confiabilidade do AWS Well-Architected Framework? Escolha duas.",
+      "options": [
+        "Recuperar-se automaticamente de falhas",
+        "Implementar uma base sólida de identidade",
+        "Adotar um modelo de consumo para pagar apenas pelo uso",
+        "Dimensionar horizontalmente para aumentar a disponibilidade da carga de trabalho",
+        "Analisar e atribuir as despesas a cada carga de trabalho"
+      ],
+      "answer": [
+        0,
+        3
+      ],
+      "explanation": "Recuperação automática de falhas e escalabilidade horizontal são princípios de Confiabilidade. A base sólida de identidade pertence ao pilar Segurança, e o modelo de consumo e a atribuição de despesas pertencem a Otimização de custos."
+    },
+    {
+      "id": "S4-009",
+      "domain": 1,
+      "task": "1.3",
+      "type": "single",
+      "question": "Uma empresa quer contar com um grupo global de especialistas da AWS que a ajude a atingir resultados específicos relacionados à adoção da nuvem em projetos de migração. O que ela deve contratar?",
+      "options": [
+        "AWS Trusted Advisor",
+        "AWS Professional Services",
+        "AWS Artifact",
+        "AWS Health Dashboard"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "O AWS Professional Services é uma equipe global de especialistas que ajuda clientes a concretizar resultados de negócio ao adotar a AWS. Trusted Advisor, Artifact e Health Dashboard são ferramentas, não equipes de consultoria."
+    },
+    {
+      "id": "S4-010",
+      "domain": 1,
+      "task": "1.3",
+      "type": "single",
+      "question": "Antes de migrar, uma empresa quer montar um business case com base no consumo atual de seus servidores on-premises e estimar os custos na AWS. Qual serviço atende a essa necessidade?",
+      "options": [
+        "AWS Application Migration Service",
+        "AWS Database Migration Service",
+        "AWS Migration Evaluator",
+        "AWS Cost Explorer"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "O Migration Evaluator analisa o uso dos servidores locais e projeta custos na AWS para sustentar o business case da migração. O Application Migration Service e o DMS executam a migração em si, e o Cost Explorer analisa custos já incorridos na AWS."
+    },
+    {
+      "id": "S4-011",
+      "domain": 1,
+      "task": "1.3",
+      "type": "single",
+      "question": "Uma empresa adota a nuvem para lançar produtos digitais com mais rapidez e criar novas fontes de receita. Qual resultado de negócio do AWS CAF isso representa?",
+      "options": [
+        "Crescimento da receita",
+        "Redução de riscos de negócios",
+        "Melhoria do desempenho ambiental, social e de governança (ESG)",
+        "Aumento da eficiência operacional"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "Entre os resultados do CAF, lançar produtos e abrir novos fluxos de receita corresponde ao crescimento da receita. Redução de risco, ESG e eficiência operacional são os outros resultados e têm foco diferente."
+    },
+    {
+      "id": "S4-012",
+      "domain": 1,
+      "task": "1.3",
+      "type": "single",
+      "question": "Uma empresa quer encontrar um parceiro de consultoria certificado para ajudá-la a projetar, migrar e gerenciar cargas de trabalho na AWS. Qual recurso ela deve consultar?",
+      "options": [
+        "AWS re:Post",
+        "AWS Knowledge Center",
+        "AWS Service Quotas",
+        "AWS Partner Network (APN)"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "A AWS Partner Network reúne parceiros de consultoria e tecnologia que ajudam clientes a projetar, migrar e operar na AWS. O re:Post é uma comunidade de perguntas, o Knowledge Center reúne respostas a dúvidas frequentes, e o Service Quotas mostra limites de serviço."
+    },
+    {
+      "id": "S4-013",
+      "domain": 1,
+      "task": "1.4",
+      "type": "single",
+      "question": "Qual item costuma compor o custo total de propriedade (TCO) de um ambiente on-premises e é reduzido ou eliminado ao migrar para a AWS?",
+      "options": [
+        "Tarifas de requisições às APIs de serviços da AWS",
+        "Energia, refrigeração e espaço físico do datacenter",
+        "Assinatura de um plano de suporte da AWS",
+        "Cobrança por GB-mês de armazenamento no Amazon S3"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "Energia, refrigeração, espaço e manutenção física do datacenter são custos on-premises que a AWS assume. As demais opções são custos que passam a existir na nuvem."
+    },
+    {
+      "id": "S4-014",
+      "domain": 1,
+      "task": "1.4",
+      "type": "single",
+      "question": "Uma empresa substitui a compra de servidores físicos por recursos cobrados por uso na AWS. Como essa mudança afeta sua estrutura de custos?",
+      "options": [
+        "Despesas operacionais passam a ser despesas de capital depreciadas em anos",
+        "Custos variáveis passam a ser custos fixos amortizados em contrato",
+        "Despesas de capital fixas passam a ser despesas operacionais variáveis",
+        "Os custos deixam de precisar de acompanhamento financeiro"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "Na nuvem, o gasto antecipado (CapEx) com hardware dá lugar a despesas operacionais (OpEx) que variam com o uso. As alternativas inverteriam essa lógica ou ignorariam a necessidade de acompanhar os gastos."
+    },
+    {
+      "id": "S4-015",
+      "domain": 1,
+      "task": "1.4",
+      "type": "multi",
+      "question": "Ao comparar o custo de um ambiente on-premises com o da AWS (TCO), quais itens devem ser considerados no lado on-premises? Escolha duas.",
+      "options": [
+        "Energia e refrigeração do datacenter",
+        "Número de Zonas de Disponibilidade de cada Região",
+        "Aquisição e renovação periódica de hardware",
+        "Quantidade de contas em uma organização da AWS",
+        "Pontuação do pilar de sustentabilidade da carga de trabalho"
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explanation": "Energia, refrigeração, compra e renovação de hardware fazem parte do custo on-premises. O número de AZs, a quantidade de contas e a pontuação de sustentabilidade não compõem esse cálculo de custo."
+    },
+    {
+      "id": "S4-016",
+      "domain": 1,
+      "task": "1.4",
+      "type": "single",
+      "question": "Qual das opções a seguir é um exemplo de custo variável ao usar a AWS?",
+      "options": [
+        "Pagar por hora pelas instâncias EC2 On-Demand efetivamente executadas",
+        "Pagar antecipadamente a compra de um servidor físico próprio",
+        "Assinar contrato de aluguel de espaço em colocation por cinco anos",
+        "Arcar com a depreciação de racks adquiridos pela empresa"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "Instâncias On-Demand são cobradas conforme o tempo de execução, portanto o custo varia com o uso. Compra de servidores, contratos longos de colocation e depreciação são custos fixos."
+    },
+    {
+      "id": "S4-017",
+      "domain": 2,
+      "task": "2.1",
+      "type": "single",
+      "question": "Na gestão de patches, o modelo de responsabilidade compartilhada define um controle compartilhado entre AWS e cliente. O que cabe à AWS nesse controle?",
+      "options": [
+        "Aplicar patches ao sistema operacional convidado das instâncias EC2 do cliente",
+        "Aplicar patches aos aplicativos instalados pelo cliente",
+        "Decidir quando os patches do cliente devem ser aplicados",
+        "Aplicar patches à infraestrutura e ao software dos serviços que ela opera"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "A AWS corrige a infraestrutura subjacente e o software dos serviços sob sua gestão, e o cliente cuida do sistema operacional convidado e dos aplicativos. Por isso as demais opções descrevem responsabilidades do cliente."
+    },
+    {
+      "id": "S4-018",
+      "domain": 2,
+      "task": "2.1",
+      "type": "single",
+      "question": "A AWS treina seus próprios funcionários em segurança, e o cliente treina os dele. Como o modelo de responsabilidade compartilhada classifica esse tipo de controle?",
+      "options": [
+        "Controle herdado",
+        "Controle compartilhado",
+        "Controle exclusivo do cliente",
+        "Controle exclusivo da AWS"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "Conscientização e treinamento é um controle compartilhado, pois cada parte o aplica ao seu próprio pessoal. Controles herdados são aqueles que o cliente recebe integralmente da AWS, como a segurança física."
+    },
+    {
+      "id": "S4-019",
+      "domain": 2,
+      "task": "2.1",
+      "type": "single",
+      "question": "Qual é um exemplo de controle herdado pelo cliente no modelo de responsabilidade compartilhada?",
+      "options": [
+        "Configuração das regras de grupos de segurança",
+        "Gerenciamento de patches dos aplicativos do cliente",
+        "Segurança física dos datacenters da AWS",
+        "Criptografia dos dados armazenados pelo cliente"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "Controles herdados são totalmente gerenciados pela AWS, como a segurança física das instalações. Grupos de segurança, patches de aplicativos e criptografia de dados são responsabilidades do cliente."
+    },
+    {
+      "id": "S4-020",
+      "domain": 2,
+      "task": "2.1",
+      "type": "multi",
+      "question": "Quais responsabilidades pertencem ao cliente no modelo de responsabilidade compartilhada da AWS? Escolha duas.",
+      "options": [
+        "Configurar as permissões de acesso no IAM",
+        "Manter a segurança física das Zonas de Disponibilidade",
+        "Atualizar o hipervisor dos hosts físicos",
+        "Classificar e proteger os dados que armazena na nuvem",
+        "Manter o hardware da rede global da AWS"
+      ],
+      "answer": [
+        0,
+        3
+      ],
+      "explanation": "Segurança na nuvem inclui gerenciar acessos e proteger os dados do cliente. Segurança física, hipervisor e hardware de rede são responsabilidades da AWS."
+    },
+    {
+      "id": "S4-021",
+      "domain": 2,
+      "task": "2.1",
+      "type": "multi",
+      "question": "Quais dos itens a seguir são controles compartilhados entre a AWS e o cliente? Escolha três.",
+      "options": [
+        "Gestão de patches",
+        "Segurança física dos datacenters",
+        "Gerenciamento de configuração",
+        "Virtualização dos hosts",
+        "Conscientização e treinamento",
+        "Fornecimento de energia das instalações"
+      ],
+      "answer": [
+        0,
+        2,
+        4
+      ],
+      "explanation": "Gestão de patches, gerenciamento de configuração e conscientização e treinamento são controles compartilhados, cada parte cuidando do que lhe cabe. Segurança física, virtualização e energia são responsabilidades da AWS."
+    },
+    {
+      "id": "S4-022",
+      "domain": 2,
+      "task": "2.2",
+      "type": "single",
+      "question": "Qual serviço da AWS detecta ameaças ao analisar AWS CloudTrail, VPC Flow Logs e logs de DNS com aprendizado de máquina?",
+      "options": [
+        "Amazon GuardDuty",
+        "Amazon Inspector",
+        "AWS Config",
+        "Amazon Macie"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O GuardDuty monitora continuamente fontes de log como CloudTrail, Flow Logs e DNS para identificar atividade suspeita. O Inspector procura vulnerabilidades, o Config avalia configurações e o Macie localiza dados sensíveis."
+    },
+    {
+      "id": "S4-023",
+      "domain": 2,
+      "task": "2.2",
+      "type": "single",
+      "question": "Uma empresa quer verificar automaticamente vulnerabilidades de software em instâncias EC2 e em imagens de contêiner. Qual serviço deve usar?",
+      "options": [
+        "Amazon GuardDuty",
+        "Amazon Macie",
+        "AWS Security Hub",
+        "Amazon Inspector"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O Inspector faz varreduras automatizadas de vulnerabilidades em instâncias EC2, imagens de contêiner e funções Lambda. O GuardDuty detecta ameaças, o Macie trata dados sensíveis no S3, e o Security Hub consolida alertas."
+    },
+    {
+      "id": "S4-024",
+      "domain": 2,
+      "task": "2.2",
+      "type": "single",
+      "question": "Uma empresa precisa descobrir e proteger dados sensíveis, como informações pessoais, armazenados em buckets do Amazon S3. Qual serviço atende a essa necessidade?",
+      "options": [
+        "Amazon Inspector",
+        "Amazon Macie",
+        "Amazon GuardDuty",
+        "AWS Shield"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "O Macie usa aprendizado de máquina para descobrir e classificar dados sensíveis no S3. O Inspector avalia vulnerabilidades, o GuardDuty detecta ameaças, e o Shield protege contra ataques de negação de serviço."
+    },
+    {
+      "id": "S4-025",
+      "domain": 2,
+      "task": "2.2",
+      "type": "single",
+      "question": "Uma empresa com várias contas quer uma visão consolidada dos alertas de segurança e das verificações de conformidade. Qual serviço deve usar?",
+      "options": [
+        "Amazon Detective",
+        "Amazon Macie",
+        "AWS Security Hub",
+        "AWS Artifact"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "O Security Hub agrega achados de diversos serviços e avalia a conformidade com padrões de segurança em várias contas. O Detective investiga causas de achados, o Macie classifica dados, e o Artifact fornece relatórios de conformidade da AWS."
+    },
+    {
+      "id": "S4-026",
+      "domain": 2,
+      "task": "2.2",
+      "type": "multi",
+      "question": "Uma equipe quer detectar atividade maliciosa em sua conta e, depois, investigar a causa raiz de um achado de segurança. Quais serviços atendem a esses objetivos? Escolha duas.",
+      "options": [
+        "Amazon GuardDuty",
+        "Amazon Macie",
+        "Amazon Detective",
+        "AWS Artifact",
+        "Amazon Inspector"
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explanation": "O GuardDuty detecta atividade suspeita, e o Detective correlaciona dados para investigar a causa raiz dos achados. Macie e Inspector tratam de dados sensíveis e vulnerabilidades, e o Artifact fornece relatórios de conformidade."
+    },
+    {
+      "id": "S4-027",
+      "domain": 2,
+      "task": "2.3",
+      "type": "single",
+      "question": "Uma aplicação precisa armazenar credenciais de banco de dados e rotacioná-las automaticamente. Qual serviço atende a esse requisito?",
+      "options": [
+        "AWS Secrets Manager",
+        "AWS Key Management Service (AWS KMS)",
+        "AWS Certificate Manager (ACM)",
+        "AWS IAM Identity Center"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O Secrets Manager armazena segredos e permite rotação automática de credenciais. O KMS gerencia chaves de criptografia, o ACM gerencia certificados, e o IAM Identity Center gerencia o acesso de usuários."
+    },
+    {
+      "id": "S4-028",
+      "domain": 2,
+      "task": "2.3",
+      "type": "single",
+      "question": "Qual recurso do AWS Systems Manager armazena de forma hierárquica dados de configuração e valores de aplicativos, inclusive segredos criptografados?",
+      "options": [
+        "Session Manager",
+        "Run Command",
+        "Patch Manager",
+        "Parameter Store"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O Parameter Store guarda parâmetros de configuração e segredos em estrutura hierárquica. Session Manager, Run Command e Patch Manager servem, respectivamente, para acesso a instâncias, execução de comandos e aplicação de patches."
+    },
+    {
+      "id": "S4-029",
+      "domain": 2,
+      "task": "2.3",
+      "type": "single",
+      "question": "Um auditor precisa de uma lista de todos os usuários do IAM com o status de senhas, chaves de acesso e MFA. O que a empresa deve gerar?",
+      "options": [
+        "Log de eventos do AWS CloudTrail",
+        "Relatório de credenciais do IAM",
+        "Relatório de conformidade do AWS Artifact",
+        "Relatório de custos do AWS Cost Explorer"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "O relatório de credenciais do IAM lista os usuários e o status de suas credenciais. O CloudTrail registra chamadas de API, o Artifact fornece documentos de conformidade da AWS, e o Cost Explorer trata de custos."
+    },
+    {
+      "id": "S4-030",
+      "domain": 2,
+      "task": "2.3",
+      "type": "single",
+      "question": "Qual é a prática recomendada para as chaves de acesso de longo prazo de um usuário do IAM?",
+      "options": [
+        "Incorporar as chaves no código-fonte para facilitar o uso",
+        "Compartilhar a mesma chave entre vários desenvolvedores",
+        "Rotacionar as chaves periodicamente e remover as que não são usadas",
+        "Criar chaves de acesso do usuário-raiz para uso no dia a dia"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "Rotacionar e excluir chaves sem uso reduz a janela de exposição em caso de vazamento. Colocar chaves no código, compartilhá-las ou usar chaves do usuário-raiz são práticas inseguras."
+    },
+    {
+      "id": "S4-031",
+      "domain": 2,
+      "task": "2.3",
+      "type": "multi",
+      "question": "Quais configurações podem ser definidas na política de senhas de uma conta AWS? Escolha duas.",
+      "options": [
+        "Comprimento mínimo da senha",
+        "Número máximo de instâncias EC2 por usuário",
+        "Expiração periódica das senhas",
+        "Armazenamento obrigatório das senhas no Secrets Manager",
+        "Chave do KMS usada para criptografar as senhas"
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explanation": "A política de senhas do IAM permite exigir comprimento mínimo, tipos de caracteres e expiração das senhas. Limites de instâncias, Secrets Manager e chaves do KMS não fazem parte dessa política."
+    },
+    {
+      "id": "S4-032",
+      "domain": 2,
+      "task": "2.4",
+      "type": "single",
+      "question": "Qual recurso da AWS reúne respostas para as perguntas mais frequentes que os clientes fazem ao suporte, incluindo temas de segurança?",
+      "options": [
+        "AWS Knowledge Center",
+        "AWS Artifact",
+        "AWS Service Quotas",
+        "AWS Marketplace"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O Knowledge Center agrega perguntas e respostas comuns recebidas pelo AWS Support. O Artifact fornece relatórios de conformidade, o Service Quotas mostra limites, e o Marketplace vende software."
+    },
+    {
+      "id": "S4-033",
+      "domain": 2,
+      "task": "2.4",
+      "type": "single",
+      "question": "Uma empresa precisa de módulos de segurança de hardware (HSM) dedicados, sob controle exclusivo dela, para gerar e armazenar chaves criptográficas. Qual serviço atende a essa necessidade?",
+      "options": [
+        "AWS Secrets Manager",
+        "AWS Certificate Manager",
+        "AWS WAF",
+        "AWS CloudHSM"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O CloudHSM fornece HSMs dedicados em que o cliente controla as chaves. Secrets Manager guarda segredos, o ACM gerencia certificados, e o WAF filtra tráfego web."
+    },
+    {
+      "id": "S4-034",
+      "domain": 2,
+      "task": "2.4",
+      "type": "single",
+      "question": "Uma empresa quer adicionar cadastro, login e controle de acesso a um aplicativo móvel para milhões de usuários finais. Qual serviço deve usar?",
+      "options": [
+        "AWS IAM Identity Center",
+        "Amazon Cognito",
+        "AWS CloudHSM",
+        "AWS Shield"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "O Cognito oferece autenticação e gerenciamento de identidade para os usuários de aplicativos web e móveis. O IAM Identity Center é voltado ao acesso da força de trabalho às contas AWS."
+    },
+    {
+      "id": "S4-035",
+      "domain": 2,
+      "task": "2.4",
+      "type": "single",
+      "question": "Uma empresa quer provisionar, gerenciar e renovar automaticamente certificados TLS para seus sites. Qual serviço deve usar?",
+      "options": [
+        "AWS Key Management Service (AWS KMS)",
+        "AWS Secrets Manager",
+        "AWS Certificate Manager (ACM)",
+        "AWS WAF"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "O ACM provisiona, implanta e renova certificados TLS. O KMS gerencia chaves de criptografia, o Secrets Manager guarda segredos, e o WAF protege aplicações web contra requisições maliciosas."
+    },
+    {
+      "id": "S4-036",
+      "domain": 3,
+      "task": "3.1",
+      "type": "single",
+      "question": "Uma equipe quer implantar uma aplicação web apenas enviando o código e deixando a AWS cuidar de provisionamento, balanceamento de carga e escalabilidade. Qual serviço deve usar?",
+      "options": [
+        "AWS Elastic Beanstalk",
+        "AWS CodeBuild",
+        "AWS Outposts",
+        "Amazon Rekognition"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O Elastic Beanstalk recebe o código e provisiona e gerencia automaticamente a infraestrutura necessária. O CodeBuild compila e testa código, o Outposts leva infraestrutura AWS ao datacenter, e o Rekognition analisa imagens."
+    },
+    {
+      "id": "S4-037",
+      "domain": 3,
+      "task": "3.1",
+      "type": "single",
+      "question": "Um administrador criou manualmente um ambiente no console e agora precisa recriá-lo de forma idêntica várias vezes. Qual é a abordagem mais adequada?",
+      "options": [
+        "Repetir manualmente os mesmos cliques no console a cada nova criação",
+        "Registrar os passos em um documento para outras pessoas executarem",
+        "Pedir ao suporte da AWS que copie o ambiente de forma idêntica",
+        "Descrever o ambiente em um modelo do AWS CloudFormation e reutilizá-lo"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "Infraestrutura como código com o CloudFormation torna a criação repetível, consistente e auditável. Processos manuais são lentos e sujeitos a erros, e o suporte não replica ambientes de clientes."
+    },
+    {
+      "id": "S4-038",
+      "domain": 3,
+      "task": "3.2",
+      "type": "single",
+      "question": "Qual é a melhor forma de distribuir instâncias EC2 para obter alta disponibilidade dentro de uma Região?",
+      "options": [
+        "Em uma única Zona de Disponibilidade, com instâncias maiores",
+        "Em várias Zonas de Disponibilidade da mesma Região",
+        "Em um único datacenter, com mais volumes EBS",
+        "Em uma única Zona de Disponibilidade, com uma cópia por snapshot"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "Usar várias AZs evita que a falha de uma delas derrube a aplicação. Instâncias maiores, mais volumes ou snapshots em uma única AZ não eliminam esse ponto único de falha."
+    },
+    {
+      "id": "S4-039",
+      "domain": 3,
+      "task": "3.2",
+      "type": "single",
+      "question": "Como a AWS define uma Zona de Disponibilidade?",
+      "options": [
+        "Um local de borda usado para armazenar conteúdo em cache próximo aos usuários",
+        "Um único rack de servidores dentro de um datacenter",
+        "Um ou mais datacenters discretos com energia, rede e conectividade redundantes em uma Região",
+        "Um agrupamento lógico de contas pertencentes à mesma organização"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "Uma AZ é formada por um ou mais datacenters isolados, com infraestrutura redundante, dentro de uma Região. Locais de borda servem ao CloudFront, e racks e contas não correspondem a esse conceito."
+    },
+    {
+      "id": "S4-040",
+      "domain": 3,
+      "task": "3.2",
+      "type": "multi",
+      "question": "Quais ações ajudam a eliminar pontos únicos de falha em uma arquitetura? Escolha duas.",
+      "options": [
+        "Executar o banco de dados em implantação Multi-AZ",
+        "Usar uma instância EC2 maior em uma única Zona de Disponibilidade",
+        "Manter um único servidor de aplicação com backup semanal",
+        "Armazenar os dados somente no armazenamento de instância",
+        "Distribuir instâncias em várias AZs atrás de um Elastic Load Balancing"
+      ],
+      "answer": [
+        0,
+        4
+      ],
+      "explanation": "Multi-AZ e balanceamento entre várias AZs removem pontos únicos de falha. Instância maior em uma AZ, servidor único e armazenamento de instância mantêm ou agravam esse risco."
+    },
+    {
+      "id": "S4-041",
+      "domain": 3,
+      "task": "3.3",
+      "type": "single",
+      "question": "Qual serviço adiciona e remove instâncias EC2 automaticamente conforme a demanda da aplicação?",
+      "options": [
+        "Amazon EC2 Auto Scaling",
+        "Elastic Load Balancing",
+        "Amazon CloudFront",
+        "Amazon Route 53"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O EC2 Auto Scaling ajusta o número de instâncias à demanda. O Elastic Load Balancing distribui o tráfego, o CloudFront entrega conteúdo e o Route 53 resolve nomes DNS."
+    },
+    {
+      "id": "S4-042",
+      "domain": 3,
+      "task": "3.3",
+      "type": "single",
+      "question": "Qual serviço distribui o tráfego de entrada entre várias instâncias EC2 em diferentes Zonas de Disponibilidade e verifica a integridade delas?",
+      "options": [
+        "Amazon EC2 Auto Scaling",
+        "Amazon EBS",
+        "AWS Direct Connect",
+        "Elastic Load Balancing"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O Elastic Load Balancing encaminha o tráfego apenas para destinos saudáveis em várias AZs. O Auto Scaling altera a quantidade de instâncias, o EBS fornece armazenamento, e o Direct Connect oferece conexão dedicada."
+    },
+    {
+      "id": "S4-043",
+      "domain": 3,
+      "task": "3.3",
+      "type": "single",
+      "question": "Uma aplicação web HTTP precisa encaminhar requisições para diferentes grupos de instâncias com base no caminho da URL. Qual tipo de balanceador de carga é o mais adequado?",
+      "options": [
+        "Network Load Balancer",
+        "Application Load Balancer",
+        "Gateway Load Balancer",
+        "AWS Global Accelerator"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "O Application Load Balancer opera na camada de aplicação e permite roteamento baseado em caminho e host. O Network Load Balancer trabalha com tráfego TCP/UDP de alta performance, e o Gateway Load Balancer serve a appliances virtuais."
+    },
+    {
+      "id": "S4-044",
+      "domain": 3,
+      "task": "3.4",
+      "type": "single",
+      "question": "Uma empresa vai migrar um banco Oracle para o Amazon Aurora PostgreSQL e precisa converter o esquema e o código do banco para o novo motor. Qual ferramenta ajuda nessa conversão?",
+      "options": [
+        "AWS Application Migration Service",
+        "AWS Elastic Disaster Recovery",
+        "AWS Schema Conversion Tool (AWS SCT)",
+        "AWS Migration Evaluator"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "A SCT converte esquemas e código de banco de dados entre motores diferentes. O Application Migration Service migra servidores, o Elastic Disaster Recovery replica servidores para recuperação e o Migration Evaluator estima custos, nenhum deles converte esquemas."
+    },
+    {
+      "id": "S4-045",
+      "domain": 3,
+      "task": "3.4",
+      "type": "single",
+      "question": "Qual é uma vantagem de usar o Amazon RDS em vez de instalar o banco de dados por conta própria em instâncias EC2?",
+      "options": [
+        "A AWS automatiza tarefas como backups, aplicação de patches no motor e provisionamento",
+        "O cliente tem acesso ao sistema operacional do host do banco",
+        "O cliente controla o hipervisor da instância de banco",
+        "O cliente deixa de definir quem pode acessar os dados"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O RDS é um serviço gerenciado que automatiza backups, patches do motor e provisionamento. O acesso ao SO e ao hipervisor não é oferecido, e o controle de acesso aos dados continua sendo do cliente."
+    },
+    {
+      "id": "S4-046",
+      "domain": 3,
+      "task": "3.4",
+      "type": "single",
+      "question": "Uma empresa quer migrar um banco de dados para a AWS com o mínimo de tempo de inatividade, mantendo o banco de origem em operação durante a migração. Qual serviço deve usar?",
+      "options": [
+        "AWS Application Migration Service",
+        "AWS Elastic Disaster Recovery",
+        "AWS Storage Gateway",
+        "AWS Database Migration Service (AWS DMS)"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O DMS replica continuamente as alterações, permitindo migrar com tempo de inatividade mínimo. O Application Migration Service e o Elastic Disaster Recovery tratam de servidores, e o Storage Gateway conecta ambientes locais ao armazenamento da AWS."
+    },
+    {
+      "id": "S4-047",
+      "domain": 3,
+      "task": "3.5",
+      "type": "single",
+      "question": "Uma empresa quer expor um serviço de sua VPC a outras VPCs e contas por meio de um endpoint privado, sem usar a internet pública. Qual serviço atende a essa necessidade?",
+      "options": [
+        "Internet gateway",
+        "AWS PrivateLink",
+        "AWS Site-to-Site VPN",
+        "Amazon CloudFront"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "O PrivateLink permite acesso privado a serviços entre VPCs e contas, sem passar pela internet. O Internet gateway usa a internet, a VPN conecta redes e o CloudFront distribui conteúdo."
+    },
+    {
+      "id": "S4-048",
+      "domain": 3,
+      "task": "3.5",
+      "type": "single",
+      "question": "Uma empresa quer conectar centenas de VPCs e redes on-premises por meio de um hub central. Qual serviço deve usar?",
+      "options": [
+        "Internet gateway",
+        "AWS PrivateLink",
+        "AWS Transit Gateway",
+        "Amazon Route 53"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "O Transit Gateway funciona como hub para interconectar VPCs e redes locais. O Internet gateway dá acesso à internet, o PrivateLink expõe serviços individuais e o Route 53 resolve nomes."
+    },
+    {
+      "id": "S4-049",
+      "domain": 3,
+      "task": "3.5",
+      "type": "multi",
+      "question": "Quais opções conectam uma rede on-premises à AWS? Escolha duas.",
+      "options": [
+        "AWS Site-to-Site VPN",
+        "Amazon CloudFront",
+        "AWS Direct Connect",
+        "AWS Shield",
+        "Amazon S3 Transfer Acceleration"
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explanation": "A Site-to-Site VPN usa túneis criptografados pela internet, e o Direct Connect oferece conexão dedicada. CloudFront, Shield e Transfer Acceleration não conectam redes corporativas à AWS."
+    },
+    {
+      "id": "S4-050",
+      "domain": 3,
+      "task": "3.6",
+      "type": "single",
+      "question": "Uma empresa quer que objetos do Amazon S3 sejam movidos automaticamente para uma classe de armazenamento mais barata após 90 dias. O que ela deve configurar?",
+      "options": [
+        "Uma regra de ciclo de vida do S3",
+        "Replicação entre Regiões",
+        "Versionamento do bucket",
+        "Uma política de bucket"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "Regras de ciclo de vida fazem a transição ou a expiração de objetos automaticamente após o tempo definido. Replicação copia objetos, versionamento mantém versões e a política de bucket controla acessos."
+    },
+    {
+      "id": "S4-051",
+      "domain": 3,
+      "task": "3.6",
+      "type": "single",
+      "question": "Uma empresa quer centralizar e automatizar backups de vários serviços, como EBS, RDS, DynamoDB e EFS, por meio de políticas. Qual serviço deve usar?",
+      "options": [
+        "AWS Storage Gateway",
+        "AWS Snowball Edge",
+        "AWS Config",
+        "AWS Backup"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O AWS Backup centraliza e automatiza backups de diversos serviços. O Storage Gateway conecta ambientes locais ao armazenamento da AWS, o Snowball Edge transfere dados fisicamente, e o Config avalia configurações."
+    },
+    {
+      "id": "S4-052",
+      "domain": 3,
+      "task": "3.6",
+      "type": "single",
+      "question": "Uma empresa quer replicar continuamente servidores on-premises para a AWS a fim de se recuperar rapidamente de um desastre. Qual serviço atende a essa necessidade?",
+      "options": [
+        "AWS Backup",
+        "AWS Elastic Disaster Recovery",
+        "AWS Database Migration Service",
+        "AWS Snowball Edge"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "O Elastic Disaster Recovery replica continuamente servidores para a AWS e permite recuperação rápida em caso de desastre. O Backup guarda cópias pontuais, o DMS migra bancos, e o Snowball Edge transfere dados fisicamente."
+    },
+    {
+      "id": "S4-053",
+      "domain": 3,
+      "task": "3.7",
+      "type": "single",
+      "question": "Uma empresa precisa ingerir e processar em tempo real grandes volumes de dados de cliques de usuários em um site. Qual serviço é o mais adequado?",
+      "options": [
+        "Amazon Athena",
+        "Amazon QuickSight",
+        "Amazon Kinesis",
+        "Amazon Redshift"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "O Kinesis foi criado para coletar e processar fluxos de dados em tempo real. O Athena consulta dados no S3, o QuickSight cria painéis, e o Redshift é um data warehouse para consultas analíticas."
+    },
+    {
+      "id": "S4-054",
+      "domain": 3,
+      "task": "3.7",
+      "type": "single",
+      "question": "Uma empresa quer executar frameworks como Apache Spark e Hadoop para processar grandes volumes de dados. Qual serviço da AWS atende a essa necessidade?",
+      "options": [
+        "Amazon EMR",
+        "Amazon Kinesis",
+        "Amazon OpenSearch Service",
+        "Amazon QuickSight"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O EMR provê clusters gerenciados para frameworks de big data como Spark e Hadoop. O Kinesis processa fluxos, o OpenSearch faz busca e análise de logs, e o QuickSight é uma ferramenta de visualização."
+    },
+    {
+      "id": "S4-055",
+      "domain": 3,
+      "task": "3.8",
+      "type": "single",
+      "question": "Uma equipe de desenvolvimento quer abrir casos técnicos e receber ajuda de engenheiros de suporte da AWS. Qual serviço permite isso?",
+      "options": [
+        "AWS Artifact",
+        "AWS Trusted Advisor",
+        "AWS Health Dashboard",
+        "AWS Support"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O AWS Support oferece acesso a engenheiros e a canais para abrir casos, conforme o plano contratado. Artifact, Trusted Advisor e Health Dashboard fornecem documentos, recomendações e status, e não atendimento por casos."
+    },
+    {
+      "id": "S4-056",
+      "domain": 3,
+      "task": "3.8",
+      "type": "single",
+      "question": "Uma equipe quer automatizar as etapas de compilação, teste e implantação do código (CI/CD) em um fluxo contínuo. Qual serviço orquestra esse fluxo completo?",
+      "options": [
+        "AWS CodeBuild",
+        "AWS CodePipeline",
+        "AWS X-Ray",
+        "AWS Config"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "O CodePipeline orquestra as etapas do fluxo de entrega contínua. O CodeBuild apenas compila e testa o código, o X-Ray rastreia requisições, e o Config avalia a configuração de recursos."
+    },
+    {
+      "id": "S4-057",
+      "domain": 3,
+      "task": "3.8",
+      "type": "multi",
+      "question": "Uma equipe quer compilar e testar seu código e também analisar o desempenho das requisições entre os componentes de uma aplicação. Quais serviços atendem a esses objetivos? Escolha duas.",
+      "options": [
+        "AWS CodeBuild",
+        "AWS Shield",
+        "AWS X-Ray",
+        "Amazon Macie",
+        "AWS Snowball"
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explanation": "O CodeBuild compila e testa o código, e o X-Ray rastreia requisições para analisar o desempenho entre os componentes. Shield, Macie e Snowball tratam de proteção contra ataques, dados sensíveis e transferência física de dados."
+    },
+    {
+      "id": "S4-058",
+      "domain": 4,
+      "task": "4.1",
+      "type": "single",
+      "question": "Uma empresa guarda cópias secundárias de dados que podem ser recriados e são acessados raramente. Aceita mantê-los em uma única Zona de Disponibilidade, precisa de acesso em milissegundos e quer pagar menos que na classe S3 Standard-IA. Qual classe do Amazon S3 é a mais adequada?",
+      "options": [
+        "S3 Standard",
+        "S3 Glacier Deep Archive",
+        "S3 One Zone-IA",
+        "S3 Intelligent-Tiering"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "A S3 One Zone-IA guarda os dados em uma única AZ, com custo menor que a Standard-IA, e entrega em milissegundos. A Standard custa mais para acesso raro, a Deep Archive leva horas para recuperar e a Intelligent-Tiering é indicada para padrões de acesso imprevisíveis."
+    },
+    {
+      "id": "S4-059",
+      "domain": 4,
+      "task": "4.1",
+      "type": "single",
+      "question": "Uma empresa tem dados com padrões de acesso desconhecidos ou que mudam ao longo do tempo e quer otimizar custos sem gerenciar a movimentação manualmente. Qual classe do S3 deve usar?",
+      "options": [
+        "S3 Intelligent-Tiering",
+        "S3 Standard-IA",
+        "S3 Glacier Deep Archive",
+        "S3 One Zone-IA"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "A Intelligent-Tiering move automaticamente objetos entre camadas conforme o padrão de acesso. As demais classes exigem escolher previamente um perfil de acesso fixo."
+    },
+    {
+      "id": "S4-060",
+      "domain": 4,
+      "task": "4.1",
+      "type": "single",
+      "question": "Em qual base o Amazon EBS cobra pelos volumes de armazenamento?",
+      "options": [
+        "Somente o espaço efetivamente preenchido com dados",
+        "Apenas o número de leituras realizadas no volume",
+        "O número de instâncias às quais o volume já esteve anexado",
+        "Capacidade provisionada por mês, independentemente de o volume estar cheio"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O EBS é cobrado pela capacidade provisionada, mesmo que não esteja totalmente usada. Não é cobrado apenas pelo espaço preenchido, nem pelo número de leituras ou anexações."
+    },
+    {
+      "id": "S4-061",
+      "domain": 4,
+      "task": "4.2",
+      "type": "single",
+      "question": "Qual é a finalidade das tags de alocação de custos na AWS?",
+      "options": [
+        "Controlar quais usuários podem iniciar instâncias EC2",
+        "Organizar e categorizar os custos por projeto, equipe ou ambiente nos relatórios de cobrança",
+        "Reduzir o preço por hora dos recursos marcados",
+        "Criptografar automaticamente os recursos marcados"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "Tags de alocação de custos permitem agrupar os gastos por categoria nos relatórios de cobrança. Elas não controlam permissões, não alteram preços e não criptografam recursos."
+    },
+    {
+      "id": "S4-062",
+      "domain": 4,
+      "task": "4.2",
+      "type": "single",
+      "question": "Uma empresa quer o relatório mais detalhado possível de uso e custos, entregue em um bucket do S3 para análise em ferramentas como o Amazon Athena. O que ela deve usar?",
+      "options": [
+        "AWS Budgets",
+        "AWS Pricing Calculator",
+        "AWS Cost and Usage Reports",
+        "AWS Health Dashboard"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "O Cost and Usage Reports entrega dados detalhados de uso e custos em arquivos no S3. O Budgets define alertas de orçamento, a Calculadora de Preços estima custos futuros, e o Health Dashboard informa eventos do serviço."
+    },
+    {
+      "id": "S4-063",
+      "domain": 4,
+      "task": "4.2",
+      "type": "multi",
+      "question": "Uma empresa quer acompanhar os gastos de cada projeto. Quais ações ajudam nesse objetivo? Escolha duas.",
+      "options": [
+        "Aplicar tags consistentes aos recursos de cada projeto",
+        "Habilitar o AWS Shield Advanced em todas as contas",
+        "Ativar as tags como tags de alocação de custos",
+        "Mudar cada projeto para uma Região diferente",
+        "Criar um bucket do S3 para cada projeto"
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explanation": "Marcar os recursos e ativar as tags como tags de alocação de custos permite ver os gastos por projeto. Shield Advanced, mudança de Região e buckets separados não oferecem essa visão de custos."
+    },
+    {
+      "id": "S4-064",
+      "domain": 4,
+      "task": "4.3",
+      "type": "single",
+      "question": "Uma empresa quer que arquitetos de soluções da AWS a ajudem a revisar sua carga de trabalho com base em boas práticas de arquitetura. Qual recurso atende a essa necessidade?",
+      "options": [
+        "AWS Solutions Architects",
+        "AWS re:Post",
+        "AWS Artifact",
+        "AWS Service Quotas"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "Os Solutions Architects da AWS orientam clientes sobre arquitetura e boas práticas. O re:Post é uma comunidade, o Artifact fornece relatórios de conformidade, e o Service Quotas gerencia limites."
+    },
+    {
+      "id": "S4-065",
+      "domain": 4,
+      "task": "4.3",
+      "type": "single",
+      "question": "Um fornecedor independente de software quer vender seu produto a clientes da AWS, com a cobrança na fatura da AWS. Onde ele deve publicar o produto?",
+      "options": [
+        "AWS Artifact",
+        "AWS Service Quotas",
+        "AWS Knowledge Center",
+        "AWS Marketplace"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O AWS Marketplace é o catálogo digital em que fornecedores vendem software e serviços, com cobrança integrada à fatura da AWS. Artifact, Service Quotas e Knowledge Center não são canais de venda."
+    }
+  ]
+}

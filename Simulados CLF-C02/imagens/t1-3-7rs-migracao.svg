@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 680 398" role="img"><title>Os 7 Rs da migração em degraus</title><desc>A empresa Varejo Sul migra 7 sistemas e escolhe um R para cada. Fica ou sai: Retain mantém no local e Retire desliga. Move igual: Rehost leva o servidor para o EC2 e Relocate move o VMware em bloco. Ajusta pouco: Replatform leva o banco para o RDS. Muda muito: Repurchase troca por SaaS e Refactor reescreve o monolito em Lambda. Quanto mais à direita, mais mudança e mais proveito da nuvem.</desc>
+<style>
+svg{font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif}
+.bg{fill:#ffffff}
+.t{font-size:14px;fill:#2C2C2A}.ts{font-size:12px;fill:#5F5E5A}.th{font-size:14px;font-weight:500;fill:#2C2C2A}
+.arr{stroke:#888780;stroke-width:1.5;fill:none}
+.c-gray rect{fill:#F1EFE8;stroke:#5F5E5A}.c-gray .th{fill:#444441}.c-gray .ts{fill:#5F5E5A}
+.c-teal rect{fill:#E1F5EE;stroke:#0F6E56}.c-teal .th{fill:#085041}.c-teal .ts{fill:#0F6E56}
+.c-amber rect{fill:#FAEEDA;stroke:#854F0B}.c-amber .th{fill:#633806}.c-amber .ts{fill:#854F0B}
+.c-purple rect{fill:#EEEDFE;stroke:#534AB7}.c-purple .th{fill:#3C3489}.c-purple .ts{fill:#534AB7}
+@media (prefers-color-scheme:dark){
+.bg{fill:#1b1b1a}.arr{stroke:#B4B2A9}
+.c-gray rect{fill:#444441;stroke:#B4B2A9}.c-gray .th{fill:#F1EFE8}.c-gray .ts{fill:#D3D1C7}
+.c-teal rect{fill:#085041;stroke:#5DCAA5}.c-teal .th{fill:#E1F5EE}.c-teal .ts{fill:#9FE1CB}
+.c-amber rect{fill:#633806;stroke:#EF9F27}.c-amber .th{fill:#FAEEDA}.c-amber .ts{fill:#FAC775}
+.c-purple rect{fill:#3C3489;stroke:#AFA9EC}.c-purple .th{fill:#EEEDFE}.c-purple .ts{fill:#EEEDFE}
+}
+</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect class="bg" x="0" y="0" width="680" height="398"/>
+<g class="c-gray"><rect x="30" y="16" width="300" height="56" rx="8" stroke-width="0.5"/><text class="th" x="180" y="34" text-anchor="middle" dominant-baseline="central">Varejo Sul migra 7 sistemas</text><text class="ts" x="180" y="54" text-anchor="middle" dominant-baseline="central">Cada sistema recebe um dos 7 Rs</text></g>
+<g class="c-gray"><rect x="30" y="176" width="140" height="36" rx="8" stroke-width="0.5"/><text class="th" x="100" y="194" text-anchor="middle" dominant-baseline="central">Fica ou sai</text></g>
+<g class="c-gray"><rect x="30" y="220" width="140" height="60" rx="8" stroke-width="0.5"/><text class="th" x="100" y="236" text-anchor="middle" dominant-baseline="central">Retain</text><text class="ts" x="100" y="254" text-anchor="middle" dominant-baseline="central">Mantém no local</text><text class="ts" x="100" y="270" text-anchor="middle" dominant-baseline="central">por enquanto</text></g>
+<g class="c-gray"><rect x="30" y="288" width="140" height="60" rx="8" stroke-width="0.5"/><text class="th" x="100" y="304" text-anchor="middle" dominant-baseline="central">Retire</text><text class="ts" x="100" y="322" text-anchor="middle" dominant-baseline="central">Desliga o que</text><text class="ts" x="100" y="338" text-anchor="middle" dominant-baseline="central">ninguém usa</text></g>
+<g class="c-teal"><rect x="190" y="128" width="140" height="36" rx="8" stroke-width="0.5"/><text class="th" x="260" y="146" text-anchor="middle" dominant-baseline="central">Move igual</text></g>
+<g class="c-teal"><rect x="190" y="172" width="140" height="60" rx="8" stroke-width="0.5"/><text class="th" x="260" y="188" text-anchor="middle" dominant-baseline="central">Rehost</text><text class="ts" x="260" y="206" text-anchor="middle" dominant-baseline="central">Lift and shift</text><text class="ts" x="260" y="222" text-anchor="middle" dominant-baseline="central">Servidor → EC2</text></g>
+<g class="c-teal"><rect x="190" y="240" width="140" height="60" rx="8" stroke-width="0.5"/><text class="th" x="260" y="256" text-anchor="middle" dominant-baseline="central">Relocate</text><text class="ts" x="260" y="274" text-anchor="middle" dominant-baseline="central">VMware em bloco</text><text class="ts" x="260" y="290" text-anchor="middle" dominant-baseline="central">sem mudar nada</text></g>
+<g class="c-amber"><rect x="350" y="80" width="140" height="36" rx="8" stroke-width="0.5"/><text class="th" x="420" y="98" text-anchor="middle" dominant-baseline="central">Ajusta pouco</text></g>
+<g class="c-amber"><rect x="350" y="124" width="140" height="60" rx="8" stroke-width="0.5"/><text class="th" x="420" y="140" text-anchor="middle" dominant-baseline="central">Replatform</text><text class="ts" x="420" y="158" text-anchor="middle" dominant-baseline="central">Pequeno ajuste</text><text class="ts" x="420" y="174" text-anchor="middle" dominant-baseline="central">Banco → RDS</text></g>
+<g class="c-purple"><rect x="510" y="32" width="140" height="36" rx="8" stroke-width="0.5"/><text class="th" x="580" y="50" text-anchor="middle" dominant-baseline="central">Muda muito</text></g>
+<g class="c-purple"><rect x="510" y="76" width="140" height="60" rx="8" stroke-width="0.5"/><text class="th" x="580" y="92" text-anchor="middle" dominant-baseline="central">Repurchase</text><text class="ts" x="580" y="110" text-anchor="middle" dominant-baseline="central">Troca por SaaS</text><text class="ts" x="580" y="126" text-anchor="middle" dominant-baseline="central">CRM próprio → SaaS</text></g>
+<g class="c-purple"><rect x="510" y="144" width="140" height="60" rx="8" stroke-width="0.5"/><text class="th" x="580" y="160" text-anchor="middle" dominant-baseline="central">Refactor</text><text class="ts" x="580" y="178" text-anchor="middle" dominant-baseline="central">Reescreve</text><text class="ts" x="580" y="194" text-anchor="middle" dominant-baseline="central">Monolito → Lambda</text></g>
+<line x1="30" y1="364" x2="648" y2="364" class="arr" marker-end="url(#arrow)"/>
+<text class="ts" x="340" y="384" text-anchor="middle" dominant-baseline="central">Mais à direita = mais mudança no sistema e mais proveito da nuvem</text>
+</svg>

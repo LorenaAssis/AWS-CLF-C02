@@ -1,0 +1,1131 @@
+{
+  "simulado": 2,
+  "titulo": "Simulado 2",
+  "questions": [
+    {
+      "id": "S2-001",
+      "domain": 1,
+      "task": "1.1",
+      "type": "single",
+      "question": "Uma loja virtual recebe um volume de acessos muito maior durante a Black Friday e quase nenhum movimento no restante do mês. A empresa quer que a capacidade aumente e diminua automaticamente conforme a demanda. Qual benefício da nuvem atende a essa necessidade?",
+      "options": [
+        "Economia de escala",
+        "Elasticidade",
+        "Alcance global em minutos",
+        "Substituição de OpEx por CapEx"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "Elasticidade é a capacidade de adquirir recursos quando a demanda sobe e liberá-los quando ela cai, pagando apenas pelo que é usado. Economia de escala reduz o preço por unidade graças ao volume agregado da AWS, e alcance global trata de implantar perto dos usuários; nenhum deles ajusta a capacidade à demanda."
+    },
+    {
+      "id": "S2-002",
+      "domain": 1,
+      "task": "1.1",
+      "type": "single",
+      "question": "Uma aplicação crítica precisa continuar disponível mesmo se um data center inteiro ficar indisponível. Qual abordagem fornece alta disponibilidade na AWS?",
+      "options": [
+        "Executar todas as instâncias em uma única Zona de Disponibilidade",
+        "Aumentar o tamanho de uma única instância EC2",
+        "Armazenar backups no mesmo servidor da aplicação",
+        "Distribuir a aplicação por várias Zonas de Disponibilidade"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "Distribuir os recursos por várias Zonas de Disponibilidade evita que a falha de um data center derrube a aplicação. Concentrar tudo em uma AZ, ou apenas aumentar uma instância, mantém um ponto único de falha, e guardar backups no mesmo servidor não protege contra a perda dele."
+    },
+    {
+      "id": "S2-003",
+      "domain": 1,
+      "task": "1.1",
+      "type": "single",
+      "question": "Uma equipe adiciona mais instâncias EC2 idênticas atrás de um balanceador de carga para suportar mais usuários. Como esse tipo de escalabilidade é chamado?",
+      "options": [
+        "Escalabilidade horizontal (scale out)",
+        "Escalabilidade vertical (scale up)",
+        "Dimensionamento correto (rightsizing)",
+        "Failover entre Regiões"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "Adicionar mais instâncias para dividir a carga é escalabilidade horizontal. A escalabilidade vertical aumenta a capacidade de uma instância existente, o rightsizing ajusta o tamanho ao uso real e o failover troca para um ambiente de reserva em caso de falha."
+    },
+    {
+      "id": "S2-004",
+      "domain": 1,
+      "task": "1.2",
+      "type": "single",
+      "question": "Qual das opções é um princípio de design do pilar Confiabilidade do AWS Well-Architected Framework?",
+      "options": [
+        "Estimar a capacidade necessária e provisioná-la para o pico do ano",
+        "Executar os procedimentos de recuperação manualmente para maior controle",
+        "Recuperar-se automaticamente de falhas",
+        "Concentrar a carga em uma única Zona de Disponibilidade para simplificar"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "Automatizar a recuperação, por exemplo com health checks e substituição de recursos, é um princípio de Confiabilidade. O pilar também orienta a parar de adivinhar capacidade e a distribuir a carga por vários recursos e AZs, o oposto das demais opções."
+    },
+    {
+      "id": "S2-005",
+      "domain": 1,
+      "task": "1.2",
+      "type": "single",
+      "question": "Uma equipe revisa periodicamente novos tipos de instância e serviços lançados pela AWS para escolher o recurso mais adequado a cada carga de trabalho. Qual pilar do Well-Architected essa prática reforça?",
+      "options": [
+        "Excelência operacional",
+        "Eficiência de performance",
+        "Otimização de custos",
+        "Segurança"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "Selecionar o tipo de recurso adequado e reavaliar as escolhas conforme surgem novas opções é o foco da Eficiência de performance. Excelência operacional trata de operar e melhorar processos, otimização de custos de eliminar gasto desnecessário e segurança de proteger dados e sistemas."
+    },
+    {
+      "id": "S2-006",
+      "domain": 1,
+      "task": "1.2",
+      "type": "single",
+      "question": "Uma empresa simula periodicamente a falha de componentes da aplicação para validar se os procedimentos de recuperação funcionam. Qual pilar do Well-Architected essa prática representa?",
+      "options": [
+        "Sustentabilidade",
+        "Segurança",
+        "Eficiência de performance",
+        "Confiabilidade"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "Testar os procedimentos de recuperação simulando falhas é uma prática clássica do pilar Confiabilidade, que busca garantir que a carga de trabalho execute sua função corretamente e se recupere de interrupções. Os outros pilares não têm esse foco."
+    },
+    {
+      "id": "S2-007",
+      "domain": 1,
+      "task": "1.2",
+      "type": "multi",
+      "question": "Quais práticas estão alinhadas ao pilar Eficiência de performance do AWS Well-Architected Framework? Escolha duas.",
+      "options": [
+        "Implantar a carga de trabalho em várias Regiões para reduzir a latência para os usuários",
+        "Provisionar capacidade fixa dimensionada para o pico máximo previsto",
+        "Padronizar um único tipo de instância para todas as cargas de trabalho",
+        "Consumir tecnologias complexas como serviços gerenciados em vez de construí-las",
+        "Evitar medir o desempenho para reduzir custos de monitoramento"
+      ],
+      "answer": [
+        0,
+        3
+      ],
+      "explanation": "Ir para o mundo todo em minutos e democratizar tecnologias avançadas, usando serviços gerenciados, são princípios de Eficiência de performance. Capacidade fixa para o pico, instância única para tudo e falta de medição contrariam a escolha do recurso certo e a análise de desempenho."
+    },
+    {
+      "id": "S2-008",
+      "domain": 1,
+      "task": "1.2",
+      "type": "single",
+      "question": "Um arquiteto substitui um servidor grande e único por vários servidores menores, de modo que a falha de um deles afete apenas uma pequena parte da carga. Que princípio de design de Confiabilidade isso aplica?",
+      "options": [
+        "Escalar horizontalmente para reduzir o impacto de uma falha individual",
+        "Aumentar a capacidade vertical para evitar a necessidade de balanceamento",
+        "Gerenciar mudanças manualmente para evitar erros de automação",
+        "Adiar os testes de recuperação até a ocorrência de um incidente real"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "Substituir um recurso grande por vários pequenos reduz o impacto de qualquer falha individual, princípio de Confiabilidade chamado escalar horizontalmente. As demais opções mantêm pontos únicos de falha, dependem de processos manuais ou deixam de validar a recuperação."
+    },
+    {
+      "id": "S2-009",
+      "domain": 1,
+      "task": "1.3",
+      "type": "single",
+      "question": "Uma empresa quer migrar rapidamente seus servidores locais para instâncias EC2, sem alterar o código das aplicações. Qual estratégia de migração ela está adotando?",
+      "options": [
+        "Refactor (reescrever)",
+        "Retire (desativar)",
+        "Rehost (lift and shift)",
+        "Repurchase (trocar)"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "Rehost move as aplicações como estão para a AWS, sem mudanças de código. Refactor reescreve a aplicação, retire desativa o que não é mais necessário e repurchase troca o sistema por um produto diferente, normalmente SaaS."
+    },
+    {
+      "id": "S2-010",
+      "domain": 1,
+      "task": "1.3",
+      "type": "single",
+      "question": "Uma empresa decide abandonar seu sistema de CRM instalado localmente e passar a usar um produto SaaS de terceiros. Qual estratégia de migração isso representa?",
+      "options": [
+        "Rehost",
+        "Repurchase",
+        "Retain",
+        "Replatform"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "Repurchase (drop and shop) substitui a aplicação existente por um produto comercial, em geral SaaS. Rehost move a aplicação sem mudanças, retain a mantém no ambiente atual e replatform faz ajustes pontuais, como migrar o banco para um serviço gerenciado."
+    },
+    {
+      "id": "S2-011",
+      "domain": 1,
+      "task": "1.3",
+      "type": "single",
+      "question": "Uma empresa precisa transferir dezenas de terabytes de dados de um escritório com internet lenta e instável para o Amazon S3. Qual serviço é o mais adequado?",
+      "options": [
+        "Amazon CloudFront",
+        "AWS Global Accelerator",
+        "Amazon Route 53",
+        "AWS Snowball Edge"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "A família AWS Snow transfere grandes volumes fisicamente, com dispositivos enviados pelo correio, quando a rede é lenta ou instável. CloudFront, Global Accelerator e Route 53 melhoram entrega de conteúdo, roteamento e DNS, mas não movem grandes massas de dados offline."
+    },
+    {
+      "id": "S2-012",
+      "domain": 1,
+      "task": "1.3",
+      "type": "multi",
+      "question": "Quais estratégias de migração NÃO envolvem mover a aplicação para a AWS neste momento? Escolha duas.",
+      "options": [
+        "Retire, desativando aplicações que não são mais necessárias",
+        "Rehost, movendo servidores sem alterações",
+        "Retain, mantendo a aplicação onde está por enquanto",
+        "Replatform, migrando o banco para um serviço gerenciado",
+        "Refactor, redesenhando a aplicação como serverless"
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explanation": "Retire elimina aplicações sem uso e retain mantém a aplicação no ambiente atual até haver condições de migrar, portanto nenhuma delas move a carga para a AWS agora. Rehost, replatform e refactor movem a aplicação, variando apenas o grau de mudança."
+    },
+    {
+      "id": "S2-013",
+      "domain": 1,
+      "task": "1.4",
+      "type": "single",
+      "question": "Uma análise mostra que várias instâncias EC2 operam com cerca de 5% de uso de CPU. Qual ação reduz os custos com o menor impacto no desempenho?",
+      "options": [
+        "Migrar para tipos de instância menores que atendam à demanda real",
+        "Migrar para tipos de instância maiores para ganhar folga",
+        "Comprar mais instâncias do mesmo tamanho para dividir a carga",
+        "Mover as instâncias para outra Região sem alterar o tamanho"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "Rightsizing consiste em ajustar o tamanho dos recursos ao uso real, eliminando capacidade ociosa e reduzindo o gasto. Aumentar ou multiplicar instâncias eleva os custos, e trocar de Região não corrige o superdimensionamento."
+    },
+    {
+      "id": "S2-014",
+      "domain": 1,
+      "task": "1.4",
+      "type": "single",
+      "question": "Qual serviço analisa métricas de utilização e recomenda tamanhos ideais para instâncias EC2, volumes EBS e funções Lambda?",
+      "options": [
+        "AWS Artifact",
+        "AWS Health Dashboard",
+        "AWS Compute Optimizer",
+        "AWS CloudTrail"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "O AWS Compute Optimizer usa métricas de uso para sugerir configurações mais adequadas e apoiar o rightsizing. Artifact fornece relatórios de conformidade, Health Dashboard informa eventos de serviço e CloudTrail registra chamadas de API."
+    },
+    {
+      "id": "S2-015",
+      "domain": 1,
+      "task": "1.4",
+      "type": "single",
+      "question": "Uma empresa mantém ambientes de desenvolvimento ligados 24 horas, embora sejam usados apenas em horário comercial. Qual medida reduz o custo aproveitando a automação?",
+      "options": [
+        "Manter as instâncias ligadas para evitar o tempo de inicialização",
+        "Agendar o desligamento automático das instâncias fora do horário de uso",
+        "Provisionar instâncias maiores para o pico estimado do ano",
+        "Pedir que cada desenvolvedor se lembre de desligar os recursos"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "Automatizar o desligamento elimina o pagamento por capacidade ociosa de forma consistente e sem depender de pessoas. Manter tudo ligado ou superdimensionar aumenta o custo, e confiar na memória dos desenvolvedores é um processo falho e manual."
+    },
+    {
+      "id": "S2-016",
+      "domain": 1,
+      "task": "1.4",
+      "type": "single",
+      "question": "Quando o dimensionamento correto (rightsizing) dos recursos deve ser feito para obter o máximo de economia?",
+      "options": [
+        "Uma única vez, antes da migração para a AWS",
+        "Somente quando a fatura ultrapassar o orçamento definido",
+        "Nunca, pois a AWS ajusta o tamanho das instâncias EC2 sozinha",
+        "De forma contínua, monitorando a utilização ao longo do ciclo de vida da carga de trabalho"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "As necessidades mudam com o tempo, então o rightsizing deve ser um processo contínuo baseado em métricas. Fazê-lo apenas uma vez fica obsoleto, esperar estourar o orçamento é reativo e a AWS não redimensiona instâncias EC2 automaticamente."
+    },
+    {
+      "id": "S2-017",
+      "domain": 2,
+      "task": "2.1",
+      "type": "single",
+      "question": "Uma empresa usa o Amazon RDS para executar seu banco de dados. Quem é responsável por aplicar patches no sistema operacional do servidor subjacente?",
+      "options": [
+        "A AWS",
+        "O cliente",
+        "O cliente, usando o AWS Systems Manager Patch Manager",
+        "O fornecedor do sistema operacional"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "No RDS, serviço gerenciado, a AWS cuida do sistema operacional, da instalação e do patch do mecanismo e do hardware. O cliente continua responsável por configuração de acesso, esquema, consultas e dados, mas não pelo SO do host."
+    },
+    {
+      "id": "S2-018",
+      "domain": 2,
+      "task": "2.1",
+      "type": "single",
+      "question": "Qual das opções é responsabilidade do cliente ao usar o Amazon RDS?",
+      "options": [
+        "Aplicar patches no hardware do servidor host",
+        "Manter o software de virtualização",
+        "Gerenciar usuários do banco, permissões e regras de grupos de segurança",
+        "Proteger fisicamente os data centers"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "O cliente controla quem acessa o banco, as permissões e as regras de rede (grupos de segurança). Hardware, virtualização e segurança física dos data centers fazem parte da segurança DA nuvem, de responsabilidade da AWS."
+    },
+    {
+      "id": "S2-019",
+      "domain": 2,
+      "task": "2.1",
+      "type": "multi",
+      "question": "Ao usar o Amazon RDS, quais tarefas continuam sob responsabilidade do cliente? Escolha duas.",
+      "options": [
+        "Configurar os grupos de segurança que controlam o acesso de rede à instância",
+        "Aplicar patches no sistema operacional do host",
+        "Substituir discos com falha no data center",
+        "Otimizar as consultas e o esquema do banco de dados",
+        "Instalar o software do mecanismo de banco no servidor"
+      ],
+      "answer": [
+        0,
+        3
+      ],
+      "explanation": "O cliente define o acesso de rede e cuida do esquema e do desempenho das consultas. Patch do SO, troca de discos e instalação do mecanismo são tarefas que o RDS gerenciado executa pela AWS."
+    },
+    {
+      "id": "S2-020",
+      "domain": 2,
+      "task": "2.1",
+      "type": "single",
+      "question": "Qual das opções descreve a segurança DA nuvem, de responsabilidade da AWS?",
+      "options": [
+        "Criptografar os dados do cliente armazenados em seus buckets",
+        "Proteger o hardware, o software, a rede e as instalações que executam os serviços AWS",
+        "Configurar as permissões de usuários no IAM",
+        "Gerenciar o firewall do sistema operacional convidado nas instâncias"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "A AWS protege a infraestrutura global que executa os serviços. Criptografia dos dados armazenados, permissões IAM e firewall do SO convidado são configurações feitas pelo cliente, ou seja, segurança NA nuvem."
+    },
+    {
+      "id": "S2-021",
+      "domain": 2,
+      "task": "2.1",
+      "type": "single",
+      "question": "Uma empresa usa o Amazon DynamoDB. Qual das opções é responsabilidade do cliente?",
+      "options": [
+        "Atualizar o sistema operacional dos servidores",
+        "Manter o hardware de armazenamento",
+        "Aplicar patches no software do mecanismo de banco",
+        "Controlar o acesso às tabelas com o IAM e classificar os dados armazenados"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "Mesmo em serviços gerenciados, o cliente decide quem pode acessar os dados e como eles são classificados e protegidos. Sistema operacional, hardware e patches do mecanismo são operados pela AWS no DynamoDB."
+    },
+    {
+      "id": "S2-022",
+      "domain": 2,
+      "task": "2.2",
+      "type": "single",
+      "question": "Um auditor solicita à empresa os relatórios de conformidade SOC da AWS. Qual serviço permite baixá-los sob demanda?",
+      "options": [
+        "AWS Artifact",
+        "AWS Config",
+        "Amazon Inspector",
+        "AWS CloudTrail"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O AWS Artifact é o portal de autoatendimento para relatórios de auditoria e de conformidade de terceiros, como SOC e ISO. Config avalia configurações de recursos, Inspector busca vulnerabilidades e CloudTrail registra chamadas de API."
+    },
+    {
+      "id": "S2-023",
+      "domain": 2,
+      "task": "2.2",
+      "type": "single",
+      "question": "Uma empresa de saúde precisa aceitar um adendo comercial (BAA) com a AWS para usar a nuvem com dados regulados. Onde ela encontra e aceita esses acordos?",
+      "options": [
+        "No AWS Trusted Advisor",
+        "No AWS Support Center",
+        "No AWS Artifact",
+        "No AWS Health Dashboard"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "O AWS Artifact também permite revisar, aceitar e gerenciar acordos, como o BAA para cargas sujeitas à HIPAA. Trusted Advisor dá recomendações, o Support Center abre casos e o Health Dashboard mostra eventos de serviço."
+    },
+    {
+      "id": "S2-024",
+      "domain": 2,
+      "task": "2.2",
+      "type": "single",
+      "question": "Uma empresa precisa cumprir a legislação do seu país ao armazenar dados de clientes na AWS. Quem é responsável por garantir que o uso dos serviços atenda a essas leis?",
+      "options": [
+        "A AWS, automaticamente, para todos os clientes",
+        "O cliente, apoiado pelas certificações e programas de conformidade da AWS",
+        "O órgão regulador do país, ao aprovar a conta",
+        "O parceiro de consultoria da rede APN"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "A AWS fornece infraestrutura certificada e documentação, mas a conformidade da carga de trabalho com as leis aplicáveis é do cliente. Nem a AWS, nem o regulador, nem um parceiro assumem essa responsabilidade automaticamente."
+    },
+    {
+      "id": "S2-025",
+      "domain": 2,
+      "task": "2.2",
+      "type": "multi",
+      "question": "Quais serviços ajudam uma empresa a demonstrar conformidade em uma auditoria? Escolha duas.",
+      "options": [
+        "AWS Artifact, para obter relatórios de conformidade da AWS",
+        "AWS Snowball, para transferir dados fisicamente",
+        "Amazon Polly, para converter texto em fala",
+        "AWS Config, para avaliar a conformidade das configurações dos recursos",
+        "Amazon SQS, para enfileirar mensagens"
+      ],
+      "answer": [
+        0,
+        3
+      ],
+      "explanation": "O Artifact fornece os relatórios da AWS e o Config registra e avalia as configurações dos recursos em relação a regras de conformidade. Snowball, Polly e SQS não têm relação com evidências de conformidade."
+    },
+    {
+      "id": "S2-026",
+      "domain": 2,
+      "task": "2.2",
+      "type": "single",
+      "question": "Que tipo de documento o AWS Artifact disponibiliza aos clientes?",
+      "options": [
+        "Relatórios de custo detalhados por serviço",
+        "Resultados de varredura de vulnerabilidades das instâncias",
+        "Registros de todas as chamadas de API da conta",
+        "Relatórios de auditoria de terceiros sobre a conformidade da AWS"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O Artifact reúne relatórios de auditoria e certificações da AWS, como SOC e ISO. Custos aparecem em ferramentas de billing, vulnerabilidades no Amazon Inspector e chamadas de API no CloudTrail."
+    },
+    {
+      "id": "S2-027",
+      "domain": 2,
+      "task": "2.3",
+      "type": "single",
+      "question": "O que significa aplicar o princípio do menor privilégio no IAM?",
+      "options": [
+        "Conceder somente as permissões necessárias para executar a tarefa",
+        "Dar acesso de administrador a todos os desenvolvedores",
+        "Compartilhar um único usuário IAM com toda a equipe",
+        "Usar o usuário-raiz nas operações do dia a dia"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "Menor privilégio é dar a cada identidade apenas o acesso necessário, reduzindo o impacto de erros ou credenciais comprometidas. Acesso administrativo amplo, compartilhamento de usuários e uso do usuário-raiz violam essa prática."
+    },
+    {
+      "id": "S2-028",
+      "domain": 2,
+      "task": "2.3",
+      "type": "single",
+      "question": "Dezenas de desenvolvedores precisam das mesmas permissões no IAM. Qual é a melhor forma de gerenciá-las?",
+      "options": [
+        "Anexar a política individualmente a cada usuário",
+        "Compartilhar as credenciais de um único usuário",
+        "Criar um grupo IAM com a política e adicionar os usuários ao grupo",
+        "Usar o usuário-raiz para executar as tarefas"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "Grupos IAM concentram as permissões em um único lugar, facilitando concessão e revogação. Anexar política usuário a usuário é trabalhoso e sujeito a erros, e compartilhar credenciais ou usar o usuário-raiz é inseguro."
+    },
+    {
+      "id": "S2-029",
+      "domain": 2,
+      "task": "2.3",
+      "type": "single",
+      "question": "Em que formato são escritas as políticas do IAM?",
+      "options": [
+        "Planilhas CSV importadas pelo console",
+        "Documentos JSON",
+        "Scripts do PowerShell",
+        "Arquivos de imagem de máquina"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "As políticas do IAM são documentos JSON que definem efeito (Allow ou Deny), ações, recursos e condições. As demais opções não são formatos de política."
+    },
+    {
+      "id": "S2-030",
+      "domain": 2,
+      "task": "2.3",
+      "type": "multi",
+      "question": "Quais são práticas recomendadas de segurança do IAM? Escolha duas.",
+      "options": [
+        "Habilitar a autenticação multifator (MFA) para usuários com acesso privilegiado",
+        "Embutir chaves de acesso no código-fonte das aplicações",
+        "Compartilhar um usuário IAM entre vários colaboradores",
+        "Revisar periodicamente as permissões e remover as que não são mais necessárias",
+        "Usar o usuário-raiz para as tarefas administrativas cotidianas"
+      ],
+      "answer": [
+        0,
+        3
+      ],
+      "explanation": "MFA adiciona uma segunda camada de proteção e revisões periódicas mantêm o menor privilégio. Colocar chaves no código, compartilhar usuários e usar o usuário-raiz no dia a dia são práticas inseguras."
+    },
+    {
+      "id": "S2-031",
+      "domain": 2,
+      "task": "2.3",
+      "type": "single",
+      "question": "A quais entidades uma política IAM baseada em identidade pode ser anexada?",
+      "options": [
+        "Regiões da AWS e suas sub-redes",
+        "Zonas de Disponibilidade",
+        "Endereços IP públicos",
+        "Usuários, grupos ou perfis (roles) do IAM"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "Políticas baseadas em identidade são anexadas a usuários, grupos ou perfis do IAM. Regiões, AZs e endereços IP não são identidades do IAM."
+    },
+    {
+      "id": "S2-032",
+      "domain": 2,
+      "task": "2.4",
+      "type": "single",
+      "question": "Uma organização com muitas contas AWS quer aplicar e gerenciar regras de firewall de aplicações web de forma centralizada. Qual serviço atende a essa necessidade?",
+      "options": [
+        "AWS Firewall Manager",
+        "Amazon Inspector",
+        "Amazon Macie",
+        "AWS KMS"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O AWS Firewall Manager administra centralmente regras do AWS WAF, do Shield Advanced e de outros firewalls em várias contas do AWS Organizations. Inspector procura vulnerabilidades, Macie descobre dados sensíveis e KMS gerencia chaves de criptografia."
+    },
+    {
+      "id": "S2-033",
+      "domain": 2,
+      "task": "2.4",
+      "type": "single",
+      "question": "Uma empresa quer implantar uma solução SIEM de um fornecedor independente em sua conta AWS. Onde ela pode encontrar e assinar esse tipo de produto?",
+      "options": [
+        "No AWS Artifact",
+        "No AWS Direct Connect",
+        "No AWS Marketplace",
+        "No AWS Support Center"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "O AWS Marketplace é um catálogo digital com softwares de terceiros, incluindo produtos de segurança. Artifact fornece relatórios de conformidade, Direct Connect é conectividade dedicada e o Support Center é para casos de suporte."
+    },
+    {
+      "id": "S2-034",
+      "domain": 2,
+      "task": "2.4",
+      "type": "multi",
+      "question": "Quais recursos o AWS Firewall Manager pode gerenciar de forma centralizada em várias contas? Escolha duas.",
+      "options": [
+        "Regras do AWS WAF",
+        "Chaves do AWS KMS",
+        "Políticas de ciclo de vida do Amazon S3",
+        "Políticas de grupos de segurança da Amazon VPC",
+        "Alarmes do Amazon CloudWatch"
+      ],
+      "answer": [
+        0,
+        3
+      ],
+      "explanation": "O Firewall Manager centraliza regras do WAF, grupos de segurança, Shield Advanced, Network Firewall e outras proteções. Chaves KMS, ciclo de vida do S3 e alarmes do CloudWatch não fazem parte de seu escopo."
+    },
+    {
+      "id": "S2-035",
+      "domain": 2,
+      "task": "2.4",
+      "type": "single",
+      "question": "Qual é um benefício de adquirir softwares de segurança de terceiros pelo AWS Marketplace?",
+      "options": [
+        "Todos os produtos do catálogo são gratuitos para clientes AWS",
+        "A cobrança dos produtos pode aparecer na mesma fatura da AWS",
+        "Os produtos só funcionam em Dedicated Hosts",
+        "Apenas a própria AWS pode publicar produtos no catálogo"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "Uma vantagem do Marketplace é a cobrança consolidada na fatura da AWS, além do provisionamento simplificado. Os produtos têm preços próprios, rodam em diversos tipos de recursos e são publicados por fornecedores independentes."
+    },
+    {
+      "id": "S2-036",
+      "domain": 3,
+      "task": "3.1",
+      "type": "single",
+      "question": "Uma empresa quer recriar um ambiente idêntico, com rede, instâncias e banco de dados, em várias contas e Regiões a partir de um modelo. Qual serviço deve usar?",
+      "options": [
+        "AWS Config",
+        "Amazon CloudWatch",
+        "AWS Trusted Advisor",
+        "AWS CloudFormation"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O CloudFormation provisiona recursos a partir de templates, tornando o ambiente repetível (infraestrutura como código). Config avalia configurações, CloudWatch monitora métricas e Trusted Advisor fornece recomendações."
+    },
+    {
+      "id": "S2-037",
+      "domain": 3,
+      "task": "3.1",
+      "type": "single",
+      "question": "No AWS CloudFormation, como é chamado o conjunto de recursos criados e gerenciados a partir de um template?",
+      "options": [
+        "Stack",
+        "Cluster",
+        "Layer",
+        "Volume"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "Uma stack agrupa os recursos criados por um template do CloudFormation, que podem ser criados, atualizados e excluídos em conjunto. Cluster, layer e volume são termos de outros serviços."
+    },
+    {
+      "id": "S2-038",
+      "domain": 3,
+      "task": "3.2",
+      "type": "single",
+      "question": "Uma empresa possui usuários espalhados pelo mundo e quer entregar conteúdo estático do site com baixa latência. Qual serviço deve usar?",
+      "options": [
+        "Amazon EBS",
+        "AWS Direct Connect",
+        "Amazon CloudFront",
+        "AWS Storage Gateway"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "O CloudFront é uma rede de entrega de conteúdo que armazena cópias em locais de borda próximos dos usuários. EBS é armazenamento em bloco, Direct Connect é conexão dedicada e Storage Gateway integra armazenamento local à nuvem."
+    },
+    {
+      "id": "S2-039",
+      "domain": 3,
+      "task": "3.2",
+      "type": "single",
+      "question": "Uma empresa precisa de endereços IP estáticos de entrada e de redirecionamento rápido do tráfego TCP entre Regiões, usando a rede global da AWS. Qual serviço atende?",
+      "options": [
+        "Amazon CloudFront",
+        "AWS Global Accelerator",
+        "Amazon S3 Transfer Acceleration",
+        "AWS Site-to-Site VPN"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "O Global Accelerator fornece IPs anycast estáticos e direciona o tráfego pela rede global da AWS para os endpoints saudáveis mais próximos. CloudFront faz cache de conteúdo, S3 Transfer Acceleration acelera uploads ao S3 e a VPN apenas conecta redes."
+    },
+    {
+      "id": "S2-040",
+      "domain": 3,
+      "task": "3.2",
+      "type": "multi",
+      "question": "Quais afirmações sobre locais de borda (edge locations) estão corretas? Escolha duas.",
+      "options": [
+        "O CloudFront usa locais de borda para armazenar em cache conteúdo mais perto dos usuários",
+        "Cada local de borda é uma Região completa com várias Zonas de Disponibilidade",
+        "Os locais de borda armazenam todos os dados dos buckets S3 dos clientes",
+        "O Global Accelerator usa locais de borda como pontos de entrada na rede global da AWS",
+        "Os clientes executam instâncias EC2 diretamente nos locais de borda"
+      ],
+      "answer": [
+        0,
+        3
+      ],
+      "explanation": "CloudFront e Global Accelerator usam locais de borda para aproximar o tráfego e o conteúdo dos usuários. Os locais de borda não são Regiões, não guardam os dados originais do S3 e não hospedam instâncias EC2 dos clientes."
+    },
+    {
+      "id": "S2-041",
+      "domain": 3,
+      "task": "3.3",
+      "type": "single",
+      "question": "Uma equipe quer executar contêineres Docker sem provisionar nem gerenciar servidores. Qual opção atende melhor?",
+      "options": [
+        "Amazon ECR",
+        "Amazon EC2 Dedicated Hosts",
+        "Amazon SQS",
+        "AWS Fargate"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O Fargate é um mecanismo de computação serverless para contêineres, usado com ECS ou EKS. O ECR apenas armazena imagens, Dedicated Hosts são servidores físicos que o cliente gerencia e o SQS é um serviço de filas."
+    },
+    {
+      "id": "S2-042",
+      "domain": 3,
+      "task": "3.3",
+      "type": "single",
+      "question": "Uma empresa já usa Kubernetes e quer um serviço gerenciado para executar seus clusters na AWS. Qual serviço deve escolher?",
+      "options": [
+        "Amazon EKS",
+        "Amazon ECS",
+        "Amazon ECR",
+        "AWS Lambda"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O Amazon EKS é o serviço gerenciado de Kubernetes da AWS. O ECS é o orquestrador próprio da AWS, não Kubernetes, o ECR é um registro de imagens e o Lambda executa funções sem contêineres gerenciados pelo cliente."
+    },
+    {
+      "id": "S2-043",
+      "domain": 3,
+      "task": "3.3",
+      "type": "multi",
+      "question": "Quais afirmações sobre serviços de contêineres da AWS estão corretas? Escolha duas.",
+      "options": [
+        "O Amazon ECR armazena e gerencia imagens de contêiner",
+        "O AWS Fargate exige que o cliente aplique patches no SO dos hosts",
+        "O Amazon ECS orquestra contêineres e pode usar Fargate ou EC2 como capacidade",
+        "O Amazon EKS é um serviço de armazenamento de objetos",
+        "O Amazon ECR é o serviço que executa os contêineres"
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explanation": "O ECR é o registro de imagens e o ECS é o orquestrador, que pode rodar sobre Fargate ou instâncias EC2. O Fargate elimina o gerenciamento dos hosts, o EKS gerencia Kubernetes e o ECR não executa contêineres."
+    },
+    {
+      "id": "S2-044",
+      "domain": 3,
+      "task": "3.4",
+      "type": "single",
+      "question": "Uma aplicação precisa de um banco de dados NoSQL totalmente gerenciado, com latência de poucos milissegundos em qualquer escala. Qual serviço atende?",
+      "options": [
+        "Amazon RDS",
+        "Amazon Redshift",
+        "Amazon DynamoDB",
+        "Amazon Neptune"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "O DynamoDB é um banco NoSQL de chave-valor e documentos, serverless e com baixa latência em qualquer escala. O RDS é relacional, o Redshift é data warehouse e o Neptune é banco de grafos."
+    },
+    {
+      "id": "S2-045",
+      "domain": 3,
+      "task": "3.4",
+      "type": "single",
+      "question": "Uma rede social precisa armazenar e consultar relacionamentos complexos entre milhões de usuários, como amizades e conexões. Qual serviço é o mais adequado?",
+      "options": [
+        "Amazon DocumentDB",
+        "Amazon Neptune",
+        "Amazon RDS",
+        "Amazon Redshift"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "O Amazon Neptune é um banco de dados de grafos, ideal para dados altamente conectados. DocumentDB armazena documentos, RDS é relacional tradicional e Redshift é voltado para análise em data warehouse."
+    },
+    {
+      "id": "S2-046",
+      "domain": 3,
+      "task": "3.4",
+      "type": "single",
+      "question": "Uma empresa quer migrar uma aplicação que usa MongoDB para um banco de documentos gerenciado, mantendo a compatibilidade com o código existente. Qual serviço deve usar?",
+      "options": [
+        "Amazon Neptune",
+        "Amazon RDS para PostgreSQL",
+        "Amazon Redshift",
+        "Amazon DocumentDB"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O Amazon DocumentDB é um banco de documentos gerenciado compatível com as APIs do MongoDB. Neptune é para grafos, RDS para PostgreSQL é relacional e Redshift é um data warehouse."
+    },
+    {
+      "id": "S2-047",
+      "domain": 3,
+      "task": "3.5",
+      "type": "single",
+      "question": "Qual afirmação sobre grupos de segurança (security groups) da Amazon VPC está correta?",
+      "options": [
+        "São stateful e permitem automaticamente o tráfego de resposta",
+        "São stateless e exigem regras para o tráfego de resposta",
+        "Suportam regras de negação explícita para endereços IP",
+        "Avaliam as regras em ordem numérica crescente"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "Grupos de segurança são stateful, ficam associados às interfaces das instâncias e só têm regras de permissão. Operar na sub-rede, ser stateless, negar explicitamente e avaliar regras por número são características das ACLs de rede."
+    },
+    {
+      "id": "S2-048",
+      "domain": 3,
+      "task": "3.5",
+      "type": "single",
+      "question": "Uma empresa precisa bloquear explicitamente o endereço IP de origem de um atacante no nível da sub-rede. Qual recurso permite criar essa regra de negação?",
+      "options": [
+        "Security group",
+        "Internet gateway",
+        "Network ACL (ACL de rede)",
+        "Tabela de rotas"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "As ACLs de rede aceitam regras de permissão e de negação explícitas no nível da sub-rede. Grupos de segurança só permitem tráfego, e internet gateway e tabelas de rotas tratam de conectividade e roteamento."
+    },
+    {
+      "id": "S2-049",
+      "domain": 3,
+      "task": "3.5",
+      "type": "single",
+      "question": "Por padrão, quais regras tem um grupo de segurança recém-criado?",
+      "options": [
+        "Permite todo tráfego de entrada e de saída",
+        "Bloqueia todo tráfego de entrada e permite todo tráfego de saída",
+        "Bloqueia todo tráfego de entrada e de saída",
+        "Permite todo tráfego de entrada e bloqueia o de saída"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "Um novo grupo de segurança não tem regras de entrada, portanto nega todo tráfego recebido, e traz uma regra padrão que permite todo tráfego de saída. As regras precisam ser adicionadas conforme a necessidade."
+    },
+    {
+      "id": "S2-050",
+      "domain": 3,
+      "task": "3.6",
+      "type": "single",
+      "question": "Uma instância EC2 precisa de um disco de bloco persistente, cujos dados sejam mantidos mesmo quando a instância for parada. Qual opção deve usar?",
+      "options": [
+        "Armazenamento de instância (instance store)",
+        "Amazon S3 Glacier",
+        "Amazon CloudFront",
+        "Volume do Amazon EBS"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O EBS fornece volumes de bloco persistentes, independentes do ciclo de vida da instância. O instance store é temporário, o S3 Glacier é arquivamento de objetos e o CloudFront é uma rede de entrega de conteúdo."
+    },
+    {
+      "id": "S2-051",
+      "domain": 3,
+      "task": "3.6",
+      "type": "single",
+      "question": "Uma aplicação precisa de armazenamento temporário de altíssimo desempenho para dados de cache que podem ser perdidos se a instância for encerrada. Qual opção é a mais adequada?",
+      "options": [
+        "Armazenamento de instância (instance store)",
+        "Volume do Amazon EBS com snapshots",
+        "Amazon S3 Glacier Deep Archive",
+        "Amazon EFS"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O instance store está fisicamente ligado ao host e oferece alto desempenho para dados temporários, que são perdidos quando a instância é encerrada. EBS com snapshots, Glacier Deep Archive e EFS têm foco em durabilidade ou arquivamento."
+    },
+    {
+      "id": "S2-052",
+      "domain": 3,
+      "task": "3.6",
+      "type": "multi",
+      "question": "Quais afirmações sobre volumes do Amazon EBS estão corretas? Escolha duas.",
+      "options": [
+        "Podem ter backup por meio de snapshots",
+        "Os dados são perdidos sempre que a instância é parada",
+        "Um volume pode ser anexado a instâncias de qualquer Região",
+        "Cada volume existe em uma única Zona de Disponibilidade",
+        "É armazenamento de objetos acessado por HTTP"
+      ],
+      "answer": [
+        0,
+        3
+      ],
+      "explanation": "Snapshots permitem backup incremental dos volumes, e cada volume EBS reside em uma Zona de Disponibilidade e só pode ser anexado a instâncias dessa mesma AZ. Os dados persistem após parar a instância, e o EBS é armazenamento em bloco, não de objetos."
+    },
+    {
+      "id": "S2-053",
+      "domain": 3,
+      "task": "3.7",
+      "type": "single",
+      "question": "Uma empresa quer que os funcionários façam perguntas em linguagem natural e encontrem respostas em documentos corporativos espalhados por diversos repositórios. Qual serviço é o mais adequado?",
+      "options": [
+        "Amazon Lex",
+        "Amazon Polly",
+        "Amazon Kendra",
+        "Amazon Translate"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "O Amazon Kendra é um serviço de busca inteligente corporativa baseado em machine learning. Lex cria chatbots, Polly converte texto em fala e Translate faz tradução de textos."
+    },
+    {
+      "id": "S2-054",
+      "domain": 3,
+      "task": "3.7",
+      "type": "single",
+      "question": "Cientistas de dados precisam criar, treinar e implantar modelos de machine learning personalizados em um ambiente totalmente gerenciado. Qual serviço atende?",
+      "options": [
+        "Amazon Rekognition",
+        "Amazon SageMaker",
+        "Amazon Polly",
+        "Amazon Comprehend"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "O Amazon SageMaker cobre todo o ciclo de ML, da preparação à implantação de modelos personalizados. Rekognition, Polly e Comprehend são serviços de IA prontos para tarefas específicas, como imagens, voz e texto."
+    },
+    {
+      "id": "S2-055",
+      "domain": 3,
+      "task": "3.8",
+      "type": "single",
+      "question": "Uma empresa quer montar uma central de atendimento na nuvem, com chamadas telefônicas e chat, sem comprar infraestrutura. Qual serviço deve usar?",
+      "options": [
+        "Amazon SES",
+        "Amazon WorkSpaces",
+        "Amazon SNS",
+        "Amazon Connect"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O Amazon Connect é uma central de contato omnichannel na nuvem. SES envia e-mails, WorkSpaces fornece desktops virtuais e SNS publica notificações."
+    },
+    {
+      "id": "S2-056",
+      "domain": 3,
+      "task": "3.8",
+      "type": "single",
+      "question": "Uma empresa precisa fornecer desktops virtuais completos, Windows ou Linux, a funcionários que trabalham remotamente. Qual serviço atende?",
+      "options": [
+        "Amazon WorkSpaces",
+        "Amazon Connect",
+        "Amazon SES",
+        "AWS Batch"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O Amazon WorkSpaces é um serviço de desktop como serviço (DaaS) gerenciado. Connect é central de atendimento, SES envia e-mails e Batch executa jobs em lote."
+    },
+    {
+      "id": "S2-057",
+      "domain": 3,
+      "task": "3.8",
+      "type": "single",
+      "question": "Uma empresa quer enviar e-mails transacionais e de marketing em grande volume por meio de um serviço gerenciado. Qual serviço deve usar?",
+      "options": [
+        "Amazon Connect",
+        "Amazon AppStream 2.0",
+        "Amazon SES",
+        "Amazon WorkSpaces"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "O Amazon Simple Email Service (SES) envia e-mails em escala. Connect trata de atendimento, AppStream 2.0 faz streaming de aplicações e WorkSpaces entrega desktops virtuais."
+    },
+    {
+      "id": "S2-058",
+      "domain": 4,
+      "task": "4.1",
+      "type": "single",
+      "question": "Uma empresa tem uma carga constante e previsível e aceita assumir um compromisso de uso por 1 ou 3 anos em troca de desconto, com flexibilidade de família e Região de instância. Qual modelo de preço atende?",
+      "options": [
+        "Instâncias Spot",
+        "Compute Savings Plans",
+        "Instâncias On-Demand",
+        "Dedicated Hosts"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "Os Savings Plans oferecem desconto em troca de um compromisso de gasto por hora por 1 ou 3 anos, e os Compute Savings Plans são flexíveis quanto a família, tamanho e Região. Spot e On-Demand não exigem compromisso, e Dedicated Hosts são servidores físicos dedicados."
+    },
+    {
+      "id": "S2-059",
+      "domain": 4,
+      "task": "4.1",
+      "type": "single",
+      "question": "Uma empresa precisa usar licenças de software vinculadas a soquetes e núcleos físicos e quer visibilidade desses recursos do servidor. Qual opção atende?",
+      "options": [
+        "Instâncias Spot",
+        "Savings Plans",
+        "Instâncias On-Demand padrão",
+        "Amazon EC2 Dedicated Hosts"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "Dedicated Hosts são servidores físicos dedicados ao cliente, com visibilidade de soquetes e núcleos, útil para licenças por servidor. Spot, Savings Plans e instâncias On-Demand padrão não oferecem esse controle."
+    },
+    {
+      "id": "S2-060",
+      "domain": 4,
+      "task": "4.1",
+      "type": "multi",
+      "question": "Quais afirmações sobre as opções de compra do Amazon EC2 estão corretas? Escolha duas.",
+      "options": [
+        "As On-Demand Capacity Reservations reservam capacidade em uma Zona de Disponibilidade específica",
+        "As Capacity Reservations exigem um compromisso de 1 ou 3 anos",
+        "As Dedicated Instances executam em hardware dedicado a uma única conta",
+        "As Dedicated Instances dão visibilidade de soquetes e núcleos físicos para licenciamento",
+        "Os Dedicated Hosts compartilham o servidor físico com instâncias de outros clientes"
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explanation": "Capacity Reservations garantem capacidade em uma AZ, sem exigir compromisso de prazo, e as Dedicated Instances usam hardware dedicado a uma única conta. A visibilidade de soquetes e núcleos é dos Dedicated Hosts, que não compartilham o servidor com outros clientes."
+    },
+    {
+      "id": "S2-061",
+      "domain": 4,
+      "task": "4.2",
+      "type": "single",
+      "question": "Uma empresa quer estimar o custo mensal de uma arquitetura planejada antes de criar qualquer recurso. Qual ferramenta deve usar?",
+      "options": [
+        "AWS Pricing Calculator",
+        "AWS Cost Explorer",
+        "AWS Budgets",
+        "AWS Cost and Usage Report"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "A AWS Pricing Calculator estima custos de arquiteturas planejadas a partir das configurações informadas. Cost Explorer, Budgets e o relatório CUR trabalham com custos e uso reais já ocorridos."
+    },
+    {
+      "id": "S2-062",
+      "domain": 4,
+      "task": "4.2",
+      "type": "single",
+      "question": "Uma equipe quer comparar o custo mensal estimado de executar a mesma carga de trabalho em duas Regiões antes de decidir onde implantá-la. Qual ferramenta permite essa comparação?",
+      "options": [
+        "AWS Cost Explorer",
+        "AWS Budgets",
+        "AWS Pricing Calculator",
+        "AWS Health Dashboard"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "Na Pricing Calculator é possível criar estimativas para cada Região e comparar os valores. Cost Explorer analisa gastos já realizados, Budgets alerta sobre limites e o Health Dashboard informa eventos de serviço."
+    },
+    {
+      "id": "S2-063",
+      "domain": 4,
+      "task": "4.2",
+      "type": "single",
+      "question": "Qual afirmação sobre a AWS Pricing Calculator está correta?",
+      "options": [
+        "Cria automaticamente os recursos descritos na estimativa",
+        "Gera estimativas com base nas configurações informadas, sem criar recursos na conta",
+        "Exibe a fatura real do mês em andamento",
+        "Aplica descontos em tempo real à conta do cliente"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "A calculadora apenas estima custos a partir dos parâmetros informados. Ela não provisiona recursos, não mostra a fatura real nem altera descontos da conta."
+    },
+    {
+      "id": "S2-064",
+      "domain": 4,
+      "task": "4.3",
+      "type": "single",
+      "question": "Qual ferramenta inspeciona o ambiente AWS e oferece recomendações de melhores práticas em custo, desempenho, segurança e tolerância a falhas?",
+      "options": [
+        "AWS Health Dashboard",
+        "AWS Config",
+        "AWS CloudTrail",
+        "AWS Trusted Advisor"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "O Trusted Advisor verifica a conta e gera recomendações em categorias como otimização de custos, desempenho, segurança e tolerância a falhas. Health Dashboard informa eventos, Config avalia configurações e CloudTrail registra atividades de API."
+    },
+    {
+      "id": "S2-065",
+      "domain": 4,
+      "task": "4.3",
+      "type": "single",
+      "question": "Uma empresa quer ser alertada sobre eventos do serviço AWS, como uma degradação, que afetam especificamente os recursos que ela utiliza. Qual serviço atende?",
+      "options": [
+        "AWS Health Dashboard",
+        "AWS Trusted Advisor",
+        "AWS Cost Explorer",
+        "AWS Artifact"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "O AWS Health Dashboard exibe eventos e alertas que afetam os serviços e recursos da conta. Trusted Advisor dá recomendações, Cost Explorer analisa custos e Artifact fornece relatórios de conformidade."
+    }
+  ]
+}

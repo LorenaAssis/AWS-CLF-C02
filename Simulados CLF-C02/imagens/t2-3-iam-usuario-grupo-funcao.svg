@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 680 390" role="img"><title>IAM: raiz, usuário, grupo, política e função</title><desc>O usuário-raiz fica guardado com MFA e só cria um usuário admin. O admin cria o grupo dev com joao.dev e ana.dev, que recebem a política S3 somente leitura (menor privilégio). Uma instância EC2 assume a função leitor-s3, recebe credencial temporária e lê o bucket contracheques-2026 sem chave salva.</desc>
+<style>
+svg{font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif}
+.bg{fill:#ffffff}
+.t{font-size:14px;fill:#2C2C2A}.ts{font-size:12px;fill:#5F5E5A}.th{font-size:14px;font-weight:500;fill:#2C2C2A}
+.arr{stroke:#888780;stroke-width:1.5;fill:none}
+.c-gray rect{fill:#F1EFE8;stroke:#5F5E5A}.c-gray .th{fill:#444441}.c-gray .ts{fill:#5F5E5A}
+.c-teal rect{fill:#E1F5EE;stroke:#0F6E56}.c-teal .th{fill:#085041}.c-teal .ts{fill:#0F6E56}
+.c-amber rect{fill:#FAEEDA;stroke:#854F0B}.c-amber .th{fill:#633806}.c-amber .ts{fill:#854F0B}
+.c-blue rect{fill:#E6F1FB;stroke:#185FA5}.c-blue .th{fill:#0C447C}.c-blue .ts{fill:#185FA5}
+@media (prefers-color-scheme:dark){
+.bg{fill:#1b1b1a}.arr{stroke:#B4B2A9}
+.t,.th{fill:#F1EFE8}.ts{fill:#D3D1C7}
+.c-gray rect{fill:#444441;stroke:#B4B2A9}.c-gray .th{fill:#F1EFE8}.c-gray .ts{fill:#D3D1C7}
+.c-teal rect{fill:#085041;stroke:#5DCAA5}.c-teal .th{fill:#E1F5EE}.c-teal .ts{fill:#9FE1CB}
+.c-amber rect{fill:#633806;stroke:#EF9F27}.c-amber .th{fill:#FAEEDA}.c-amber .ts{fill:#FAC775}
+.c-blue rect{fill:#0C447C;stroke:#85B7EB}.c-blue .th{fill:#E6F1FB}.c-blue .ts{fill:#E6F1FB}
+}
+</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect class="bg" x="0" y="0" width="680" height="390"/>
+<g class="c-amber"><rect x="30" y="20" width="210" height="60" rx="8" stroke-width="0.5"/><text class="th" x="135" y="40" text-anchor="middle" dominant-baseline="central">Usuário-raiz</text><text class="ts" x="135" y="62" text-anchor="middle" dominant-baseline="central">MFA ligado, fica no cofre</text></g>
+<line x1="240" y1="50" x2="288" y2="50" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="290" y="20" width="180" height="60" rx="8" stroke-width="0.5"/><text class="th" x="380" y="40" text-anchor="middle" dominant-baseline="central">Usuário admin</text><text class="ts" x="380" y="62" text-anchor="middle" dominant-baseline="central">Usado no dia a dia</text></g>
+<line x1="320" y1="80" x2="320" y2="118" class="arr" marker-end="url(#arrow)"/>
+<text class="ts" x="332" y="100" dominant-baseline="central">cria</text>
+<g class="c-teal"><rect x="30" y="120" width="320" height="140" rx="12" stroke-width="0.5"/><text class="th" x="190" y="142" text-anchor="middle" dominant-baseline="central">Grupo dev</text><text class="ts" x="190" y="244" text-anchor="middle" dominant-baseline="central">Mesma permissão para todos</text></g>
+<g class="c-teal"><rect x="50" y="166" width="130" height="56" rx="8" stroke-width="0.5"/><text class="th" x="115" y="184" text-anchor="middle" dominant-baseline="central">joao.dev</text><text class="ts" x="115" y="204" text-anchor="middle" dominant-baseline="central">Senha e MFA</text></g>
+<g class="c-teal"><rect x="200" y="166" width="130" height="56" rx="8" stroke-width="0.5"/><text class="th" x="265" y="184" text-anchor="middle" dominant-baseline="central">ana.dev</text><text class="ts" x="265" y="204" text-anchor="middle" dominant-baseline="central">Senha e MFA</text></g>
+<g class="c-gray"><rect x="400" y="150" width="250" height="80" rx="8" stroke-width="0.5"/><text class="th" x="525" y="170" text-anchor="middle" dominant-baseline="central">Política S3 só leitura</text><text class="ts" x="525" y="192" text-anchor="middle" dominant-baseline="central">JSON: Allow s3:GetObject</text><text class="ts" x="525" y="212" text-anchor="middle" dominant-baseline="central">Menor privilégio</text></g>
+<line x1="400" y1="190" x2="352" y2="190" class="arr" marker-end="url(#arrow)"/>
+<text class="ts" x="225" y="290" text-anchor="middle" dominant-baseline="central">assume</text>
+<text class="ts" x="470" y="290" text-anchor="middle" dominant-baseline="central">lê</text>
+<g class="c-gray"><rect x="30" y="306" width="170" height="60" rx="8" stroke-width="0.5"/><text class="th" x="115" y="326" text-anchor="middle" dominant-baseline="central">EC2 app-web</text><text class="ts" x="115" y="348" text-anchor="middle" dominant-baseline="central">Sem chave salva</text></g>
+<line x1="200" y1="336" x2="248" y2="336" class="arr" marker-end="url(#arrow)"/>
+<g class="c-blue"><rect x="250" y="306" width="200" height="60" rx="8" stroke-width="0.5"/><text class="th" x="350" y="326" text-anchor="middle" dominant-baseline="central">Função leitor-s3</text><text class="ts" x="350" y="348" text-anchor="middle" dominant-baseline="central">Credencial temporária</text></g>
+<line x1="450" y1="336" x2="488" y2="336" class="arr" marker-end="url(#arrow)"/>
+<g class="c-gray"><rect x="490" y="306" width="160" height="60" rx="8" stroke-width="0.5"/><text class="th" x="570" y="326" text-anchor="middle" dominant-baseline="central">Bucket S3</text><text class="ts" x="570" y="348" text-anchor="middle" dominant-baseline="central">contracheques-2026</text></g>
+</svg>

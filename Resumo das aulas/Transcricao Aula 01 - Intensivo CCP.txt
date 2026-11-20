@@ -1,0 +1,3622 @@
+[00:01:22] Olá pessoal, boa noite, vocês estão me ouvindo?
+[00:01:25] Está tudo bem com o áudio?
+[00:01:35] Tudo tranquilo?
+[00:01:37] Boa noite!
+[00:01:38] Agora sem dúvida.
+[00:01:43] Olá pessoal, boa noite, vocês estão me ouvindo?
+[00:01:46] Perfeito!
+[00:01:51] Pessoal, o seguinte, eu já vou me apresentar para vocês.
+[00:01:55] Eu vou pedir só um pouquinho de paciência.
+[00:02:03] O modo que a gente está transmitindo hoje aqui,
+[00:02:06] é um modo novo.
+[00:02:35] Pesso perdão pelo atraso de 10 minutos.
+[00:02:40] Gostaria de me apresentar para vocês.
+[00:02:44] Meu nome é Anderson Poquete, sou instrutor da Escola da Nouve.
+[00:02:50] Antes de tudo, eu sou um ex-alunho da Escola da Nouve.
+[00:02:56] Estudei aqui, me assisti à escola da Nouve
+[00:02:59] em outubro de 2022.
+[00:03:02] Logo depois eu virei instrutor aqui em terra.
+[00:03:06] Hoje estamos aqui, justamente,
+[00:03:09] vou passar algumas informações para vocês.
+[00:03:12] A gente vai passar esses quatro dias
+[00:03:15] com intensivão.
+[00:03:17] A programação vai ser justamente
+[00:03:21] sendo encaminhada para vocês
+[00:03:23] muito provavelmente por e-mail ou por plasma.
+[00:03:25] Abre você a ver no plasma.
+[00:03:27] A questão de voucher também vai ser dita um pouco mais por frente.
+[00:03:32] Então, fiquem tranquilos, vamos focar primeiramente aqui.
+[00:03:36] Isso, Roger, é a primeira vez aqui no YouTube.
+[00:03:39] A gente já deu aula do bici no Teams,
+[00:03:43] mas no YouTube é a primeira vez.
+[00:03:46] Então, eu também gostaria de iniciar.
+[00:03:51] Eu não estou sozinho aqui na live,
+[00:03:53] então, como é a primeira vez,
+[00:03:55] eu estou falando em vida configurações
+[00:03:57] justamente do programa aqui de transmissão.
+[00:04:00] Mas a gente está com a nossa moderadora.
+[00:04:03] A gente está aqui com a Carrie, aqui no chat.
+[00:04:06] Então, como vocês vêm aí o nome da Carrie,
+[00:04:09] aqui no chat ela vai estar passando
+[00:04:12] algumas informações para vocês.
+[00:04:14] Está bom? Algumas documentações.
+[00:04:16] Se vocês precisarem tirar alguma dúvida,
+[00:04:18] então vocês já podem chamar no Nouve dela,
+[00:04:21] digitar o Nouve dela, Carrie.
+[00:04:24] Se você quer dar uma palavrinha,
+[00:04:27] eu posso habilitar aqui o seu áudio.
+[00:04:32] Pode abrir o seu áudio e falar alguma coisa.
+[00:04:37] Ela está com o nome Carrie Mota, tá bom pessoal?
+[00:04:46] Bá-la-la.
+[00:04:50] Vai te falar.
+[00:04:52] Boa noite, pessoal.
+[00:04:55] Estão me ouvindo?
+[00:04:57] Vocês que saíram do Viet?
+[00:05:05] Estão funcionando?
+[00:05:08] Maravilha, prazer pessoal, me chamo Carrie.
+[00:05:12] Eu enquei para vocês, e em que que que a presença?
+[00:05:16] Eu sou instruchora, trabalho como analista de dados, programação.
+[00:05:22] Acho que agora eu tenho um povo web, certo?
+[00:05:26] Maravilha, que precisaram, tenho comigo.
+[00:05:29] Eu estou respondendo aqui no chat.
+[00:05:33] Estou a disposição de vocês.
+[00:05:36] Anderson, qualquer coisa, só me chamar.
+[00:05:38] Tá ok, Carrie. Obrigado.
+[00:05:40] Pessoal, vamos lá.
+[00:05:42] É justamente eu já adianto novamente que o input que chegou agora
+[00:05:47] eu peço desculpas aí, a gente tá ali com um software novo fazendo essa transmissão.
+[00:05:53] Então, vamos aqui para o nosso foco.
+[00:05:55] Então a Carrie, ela vai estar disponibilizando para vocês
+[00:05:59] a lista de presença, certo?
+[00:06:02] Vai estar disponibilizando para vocês uma lista de presença.
+[00:06:06] Então vocês coloquem aí seu email, seu nome completo, tá bom?
+[00:06:10] E qualquer dúvida já direcione para ela aqui no chat.
+[00:06:20] Beleza? Vamos lá.
+[00:06:26] Eu vou botar aqui justamente o nosso conteúdo.
+[00:06:34] Eu vou pedir só como está um pouco de delay
+[00:06:37] porque eu perço só a gente, Lisa, que vocês me informem, por favor,
+[00:06:41] se vocês estão vendo a minha tela aqui com o nosso slide.
+[00:07:01] A lista de presença, pessoal, a Carrie vai passar no chat o link, tá bom?
+[00:07:11] Ela vai passar o link na lista de... Beleza, vendo a tela, ok.
+[00:07:20] Vamos lá, então.
+[00:07:23] Pessoal, hoje é justamente aqui o nosso primeiro dia
+[00:07:30] de visão de um intensivão aqui em relação a AWS.
+[00:07:36] Então, antes de tudo, eu gostaria de dizer para vocês,
+[00:07:43] quando a gente vai fazer um concurso,
+[00:07:48] por exemplo, eu vou pegar aqui um concurso,
+[00:07:51] quando a gente vai pegar aqui um concurso, a gente precisa justamente
+[00:07:55] o que a gente dos itens, do conteúdo que a gente precisa estudar, certo?
+[00:08:01] Então, do mesmo jeito, são os exames oficiais aqui da AWS.
+[00:08:06] Então, cada exame da AWS tem um dia preparatório.
+[00:08:11] Ou seja, dentro desse guia, ele vai dizer que justamente
+[00:08:16] aqui para a gente o que pode cair dentro do exame, certo?
+[00:08:23] Então, o que a gente vai fazer?
+[00:08:26] Eu vou aqui sair aqui por enquanto e vou voltar aqui no guia do exame.
+[00:08:33] A Carrie vai estar passando também para vocês o link deste PDF para vocês.
+[00:08:40] Então, este aqui é o norte do que a gente precisa
+[00:08:46] para fazer o exame para o artista, tá bom?
+[00:08:49] Vamos dar uma passada aqui sobre esse PDF.
+[00:08:54] Então, ele dá justamente aqui o que o exame, Claudio Pratis,
+[00:09:00] ele quer saber de você.
+[00:09:04] Ele quer explicar o valor da nuvem, compreender o modelo de responsabilidade
+[00:09:09] compartilhada, compreender o error-debt, compreender as práticas
+[00:09:15] recomendadas de segurança, compreender justamente as práticas
+[00:09:19] de cobrança dos aspectos econômicos e do custo da nuvem da AWS,
+[00:09:23] descrever e posicionar os principais serviços, incluindo a computação,
+[00:09:27] rede, banco, armazenamento, identificar os serviços
+[00:09:31] para a uso de casos comuns, cai bastante, tá bom?
+[00:09:36] Então, dentro desse guia, ele vai dizer como é que vai ser o exame?
+[00:09:41] Como é que vai ser o múltiplo escolha ou múltiplo resposta?
+[00:09:45] Vai ter perguntas em que você vai ter que selecionar.
+[00:09:49] Em uma resposta, vai ter perguntas que você vai ter que selecionar
+[00:09:53] mais do que uma resposta, tá bom?
+[00:09:57] Então, dentro desse guia, vai estar ali incluído,
+[00:10:01] todas, ah, não sei, se vocês já sabem,
+[00:10:05] mas a prova é ela tem 65 questões.
+[00:10:09] Dentro das 65, somente 50 afetam a nossa pontuação,
+[00:10:16] certo?
+[00:10:19] E outras 15 não são avaliadas, ou seja, nem para bem e não para mal.
+[00:10:25] Mas anda, pessoal, quais são essas perguntas?
+[00:10:28] Quando a gente está fazendo o exame, nós sabemos com essas perguntas?
+[00:10:31] Não, então eu sempre indico ali para os meus alunos, pessoal,
+[00:10:35] respondam todas as questões, como se valesse pontos, certo?
+[00:10:43] Então, é bastante importante você levar a atenção
+[00:10:48] todas as 65 questões.
+[00:10:50] E antes, como é que é pontuado?
+[00:10:51] Como é que é dividido ali o exame?
+[00:10:53] Pessoal, o exame, ele é dividido em quatro domínios.
+[00:10:57] Quais são os domínios?
+[00:10:59] São conceito em nuvem, corresponde a 24% da prova,
+[00:11:04] segurança e conformidade corresponde a 30% do exame,
+[00:11:09] tecnologia e serviço da nuvem corresponde a 34% do exame,
+[00:11:16] cobranças, pleixas e suporte entre serviços e recursos
+[00:11:21] só corresponde a 12% do conteúdo pontuado do exame.
+[00:11:28] Então, dentro desse guia, vocês vão ver o que vai cair
+[00:11:34] no domínio 1 que corresponde ao conceito de nuvem,
+[00:11:38] toda proposta de valor da nuvem da AWS, principalmente o Arac Pact.
+[00:11:45] Então, eu como falo ali para os meus alunos, pessoal,
+[00:11:50] eu sou mais do papel, eu sou do papel.
+[00:11:58] Então, este documento PDF eu tinha quando era aluno impresso,
+[00:12:05] para quê?
+[00:12:06] E justamente ali, eu iria lá com a caneta, com o lápis,
+[00:12:09] na verdade era com o lápis, e eu ia lá e rabiscada ali,
+[00:12:12] justamente ali quando eu estava estudando.
+[00:12:14] Então, quem se dá muito bem ali em relação com as telas?
+[00:12:21] Ah, de boa, sem problema nenhum.
+[00:12:25] Agora, quem é como eu?
+[00:12:27] Justamente gosta ali de papel, de rabiscar, de anotar.
+[00:12:31] Ah, eu saia ali, eu saia de onde?
+[00:12:36] Peguei a condução, cara, eu estou ali com papel.
+[00:12:39] Eu estou estudando.
+[00:12:40] Eu aproveitava ali cada minuto para fazer as minhas anotações
+[00:12:44] e tentar relembrar os conceitos.
+[00:12:47] Então, pessoal, este é o guia.
+[00:12:49] Agora, o que eu mais usava dentro deste guia,
+[00:12:52] onde eu mais rabiscava, era justamente na página 15.
+[00:13:00] Então, acredito que a Kelly já passou aí para vocês o link
+[00:13:06] deste documento, se vocês foram aqui até a página 15,
+[00:13:12] eu não tenho nem medo de errar.
+[00:13:14] É a página 15, aqui ó, página 15.
+[00:13:18] Nós temos aqui o Appense, onde tem ali a parte de tecnologia
+[00:13:22] e conceito dos serviços e recursos,
+[00:13:24] que vai justamente ali, cair, pensando.
+[00:13:29] Então, o que que eu fazia?
+[00:13:31] Eu pegava aqui, por exemplo,
+[00:13:34] ah, eu pegava aqui o AWS Buds,
+[00:13:37] pegava aqui do AWS Buds, nesse espaço que está em branco,
+[00:13:41] ia de lá de lápis e anotava a descrição do recurso.
+[00:13:46] Do Project Explorer, do lado aqui em branco,
+[00:13:49] ia de lá com uma caneta, um lápis,
+[00:13:51] seja o que for melhor para você,
+[00:13:53] anotava ali, na descrição do serviço.
+[00:13:56] O principal e caracteres do serviço,
+[00:13:58] eu anotava ali, palavras-chaves, por exemplo.
+[00:14:02] Então, vamos vocês podem perceber, há vários serviços,
+[00:14:07] há vários recursos e tudo que você está lendo aqui,
+[00:14:12] pode cair no exame.
+[00:14:16] Ah, pessoal, deixa eu ver se eu entendi.
+[00:14:18] Então, tudo que está escrito, tudo que está escrito aqui,
+[00:14:23] nesse PDF vai cair no exame?
+[00:14:26] Não.
+[00:14:28] Eu estou informando para vocês que tudo que está aqui,
+[00:14:31] pode cair, tá bom?
+[00:14:35] E Anderson?
+[00:14:37] Caramba, eu como é que eu vou estudar tudo isso?
+[00:14:43] Eu digo para os meus alunos,
+[00:14:45] que é justamente na questão da gente fazer o uso inteligente
+[00:14:50] aqui do Kia.
+[00:14:52] Deixa eu voltar aqui para a tela
+[00:14:54] e justamente aqui para vocês me verem.
+[00:15:00] Então, vamos lá.
+[00:15:01] Olha aqui para mim.
+[00:15:07] Existem alguns serviços que obviamente
+[00:15:10] cair mais lhes anos.
+[00:15:13] É o que a gente chamamos ali de serviços core.
+[00:15:17] Existe serviços core para diversos tipos
+[00:15:21] de segmenta ali da LVWS.
+[00:15:24] Existe ali uns serviços core
+[00:15:27] justamente na área da computação, nos serviços de computação.
+[00:15:31] A gente sabe, sabemos ali, que é o SC2.
+[00:15:34] Existe ali um serviço core que cai justamente ali
+[00:15:38] na parte de armazenamento, que é o SC3.
+[00:15:41] Existe um serviço core que cai ali na parte de bancidades,
+[00:15:46] que é o RDS.
+[00:15:47] Existe só o RDS?
+[00:15:48] Não.
+[00:15:49] Existe só o DimeDB, que é o banco de dados no CIC?
+[00:15:52] Não.
+[00:15:53] Existe vários outros tipos de banco de dados.
+[00:15:56] Porém, contudo, por aí, a gente sabe que tem aquele serviço
+[00:16:00] que ama probabilidade maior de cair no exame.
+[00:16:06] E é nessa jornada que a gente vai começar
+[00:16:10] e nós vamos terminar.
+[00:16:12] Tá bom?
+[00:16:13] Então, vamos lá.
+[00:16:14] Vamos voltar aqui.
+[00:16:16] Saindo do guia, vamos iniciar justamente aqui o nosso
+[00:16:30] curso item CIFO.
+[00:16:33] Ok?
+[00:16:34] Deixa eu pegar aqui, acaneto, fazer algumas notações.
+[00:16:36] Então, mostrei para vocês o quão importante
+[00:16:40] é o guia do exame.
+[00:16:42] O quão importante é você ter o guia do exame
+[00:16:46] à sua mão?
+[00:16:47] Posso ter no celular?
+[00:16:49] Pode.
+[00:16:50] Impresso?
+[00:16:51] Pode.
+[00:16:52] Posso ter só no meu tablet?
+[00:16:53] Pode.
+[00:16:54] Pode.
+[00:16:55] O nome.
+[00:16:56] O importante é que você sempre use o guia como um norte
+[00:17:00] até a sua certificação.
+[00:17:03] Beleza?
+[00:17:04] Vamos lá.
+[00:17:05] Então, vamos dar início ao nosso item CIFO.
+[00:17:12] Anderson, quais categorias de serviço precisamos conhecer
+[00:17:15] para realizar o exame?
+[00:17:17] Aí vai cair justamente o que eu estava falando com vocês
+[00:17:22] há dois, três minutos atrás.
+[00:17:24] Pessoal, CIFI, tudo caísse no exame, a gente não precisaria
+[00:17:35] do interesse de vão, a gente precisaria de um curso de
+[00:17:38] três, quatro anos.
+[00:17:40] A AWS tem ali mais de 260 serviços, mas muito mais de
+[00:17:46] recursos também.
+[00:17:47] A gente adicionar serviços e recursos vai passar fácil
+[00:17:50] dos 300.
+[00:17:52] E não tem como, em 65 questões, a AWS justamente
+[00:17:59] testar a gente.
+[00:18:01] Então, por isso eu falei para vocês do serviços CORE.
+[00:18:07] Ok?
+[00:18:08] Pessoal, seguinte, a Karen falou que o YouTube
+[00:18:17] está abarrando aqui os links, tá bom?
+[00:18:20] Então, eu peço só um pouquinho de paciência que a gente
+[00:18:23] vai justamente ler.
+[00:18:25] Quer resolver esse problema?
+[00:18:26] Vamos focar aqui no conteúdo.
+[00:18:29] Depois a gente passa para esse caso.
+[00:18:32] Eu peço só que vocês não saem 100 anos antes
+[00:18:37] assinar a presença.
+[00:18:39] A gente vai no jeito, tá bom?
+[00:18:42] Vamos lá.
+[00:18:43] Quais são as principais categorias?
+[00:18:45] Computação, redes entrega de conteúdo, gerenciamento e
+[00:18:51] governança.
+[00:18:52] Nós temos banco de dados, segurança, identidade e
+[00:18:56] compliance, gerenciamento de custos e armazenamento.
+[00:19:00] Então, veja que nós temos vários recursos, vários
+[00:19:07] serviços para cada categoria.
+[00:19:09] Então, a gente está justamente aqui vendo aqueles que
+[00:19:13] há uma alta probabilidade de cair.
+[00:19:18] Ah, entendi.
+[00:19:19] Então, todos esses aí vão caindo.
+[00:19:21] Não.
+[00:19:23] Há uma alta probabilidade de cair.
+[00:19:29] Certo?
+[00:19:31] Temos aqueles que nós temos, temos certeza que
+[00:19:34] vai cair.
+[00:19:35] Vamos por exemplo.
+[00:19:37] S2.
+[00:19:38] É o carro chefe da WS.
+[00:19:41] O que é o S2?
+[00:19:43] O S2 é um serviço que oferece servidores virtuais na
+[00:19:49] LUE.
+[00:19:50] É onde podemos executar aplicações.
+[00:19:54] É onde nós podemos hospedar sites.
+[00:19:57] É onde nós podemos hospedar sistemas.
+[00:20:00] Nós temos também aqui o Amazon S2 AutoScale.
+[00:20:07] O que é o Amazon S2 AutoScale?
+[00:20:11] O S2 como eu gosto de chamar ele o AutoSkining Group,
+[00:20:15] é um serviço que aumenta e diminui automaticamente a
+[00:20:19] quantidade de instâncias acedentes.
+[00:20:21] Ele faz o ajuste de capacidade justamente conforme a demanda.
+[00:20:30] Nós temos aqui o Beanstalk.
+[00:20:36] Eu já fiz, pessoal, a certificação Cloud Practitioner,
+[00:20:41] que é o nosso fôlego aqui.
+[00:20:44] Eu já fiz essa certificação quatro vezes.
+[00:20:49] Uma como aluno e três vezes como teste.
+[00:20:53] Todas as vezes que eu fiz o exame, caíam, esse é o 2.
+[00:20:59] Três vezes caíam sobre o Beanstalk.
+[00:21:04] Obviamente eu não vou conseguir lembrar de todos,
+[00:21:10] já faz um tempo que eu fiz isso.
+[00:21:12] Mas a gente tem ideia desse serviço que vai caíam ali
+[00:21:17] que caem costumamente.
+[00:21:19] Então vamos lá.
+[00:21:21] O AWS Lambda cai costumamente.
+[00:21:24] Então este é um serviço que tem a alta probabilidade de caíam o exame.
+[00:21:30] Eu não sei o que é o AWS Lambda.
+[00:21:32] O AWS Lambda é um serviço de computação sem servidor
+[00:21:35] e chamando-se Serbis.
+[00:21:37] É onde a gente executa os códigos sem precisar administrar servidores.
+[00:21:46] Ok.
+[00:21:48] Nós temos aqui na parte de redes em entrega de conteúdo a Amazon VPC,
+[00:21:52] que é justamente uma rede virtual privada dentro da AWS pra que serve.
+[00:22:02] É justamente dentro da rede onde você vai criar e controlar redes, sub-redes,
+[00:22:09] regras de acesso.
+[00:22:12] Ok.
+[00:22:13] Nós temos aqui o Amazon Road to 53,
+[00:22:17] que é um serviço de DNS da AWS.
+[00:22:19] Ele faz somente isso, serviço de DNS?
+[00:22:24] Não.
+[00:22:25] Ele também vende dominhos.
+[00:22:27] Ele também trabalha como política de rodamento.
+[00:22:34] Nós temos aqui o Amazon CloudFont,
+[00:22:39] que é o serviço de CDN da AWS.
+[00:22:43] É a rede de distribuição de conteúdo.
+[00:22:46] E antes de pra que serve isso,
+[00:22:48] a gente vai falar um pouco mais nos slides da frente.
+[00:22:52] Ele usa a infraestrutura da AWS nos conjuntos de presença
+[00:22:58] pra entregar conteúdos com a menor latência possível.
+[00:23:02] E que conteúdo esse?
+[00:23:04] Pode ser um sade, pode ser um PDF,
+[00:23:10] pode ser um vídeo, pode ser uma foto,
+[00:23:13] pode ser um trabalho dele, é distribuir conteúdo o mais rápido possível,
+[00:23:19] usando a infraestrutura nos conjuntos de presença da AWS.
+[00:23:23] Nós temos aqui o balanceador de carga.
+[00:23:27] Antes de pra que serve isso, balanceador de carga.
+[00:23:31] Então, a gente tem, você pode pensar,
+[00:23:35] que nós temos um site sendo provido por um instância do EC2.
+[00:23:43] E esse site, ele pode sofrer justamente inúmeros acesso.
+[00:23:50] Tá chegando aqui a Black Friday.
+[00:23:55] Já pensou um site ali como o Magazine Luiza,
+[00:23:58] um Casa de Bahia,
+[00:24:01] não sei se tem Casa de Bahia ainda, mas,
+[00:24:03] esses é como se, com toda certeza,
+[00:24:06] a aplicação deles, o site deles,
+[00:24:08] não cai só em uma máquina,
+[00:24:10] que é em várias máquinas.
+[00:24:15] Eles podem estar usando um serviço como
+[00:24:18] o EC2 para aumentar e diminuir
+[00:24:25] automaticamente.
+[00:24:29] E nós temos aqui os balanceadores de carga.
+[00:24:32] Pra que esses balanceadores de carga?
+[00:24:34] Justamente pra dividir o tráfego entre as instâncias.
+[00:24:43] Pra não sobrecarregar, somente uma.
+[00:24:45] Pra não sobrecarregar duas,
+[00:24:47] pra não sobrecarregar três.
+[00:24:49] Ele vai dividir em todas.
+[00:24:52] Então tende assim, vamos pensar aqui no Brasil
+[00:24:56] pra se instentar um serviço durante a Black Friday,
+[00:24:58] a Magazine Luiza,
+[00:25:00] usaria em torno de, vou chutar um número pessoal,
+[00:25:03] vamos supor que fosse 200 máquinas EC2,
+[00:25:06] usando auto-esqueme.
+[00:25:08] Ele diminuiria com o tempo,
+[00:25:10] ou aumentaria com o tempo,
+[00:25:12] de acordo com a demanda,
+[00:25:14] de acordo com a necessidade.
+[00:25:16] E nós teríamos aqui o balanceador de carga
+[00:25:18] pra dividir todos os acessos da gente.
+[00:25:21] Nós, clientes, pra não sobrecarregar o serviço.
+[00:25:26] Continuando aqui, deixa eu limpar um pouquinho aqui.
+[00:25:35] Continuando, nós temos aqui serviços de monitoramento, pessoal.
+[00:25:40] É, importantíssimo, vai cair na prova de vocês EC2?
+[00:25:45] Eu só não dou em 100%.
+[00:25:47] Uma probabilidade altíssima.
+[00:25:51] Auto-esqueme também,
+[00:25:53] Binstal também, Lambda também.
+[00:25:55] Então nesta página que vocês estão vendo,
+[00:26:00] muito provavelmente vai cair.
+[00:26:02] Sinão mais na metade, quase todos.
+[00:26:06] Com uma nuvem, você vai trabalhar com muitos serviços,
+[00:26:14] com muitas, digamos assim,
+[00:26:18] dependência no serviço,
+[00:26:20] ele pode estar dependendo do outro,
+[00:26:22] ou ele pode estar interligado com o outro.
+[00:26:24] A gente tem que ter uma visibilidade.
+[00:26:27] A gente tem que ter, atenção, a palavra,
+[00:26:30] observabilidade.
+[00:26:33] O Amazon CloudWatch é esse serviço que vai entregar pra gente.
+[00:26:37] É um serviço de monitoramento.
+[00:26:41] É um serviço que a gente pode monitorar métricas,
+[00:26:45] capturar logs, definir alarmes.
+[00:26:51] É um serviço de monitoramento.
+[00:26:55] Nós temos aqui, em distract,
+[00:27:02] nós temos aqui o Trusted Advisor.
+[00:27:04] O Trusted Advisor é o que eu chamo dos meus alunos.
+[00:27:06] Pessoal, o Trusted Advisor é o nosso conselheiro.
+[00:27:10] É aquele serviço que ele não vai fazer nada por si só.
+[00:27:18] Tem ali uma máquina, uma Instância C2,
+[00:27:25] que está ligada a dois meses.
+[00:27:27] Ela está gerando custos, eu vou lá e vou desligar.
+[00:27:30] Ela não faz isso.
+[00:27:32] Ela vai te sugestionar.
+[00:27:39] Ela vai identificar melhorias.
+[00:27:43] Ela vai te identificar oportunidades.
+[00:27:46] Ela vai me identificar melhorias.
+[00:27:52] Vai me identificar oportunidades em que anos?
+[00:27:54] Em custo, limite de serviços,
+[00:28:00] segurança, um outro exemplo.
+[00:28:08] Você tem um grupo de segurança dentro daquela máquina?
+[00:28:12] Aquela máquina só faz acesso a esse CH.
+[00:28:15] Mas a porta 80, que é a porta HTTP,
+[00:28:19] que dá acesso à internet pública,
+[00:28:23] está na regra de entrada a permissão
+[00:28:26] de acesso público daquela máquina.
+[00:28:34] Não é melhor você excluir aquela regra
+[00:28:37] e proteger para nenhum usuário
+[00:28:40] que tenha acesso àquela máquina publicamente,
+[00:28:43] vir à internet.
+[00:28:47] Se caso seja necessário,
+[00:28:50] em vez de usar um endereço 0.0.0.0,
+[00:28:55] que pode vir de qualquer canto.
+[00:28:57] Por que você não usa um IP específico
+[00:28:59] que um dia ela vai só aceitar a comunicação
+[00:29:02] daquele endereço?
+[00:29:08] Nós temos aqui também o CloudFormation,
+[00:29:13] que é um serviço de infraestrutura como código.
+[00:29:18] Nós temos aqui o AWS Config,
+[00:29:21] que é um serviço de registro e avaliação
+[00:29:24] de configuração de recursos.
+[00:29:26] Nós temos aqui o CloudTrail,
+[00:29:29] que já dou outra pilinha para o CloudTrail.
+[00:29:35] É um serviço onde ele registra atividades realizadas
+[00:29:39] na conta da AWS.
+[00:29:41] É o X9, é aquele que vai dedurar
+[00:29:45] qualquer coisa para mim.
+[00:29:47] Então, tem que ser na AWS tudo é registrado.
+[00:29:53] Não existe anônimo mato na nuvem.
+[00:30:00] Não existe anônimo mato na nuvem.
+[00:30:05] Então, olha, tinha uma instância C2 ligada.
+[00:30:11] Aquela instância C2 estava provando
+[00:30:13] um serviço muito importante.
+[00:30:15] Alguém excluiu.
+[00:30:22] Quem foi que excluiu? Ninguém se acusa.
+[00:30:25] Ninguém se acusa.
+[00:30:27] Ninguém sabe nada.
+[00:30:29] Eu não preciso.
+[00:30:36] Eu posso justamente voltar
+[00:30:42] no serviço do CloudTrail e verificar
+[00:30:45] quem foi, quando foi,
+[00:30:48] se foi atalhar de navegador,
+[00:30:50] que horas foi.
+[00:30:52] Eu consigo ver o usuário.
+[00:30:54] Então, eu chamo aqui de X9, dado.
+[00:31:00] Vamos lá, dá um tempo nessa primeira linha aqui.
+[00:31:04] Kerry disse que a gente tem algumas perguntas.
+[00:31:09] Pedindo para repetir sobre o Beanstalk e o CloudFront.
+[00:31:12] Pessoal, a questão da lista de chamada
+[00:31:15] está no mural do Clássio, tá bom?
+[00:31:17] Kerry informou aqui.
+[00:31:19] Sobre o Beanstalk e o AWS CloudFront.
+[00:31:25] Vamos lá, pessoal.
+[00:31:28] O CloudFront é um serviço de rede e distribuição de conteúdo.
+[00:31:32] Qual é a função dele?
+[00:31:36] É pegar conteúdo
+[00:31:39] e distribuir para o usuário final.
+[00:31:42] Ou seja, para a gente, para a gente, cliente.
+[00:31:45] Mas antes, pode ser o quê?
+[00:31:48] Pode ser um vídeo.
+[00:31:52] Pode ser um site.
+[00:31:54] Pode ser a foto.
+[00:31:56] Pode ser um documento.
+[00:32:00] Ele não é ingessado.
+[00:32:02] Só pode isso.
+[00:32:04] Só pode aquilo.
+[00:32:06] Ele é uma rede e distribuição de conteúdo.
+[00:32:09] Ele vai pegar o conteúdo que você quer distribuir
+[00:32:12] e levar até o usuário final.
+[00:32:17] Com um asterisco.
+[00:32:22] Com a menor latência do cico.
+[00:32:26] Isso.
+[00:32:30] Uma selva falando aqui.
+[00:32:32] Uma selva de suave.
+[00:32:34] Exatamente.
+[00:32:36] Rede e distribuição de conteúdo.
+[00:32:38] Até porque está no inglês, a cdm.
+[00:32:40] A cígula cdm é Continuity Delivery Network.
+[00:32:44] Ok?
+[00:32:46] O outro era justamente o Beanstalk.
+[00:32:50] Pessoal, o Beanstalk
+[00:32:52] o costume dizia
+[00:32:54] que ele é um ótimo serviço
+[00:32:58] para quem é muito bom
+[00:33:00] em desenvolver.
+[00:33:02] Mas tem aquela dificuldade
+[00:33:04] de
+[00:33:06] implementar
+[00:33:08] a infraestrutura.
+[00:33:10] Ok?
+[00:33:12] O Beanstalk facilita a implementação
+[00:33:17] e o gerenciamento de aplicações.
+[00:33:19] Então você consegue
+[00:33:21] publicar aplicações
+[00:33:23] sem precisar gerenciar a infraestrutura.
+[00:33:25] Como assim Andres?
+[00:33:27] Eu posso ser o melhor programador.
+[00:33:29] Eu posso ser o melhor programador.
+[00:33:31] Eu posso ser o melhor programador.
+[00:33:35] Eu posso ser o melhor programador.
+[00:33:37] Eu fiz ali uma aplicação.
+[00:33:39] Andres,
+[00:33:41] e essa aplicação vai precisar o quê?
+[00:33:43] Vamos supor.
+[00:33:45] Essa aplicação vai precisar de um banco de dados,
+[00:33:47] vai precisar de duas instâncias.
+[00:33:49] Essa aplicação
+[00:33:51] vai precisar de regras de file,
+[00:33:53] a nível de instância,
+[00:33:55] a nível de subredi.
+[00:33:57] A gente vai trabalhar com os bancos de dados
+[00:33:59] na subredi privada,
+[00:34:01] com aplicação na subredi pública.
+[00:34:03] Então, o que é isso? Tem um problema.
+[00:34:05] Eu sou bom
+[00:34:07] para programar.
+[00:34:09] Mas quando chega na infraestrutura,
+[00:34:11] eu
+[00:34:13] não sei.
+[00:34:18] Quando chega na infraestrutura,
+[00:34:20] eu não sei como eu vou criar isso.
+[00:34:22] Eu não sei como eu vou criar esse banco de dados.
+[00:34:24] Eu não sei como eu vou criar essa instância.
+[00:34:26] Você vê isso.
+[00:34:28] O Lsq Beanstalk.
+[00:34:30] Você pega o seu código,
+[00:34:33] vai lá no Beanstalk.
+[00:34:35] Configura ele.
+[00:34:37] E o Beanstalk
+[00:34:39] automaticamente
+[00:34:41] ele vai criar
+[00:34:43] todas as dependências
+[00:34:45] para o seu aplicativo funcionar.
+[00:34:47] Você, programador,
+[00:34:49] não precisa saber criar infraestrutura.
+[00:34:51] Um Beanstalk
+[00:34:53] que vai pegar o seu código e ele vai
+[00:34:55] colocar para funcionar na infraestrutura
+[00:34:57] tudo
+[00:34:59] até aquele serviço estar completamente
+[00:35:01] amplo.
+[00:35:03] Esse serviço está
+[00:35:05] completamente
+[00:35:07] funcionando. Aqui a RITM está me falando,
+[00:35:09] pessoal, que
+[00:35:11] a presença também está na descrição do vídeo.
+[00:35:13] Ok?
+[00:35:15] Na descrição do vídeo.
+[00:35:17] Vamos lá. Vamos continuar.
+[00:35:19] Vamos agora aqui para a linha
+[00:35:21] de baixo, pessoal.
+[00:35:23] A gente
+[00:35:27] vai falar agora do banco de dados.
+[00:35:29] O que é o RDS?
+[00:35:31] O que é o time de
+[00:35:33] um serviço?
+[00:35:35] O RDS
+[00:35:37] o R de RDS
+[00:35:39] é de relacional.
+[00:35:41] Ele é um banco de dados
+[00:35:43] relacional totalmente
+[00:35:45] gerenciado pela AWS.
+[00:35:47] Anderson,
+[00:35:49] eu não estou entendendo.
+[00:35:53] Você falou aqui que o RDS
+[00:35:55] é um banco de dados relacional totalmente
+[00:35:57] gerenciado pela nuvem da AWS.
+[00:35:59] E dava para
+[00:36:01] não ser gerenciado pela AWS?
+[00:36:03] Dava assim.
+[00:36:05] É só você o que é, ó,
+[00:36:07] implementa ele aqui no S2.
+[00:36:09] Você consegue
+[00:36:11] pegar e criar um banco de dados
+[00:36:13] no S2.
+[00:36:15] Você só que ali
+[00:36:17] você vai ter mais responsabilidade. A gente vai falar
+[00:36:19] isso. Sobre isso hoje.
+[00:36:21] Então nós temos o RDS
+[00:36:24] que é um banco de dados relacional
+[00:36:26] gerenciado
+[00:36:28] pela AWS.
+[00:36:30] Nós temos o
+[00:36:32] Amazon
+[00:36:34] da ADB que é um banco de dados
+[00:36:36] não gerenciado.
+[00:36:38] O perdão, no SICO
+[00:36:40] um
+[00:36:42] é relacional e o outro é não relacional.
+[00:36:44] Mas eu me confundi aqui.
+[00:36:46] Volta a fita aí.
+[00:36:48] O RDS
+[00:36:50] é um banco de dados relacional.
+[00:36:52] O Amazon da ADB é um banco de dados
+[00:36:54] não relacional.
+[00:37:01] Tem o usuário
+[00:37:03] TTXSOPH
+[00:37:05] perguntando aqui
+[00:37:10] o que seria um banco de dados
+[00:37:12] não
+[00:37:14] um banco de dados
+[00:37:16] de
+[00:37:18] chave e valor.
+[00:37:20] Nesse caso,
+[00:37:22] se você está perguntando um banco de dados
+[00:37:24] chave e valor, é justamente
+[00:37:26] o
+[00:37:28] da ADB.
+[00:37:30] É um banco de dados
+[00:37:34] chave
+[00:37:36] e valor.
+[00:37:38] Seria muito provavelmente
+[00:37:44] essa seria a resposta
+[00:37:46] da ADB.
+[00:37:49] Ele armazena ali as informações
+[00:37:51] e para de chave e valor.
+[00:37:53] Voltando aqui
+[00:38:03] a parte de segurança, identidade
+[00:38:05] e compliance.
+[00:38:07] Ah pessoal, atenção.
+[00:38:10] Atenção.
+[00:38:16] Na parte de banco de dados nós temos o RDS da ADB.
+[00:38:18] Mas temos um outro chamado
+[00:38:20] a Aurora.
+[00:38:22] É relacional.
+[00:38:24] A Aurora.
+[00:38:32] Esse banco de dados é importantíssimo.
+[00:38:34] Nós também sabemos
+[00:38:36] para que ele serve.
+[00:38:43] Porque antes, é tão importante sabendo
+[00:38:45] o banco de dados do Amazon Aurora.
+[00:38:47] O Amazon Aurora é um banco de dados
+[00:38:49] criado pela própria AWS.
+[00:38:51] E costuma
+[00:38:53] também cair muito
+[00:38:55] nos exames.
+[00:38:57] O Amazon Aurora é um banco de dados
+[00:39:01] compatível com
+[00:39:03] os mecanismos.
+[00:39:05] MySQL e PortSqreeSQL.
+[00:39:08] Grande característica do Aurora.
+[00:39:10] O alto desempenho.
+[00:39:17] O alto desempenho
+[00:39:19] e justamente ali a autodismosidade
+[00:39:21] que ele pode prover para as aplicações.
+[00:39:23] O Aurora
+[00:39:27] consegue ser até cinco vezes mais rápido
+[00:39:29] que o banco de dados
+[00:39:31] MySQL.
+[00:39:33] O mecanismo é o MySQL.
+[00:39:35] É um banco de dados
+[00:39:37] que tem uma atenção.
+[00:39:39] RDS é o Aurora.
+[00:39:41] O ADB é importantíssimo.
+[00:39:43] A parte da segurança,
+[00:39:45] identidade e complice
+[00:39:47] temos o principal serviço
+[00:39:49] de gerenciamento de identidade
+[00:39:51] da AWS.
+[00:39:53] A gente
+[00:39:55] tem um gerenciamento
+[00:39:57] de acesso
+[00:39:59] de identidade da AWS.
+[00:40:01] É justamente
+[00:40:03] neste serviço
+[00:40:05] que é gratuito
+[00:40:07] para todo mundo a nível de conta.
+[00:40:09] Onde a gente vai fazer
+[00:40:11] gerenciamento de identidade e de permissão.
+[00:40:13] É aqui que a gente vai
+[00:40:19] decidir
+[00:40:21] o One Anderson.
+[00:40:23] Tem acesso, por exemplo,
+[00:40:25] a serviços que a Cary não tem.
+[00:40:27] Onde a gente define
+[00:40:29] aqui no Iain.
+[00:40:32] A Cary tem acesso
+[00:40:34] a serviço que o One Anderson
+[00:40:36] não tem.
+[00:40:39] Onde a gente pode definir isso?
+[00:40:41] No gerenciador de acesso.
+[00:40:43] É aqui que a gente controla quem pode
+[00:40:48] acessar os recursos da AWS,
+[00:40:50] quem pode realizar tais ações.
+[00:40:52] Antes, o Iain cai muito
+[00:40:59] e exame com toda certeza.
+[00:41:01] Vai cair na minha prova, alta probabilidade.
+[00:41:03] Nós temos aqui
+[00:41:18] o AFF.
+[00:41:24] Nós temos aqui o Shield.
+[00:41:28] Nós temos aqui o ArtFact
+[00:41:30] na categoria de compliance.
+[00:41:32] Nós temos aqui
+[00:41:38] o AFF que é um file para aplicações web.
+[00:41:40] Ele atua na camada 7.
+[00:41:42] Bloquear
+[00:41:47] tipos de tráfico.
+[00:41:49] Ah, por exemplo,
+[00:41:51] eu não quero,
+[00:41:53] eu tenho um site de venda de Thames.
+[00:41:55] Venda de Thames,
+[00:41:57] camisa.
+[00:41:59] Eu não quero que os usuários
+[00:42:01] russos,
+[00:42:03] usuários
+[00:42:05] do Kazakhstan,
+[00:42:07] Tajikistan. Eu não quero que aqueles usuários
+[00:42:09] daquela localidade acesse
+[00:42:11] minha aplicação. Tem como publicar o time.
+[00:42:13] Usando o AFF.
+[00:42:18] Nós temos aqui o Shield.
+[00:42:20] Que é um serviço de
+[00:42:22] conta...
+[00:42:24] que protege contra ataques de negação de serviços.
+[00:42:26] Ou seja,
+[00:42:30] existe um atacante
+[00:42:34] que tale maliciosamente
+[00:42:38] criando bots para acessar a tua
+[00:42:40] aplicação. Só que não é
+[00:42:42] um, dois, três, quatro, cinco bots,
+[00:42:44] não.
+[00:42:48] 5 mil, 10 mil, 15 mil. Qual é o intuito?
+[00:42:50] Derrubar a tua aplicação.
+[00:42:52] Derrubar ali, por exemplo, sua página web.
+[00:42:54] Ah, eu tenho um site ali
+[00:42:56] que vende perfume.
+[00:42:58] Vai lá,
+[00:43:00] cria a voz para tentar derrubar ali o teu site.
+[00:43:04] Nós temos aqui
+[00:43:06] serviço que protege contra isso.
+[00:43:08] E nós temos o AFF
+[00:43:10] que acesse a documento de conformidade
+[00:43:12] da AWS.
+[00:43:14] Ok?
+[00:43:16] Pessoal, sobre os serviços
+[00:43:18] que eu ainda não comentei aqui, por exemplo, sobre o
+[00:43:20] do Daz.
+[00:43:22] Eu vi o
+[00:43:24] colega perguntando sobre o Red Heat
+[00:43:26] que é um bot de Daz
+[00:43:28] na escala de petabytes.
+[00:43:32] Então, eu vou comentar ele aqui.
+[00:43:34] Que é o que é no próximo slide.
+[00:43:36] Bom, no próximo slide.
+[00:43:38] Vou comentar sobre, não só ele, como os outros serviços.
+[00:43:40] Sério.
+[00:43:42] Gerenciamente de custo,
+[00:43:45] nós temos a calculadora, nada mais do que a calculadora.
+[00:43:49] Onde você pode ali estimar custos
+[00:43:51] do que você quer criar. Por exemplo,
+[00:43:53] Anderson, é o seguinte.
+[00:43:55] Eu estou pensando
+[00:43:59] em montar uma infraestrutura
+[00:44:01] X, Y, Z.
+[00:44:07] Quanto é que vai custar?
+[00:44:09] Aí chega o cidadão e fala assim para você.
+[00:44:11] Eu acho
+[00:44:13] eu suponho
+[00:44:15] eu tenho impressão
+[00:44:18] que vai custar
+[00:44:20] não a necessidade.
+[00:44:24] Você pode usar a calculadora
+[00:44:26] e a calculadora não está nem
+[00:44:28] dentro do consórcio da AWS.
+[00:44:30] Você pode já ir no Google
+[00:44:32] botar AWS Price Calculator
+[00:44:34] e estimar custos.
+[00:44:36] Você não precisa
+[00:44:41] achar, pessoal, achismo
+[00:44:43] achismo
+[00:44:45] não cubina
+[00:44:47] um
+[00:44:49] um
+[00:44:51] você pode
+[00:44:53] justamente
+[00:44:55] chegar bem próximo
+[00:44:57] do valor que ele pode custar.
+[00:45:01] Você pode estimar.
+[00:45:03] Nós temos um costa Explorer.
+[00:45:07] O costa Explorer é justamente
+[00:45:09] uma ferramenta de análise de gastos.
+[00:45:11] Aqui você está estimando
+[00:45:13] que você pode gastar.
+[00:45:15] Aqui você vai analisar o que você já gastou,
+[00:45:17] entender os custos,
+[00:45:19] visualizar em dashboard
+[00:45:21] o que você gastou
+[00:45:24] ao longo do tempo.
+[00:45:26] E nós temos aqui
+[00:45:28] um AWS Orçamento.
+[00:45:30] Chão de AWS
+[00:45:32] um nome original dele, né?
+[00:45:34] Budget in English, Orçamento em Português
+[00:45:36] que é um serviço, um recurso
+[00:45:38] onde você pode criar um Orçamento
+[00:45:40] antes eu não entendi.
+[00:45:42] Exemplo.
+[00:45:46] Vou supor
+[00:45:48] que a gente queira criar
+[00:45:50] uma aplicação X.
+[00:45:52] Essa aplicação X
+[00:45:54] ela não pode passar
+[00:45:56] de 500
+[00:45:58] dólares por mês.
+[00:46:02] Antes aí como é que a gente vai fazer?
+[00:46:04] Se não pode passar de 500 dólares por mês,
+[00:46:06] a gente tem que ficar todo dia, toda hora
+[00:46:08] indo lá no costa Explorer
+[00:46:10] ficar olhando. Não precisa.
+[00:46:12] Você justamente
+[00:46:29] você pode ir lá
+[00:46:31] para o AWS Budget, o AWS Orçamento
+[00:46:33] definir
+[00:46:35] eu só tenho 500 para gastar por mês.
+[00:46:37] Você define
+[00:46:39] os dias você define
+[00:46:41] o e-mail
+[00:46:43] eu vou definir 500
+[00:46:45] dólares por mês, vou colocar
+[00:46:47] meu e-mail e vou determinar
+[00:46:49] quando chegar a 20% gasto
+[00:46:51] me mande um e-mail.
+[00:46:53] Quando chegar
+[00:46:55] 40% dos 500 dólares gasto
+[00:46:57] me mande um e-mail.
+[00:47:01] Chego a 80%
+[00:47:03] dos 500 dólares
+[00:47:06] me mande um e-mail.
+[00:47:08] Ah, chegou no 100%
+[00:47:10] me mande um e-mail.
+[00:47:12] Você pode definir
+[00:47:14] para ele ficar te avisando. Aqui no AWS
+[00:47:16] Orçamento, o AWS
+[00:47:18] Web. E
+[00:47:23] finalizando essa questão das principais
+[00:47:25] categorias, nós temos o armazenamento.
+[00:47:27] O Amazon S3
+[00:47:30] é o que a gente chama de serviço
+[00:47:32] de armazenamento de objetos.
+[00:47:34] Serve para armazenar
+[00:47:36] arquivo, imagem, vídeo,
+[00:47:38] documento, backup.
+[00:47:40] Serve para armazenar qualquer tipo
+[00:47:42] de arquivo.
+[00:47:54] O Amazon EBS
+[00:47:57] o Amazon EBS
+[00:47:59] é um serviço de armazenamento
+[00:48:01] em blocos para instâncias
+[00:48:05] excelentes. Eu vi que
+[00:48:11] tem um Amazon S3 e tem um S3
+[00:48:13] Glacier. São propostas
+[00:48:15] diferentes.
+[00:48:17] E quanto um
+[00:48:19] armazenamento de longo prazo.
+[00:48:21] Todos aqueles seus arquivos que
+[00:48:23] é acessado,
+[00:48:25] não é S3 Glacier, você vê um floco
+[00:48:27] de neve, né?
+[00:48:29] Eu gosto de chamar até um armazenamento
+[00:48:31] frio. Da esquerda para a direita, entre
+[00:48:33] as classes, ele é o armazenamento mais
+[00:48:35] frio. Porque ele é
+[00:48:37] voltado para armazenamento de longo prazo.
+[00:48:39] É para aqueles arquivos, para aqueles
+[00:48:41] objetos, para aqueles vídeos,
+[00:48:43] para aqueles documentos, para aqueles
+[00:48:45] decavos.
+[00:48:49] Tem que ser preservado.
+[00:48:51] Mas que
+[00:48:53] dificilmente é acessado. Muita
+[00:48:55] veria ali também com compliance.
+[00:48:57] Palavra
+[00:48:59] chave para Glacier
+[00:49:01] é equivamento.
+[00:49:07] E por último nós temos aqui a família snow.
+[00:49:09] Para a família snow nós tínhamos
+[00:49:11] três tipos. Para a família snow
+[00:49:15] nós tínhamos, nós tínhamos
+[00:49:17] o snow cone,
+[00:49:19] o snowball
+[00:49:21] e a gente tínhamos
+[00:49:23] o snow mobile.
+[00:49:27] Que foi desfuntinado
+[00:49:29] pela AWS.
+[00:49:31] Ok?
+[00:49:38] Anderson, agora
+[00:49:40] eu gostaria de perguntar
+[00:49:42] por que, Anderson?
+[00:49:44] Aqui no banco de dados?
+[00:49:49] Eu sei que tem mais banco de dados.
+[00:49:51] Foi o que você
+[00:49:53] não comentou.
+[00:49:55] Nós temos o RDS, o Dimeb,
+[00:49:57] você falou do Aurora.
+[00:49:59] Eu vi um colega aqui no chat falando
+[00:50:01] do Redshift.
+[00:50:03] Tem o document B.
+[00:50:05] Tem o Amazon Times Free.
+[00:50:10] Tem vários tipos de banco de dados.
+[00:50:12] Por que você não comentou?
+[00:50:14] São as principais categorias
+[00:50:18] com os principais recursos
+[00:50:20] que tem a alta probabilidade
+[00:50:22] de cair no exame.
+[00:50:24] Para quem chegou
+[00:50:26] depois
+[00:50:28] eu tinha comentado.
+[00:50:30] Pessoal, o seguinte.
+[00:50:32] Entre serviços e recursos da AWS
+[00:50:34] nós temos
+[00:50:36] mais de 260 serviços.
+[00:50:38] Se a gente fosse fazer
+[00:50:40] um intensivão ou um curso
+[00:50:46] contando todos os serviços
+[00:50:48] nós passaremos 4, 5 anos fácil
+[00:50:50] de curso.
+[00:50:52] Fácil.
+[00:50:54] Entre slides
+[00:50:56] e la la tome.
+[00:50:58] Ó.
+[00:51:05] Nós temos outras categorias
+[00:51:07] que fazem parte do exame.
+[00:51:09] Eu sei que podem essas outras categorias
+[00:51:11] que fazem parte do exame.
+[00:51:13] Eles podem cair
+[00:51:15] na prova?
+[00:51:17] Sim.
+[00:51:20] É o bem que respondi na pergunta.
+[00:51:22] Outros categorias fazem parte do exame
+[00:51:24] e logo eles podem cair
+[00:51:26] na prova.
+[00:51:28] Serviços de análise como
+[00:51:30] o famoso Athena.
+[00:51:32] Famoso Glue.
+[00:51:34] Esse caiu na minha prova.
+[00:51:36] Esse já caiu na minha prova de Glory Protege.
+[00:51:38] Serviços de Conteílios
+[00:51:42] nós temos aqui o SCR
+[00:51:44] registra imagens.
+[00:51:48] Nós temos aqui
+[00:51:50] os serviços de containers.
+[00:51:52] Nós temos o EKS, serviços de Kubernetes.
+[00:51:54] Nós temos o Fargate
+[00:51:56] que é a parte de gerenciamento de células.
+[00:51:58] Entre outros serviços
+[00:52:02] como hoje
+[00:52:04] nós recebemos a informação que
+[00:52:06] o Kendra
+[00:52:08] vai sair
+[00:52:10] e não vai ser mais cobrado em Zana.
+[00:52:12] Como?
+[00:52:14] Cloud9.
+[00:52:16] Como eu falei aqui
+[00:52:18] da Famine Snow?
+[00:52:20] O Snowmobile.
+[00:52:22] O Snowmobile não é mais.
+[00:52:24] Não vai ser mais cobrado.
+[00:52:28] Computação de usuário final.
+[00:52:30] Webstream 2.0. Worklink.
+[00:52:32] Workspace.
+[00:52:34] Serviços de Imigração.
+[00:52:36] Data sync já caiu no meu exame.
+[00:52:38] DMS já caiu no meu exame.
+[00:52:40] Amigo Graysker-Hub
+[00:52:42] já caiu no meu exame.
+[00:52:48] Agora eu pergunto para vocês
+[00:52:50] Vão ver que vocês estão prestando atenção.
+[00:52:52] Eu vou olhar aqui no chat.
+[00:52:54] Eu vou olhar aqui no chat.
+[00:52:58] Pergunta
+[00:53:02] Qual é o documento
+[00:53:04] que vai ser o nosso norte
+[00:53:06] para guiar a gente
+[00:53:08] no exame de certificação?
+[00:53:10] Coloca aqui no chat.
+[00:53:14] Eu vou comentar sobre ele.
+[00:53:16] Coloca aqui no chat.
+[00:53:30] Eu quero ver o que vocês responder.
+[00:53:32] Qual é
+[00:53:40] o documento
+[00:53:42] que eu comentei com vocês?
+[00:53:53] O guia do exame.
+[00:53:55] O Guia do Exame.
+[00:54:04] O Guia do Exame
+[00:54:06] acredito que é quero.
+[00:54:08] Eu ouro que os colegas já podem
+[00:54:10] passar o link para vocês aí no chat.
+[00:54:14] Então nós temos aqueles serviços
+[00:54:16] que têm alta probabilidade
+[00:54:18] repetindo
+[00:54:20] que pode cair no exame
+[00:54:22] e temos aqueles
+[00:54:24] serviços e recursos
+[00:54:26] que estão no guia
+[00:54:28] e podem cair sim, como esses que eu circulei para vocês.
+[00:54:30] Que caiam nos meus últimos exames
+[00:54:32] de cloro pratiz.
+[00:54:34] Que é o
+[00:54:36] exame
+[00:54:38] que vocês vão fazer.
+[00:54:46] Vamos lá.
+[00:54:51] A avisa importante. Na verdade eu já avisei aqui.
+[00:54:53] Que os links de revisão
+[00:54:55] não vão realizar
+[00:54:57] cobertura de 100% das categorias serviços.
+[00:54:59] Se não
+[00:55:01] passa de 4 anos fácil.
+[00:55:03] Mas o foco vai ser aqui
+[00:55:05] um serviço que aparece com mais frequências.
+[00:55:07] É o que naquela imagem que eu já comentei com vocês.
+[00:55:09] Beleza?
+[00:55:11] Vamos lá.
+[00:55:13] Guia do Exame pessoal.
+[00:55:15] Guia do Exame.
+[00:55:17] O colega perguntou
+[00:55:19] se o S3 Glacier
+[00:55:21] tem criptografia.
+[00:55:23] Sim.
+[00:55:25] O S3 Glacier
+[00:55:27] tem criptografia.
+[00:55:29] Nós temos lá a questão dos Valtis.
+[00:55:31] A gente chama de Valtis.
+[00:55:35] Protegido.
+[00:55:40] Sempre ser protegido.
+[00:55:45] Quanto tem prova em certificado.
+[00:55:47] Pessoal, mais detalhes
+[00:55:49] sobre
+[00:55:51] Valsher.
+[00:55:53] Sobre simulado.
+[00:55:55] A gente vai dizer aqui nos próximos.
+[00:55:57] Tá bom?
+[00:55:59] Agora vou comentar um negócio com vocês aqui.
+[00:56:01] Quem ficar até o final
+[00:56:03] com a gente aqui
+[00:56:05] eu tô sabendo de uma coisa.
+[00:56:07] Eu tô
+[00:56:09] sabendo de uma coisa que até
+[00:56:11] me deu vontade de fazer o exame
+[00:56:13] pela assista mesmo.
+[00:56:15] Muito obviamente porque não vale valer pra mim.
+[00:56:17] Se eu fosse vocês
+[00:56:19] ficaria aqui até o final.
+[00:56:21] Pra saber o que é. Vale
+[00:56:23] muito a pena.
+[00:56:25] Vamos lá.
+[00:56:27] Dominion, conceito de nuvem.
+[00:56:30] Pra questão ali de otimização de tempo pessoal
+[00:56:32] o
+[00:56:34] EC2 vai ser incluído aqui no
+[00:56:36] Dominion. Tá bom?
+[00:56:38] Releibrando a definição
+[00:56:40] de computação em nuvem.
+[00:56:42] O que é pessoal?
+[00:56:46] O que é computação em nuvem?
+[00:56:48] Vamos lá aqui no chat.
+[00:56:50] A, B, C ou D.
+[00:56:52] O que é
+[00:56:54] computação em nuvem?
+[00:57:00] Só a gente finaliza as 22 horas.
+[00:57:02] Daqui a pouco eu dou um tempinho aqui pra vocês.
+[00:57:04] Se for o caso.
+[00:57:06] Ou quem não puder ficar pode dar uma olhada na gravação.
+[00:57:08] Vai ter a gravação.
+[00:57:10] Tá bom?
+[00:57:17] O que é computação em nuvem?
+[00:57:26] O maior de bota aqui é letra C, né?
+[00:57:28] Letra C.
+[00:57:30] Pessoal,
+[00:57:32] computação em nuvem
+[00:57:34] nada mais é
+[00:57:36] nada mais é
+[00:57:38] do que a entrega
+[00:57:40] sobre demanda de recursos
+[00:57:44] computacionais
+[00:57:46] via um provair
+[00:57:48] de um ambiente
+[00:57:50] sem o gerenciamento
+[00:57:52] ativo do usuário.
+[00:58:05] Então pessoal,
+[00:58:07] não só anamlesce como
+[00:58:09] Wegeri,
+[00:58:11] Google Cloud,
+[00:58:13] Oceai
+[00:58:15] todos,
+[00:58:17] todos
+[00:58:19] funcionam.
+[00:58:21] Claro que é medicado um dentro das suas características,
+[00:58:23] mas
+[00:58:25] na teoria
+[00:58:33] é muito importante
+[00:58:35] trair serviço sobre demanda de internet sem gerenciamento de usuário.
+[00:58:37] Entrega
+[00:58:39] armazenamento, entrega produtos
+[00:58:41] com passonais, entrega banco de
+[00:58:43] dados, entrega todo tipo de
+[00:58:45] serviço via internet.
+[00:58:49] Atenção
+[00:58:51] muita atenção
+[00:58:53] atenção
+[00:58:56] cloud pra ti,
+[00:58:58] como vocês bem sabem pessoal.
+[00:59:00] Não existe só uma certificação
+[00:59:02] da AWS.
+[00:59:04] Existe várias certificações,
+[00:59:10] existem vários níveis,
+[00:59:12] existe a Pratixler
+[00:59:14] que é justamente
+[00:59:16] o que nós estamos aqui estudando,
+[00:59:18] existe a Associate,
+[00:59:20] existe a Professional,
+[00:59:22] existe a Ad
+[00:59:24] Especialidade.
+[00:59:26] Pensem como uma
+[00:59:30] pirâmide invertida,
+[00:59:36] e a profissional
+[00:59:38] pirâmide invertida.
+[00:59:43] E nessa pirâmide
+[00:59:45] a base
+[00:59:47] é a
+[00:59:49] Cloud Pratixler
+[00:59:51] Certified Cloud Pratixler
+[00:59:55] e a
+[00:59:57] AI Pratixler
+[00:59:59] a inteligência
+[01:00:03] artificial intelligence
+[01:00:05] Pratixler
+[01:00:08] As Pratixler
+[01:00:10] nada mais
+[01:00:12] nada menos do que a base
+[01:00:14] muito
+[01:00:18] por isso que até a AWS,
+[01:00:20] ela recomenda
+[01:00:22] a AWS não te proíbe de fazer
+[01:00:24] uma professional, não proíbe de fazer
+[01:00:26] uma associate e não te proíbe de fazer
+[01:00:28] uma especialidade como o primeiro exame, ela não proíbe
+[01:00:30] porém por tudo,
+[01:00:32] todavia, ela recomenda
+[01:00:34] primeira Pratixler.
+[01:00:36] E na Pratixler, na Cloud
+[01:00:40] e vai servir pra todas as outras certificações
+[01:00:42] o porquê
+[01:00:44] a por tão aclamado
+[01:00:46] nuvem
+[01:00:50] eu há as pessoas, porque nuvem
+[01:00:54] é tão bom.
+[01:00:56] Porque nuvem
+[01:01:00] é a bola da vez
+[01:01:02] em vez de ter ali
+[01:01:04] um pequeno data center
+[01:01:06] numa empresa
+[01:01:08] no Prime, se eu me enxergar.
+[01:01:10] A AWS pessoal
+[01:01:12] ela traz
+[01:01:14] 6
+[01:01:16] vantagens de simigrar pra nuvem
+[01:01:18] então
+[01:01:27] pra quem tem dúvidas
+[01:01:29] e
+[01:01:31] atenção
+[01:01:33] vantagens de simigrar
+[01:01:35] pra nuvem
+[01:01:37] vai cair
+[01:01:39] você se lembra lá dos recursos
+[01:01:41] que eu falei, pessoal, eu não posso
+[01:01:43] dar 100%
+[01:01:45] mas eu vou dar 99% de possibilidade
+[01:01:47] cair no seu exame, porque
+[01:01:49] você vai ter 4 probabilidades
+[01:01:51] lembrando, porque
+[01:01:53] existe mais
+[01:01:55] de 200 serviços
+[01:01:57] e recusta da AWS
+[01:01:59] se fosse pra fazer tudo isso
+[01:02:01] uma prova, a prova não seria de 65 questões
+[01:02:05] mas agora eu vou lidar
+[01:02:07] 100%
+[01:02:09] de certeza, atenção, eu estou dando
+[01:02:11] o Anderson lá da escola
+[01:02:13] eu tenho certeza que a Kerry também
+[01:02:15] está dando
+[01:02:17] 100%
+[01:02:19] de certeza, que vai cair
+[01:02:21] quer estongir
+[01:02:23] vantagens de simigrar
+[01:02:25] pra nuvem
+[01:02:27] pode ser 1, pode ser 2, pode ser 3
+[01:02:29] não sei
+[01:02:31] vai cair
+[01:02:33] vai cair
+[01:02:35] vamos
+[01:02:43] para as vantagens
+[01:02:48] economize
+[01:02:53] beneficice
+[01:02:55] de enormes
+[01:02:57] economias
+[01:02:59] de escalas
+[01:03:07] de adivinhar a capacidade
+[01:03:09] para
+[01:03:11] de gastar dinheiro
+[01:03:13] mantendo data centers
+[01:03:15] aumente velocidade
+[01:03:17] e agilidade
+[01:03:19] toque esse global em minutos
+[01:03:21] eu vou pedir aqui pra Kerry
+[01:03:23] por favor, quero
+[01:03:25] se possível
+[01:03:27] você passar aqui
+[01:03:31] a documentação
+[01:03:33] oficial, tá parte
+[01:03:35] oficial, que trata-se das 6
+[01:03:37] vantagens de simigrar pra nuvem
+[01:03:39] é essencial pra eles aqui
+[01:03:41] por favor
+[01:03:43] então pessoal
+[01:03:45] a AWS
+[01:03:49] ela vai ali
+[01:03:51] justamente
+[01:03:58] cuidar ali
+[01:04:00] da infraestrutura física
+[01:04:09] nós, clientes, não precisamos
+[01:04:11] adivinhar a capacidade
+[01:04:13] tá falando do exigendo da psiqueligroup
+[01:04:18] a questão, já viu o colega aqui falando
+[01:04:20] do KPEX
+[01:04:22] exatamente
+[01:04:29] a AWS pessoal, ela atende
+[01:04:31] milhares de clientes
+[01:04:33] ela compartilha sua infraestrutura
+[01:04:35] em grande escala
+[01:04:43] então logo
+[01:04:45] ela pode repassar
+[01:04:47] a economia
+[01:04:49] você consegue reduzir os custos
+[01:04:51] ela consegue oferecer
+[01:04:53] preço menor
+[01:04:55] conforme a gente vai usando
+[01:04:57] a gente
+[01:05:03] não precisa
+[01:05:05] já falei pra vocês aqui alguns slides
+[01:05:07] atrás, a gente não
+[01:05:09] precisa, a gente não deve
+[01:05:11] falar, tratar
+[01:05:13] a nuvem
+[01:05:15] com a Xismo, a gente não precisa
+[01:05:17] disso, a gente pode
+[01:05:22] prever
+[01:05:24] antecibadamente, quantos servidores a gente vai ser
+[01:05:26] necessário
+[01:05:28] a gente consegue aumentar e diminuir os recursos
+[01:05:30] conforme a demanda
+[01:05:36] e se o colega tá falando aqui no chat
+[01:05:38] a gente troca
+[01:05:44] o KPEX pelo OPEX
+[01:05:46] a gente não precisa de despesa fixa
+[01:05:48] a gente pode trabalhar com despesa
+[01:05:50] variável, antes eu não entendi
+[01:05:52] um exemplo
+[01:05:58] eu tô fazendo aqui um aplicativo
+[01:06:00] meu aplicativo, sei lá, vai ser
+[01:06:02] concorrente
+[01:06:04] do WhatsApp
+[01:06:06] vai ser concorrente do WhatsApp, o que eu preciso?
+[01:06:08] ah, eu preciso de
+[01:06:10] 3 servidores da DEL
+[01:06:14] eu preciso aqui
+[01:06:17] cabos
+[01:06:21] eu preciso de acondicionado
+[01:06:23] ah, caramba, isso aqui vai estar
+[01:06:25] muita coisa, eu não vou conseguir montar na minha casa não
+[01:06:27] vou ter que alugar
+[01:06:29] o espaço
+[01:06:31] mas eu vou alugar
+[01:06:33] mas tudo que tem aqui é muito caro
+[01:06:35] eu vou ter que contratar
+[01:06:37] segurança
+[01:06:41] eu não vou poder estar lá 100% do tempo
+[01:06:43] eu vou ter que contratar
+[01:06:45] pessoal
+[01:06:47] qualificado
+[01:07:02] isso quer dizer o que?
+[01:07:04] isso aqui é nada mais nada menos
+[01:07:06] do que despesa de capital
+[01:07:08] antes mesmo
+[01:07:11] da aplicação do meu concorrente
+[01:07:13] que eu vou fazer
+[01:07:15] do WhatsApp funcionar
+[01:07:17] eu já tô gastando dinheiro
+[01:07:19] energia
+[01:07:21] falar aqui no chat
+[01:07:23] como é que eu vou ligar isso tudo? Eu preciso de energia
+[01:07:25] então eu troco
+[01:07:33] as despesas de capital
+[01:07:35] pelas despesas variáveis
+[01:07:37] eu não preciso investir dinheiro
+[01:07:39] eu já me cadastro na da do S
+[01:07:41] e já começo a montar lá
+[01:07:43] de primeira
+[01:07:45] eu só vou pagar pelo que eu utilizar
+[01:07:47] a segurança
+[01:07:49] segurança, a da do S tem
+[01:07:51] energia, ela tem
+[01:07:53] acondicionado, ela tem
+[01:07:55] eu vou pagar pelo que eu
+[01:07:58] usar, eu vou pagar pelo que eu usar
+[01:08:00] a gente adiantou um pouco
+[01:08:04] mas as grandes economias de escala
+[01:08:06] a gente não precisa
+[01:08:09] gastar dinheiro administrando e mantendo data
+[01:08:11] sempre
+[01:08:16] o nosso foco é cliente
+[01:08:20] o nosso foco é do cliente
+[01:08:22] eu preciso
+[01:08:35] aumentar a velocidade
+[01:08:37] agilidade
+[01:08:42] dependendo do de onde você
+[01:08:44] aí eu preciso de um servidor
+[01:08:46] da del cara, o servidor
+[01:08:48] que você vai ver lá
+[01:08:50] eu vou juntar aqui
+[01:08:52] o servidor modelo XYZ
+[01:08:54] XYZ 400
+[01:08:56] eu preciso desse modelo, ai esse modelo aqui
+[01:08:58] está custando
+[01:09:00] esse modelo está custando 30 mil reais
+[01:09:04] 30 mil reais
+[01:09:06] esse modelo eu não tenho a pronta entrega
+[01:09:08] esse modelo eu tenho que esperar
+[01:09:14] chegar de São Paulo
+[01:09:16] ai eu tenho que esperar
+[01:09:18] o estado de mitos, ai eu tenho que esperar
+[01:09:20] eu vou fazer um vídeo de um modelo
+[01:09:25] na nuvem não
+[01:09:28] na nuvem eu posso
+[01:09:30] a qualquer momento em 2, 3 minutos
+[01:09:32] criar um site
+[01:09:34] e disponibilizar esse site
+[01:09:36] sendo provendo por um EC2
+[01:09:38] por exemplo
+[01:09:40] posso testar
+[01:09:42] ai tu já pensou
+[01:09:44] eu vou testar poxa
+[01:09:46] aquele modelo XYZ 400
+[01:09:48] que gostava 30 mil reais
+[01:09:50] eu não precisava comprar ele
+[01:09:52] porque eu só uso metade
+[01:09:54] o desempenho dele
+[01:09:56] eu poderia ter comprado
+[01:09:58] ou de 15 mil
+[01:10:00] e os outros 15 mil você poderia ter investido
+[01:10:04] na empresa
+[01:10:09] então eu tenho a velocidade
+[01:10:11] de utilizar a agilidade na nuvem
+[01:10:13] e lançar aplicações
+[01:10:19] tofem-se global
+[01:10:24] onde eu permito
+[01:10:26] disponibilizar aplicações
+[01:10:28] e diferente a gente não ah, da São Láfus
+[01:10:30] que vem
+[01:10:34] quer dizer todo mundo diz isso
+[01:10:36] lá vem um anso também botar
+[01:10:38] a conversa aqui
+[01:10:40] a região de São Paulo
+[01:10:45] antes porque a região de São Paulo
+[01:10:47] é mais
+[01:10:49] cara do que a da
+[01:10:51] norte da Vigília
+[01:10:53] alguém quer chutar, alguém quer dizer
+[01:10:59] porque a região de São Paulo
+[01:11:01] o serviço é mais caro
+[01:11:03] do que a norte da Vigília
+[01:11:05] é isso ai
+[01:11:17] é imposto
+[01:11:21] é imposto sobre imposto
+[01:11:23] é muito imposto
+[01:11:26] então
+[01:11:28] pode ser que se o seu case
+[01:11:30] não for ali a questão
+[01:11:32] da latência, você pode
+[01:11:34] colocar toda sua aplicação
+[01:11:36] ilegal né
+[01:11:38] tem que ser legal
+[01:11:40] o norte da Vigília
+[01:11:48] tem um colar que falou que é tempo de resposta
+[01:11:50] se o problema não for tempo de resposta
+[01:11:52] você pode botar nócio de vigia
+[01:11:54] mas o maior motivo de
+[01:11:56] norte da Vigília ser mais barato
+[01:11:58] do que São Paulo é imposto
+[01:12:00] é muito imposto
+[01:12:02] não é nem oferta e procura
+[01:12:04] que a maioria dos recursos
+[01:12:06] que tem São Paulo tendo um norte da Vigília
+[01:12:10] mas é imposto então
+[01:12:12] muita empresa
+[01:12:14] muito empresário
+[01:12:16] mantém suas aplicações fora do Brasil
+[01:12:18] para pagar menos imposto
+[01:12:20] é isso que eu estava comentando
+[01:12:26] se o problema não for
+[01:12:28] a latência
+[01:12:31] se o problema for só
+[01:12:33] dinheiro, pode botar a vigia
+[01:12:35] e a latência
+[01:12:37] também não vai ser essa coisa toda de devagar
+[01:12:39] não, hein pessoal, a não ser
+[01:12:45] que a aplicação seja muito
+[01:12:47] tolerante
+[01:12:49] não tolerante ali
+[01:12:51] a latência é muito alta
+[01:12:53] ai tá certo
+[01:13:00] muito provavelmente eu vi a perda
+[01:13:02] da júlia vireiro
+[01:13:04] e as grandes empresas escolhem a região de São Paulo
+[01:13:08] provavelmente ela tá botando
+[01:13:10] o preço
+[01:13:12] no produto, ela tá aumentando o preço do produto
+[01:13:14] para compensar o imposto
+[01:13:18] tem complies também, correto
+[01:13:20] complies
+[01:13:22] é por isso que eu falei
+[01:13:24] norte da Vigília, se for legal
+[01:13:26] deixa eu comentar, se for legal
+[01:13:32] então a gente pode tornar-se global
+[01:13:34] em minutos
+[01:13:36] vamos lá passando
+[01:13:38] o empresa
+[01:13:40] está migrando para a AWS Cloud
+[01:13:42] e em vez de executar sua infraestrutura
+[01:13:44] no premise
+[01:13:46] pode ser o seguinte, são vantagens dessa migração
+[01:13:48] qual é a vantagem
+[01:13:50] dessa afirmação
+[01:13:52] um empresa está migrando para a AWS
+[01:13:54] em vez de executar na infraestrutura
+[01:13:56] no premise
+[01:13:58] qual é
+[01:14:00] a vantagem dessa migração
+[01:14:02] a, b, c, d, o, e
+[01:14:04] e ele diz aqui ó
+[01:14:06] escolha duas
+[01:14:08] vamos lá
+[01:14:10] c e e
+[01:14:20] b, b
+[01:14:30] pessoal são duas
+[01:14:32] cai exatamente assim na prova
+[01:14:34] escolha duas
+[01:14:36] são duas
+[01:14:41] bc, b e e
+[01:14:43] bc
+[01:14:48] bc, bc, a maioria bc
+[01:14:50] b e e
+[01:14:52] vamos lá
+[01:15:02] vamos ver qual é a resposta correta
+[01:15:07] nós temos aqui
+[01:15:09] maior com a cg
+[01:15:11] e capacidade
+[01:15:13] de implementação global em minutos
+[01:15:15] então a gente temos aqui
+[01:15:17] nada mais
+[01:15:21] do que
+[01:15:26] aumentar a velocidade
+[01:15:28] e agilidade e tornar-se global
+[01:15:30] em minutos, essas são as vontades
+[01:15:32] mais um, o Desson
+[01:15:34] a limitação dos curdos de um membro da TI
+[01:15:37] eu não vou
+[01:15:39] demitir os meus funcionários
+[01:15:41] de toda a tecnologia
+[01:15:43] quem vai operar a nuvem
+[01:15:45] quem vai ser analista de nuvem
+[01:15:47] quem é o administrador
+[01:15:51] a outra que era a R
+[01:16:02] pessoal comentou, a redundância é padrão
+[01:16:04] para todos os serviços
+[01:16:06] de computação
+[01:16:08] e a limitação da necessidade
+[01:16:10] de realizar o dito de segurança
+[01:16:12] também está errado
+[01:16:22] vamos para o próximo
+[01:16:24] e as passas, a gente vai agora
+[01:16:26] entrar, é claro que
+[01:16:28] mas existe ali
+[01:16:30] várias categorias
+[01:16:32] de modelo de computação
+[01:16:34] mas as mais conhecidas
+[01:16:36] são as IAS PAS e SAS
+[01:16:38] IAS PAS e SAS
+[01:16:42] muito
+[01:16:47] relacionado
+[01:16:49] a certos também tipos de serviços
+[01:16:51] da AWS
+[01:16:53] como assim Andres?
+[01:16:56] infraestrutura como serviço
+[01:17:00] aqui
+[01:17:02] eu tenho
+[01:17:04] grande
+[01:17:06] poder
+[01:17:08] mas eu também tenho grande
+[01:17:10] responsabilidade
+[01:17:12] eu tenho aqui no plataforma
+[01:17:21] com serviço
+[01:17:23] já ali
+[01:17:25] algumas
+[01:17:27] vamos dizer
+[01:17:29] alguns benefícios
+[01:17:31] como
+[01:17:33] não precisar gerenciar
+[01:17:35] alguns recursos, alguns serviços
+[01:17:37] onde eu só posso chegar e
+[01:17:39] implementar
+[01:17:43] eu posso só chegar e implementar
+[01:17:45] e no SAS
+[01:17:50] aqui
+[01:17:52] eu vou só
+[01:17:54] usar
+[01:18:00] então pessoal no infraestrutura como serviço
+[01:18:02] ele oferece
+[01:18:04] recursos de infraestrutura como
+[01:18:06] servidores, reis
+[01:18:08] armazenamento
+[01:18:10] aqui você vai
+[01:18:12] criar do zero
+[01:18:16] aqui você vai configurar
+[01:18:18] do zero
+[01:18:32] então
+[01:18:34] com grandes poderes
+[01:18:36] grandes responsabilidades
+[01:18:41] grandes poderes
+[01:18:43] grandes responsabilidades
+[01:18:45] no PAS
+[01:18:47] você já tem aqui alguns benefícios
+[01:18:49] como eu disse
+[01:18:51] você já pode ali desenvolver
+[01:18:53] executar
+[01:18:55] sem ter que
+[01:18:57] administrar
+[01:18:59] como você vai ter que fazer no IAS
+[01:19:03] toda infraestrutura do jacim
+[01:19:05] você vai ter que tomar de conta, você vai ter que criar do zero
+[01:19:07] você vai ter que dar manutenção
+[01:19:09] você vai ter que fazer tudo
+[01:19:16] e no SAS a gente vai só lá
+[01:19:18] e usar
+[01:19:20] Anderson, eu entendi
+[01:19:22] grandes poderes
+[01:19:24] grandes responsabilidades
+[01:19:26] no PAS
+[01:19:28] implementar
+[01:19:30] no SAS usar um ID exemplos
+[01:19:32] um ID exemplos
+[01:19:37] aqui eu posso botar um database
+[01:19:39] um banco de dados
+[01:19:45] um SC2
+[01:19:54] no PAS
+[01:19:56] eu tenho um database
+[01:20:00] pode ser um RDS que é um 6G
+[01:20:08] no software
+[01:20:10] como serviço eu posso ter aqui uma
+[01:20:12] central
+[01:20:14] que é o connect
+[01:20:21] usamos
+[01:20:23] sempre, todos os dias
+[01:20:25] por exemplo
+[01:20:30] Gmail
+[01:20:32] Outlook
+[01:20:34] a gente só usa
+[01:20:36] a gente não precisa montar nada
+[01:20:40] banco de dados, o RDS
+[01:20:42] vamos só configurar
+[01:20:44] antes o que que tá rodando por trás
+[01:20:46] nesse serviço, é um Linux, é um Windows
+[01:20:48] o que é que tá
+[01:20:50] não me interessa
+[01:20:54] esse é problema da AWS
+[01:20:56] é ela que vai gerenciar
+[01:20:58] Anderson
+[01:21:00] se eu tenho um banco de dados no SC2
+[01:21:02] quem vai atualizar?
+[01:21:04] você
+[01:21:06] vai atualizar os pedes
+[01:21:08] do sistema operacional
+[01:21:10] você
+[01:21:12] Anderson, o que que vai gerenciar
+[01:21:14] toda a parte
+[01:21:16] de administração do bot
+[01:21:18] você
+[01:21:27] o Binstalk é PAS
+[01:21:29] sim, correto
+[01:21:31] o Binstalk é PAS
+[01:21:38] vamos passando
+[01:21:40] ele traz aqui
+[01:21:44] um exame
+[01:21:48] tudo que for
+[01:21:52] azul
+[01:21:54] são os nossos
+[01:21:56] tudo que for AWS
+[01:21:58] é laranja
+[01:22:00] então no modelo tradicional
+[01:22:02] no on-premise, você veja que desde a aplicação
+[01:22:04] até a rede
+[01:22:08] é tudo azul
+[01:22:10] então no on-premise
+[01:22:19] olha o foco
+[01:22:21] a gente acorda de ver
+[01:22:23] migração
+[01:22:25] para ir para a nuvem
+[01:22:27] vantagem de se migrar
+[01:22:29] para a nuvem
+[01:22:38] o IAS
+[01:22:40] no modo IAS
+[01:22:42] toda a parte
+[01:22:44] de servidores, armazenamento
+[01:22:46] e redes
+[01:22:48] é da AWS
+[01:22:51] o sistema operacional até a aplicação
+[01:22:53] somos nós
+[01:23:02] no modo PAS
+[01:23:04] do sistema operacional
+[01:23:06] para a rede
+[01:23:08] é responsabilidade da AWS
+[01:23:13] como o nosso
+[01:23:15] colega falou
+[01:23:17] outra coisa
+[01:23:28] o software com serviço
+[01:23:30] olha aqui
+[01:23:32] usar
+[01:23:34] e topar
+[01:23:46] no programa aqui
+[01:23:49] então a gente tem aqui
+[01:23:51] com até o colega ver o colega
+[01:23:53] comentando ali
+[01:23:55] nós temos aqui o PIXA
+[01:23:57] com serviço
+[01:24:07] no modo tradicional
+[01:24:09] a gente vai fazer em casa
+[01:24:11] preparamos a massa
+[01:24:13] cortamos o tomate
+[01:24:15] temos a preparação
+[01:24:17] aquecer o forno
+[01:24:19] preparar bebida
+[01:24:21] preparar a mesa
+[01:24:23] no IAS
+[01:24:26] nós já temos algumas coisas prontas
+[01:24:28] já a gente pode comprar no mercado
+[01:24:30] já a massa
+[01:24:32] prepara
+[01:24:34] já um extrato de tomate
+[01:24:36] e o preparo
+[01:24:38] facilitado
+[01:24:40] mas a gente vai se preocupar o que?
+[01:24:42] para aquecer o forno
+[01:24:44] colocar bebida no copo
+[01:24:46] preparar a mesa
+[01:24:48] no PAS
+[01:24:50] o forno já está pronto, já está assando
+[01:24:52] a gente só vai se preocupar com a bebida
+[01:24:54] e a mesa
+[01:24:56] e no SaaS
+[01:24:58] a gente vai juntar fora
+[01:25:00] então a gente tem
+[01:25:02] como fazer tudo
+[01:25:04] em casa
+[01:25:06] comprar no mercado
+[01:25:10] pedir
+[01:25:12] para o delivery
+[01:25:14] ou a gente pode juntar foto
+[01:25:16] ser uma analogia muito boa
+[01:25:22] vamos lá
+[01:25:27] para as perguntas aqui
+[01:25:29] é
+[01:25:31] e fazer melhor
+[01:25:33] para amigar sistemas
+[01:25:35] legais
+[01:25:37] tudo vai depender do cliente
+[01:25:39] perdão da empresa
+[01:25:43] na faculdade
+[01:25:45] minha professora disse
+[01:25:47] que tem um sistema
+[01:25:49] tão antigo
+[01:25:51] mas que está funcionando
+[01:25:53] que o dom da empresa não quer mexer
+[01:25:55] mesmo de pagar muito caro
+[01:25:57] muitos os casos
+[01:26:06] vai depender
+[01:26:08] da necessidade da empresa
+[01:26:10] simigre esses sistemas legados
+[01:26:12] ou não
+[01:26:18] certo?
+[01:26:21] a quais serviços da AWS
+[01:26:23] seria e as?
+[01:26:25] principalmente
+[01:26:27] a EC2
+[01:26:29] EC2 é o principal serviço
+[01:26:40] e as
+[01:26:42] na AWS
+[01:26:48] características
+[01:26:50] a EBS
+[01:26:53] e as VPC
+[01:26:55] se isso internet
+[01:27:04] na TGate
+[01:27:06] pessoal como é que eu identifico
+[01:27:08] um serviço SELIAAS
+[01:27:14] ou não
+[01:27:16] pessoal como você quer identificar se o serviço é IAS
+[01:27:18] ou não
+[01:27:20] ao usar o serviço você tem
+[01:27:22] controle sobre a infraestrutura
+[01:27:24] por exemplo
+[01:27:30] eu tenho uma aplicação rodando a EC2
+[01:27:32] eu posso escolher o tipo de EBS
+[01:27:34] eu posso
+[01:27:36] pode ser uma SSD
+[01:27:40] pode ser
+[01:27:42] um HD mecânico
+[01:27:49] S3 é
+[01:27:51] PAS, POSAS
+[01:27:53] muitas dúvidas sobre o comportamento do S3
+[01:27:55] mas
+[01:27:57] eu costumo dizer que o S3
+[01:27:59] ele é FAS
+[01:28:01] é como eu disse pra vocês
+[01:28:03] não existe só IAS, PAS, OSAS
+[01:28:05] tem FAS, tem NAS
+[01:28:07] o S3 é como se compôde como
+[01:28:09] um FAS
+[01:28:11] função como serviço
+[01:28:15] todos os bancos seriam IAS
+[01:28:17] não, os bancos aí já vão ser
+[01:28:19] gerenciados
+[01:28:21] e vão ser PAS, RDS
+[01:28:24] é PAS, o banco já tá pronto
+[01:28:26] é só você vai configurar e usar
+[01:28:28] correto ou não
+[01:28:32] vou passar pra trás
+[01:28:37] acho que eu circulei aqui
+[01:28:39] ele pegou do antigo, deixa eu só pagar
+[01:28:41] pessoal
+[01:28:43] a pergunta do colega
+[01:28:45] aqui
+[01:28:47] aqui eles estão dos bancos
+[01:28:49] se eu montar um banco
+[01:28:51] um EC2
+[01:28:53] ele é S IAS
+[01:28:55] mas um banco pode ser PAS
+[01:28:57] pode, é só você pegar
+[01:28:59] o RDS, o RDS
+[01:29:01] é um serviço de bancos de RDS
+[01:29:03] é relacionado prontos
+[01:29:05] você vai lá, configura a ponta
+[01:29:07] e usa
+[01:29:09] o serviço tá pronto
+[01:29:15] vamos lá
+[01:29:17] quando o modelo de serviço dando VWS
+[01:29:19] fornece aos administradores o mais alto
+[01:29:21] nível de controle, atenção
+[01:29:23] alto nível de controle
+[01:29:25] a flexibilidade
+[01:29:27] gerenciamente direto sobre os recursos
+[01:29:29] de TI
+[01:29:31] de rede
+[01:29:33] hardware
+[01:29:35] passasse e aso-fasse
+[01:29:39] letracê né, tinha até passar também de
+[01:29:41] sem querer
+[01:29:43] o infraestrutura como serviço
+[01:29:45] onde eu tenho um maior controle
+[01:29:47] aí vocês
+[01:29:49] vão falar junto comigo
+[01:29:51] grandes poderes
+[01:29:53] grandes responsabilidades
+[01:29:55] grandes poderes
+[01:29:57] grandes responsabilidades
+[01:30:00] infraestrutura como serviço
+[01:30:10] uma empresa de médio porte
+[01:30:12] deseja adotar uma solução de
+[01:30:14] meio corporativo
+[01:30:16] e calendário totalmente
+[01:30:18] gerenciado na nuvem
+[01:30:22] sem se preocupar com a
+[01:30:24] munutenção de servidores
+[01:30:26] atualização de software
+[01:30:28] ou infraestrutura subjacente
+[01:30:30] qual o modelo de serviço se encaixa melhor
+[01:30:32] nesse cenário
+[01:30:38] e aí pessoal
+[01:30:48] SAS, letter B
+[01:30:50] letter B
+[01:30:54] letter B
+[01:30:56] letter B, letter B, letter B, letter B
+[01:31:01] vamos lá, vamos passar, vamos passar, vamos passar
+[01:31:03] exatamente
+[01:31:07] ver até o exemplo né
+[01:31:09] nosso altilute
+[01:31:11] nosso GB
+[01:31:13] prótamos
+[01:31:15] é um exemplo
+[01:31:23] infraestrutura global da AWS
+[01:31:25] atenção
+[01:31:27] o Anderson falou pra vocês que
+[01:31:29] cairia
+[01:31:34] vantagem de se migrar pra dúvida no exame
+[01:31:36] vai cair infraestrutura global da AWS
+[01:31:38] no exame de vocês
+[01:31:40] infraestrutura global da AWS
+[01:31:42] o que é uma região
+[01:31:44] pessoal
+[01:31:46] uma região
+[01:31:52] é uma área geográfica
+[01:31:54] uma região é uma área
+[01:31:58] geográfica onde a AWS possui
+[01:32:00] infraestrutura
+[01:32:05] por exemplo nós temos aqui no Brasil
+[01:32:07] a região de São Paulo
+[01:32:09] dentro da região de São Paulo
+[01:32:11] temos as zonas
+[01:32:13] de sonhabilidade
+[01:32:15] dentro das zonas de sonhabilidade
+[01:32:17] temos conjuntos de data centers
+[01:32:19] então a região
+[01:32:21] é uma coleção de AWS
+[01:32:23] em uma localização geográfica
+[01:32:25] onde é composto outros zonas de sonhabilidade
+[01:32:27] então aqui
+[01:32:31] eu tive o cuidado hoje pessoal
+[01:32:33] eu tive o cuidado hoje
+[01:32:35] de tentar trazer
+[01:32:37] a imagem mais
+[01:32:39] atual possível da AWS
+[01:32:41] porque Anderson
+[01:32:48] pessoal
+[01:32:50] a AWS está aprendendo
+[01:32:52] regiões
+[01:32:54] costumamente
+[01:32:56] olha aqui, eu anotei aqui
+[01:32:59] Chile
+[01:33:01] em breve
+[01:33:03] a Arábia Saudita
+[01:33:05] em breve
+[01:33:07] a do Mesh
+[01:33:09] a no Mesh já está aqui, o Mesh já está funcionando
+[01:33:11] então
+[01:33:20] ela vai estar abrindo
+[01:33:22] várias
+[01:33:24] regiões
+[01:33:26] e várias partes do mundo
+[01:33:31] a gente está conversando hoje sobre essa imagem
+[01:33:33] semana que vem a AWS pode estar diferente
+[01:33:38] Anderson
+[01:33:40] e a definição de zonas de sonhabilidade
+[01:33:42] zonas de sonhabilidade
+[01:33:44] é um ou mais data centers
+[01:33:46] que estão na mesma região
+[01:33:48] Anderson então quer dizer que
+[01:33:50] uma zonas de sonhabilidade
+[01:33:52] em São Paulo ela não pode estar junto
+[01:33:54] com a Chile, não
+[01:33:59] a Zonas de Sonhabilidade é
+[01:34:01] uma data center que estão na mesma região
+[01:34:03] somente separados
+[01:34:05] por uma distância significativa
+[01:34:07] atuando de forma independente
+[01:34:09] em caso de falho de uma zona
+[01:34:11] Anderson por que um a zonas de sonhabilidade
+[01:34:13] vou até mudar aqui a cor
+[01:34:15] Anderson por que uma zonas de sonhabilidade
+[01:34:17] digamos assim
+[01:34:19] ela não é
+[01:34:21] uma perca da ovo
+[01:34:23] vamos supor, temos a Zonas de Sonhabilidade
+[01:34:25] 50 quilômetros, temos outra
+[01:34:27] e daqui a 10 quilômetros temos outra
+[01:34:29] por que?
+[01:34:31] pessoal, Zonas de Sonhabilidade
+[01:34:33] são separadas
+[01:34:35] entre si
+[01:34:37] muito
+[01:34:41] pela segurança
+[01:34:43] segurança do que Anderson?
+[01:34:45] catástrofes naturais
+[01:34:47] do ser humano
+[01:34:53] como assim Anderson?
+[01:34:55] 11 de setembro de 2001
+[01:35:01] os ataques terroristas
+[01:35:03] a World Bank
+[01:35:05] existiam empresas
+[01:35:09] que mantiam um backup
+[01:35:11] na torre sul
+[01:35:13] existia um empresa da torre sul
+[01:35:15] que mantia um backup da torre norte
+[01:35:17] infelizmente a gente sabe
+[01:35:19] foi que deu
+[01:35:21] várias empresas ali
+[01:35:23] além de vidas que eram mais importantes
+[01:35:25] foram varridas do mapa
+[01:35:27] como se nunca tivessem existido
+[01:35:29] desachas naturais
+[01:35:33] obras
+[01:35:35] digamos assim negativas
+[01:35:37] praticadas pelo homem
+[01:35:39] então por isso
+[01:35:41] que elas são
+[01:35:45] distantes
+[01:35:47] distintas
+[01:35:49] redundantes
+[01:35:53] em conectividade
+[01:35:55] rede
+[01:36:00] tolerante a falhas
+[01:36:04] com maior alto isolamento
+[01:36:06] possível
+[01:36:08] para manter a segurança
+[01:36:10] então zona de sua habilidade
+[01:36:12] estão separadas
+[01:36:14] por uma distância significativa
+[01:36:16] atuando de forma independente
+[01:36:18] caso de falha de um a zômetro
+[01:36:20] antes quer dizer que
+[01:36:22] então pelas suas palavras
+[01:36:24] você quer dizer que um a zômetro de sua habilidade
+[01:36:26] tem duas empresas de energia
+[01:36:31] provendo
+[01:36:33] energia para essas ondas
+[01:36:35] sim
+[01:36:37] além de um gerador
+[01:36:39] geradores
+[01:36:41] antes quer dizer que
+[01:36:43] se nessas ondas de sua habilidade
+[01:36:45] existem ali
+[01:36:47] 80, 100, 120 mil servidores
+[01:36:51] se aqui
+[01:36:53] 50 a condicionado
+[01:36:55] seguraria um calor dessa zona
+[01:36:59] quer dizer que ela tem
+[01:37:01] 100, correto
+[01:37:03] é tudo redundante
+[01:37:05] antes quer dizer que
+[01:37:07] se todo o cabiamento
+[01:37:09] de dentro dessas ondas de sua habilidade
+[01:37:11] é x
+[01:37:13] quer dizer que ela tem
+[01:37:15] x ao quadrado
+[01:37:17] sim tudo é
+[01:37:19] redundante
+[01:37:21] da energia
+[01:37:23] a água condicionado
+[01:37:25] a segurança
+[01:37:27] tudo é redundante
+[01:37:36] e aqui nós temos as ondas de sua habilidade
+[01:37:38] nós perdemos aqui o exemplo da região de São Paulo
+[01:37:40] da torcente independente
+[01:37:42] uma ação distante
+[01:37:44] entre si
+[01:37:46] e
+[01:37:48] uma zona de disponibilidade
+[01:37:50] ou mais data sensor
+[01:37:52] distantes aqui no longo de distância
+[01:37:54] com energia, rede e conectividades redundantes
+[01:37:56] Anderson e o que é o ponto de presença?
+[01:38:05] o ponto de presença
+[01:38:07] é uma infraestrutura dos servidores
+[01:38:09] localizado
+[01:38:11] próximo de uma zona de disponibilidade
+[01:38:13] quer armazenar os dados mais solicitados no cache
+[01:38:15] para entregar com menor latência
+[01:38:17] a requisição de consulta
+[01:38:19] isso quer dizer o que antes
+[01:38:21] me explica
+[01:38:23] vamos lá
+[01:38:25] nós temos aqui o passo um
+[01:38:27] poxa
+[01:38:29] eu quero ver um vídeo
+[01:38:31] não suponho, quero ver um vídeo ali na Netflix
+[01:38:33] vamos aqui para a parte da teoria
+[01:38:37] o que é que aconteceria
+[01:38:39] para eu assistir
+[01:38:41] cara tem o bumbum momento
+[01:38:43] o que tem de ver aqui de filme
+[01:38:45] sei lá
+[01:38:47] tem aí o street fighter
+[01:38:49] de estar saindo de cinemas
+[01:38:51] ou qualquer outro filme para você esquecer
+[01:38:53] eu posso chegar aqui
+[01:38:55] no servidor original do stream
+[01:38:57] aqui é o stream
+[01:38:59] que pode ser Netflix
+[01:39:03] ou qualquer outro provedor
+[01:39:05] de stream
+[01:39:07] o usuário
+[01:39:09] ele quer acessar
+[01:39:13] um filme, uma série
+[01:39:15] então quando ele faz
+[01:39:20] essa solicitação em se get
+[01:39:22] ele vai ver
+[01:39:24] se tem um ponto de presença
+[01:39:26] não tem um ponto de presença
+[01:39:31] ele vai lá na origem
+[01:39:33] quando
+[01:39:38] ele volta esse dado
+[01:39:40] esse vídeo
+[01:39:42] com o usuário
+[01:39:44] ele já é reamazenado
+[01:39:46] no ponto de presença
+[01:39:48] mas para que isso Andres
+[01:39:50] estou assistindo o filme, estou assistindo o série
+[01:39:52] não consegui assistir tudo
+[01:39:54] é o melhor filme
+[01:39:56] que está acontecendo aqui no momento
+[01:39:58] várias pessoas estão assistindo
+[01:40:00] quando o usuário quer assistir
+[01:40:07] ele vai diretamente
+[01:40:09] aqui no cast
+[01:40:11] pronto de apresentar mas não tem cast
+[01:40:13] tem uma cópia aqui
+[01:40:15] tem, então
+[01:40:17] daqui ele volta
+[01:40:19] vou apagar
+[01:40:21] novamente vou botar aqui em vermelho
+[01:40:23] mas destaque
+[01:40:25] o usuário faz a solicitação
+[01:40:27] está pronto de presença, tem
+[01:40:29] daqui ele volta, ele não precisa mais
+[01:40:31] ir na origem
+[01:40:35] e não precisa mais na origem
+[01:40:37] porque isso aqui
+[01:40:39] nós salvamos o que chamamos de
+[01:40:41] latência
+[01:40:45] foi muito mais rápido
+[01:40:47] eu acessar esse vídeo e eu acessar
+[01:40:49] esse capítulo dessa série, foi muito
+[01:40:51] mais rápido
+[01:40:59] mas antes isso aqui eu sei que o
+[01:41:01] tem validade, se me tem
+[01:41:03] se continuar
+[01:41:05] aqueles arquivos sendo usados
+[01:41:07] mais solicitados, ele armazena novamente
+[01:41:09] e daqui
+[01:41:11] ele volta com o cliente
+[01:41:13] esse é um ponto de presença
+[01:41:15] antes só de a gente tem ponto de presença
+[01:41:17] aqui no Brasil, por exemplo
+[01:41:19] nós tínhamos um Rio de Janeiro
+[01:41:21] vocês bem sabem que a região
+[01:41:23] da WS no Brasil
+[01:41:25] é em São Paulo com três ondas com a habilidade
+[01:41:27] mas você não é o pessoal
+[01:41:29] acaba de falar que tem um ponto de presença
+[01:41:31] no Rio de Janeiro
+[01:41:33] ele não faz
+[01:41:37] parte da região
+[01:41:39] ele nada mais
+[01:41:42] é
+[01:41:44] do que uma infraestrutura
+[01:41:50] e até poder dizer que ele vai ajudar
+[01:41:52] ali, concede de cedê em
+[01:41:54] distribuição, correto Carlos, Carlos colocou
+[01:41:56] aqui no chat correto, nem
+[01:42:04] todos os pontos de presença
+[01:42:06] o foco é
+[01:42:08] latência
+[01:42:10] o foco é distribuir
+[01:42:12] conteúdo o mais rápido
+[01:42:14] possível para o cliente
+[01:42:16] melhorar o desempenho
+[01:42:19] com os pontos de presença
+[01:42:23] vamos lá
+[01:42:31] até tinha um dado aqui
+[01:42:33] os pontos de presença foram utilizados
+[01:42:35] para distribuição de conteúdo
+[01:42:37] mas o cloud front, o safe cloud front
+[01:42:39] usa esses pontos de presença
+[01:42:41] com toda e absoluta certeza
+[01:42:43] vamos lá
+[01:42:48] dicas do exame
+[01:42:50] região conjunto de data centers
+[01:42:52] em uma nova organização geográfica
+[01:42:54] a cada região possui
+[01:42:56] uma conjunção de disponibilidade
+[01:43:01] as ondas unidades são distintas
+[01:43:03] aqui na distância
+[01:43:05] uma das outras com conexões de alta velocidade
+[01:43:07] com segurança, refigeração
+[01:43:09] e pode ser
+[01:43:11] um mais data centers
+[01:43:13] com vários servidores
+[01:43:15] e os pontos de presença
+[01:43:17] os ad-flocates no inglês são utilizados
+[01:43:19] como cache de dados para distribuição
+[01:43:21] de conteúdo
+[01:43:23] opção é uma localização
+[01:43:27] física da estrutura global da AWS
+[01:43:29] atenção as palavras
+[01:43:31] chave
+[01:43:40] qual é a resposta correta
+[01:43:42] a resposta correta
+[01:43:44] pessoal
+[01:43:56] dica
+[01:44:00] dica
+[01:44:02] dica
+[01:44:05] pessoal
+[01:44:07] dica
+[01:44:09] dica
+[01:44:11] você bem preparado
+[01:44:13] com exame
+[01:44:15] você consegue responder
+[01:44:17] muita pergunta
+[01:44:19] um palavra chave
+[01:44:21] que está no próprio enunciado
+[01:44:23] pessoal
+[01:44:25] isso aqui é um localização
+[01:44:27] físico ou é um serviço AWS
+[01:44:29] é um localização físico
+[01:44:37] ou serviço AWS
+[01:44:39] é um serviço correto
+[01:44:47] organization
+[01:44:52] é um serviço ou localização física da AWS
+[01:44:54] serviço
+[01:44:56] um Amazon connect
+[01:45:00] é um serviço ou localização física
+[01:45:04] é um serviço
+[01:45:06] a região da AWS
+[01:45:08] ele é um serviço ou localização físico
+[01:45:10] ele é um localização físico
+[01:45:12] pessoal
+[01:45:14] não se enganem
+[01:45:16] não se enganem
+[01:45:18] muitas das questões
+[01:45:20] você consegue resolver
+[01:45:22] essas coisas aqui desta forma
+[01:45:24] falar da chave
+[01:45:26] que vai muito invalidar
+[01:45:28] os itens destratores
+[01:45:30] atenção
+[01:45:38] vamos estar preparados
+[01:45:40] para o exame
+[01:45:42] nós temos aqui
+[01:45:44] a região da AWS
+[01:45:46] de forma correta
+[01:45:48] qual componente da infraestrutura global
+[01:45:50] da AWS consiste
+[01:45:52] em uma ou mais instalações de data centers
+[01:45:54] discretas
+[01:45:56] com energia
+[01:45:58] rede conectável
+[01:46:00] redudantes localizados dentro da região
+[01:46:02] e interconectares por redes de alta velocidade
+[01:46:04] baixa latência
+[01:46:06] nós estamos falando da
+[01:46:12] aulas 22 horas
+[01:46:14] 22 horas
+[01:46:21] letra B
+[01:46:23] zona de disponibilidade
+[01:46:25] descreveu totalmente
+[01:46:27] as zonas de disponibilidade
+[01:46:31] recursos
+[01:46:33] gerenciados
+[01:46:35] o recurso gerenciado
+[01:46:37] é que a AWS
+[01:46:39] quando a gente está falando de recurso gerenciado
+[01:46:41] é quando a AWS assume
+[01:46:43] partes das tarefas de administração
+[01:46:45] em manutenção
+[01:46:47] e operação da infraestrutura
+[01:46:49] e o cliente vai falar no que?
+[01:46:53] ser isso
+[01:46:55] então ele traz aqui
+[01:46:57] um recurso gerenciado é quando o serviço
+[01:46:59] ou as configurações da câmara anterior
+[01:47:01] não são administrado pelo usuário
+[01:47:03] que é diferente do
+[01:47:05] é diferente do IaaS
+[01:47:09] vai ter que
+[01:47:11] grandes responsabilidades
+[01:47:13] grandes poderes
+[01:47:15] grandes responsabilidades
+[01:47:20] lembra lá?
+[01:47:22] aplicações
+[01:47:24] até o sistema operacional
+[01:47:26] por exemplo
+[01:47:28] o exemplo que eu trouxe para vocês
+[01:47:33] o EC2
+[01:47:35] pode ter um ponto de dados
+[01:47:37] na instalada dele
+[01:47:39] mas eu atualizo
+[01:47:41] pejo de segurança
+[01:47:43] eu atualizo
+[01:47:45] sistema operacional
+[01:47:47] os peques de segurança do próprio banco
+[01:47:49] eu vou ter que tomar de conta
+[01:47:51] de tudo
+[01:47:53] com tudo porém, todavia
+[01:47:58] nós temos agora
+[01:48:00] os serviços
+[01:48:02] por exemplo
+[01:48:04] gerenciado RDS, eu posso ter um mecanismo
+[01:48:06] mais SQL
+[01:48:08] posso ter um potesgree
+[01:48:10] posso ter um IBM
+[01:48:12] posso ter um da Microsoft
+[01:48:14] posso ter um
+[01:48:16] do MariaDB
+[01:48:18] só que aqui
+[01:48:20] por exemplo, já vez que o sistema operacional
+[01:48:22] eu não preciso mais saber
+[01:48:24] aqui o que eu vou fazer no RDS
+[01:48:26] eu só vou configurar
+[01:48:28] configurar
+[01:48:32] cara, RDS vai ser
+[01:48:34] single
+[01:48:36] vai ser single az
+[01:48:39] esse banco vai ser multi az
+[01:48:43] e tem uma terceira opção
+[01:48:50] se a Karen poder me ajudar agora
+[01:48:52] esqueci
+[01:48:54] deu um plano agora
+[01:48:58] faz parte
+[01:49:01] me ajuda aqui
+[01:49:03] quero dar uma pesquisa para a Karen agora
+[01:49:05] ter uma terceira opção
+[01:49:11] eu vou ter que configurar
+[01:49:20] a senha do banco
+[01:49:37] usuário
+[01:49:39] a questão do
+[01:49:43] do backup
+[01:49:45] é automático
+[01:49:49] eu programo para
+[01:49:54] uma vez por mês
+[01:50:05] uma vez por semana, do backup
+[01:50:07] então a gente
+[01:50:09] justamente
+[01:50:11] a gente tem que fazer ali
+[01:50:18] as configurações
+[01:50:32] lembrei
+[01:50:34] cluster
+[01:50:36] cluster
+[01:50:43] multi az cluster
+[01:50:45] vou colocar aqui a M
+[01:50:47] pronto multi az
+[01:50:49] cluster
+[01:50:51] nós tivemos três opções
+[01:50:56] single az, multi az
+[01:50:58] multi az cluster
+[01:51:03] vai ser um buraco na hora
+[01:51:05] faz parte
+[01:51:07] antes
+[01:51:09] antes que
+[01:51:11] antes que alguém
+[01:51:13] pergunte
+[01:51:16] vamos lá
+[01:51:18] no óbvio
+[01:51:20] quando a gente está falando de
+[01:51:24] do modo single az
+[01:51:26] ele está dizendo que ele
+[01:51:28] está em 1
+[01:51:30] zontos com habilidade, correto?
+[01:51:32] correto
+[01:51:34] quando a gente está falando de multi az
+[01:51:36] nós estamos falando que
+[01:51:38] ele está em
+[01:51:41] múltiplas zontos com habilidade
+[01:51:43] 2
+[01:51:51] e quando a gente está falando de multi az cluster
+[01:51:53] quando a gente está falando de multi az cluster
+[01:51:57] pessoal geralmente
+[01:51:59] nós temos aqui
+[01:52:01] uma instância
+[01:52:03] principal
+[01:52:05] onde nela vai ter a escrita
+[01:52:15] e nós temos ali outras instâncias
+[01:52:17] que são de leituras
+[01:52:19] distribuí-los na sua habilidade
+[01:52:21] nós estamos falando das
+[01:52:25] repletas
+[01:52:30] justamente para que?
+[01:52:32] evita
+[01:52:34] o acesso só para consulta
+[01:52:36] deixa as outras duas só para consulta
+[01:52:38] e deixa só para escrita
+[01:52:40] e depois ele fica replicando
+[01:52:44] nós temos aqui o cluster
+[01:52:48] vamos para o próximo
+[01:52:50] e nós temos aqui o SAS como recongenition
+[01:52:52] o AWS Recongenition pessoal
+[01:52:54] é um serviço de reconhecimento
+[01:52:56] e de operacionales
+[01:53:02] então a gente só está aqui
+[01:53:04] e só usa
+[01:53:07] vamos precisar montar nada
+[01:53:09] como no anterior
+[01:53:16] dicas do examen
+[01:53:22] um recurso deixa de ser gerenciado
+[01:53:24] com você com outra parte
+[01:53:26] o gerenciamento
+[01:53:28] as atualizações, a manutenção
+[01:53:30] o gerenciamento e a segurança
+[01:53:32] aí eu pergunto
+[01:53:34] cara eu estou com dúvida
+[01:53:38] o time de bi
+[01:53:40] aí eu pergunto
+[01:53:42] qual é o sistema operacional
+[01:53:44] tu sabe que está rodando da lv
+[01:53:46] tu escolhi o sistema operacional
+[01:53:48] não
+[01:53:51] é tu que atualiza os pés de segurança
+[01:53:53] do sistema operacional? é tu que atualiza os pés de segurança do bug?
+[01:53:55] não
+[01:53:57] muito provavelmente é o serviço gerenciado
+[01:53:59] ou seja
+[01:54:01] a parte de gerenciamento e atualizações
+[01:54:06] da manutenção
+[01:54:08] é para o AWS
+[01:54:10] você só
+[01:54:12] você só pode configurar
+[01:54:18] a atenção
+[01:54:20] foram várias atenções
+[01:54:22] pessoal
+[01:54:24] seguinte
+[01:54:31] eu tenho várias certezas da lv
+[01:54:33] existe várias certezas no mundo
+[01:54:35] meu pai assim
+[01:54:37] a única certeza que eu tenho
+[01:54:39] é que a morte um dia vai chegar
+[01:54:41] é beleza, verdade
+[01:54:43] uma certeza
+[01:54:45] agora eu vou orgir uma coisa
+[01:54:49] eu tenho uma grande certeza
+[01:54:51] e não é
+[01:54:53] não só, perdão
+[01:54:55] não só
+[01:54:59] que vantagem de se migrar pra lv
+[01:55:01] vai cair na prova de vocês
+[01:55:03] regiões de omniscomididade
+[01:55:05] vai cair nas ondas de vocês
+[01:55:07] eu tenho uma coisa pra dizer pra vocês meus amigos
+[01:55:12] o error tag
+[01:55:14] não só é, não só vai
+[01:55:16] cair
+[01:55:18] na prova de vocês
+[01:55:20] como geralmente
+[01:55:22] eu digo isso com mais de
+[01:55:24] 70, 80% de certeza
+[01:55:26] por que eu digo isso
+[01:55:28] porque tem um outro que também
+[01:55:30] quando ele é outro
+[01:55:32] é o assunto que
+[01:55:34] de mais questões na prova de vocês
+[01:55:36] exemplo
+[01:55:40] lembro-me da minha colega de sala
+[01:55:44] chegou pra mim Anderson
+[01:55:47] se eu não tivesse estudado o error tag
+[01:55:49] eu não tinha passado
+[01:55:51] por que?
+[01:55:56] na minha prova foi o 7
+[01:55:58] questões de error tag
+[01:56:00] quando eu era um do pessoal
+[01:56:02] ela caiu 7 questões na prova dela e caiu
+[01:56:04] 5 na minha
+[01:56:06] a última vez que eu fiz caiu 4
+[01:56:08] atenção
+[01:56:22] o error tag é
+[01:56:24] os assuntos que mais vai cair na prova de vocês
+[01:56:26] eu sei que o error tag é um livro
+[01:56:28] que ele é
+[01:56:32] parece uma bíblia
+[01:56:34] de tão grosso que ele é
+[01:56:36] estou falando da quantidade de páginas
+[01:56:38] pessoal, é se a gente fosse
+[01:56:41] imprimir
+[01:56:43] o error tag
+[01:56:45] era uma risma de papel
+[01:56:47] do outro e o error tag
+[01:56:49] e olha lá
+[01:56:53] pessoal, o error tag
+[01:56:55] mas eu vou dar uma dica pra vocês
+[01:56:57] o que eu preciso
+[01:56:59] pelo error tag? atenção
+[01:57:01] o error tag
+[01:57:03] você precisa saber
+[01:57:05] quais são e pra que
+[01:57:07] é o objetivo dos 6 pilares
+[01:57:09] do error tag
+[01:57:11] pilar número 1
+[01:57:16] excelência
+[01:57:18] operacional
+[01:57:20] objetivo
+[01:57:22] entregar valor
+[01:57:24] operar
+[01:57:26] monitorar
+[01:57:28] melhorar continuamente os sistemas
+[01:57:30] pilar da segurança
+[01:57:40] proteger dados
+[01:57:45] proteger sistemas
+[01:57:47] proteger recursos
+[01:57:49] contra acessos não autorizado
+[01:57:51] proteger contra
+[01:57:53] todo e qualquer tipo de
+[01:57:55] ameaça
+[01:57:57] ou pilar da confiabilidade
+[01:58:07] garantir
+[01:58:12] que os sistemas funcionem
+[01:58:14] mesmo se está tendo
+[01:58:16] falha
+[01:58:18] e fazer com que se
+[01:58:20] recupere de forma automática
+[01:58:22] se possível
+[01:58:24] de preferência
+[01:58:27] e eficiência de performance
+[01:58:36] é o pilar onde
+[01:58:38] você
+[01:58:40] onde se aconselha a você usar
+[01:58:42] os recursos de tê
+[01:58:44] de forma mais eficiente
+[01:58:46] e sempre mantendo
+[01:58:48] desempenho
+[01:58:50] mesmo se a demanda aumentar
+[01:58:52] optimização de custo
+[01:59:04] do óbvio
+[01:59:08] compreender
+[01:59:10] aonde o dinheiro está sendo gasto
+[01:59:14] evitar gastos
+[01:59:16] desnecessários
+[01:59:18] entregar
+[01:59:22] valor
+[01:59:24] como excelência opressional
+[01:59:26] sempre pelo menor custo
+[01:59:28] possível
+[01:59:30] e um mais recente
+[01:59:32] de
+[01:59:34] aproximadamente 2 anos atrás
+[01:59:38] o pilar da sustentabilidade
+[01:59:44] focado em
+[01:59:46] reduzir os impactos
+[01:59:48] ambientais
+[01:59:54] da nossa execução
+[01:59:56] da carrega de trabalho
+[01:59:58] que a gente provei
+[02:00:05] agora eu estou de boa
+[02:00:09] agora eu estou de boa
+[02:00:17] eu sou o raseus pilares do seu que um pra serve
+[02:00:19] o que outro pra serve
+[02:00:21] eu estou pronto pra ir pra prova negado
+[02:00:23] além de você saber
+[02:00:38] o que é um pilar
+[02:00:43] você tem que saber
+[02:00:45] o princípio de design
+[02:00:55] você agora
+[02:00:57] e agora saquei o que vou fazer
+[02:00:59] eu vou falar todos não
+[02:01:01] a gente vai arrumar
+[02:01:03] uma maneira pessoal
+[02:01:05] não deixa eu
+[02:01:07] esquecer
+[02:01:09] a gente precisa de um
+[02:01:11] material
+[02:01:13] vou até responder
+[02:01:15] essa pergunta
+[02:01:18] adianto pra vocês pra prova
+[02:01:20] atenção, dica pra prova
+[02:01:22] agora eu vou responder
+[02:01:24] a pergunta do colega
+[02:01:26] eu sou se
+[02:01:31] foi pra ficar bom
+[02:01:33] no af
+[02:01:35] de cabo arrago
+[02:01:37] quanto tempo seria necessário pra estudos
+[02:01:39] você é noordestino que nem eu viu
+[02:01:41] aqui no social heim pessoal
+[02:01:43] a gente usa essa expressão
+[02:01:47] se for pra ficar bom no af
+[02:01:49] do começo ao fim
+[02:01:51] eu vou prestar de quanto tempo
+[02:01:53] aí eu vou dizer aqui pro nosso colega
+[02:01:55] vou dizer pra todos os nossos colegas aqui
+[02:01:57] pessoal
+[02:02:01] a gente precisa
+[02:02:03] de um bom de war attack
+[02:02:07] além do
+[02:02:09] de viver o dia a dia
+[02:02:15] pegar a documentação
+[02:02:17] e ler do começo ao fim até entender
+[02:02:19] eu não acho
+[02:02:23] uma maneira
+[02:02:25] eu não estou de maneira nenhuma
+[02:02:27] de maneira nenhuma
+[02:02:29] desmotivando
+[02:02:31] mas tem como a gente melhorar
+[02:02:33] e como é que a gente vai melhorar
+[02:02:35] a gente vai focar no que é preciso
+[02:02:37] de conhecimento que é preciso
+[02:02:39] aí agora eu volto pro slide
+[02:02:41] eu volto pro slide
+[02:02:43] e vamos lá
+[02:02:45] eu já sei o que é
+[02:02:47] vai voltar tudo de novo
+[02:02:49] não é isso não
+[02:02:53] pro exame
+[02:02:55] pro exame
+[02:02:57] antes você já falou qual o primeiro
+[02:02:59] excelência operacional
+[02:03:01] que eu entregar valor
+[02:03:03] operar, monitorar
+[02:03:05] continuamente
+[02:03:07] pessoal precisamos do princípio
+[02:03:09] de design
+[02:03:11] princípios de design
+[02:03:13] dos pilares
+[02:03:15] eu preciso saber
+[02:03:17] pra que é aquele pilar
+[02:03:19] e de seus princípios de design
+[02:03:23] não vou falar todos porque
+[02:03:25] a gente tem que ter um tema que vocês têm
+[02:03:27] também quero que você puder
+[02:03:29] botar o link também
+[02:03:31] da documentação oficial
+[02:03:33] interessante, por gente ler
+[02:03:35] obrigado
+[02:03:37] excelência operacional, princípios de design
+[02:03:39] uma das que eu mais gosto
+[02:03:42] inclusive o mais gosto
+[02:03:44] perdão
+[02:03:46] fazer mudanças frequentes
+[02:03:48] pequenas
+[02:03:50] irreversíveis
+[02:03:52] como assim antes
+[02:03:54] eu tenho um grande sistema
+[02:03:56] tu não vai mudar tudo
+[02:03:58] de uma vez só, isso se derrui
+[02:04:04] não, não, não
+[02:04:06] você tem um sistema
+[02:04:08] eu tenho uma parte
+[02:04:11] aí aqui, o que que eu posso
+[02:04:15] melhorar aqui
+[02:04:17] princípio de design
+[02:04:19] fazer mudanças frequentes pequenas
+[02:04:21] e se eu mudar só isso aqui
+[02:04:23] e derruir
+[02:04:25] eu consigo reverter porque eu mudei pouco
+[02:04:27] até se para falhas
+[02:04:33] princípio de design
+[02:04:35] e ela disse eu não deu certo
+[02:04:37] a falha ocorreu
+[02:04:39] não tem problema
+[02:04:41] tem o outro princípio de design
+[02:04:45] aprendeu com falhas
+[02:04:47] antecipe as falhas
+[02:04:51] não deu a aprenda com as falhas
+[02:04:55] faça mudanças frequentes pequenas
+[02:04:57] que possam ser irreversíveis
+[02:05:01] trabalhar mais com código do que só
+[02:05:03] com um servidores
+[02:05:05] montando máquinas
+[02:05:07] muito servidor
+[02:05:09] muito servidor
+[02:05:11] e abençonada
+[02:05:13] olha pros serviços
+[02:05:15] vamos lá
+[02:05:19] segurança
+[02:05:21] princípio de design
+[02:05:23] a rastreabilidade
+[02:05:26] de ações
+[02:05:28] o AWS CloudTrain funcionando
+[02:05:30] bastante aqui
+[02:05:32] automatizar a prática de segurança
+[02:05:34] proteger
+[02:05:36] da visão de trânsito e repouso
+[02:05:40] prepare-se
+[02:05:42] prepare-se
+[02:05:44] alguém aqui já ouviu falar de game day
+[02:05:48] game day
+[02:05:50] alguém já ouviu falar de game day
+[02:06:05] caso
+[02:06:14] ninguém tenha ouviu falar de game day
+[02:06:16] eu vou
+[02:06:18] sugestionar
+[02:06:20] um poslive
+[02:06:22] ou amanhã
+[02:06:24] procure pro
+[02:06:26] por
+[02:06:30] Chaos Monkey
+[02:06:32] procure por
+[02:06:38] Chaos Monkey
+[02:06:40] da minha nossa senhora
+[02:06:42] da Netflix
+[02:06:44] Netflix
+[02:06:46] procure por
+[02:06:48] Netflix
+[02:06:52] procure o game day
+[02:06:54] Chaos Monkey da Netflix
+[02:06:56] coisa de louco
+[02:06:58] coisa de louco
+[02:07:00] queria vivenciar isso um dia
+[02:07:02] vamos pro próximo
+[02:07:04] tempo de curto
+[02:07:06] vamos lá
+[02:07:08] confiabilidade
+[02:07:10] recupera-se de falhas
+[02:07:14] automaticamente
+[02:07:19] pare de adivinhar a capacidade
+[02:07:21] o outro esquerdo
+[02:07:23] aqui
+[02:07:28] teste procedimento de recuperação
+[02:07:30] vamos pro próximo
+[02:07:38] eficiência de performance
+[02:07:42] outro vantagem de migra pra nuvem
+[02:07:44] dentro de eficiência de superfóssil
+[02:07:46] temos o tornaço global em minutos
+[02:07:50] utilizar a arquitetura serverless
+[02:07:52] experimentar com frequência
+[02:08:00] utilização de custo
+[02:08:04] adotar um modelo baseado
+[02:08:06] em consumo
+[02:08:08] medir eficiência
+[02:08:10] se tu não tá medindo eficiência
+[02:08:12] eu to pagando muito caro
+[02:08:14] analisar gastos
+[02:08:18] suscritabilidade
+[02:08:23] utilizar serviços
+[02:08:27] gerenciados
+[02:08:33] eu tava falando lá em cima
+[02:08:35] o eficiente do o selecção personal
+[02:08:39] é servidor pra isso, é servidor praquilo
+[02:08:41] é servidor praquilo, é servidor, é servidor
+[02:08:43] utilize
+[02:08:45] serviços gerenciados
+[02:08:49] estabiliza metas de sustentabilidade
+[02:08:51] compreenda
+[02:08:53] o impacto ambiental
+[02:08:55] da sua arquitetura
+[02:08:57] esses são os princípios de design
+[02:08:59] eu fui, voltei
+[02:09:01] prova
+[02:09:03] to falando de prova
+[02:09:05] vocês precisam saber
+[02:09:07] dos princípios
+[02:09:09] ele vai dar aqui
+[02:09:14] pessoal um
+[02:09:16] um exemplo aqui
+[02:09:18] dos princípios de design
+[02:09:20] mais comum
+[02:09:22] para ficar de
+[02:09:24] a capacidade de testar o produto
+[02:09:26] em escalaprodução, automatizar a arquitetura
+[02:09:30] permitir a evolução da arquitetura
+[02:09:32] construir arquitetura
+[02:09:34] em base de dados
+[02:09:36] melhor até vez de game deis
+[02:09:38] que tá comentando
+[02:09:49] princípios de design
+[02:09:51] escalabilidade
+[02:09:53] vertical
+[02:09:55] e horizontal
+[02:09:57] certo
+[02:10:01] a gente
+[02:10:03] tem também
+[02:10:05] recursos descartáveis
+[02:10:07] nada pra ser, não faça
+[02:10:09] servidor pra isso, servidor praquilo
+[02:10:11] e aí vai ser pra sempre
+[02:10:16] automação, cebolas
+[02:10:18] yas, auto-skill
+[02:10:20] close couple
+[02:10:22] escalara na minha prova duas vezes
+[02:10:24] lance couple
+[02:10:26] falhas não podem cascar o tiado
+[02:10:28] não monogestion, se agora você quer isso aí
+[02:10:30] você cria uma infraestrutura
+[02:10:32] tão pesada
+[02:10:34] tão pesada
+[02:10:36] nós temos
+[02:10:38] vários serviços, vários recursos
+[02:10:40] que tão assim totalmente
+[02:10:42] interligados entre si
+[02:10:46] aí de repente
+[02:10:48] aí de repente
+[02:10:50] um bem aqui
+[02:10:52] dá problema, para
+[02:10:54] aí ele começa a cascatear
+[02:10:56] um serviço
+[02:10:58] um recurso
+[02:11:00] que não tinha nada a ver com a história
+[02:11:02] para o que
+[02:11:04] tinha nada a ver com a história
+[02:11:06] para o
+[02:11:08] para o
+[02:11:10] para o
+[02:11:15] cascateou
+[02:11:17] não ao monolito
+[02:11:21] não cria dependências, se esse parar
+[02:11:23] ele não pode interferir nesse
+[02:11:25] ele não pode interferir nesse
+[02:11:27] ele não pode interferir nesse
+[02:11:29] serviços
+[02:11:37] não servidores, é o que a gente comentou aqui três vezes
+[02:11:41] exatamente, o colário falou ali
+[02:11:43] em outro baixo acoplamento
+[02:11:45] no material oficial da AWS
+[02:11:47] tá
+[02:11:49] meu deus é
+[02:11:53] criar dependências
+[02:11:55] fracamente acopladas
+[02:11:57] é o que tá no material oficial da AWS
+[02:11:59] criar
+[02:12:01] dependências fracamente acopladas
+[02:12:05] pergunta
+[02:12:07] pergunta
+[02:12:09] quais das alternativas a seguir
+[02:12:11] são pilares do well-wired tag
+[02:12:13] from the world
+[02:12:15] vamos lá
+[02:12:21] quais das alternativas a seguir são pilares
+[02:12:23] do well-wired tag from the world
+[02:12:25] nós temos
+[02:12:37] estabilidade
+[02:12:39] recursos, eficiência de desempenho
+[02:12:41] elasticidade, sistema desenvolvimento
+[02:12:43] auge, coissteria e supressão
+[02:12:45] atenção, é desse jeito no examen
+[02:12:47] vai tá lá, não tem como errar
+[02:12:49] se você marcar só uma
+[02:12:51] erro
+[02:12:53] aí eu marquei uma certa e outra errada
+[02:12:55] esse 50% de exponto, erro
+[02:12:57] B, F, F
+[02:13:00] eficiência de desempenho
+[02:13:02] excelência operacional
+[02:13:04] estamos corretos
+[02:13:06] eficiência e desempenho
+[02:13:08] excelência operacional
+[02:13:10] show, muito bom
+[02:13:12] vamos lá
+[02:13:18] uma empresa que é melhorar continuamente processos
+[02:13:20] e procedimentos para entregar
+[02:13:22] entregar valor comercial
+[02:13:24] pessoal
+[02:13:26] qual é o pilar
+[02:13:28] do well-wired tag
+[02:13:30] que entrega valor
+[02:13:32] comercial
+[02:13:35] qual é o pilar que entrega
+[02:13:37] valor comercial
+[02:13:39] letra A
+[02:13:42] letra B
+[02:13:44] letra C
+[02:13:46] letra D
+[02:13:55] todo mundo aqui de letra B
+[02:13:57] todo mundo sendo Nungbe
+[02:13:59] todo mundo sendo Nungbe
+[02:14:01] excelência
+[02:14:03] operacional
+[02:14:07] excelência operacional
+[02:14:14] perfeito
+[02:14:16] qual pilar do well-wired tag
+[02:14:18] se concentra na capacidade
+[02:14:20] de recuperação automática
+[02:14:22] de interrupções
+[02:14:24] do serviço
+[02:14:26] qual é pessoal, quem tá até comentando aqui
+[02:14:28] ele tem que ter
+[02:14:30] a capacidade de se recuperar
+[02:14:32] automaticamente
+[02:14:34] qual é o pilar
+[02:14:39] confiabilidade
+[02:14:58] muita que pela maioria
+[02:15:00] tá bom
+[02:15:02] pela maioria letra D, vamos lá
+[02:15:04] vamos lá
+[02:15:06] pilar da confiabilidade
+[02:15:08] pessoal
+[02:15:10] recuperar se automática
+[02:15:12] é um princípio de
+[02:15:14] você se perceberam
+[02:15:16] o well-wired tag
+[02:15:18] saber a descrição
+[02:15:20] e os princípios de design
+[02:15:22] de cada pilar
+[02:15:25] recuperar se automaticamente de fálias
+[02:15:27] é um princípio de design
+[02:15:29] do confiabilidade
+[02:15:31] vamos lá
+[02:15:35] uma empresa de médio forte deseja
+[02:15:37] adotar solução de em meio corporativa
+[02:15:39] e calendário totalmente
+[02:15:41] gerenciar na Nouvea e se se preocupar com a notação
+[02:15:43] de servidores de atualização de software e infraestrutura
+[02:15:45] subjacente
+[02:15:49] qual modelo de serviço é novo melhor se encaixa nesse cenário
+[02:15:51] vamos lá, vamos ver aqui
+[02:16:13] dentro da D
+[02:16:18] dentro da D
+[02:16:23] usando arquitetura sem servidor
+[02:16:25] eu estou achando que essa pergunta
+[02:16:27] ela tá errada
+[02:16:29] ou acho que essa pergunta é de outra questão
+[02:16:31] enfim
+[02:16:40] vamos quebrar a cabeça aqui
+[02:16:42] vamos quebrar a cabeça
+[02:16:44] vamos lá
+[02:16:48] qual princípio de design está relacionado
+[02:16:50] a pilar da confiabilidade
+[02:16:52] de acordo com well-wired tag
+[02:16:54] pessoal
+[02:16:56] de design
+[02:16:58] confiabilidade
+[02:17:26] é como o colega falou, acho que a questão anterior
+[02:17:28] os itens não está batendo pra pergunta
+[02:17:30] mas tudo bem
+[02:17:32] eu vou dar uma olhada e a gente
+[02:17:34] volta aí
+[02:17:36] na próxima vez pra
+[02:17:38] essa questão
+[02:17:40] confiabilidade
+[02:17:51] vamos pra lá
+[02:17:53] para lá, vamos passar
+[02:17:55] letra C procedimentos
+[02:17:57] de recuperação
+[02:17:59] é isso aí
+[02:18:01] é um pilar
+[02:18:03] do confiabilidade
+[02:18:05] então por isso
+[02:18:07] é importante
+[02:18:09] por isso é importante
+[02:18:11] saber os nomes
+[02:18:13] entender pra que serve e ser o princípio de design
+[02:18:15] sob somente disso
+[02:18:17] sem precisar ler o livro todo
+[02:18:19] todas as informações do arquiteto
+[02:18:21] tá ótimo, com exames
+[02:18:23] a gente vai aprender no momento
+[02:18:25] qual das alternativas seguir
+[02:18:27] é um princípio de design do
+[02:18:29] aerotec para excelência operacional
+[02:18:31] agora é excelência operacional
+[02:18:33] excelência operacional
+[02:18:38] qual os das seguir são
+[02:18:40] excelência operacional
+[02:18:42] é o que eu mais gosto
+[02:18:44] se vocês estiverem
+[02:18:46] lembrando que eu falei
+[02:18:48] é o que eu mais gosto
+[02:18:50] dos princípios de design da excelência operacional
+[02:18:52] é o que eu mais gosto
+[02:19:03] e aí
+[02:19:05] letra C
+[02:19:07] e B
+[02:19:09] C
+[02:19:11] tá dividido
+[02:19:15] pessoal, você vê se serve
+[02:19:17] é o que eu mais gosto
+[02:19:19] fazer alterações
+[02:19:21] frequentes pequenas
+[02:19:23] irreversíveis
+[02:19:25] falei pra vocês
+[02:19:27] esse é um princípio de design
+[02:19:29] excelência operacional
+[02:19:31] agora
+[02:19:33] vamos para o contraponto
+[02:19:35] pessoal
+[02:19:37] o CAF
+[02:19:39] o cloud adoptive from work
+[02:19:41] eu tenho uma história legal sobre o CAF
+[02:19:43] aqui
+[02:19:45] pessoal o seguinte
+[02:19:47] o CAF tem um aluno
+[02:19:49] de uma das minhas turmas que se assim
+[02:19:51] professor
+[02:19:53] isso no final do curso
+[02:19:55] no final do curso
+[02:20:00] professor eu entrei aqui na escola da nuvem
+[02:20:02] porque a empresa que eu comecei a trabalhar
+[02:20:04] me grupo pra nuvem
+[02:20:06] me grupo pra nuvem a AWS
+[02:20:08] e eu gostaria de aprender
+[02:20:10] hoje eu estou me formando aqui
+[02:20:12] o senhor com os meus colegas
+[02:20:14] e a gente saiu da AWS
+[02:20:16] a gente voltou com o prampus
+[02:20:18] o que foi
+[02:20:20] ocorrer
+[02:20:22] altos custos
+[02:20:25] falta de pessoal
+[02:20:27] é de conhecimento
+[02:20:29] não estou falando falta
+[02:20:31] de pessoal competente
+[02:20:33] estou falando de conhecimento
+[02:20:38] uma fatura
+[02:20:40] muito
+[02:20:42] cara no final do mês
+[02:20:44] pessoal o CAF
+[02:20:51] eu vou ter um material
+[02:20:54] também pra passar pra vocês
+[02:20:56] o CAF
+[02:20:58] ele adota algumas perspectivas
+[02:21:00] certo
+[02:21:02] o CAF
+[02:21:04] é um conjunto de melhores praias
+[02:21:06] e orientações fornecidas pela AWS
+[02:21:08] para ajudar organizações a desenvolverem
+[02:21:10] implementar uma estratégia
+[02:21:12] eficaz
+[02:21:14] palavra-chave
+[02:21:18] estratégia eficaz de adorção a nuvem
+[02:21:20] o que eu estou falando pra vocês
+[02:21:29] a que a nuvem é legal
+[02:21:31] a que a nuvem é barata
+[02:21:33] a que a nuvem é isso
+[02:21:35] a que a nuvem é aquilo
+[02:21:37] não é a sua
+[02:21:40] não é a sua
+[02:21:45] o CAF ele traz
+[02:21:47] em
+[02:21:49] perspectivas
+[02:21:51] pra cada subcedor
+[02:21:53] a melhor maneira de se adotar
+[02:21:55] a nuvem
+[02:21:57] e nós aqui nós temos
+[02:22:01] as perspectivas de negócio
+[02:22:03] as perspectivas de pessoas
+[02:22:05] as perspectivas de governança
+[02:22:07] a perspectiva de plataforma
+[02:22:09] a perspectiva de segurança
+[02:22:11] a perspectiva de operações
+[02:22:13] Anderson
+[02:22:15] o que eu preciso
+[02:22:17] do exame
+[02:22:19] de CAF
+[02:22:21] você precisa saber
+[02:22:26] você precisa saber
+[02:22:28] da perspectiva
+[02:22:30] e o que compõe
+[02:22:34] aquela
+[02:22:36] perspectiva
+[02:22:38] você precisa saber
+[02:22:40] da perspectiva
+[02:22:42] e o que compõe aquela
+[02:22:44] perspectiva
+[02:22:48] se você tem um material
+[02:22:50] para poder ajudar a gente
+[02:22:52] eu tenho, vou passar
+[02:22:54] pessoal, eu sei que vocês estão aí no Klesm
+[02:22:56] a melhor maneira de passar isso
+[02:22:58] tá bom então
+[02:23:00] fiquem despreocupados
+[02:23:02] então
+[02:23:04] a gente já vai entrar aqui em outro assunto
+[02:23:06] na reta final
+[02:23:08] o que eu digo pra vocês é
+[02:23:12] atenção
+[02:23:14] aqueles temas que eu vou meter
+[02:23:16] aqui com vocês nessa live
+[02:23:20] Word.Dec
+[02:23:22] CAF
+[02:23:24] migração pra nuvem
+[02:23:26] tem outros, tem outros
+[02:23:28] mas é em outros materiais
+[02:23:30] só primeiro dia aqui
+[02:23:33] a gente tem modelos de responsabilidade
+[02:23:35] compartilhada
+[02:23:37] e afins
+[02:23:39] a gente vai comentar aqui pra não
+[02:23:41] misturar as coisas
+[02:23:43] a gente vai deixar com aumentar somente um dia
+[02:23:45] então, vamos lá
+[02:23:47] continuar
+[02:23:49] finalizando aqui pessoal, a gente entrou
+[02:23:51] nos 30 minutos restantes
+[02:23:53] conexão e acesso
+[02:23:57] como é que a gente faz
+[02:23:59] essa conexão e acesso
+[02:24:01] a gente tem um operador
+[02:24:03] ele tá acessando através de algum interface
+[02:24:05] essas são as três maneiras
+[02:24:07] de acessar serviços e recursos na nuvem
+[02:24:09] via
+[02:24:11] console
+[02:24:13] via CLI
+[02:24:15] ou via ferramentas
+[02:24:17] SDK
+[02:24:19] nele se fará
+[02:24:21] a autenticação e autorização
+[02:24:23] e podemos ali acessar as instâncias
+[02:24:25] isso aqui é um exemplo
+[02:24:27] agora eu pergunto
+[02:24:29] o que é
+[02:24:32] a autenticação
+[02:24:37] pessoal, a autenticação
+[02:24:39] nada mais é do que
+[02:24:41] você provar que é você mesmo
+[02:24:46] se você me deu um exemplo
+[02:24:48] como é que eu profo que eu sou o mesmo
+[02:24:50] cara, eu tô com o meu passaporte
+[02:24:52] aqui em cima da mesa
+[02:24:54] eu tô com minha habilitação
+[02:24:56] eu tô com o meu RG
+[02:24:58] eu posso provar pra você
+[02:25:00] que eu sou eu mesmo
+[02:25:02] tem minha foto, tem meu nome completo
+[02:25:04] e a data de nascimento, cpf
+[02:25:06] é uma forma de eu provar
+[02:25:08] que eu sou eu mesmo
+[02:25:10] legal
+[02:25:12] e a autorização
+[02:25:14] a autorização
+[02:25:16] já um pouco diferente
+[02:25:20] a autorização é você
+[02:25:22] provar
+[02:25:24] que você pode ter
+[02:25:27] acesso dado
+[02:25:29] acesso ambiente
+[02:25:31] me deu um exemplo
+[02:25:34] que nunca foi
+[02:25:36] no supermercado, no hospital
+[02:25:38] ou em qualquer algo
+[02:25:40] que seja público mais aberto
+[02:25:42] a clientes
+[02:25:47] e tem sempre uma plaquinha lá
+[02:25:53] acesso permitido
+[02:25:55] acesso permitido
+[02:25:57] somente a pessoas autorizadas
+[02:25:59] eu posso entrar no supermercado
+[02:26:02] posso eu posso entrar nas instalações
+[02:26:04] não porque é lhe somamente
+[02:26:06] acesso para as pessoas autorizadas
+[02:26:08] essa é a grande diferença
+[02:26:10] de autenticação e autorização
+[02:26:12] agora pessoal
+[02:26:20] a gente encerraria aqui
+[02:26:22] porém
+[02:26:24] a gente precisa otimizar o tempo
+[02:26:26] nos outros dias
+[02:26:28] colocando aqui
+[02:26:30] um dos principais
+[02:26:32] aqui é um carro chefe
+[02:26:34] por isso que eu deixei
+[02:26:36] pra dizer pra vocês
+[02:26:38] um negócio bastante legal
+[02:26:40] somente no final
+[02:26:42] somente no final
+[02:26:44] pra vocês ficaram até o final
+[02:26:46] eu sei que todo mundo tá querendo aprender
+[02:26:48] mas tem algumas muito bom
+[02:26:50] assim é
+[02:26:52] vai ser top
+[02:26:55] o s2 é o principal
+[02:27:06] seu carro chefe
+[02:27:08] da AWS
+[02:27:10] dentro da s2
+[02:27:12] pessoal
+[02:27:14] ele é um serviço web que disponibiliza
+[02:27:16] a capacidade computacional
+[02:27:18] segura
+[02:27:20] representado por uma instância
+[02:27:22] redimensionável
+[02:27:24] características
+[02:27:35] pra quem não sabia
+[02:27:39] s2 é a certificação do nome
+[02:27:41] do serviço, que é elástico
+[02:27:43] e compute cloud, são as iniciais
+[02:27:45] é c2
+[02:27:47] que o c vem duas vezes
+[02:27:49] ali depois
+[02:27:51] no final do nome de um serviço
+[02:27:55] ele é um IAS
+[02:28:00] em fichu-toro como serviço
+[02:28:02] o modo é
+[02:28:04] aluguel de máquinas
+[02:28:09] armazenadados em volumes
+[02:28:11] virtuais, como o ebs
+[02:28:13] a gente vai falar mais pra frente ebs
+[02:28:15] ssd
+[02:28:17] disso dos mecanos
+[02:28:19] e seus tips
+[02:28:23] distribuir a carga de trabalho
+[02:28:25] pelo balançador de carga
+[02:28:29] e escalar o serviço de acordo pra demanda
+[02:28:31] a sg, ou seja, automaticamente
+[02:28:33] veja que junto com s2
+[02:28:35] que é
+[02:28:38] aluguel de máquinas virtuais
+[02:28:40] nós estamos com vários recursos
+[02:28:42] como o elástico block store
+[02:28:44] que é o
+[02:28:46] pode ser o hd
+[02:28:48] mecânico, ou pode ser ssd
+[02:28:50] que é aRnexado
+[02:28:52] virtualmente a s2
+[02:28:54] e nós temos o balançador
+[02:28:56] de carga pra aplicações
+[02:28:58] não ficar sobrecarregada
+[02:29:00] e nós temos o sg
+[02:29:02] e o auto-scaling group
+[02:29:04] que aumenta
+[02:29:06] e chamamos de
+[02:29:08] scaling out
+[02:29:10] ou diminui
+[02:29:12] chamamos de scaling in
+[02:29:14] máquinas virtuais
+[02:29:18] para suportar a demanda e valabilitação
+[02:29:20] e somos aqui
+[02:29:28] justamente s2
+[02:29:30] então nós temos aqui vários recursos usados
+[02:29:32] e
+[02:29:34] atenção, o que cai na própria?
+[02:29:38] existe pessoal
+[02:29:40] vários tipos de estandos assim
+[02:29:42] e existe vários tipos de entandos
+[02:29:44] para vários tipos de casos, como assim anos
+[02:29:46] existe ali
+[02:29:48] o de uso geral, que é em um console
+[02:29:50] um at2mip
+[02:29:52] nós temos ali
+[02:29:55] volta a computação
+[02:29:57] com um hpc
+[02:29:59] nós temos ali
+[02:30:01] optimizados para memória
+[02:30:03] optimizados para processamento
+[02:30:05] e para armazenamento
+[02:30:07] eu vou ser bem sincero com vocês
+[02:30:09] sincero
+[02:30:11] antes de agora quer dizer que eu vou ter que lembrar
+[02:30:13] dessas letras todo e não
+[02:30:15] para essa certificação
+[02:30:19] para essa certificação
+[02:30:23] não
+[02:30:25] antes de ver o que eu preciso saber
+[02:30:27] você precisa saber que existe
+[02:30:29] máquinas de
+[02:30:31] uso geral
+[02:30:33] que são voltadas para a computação
+[02:30:35] que são voltadas para memória
+[02:30:37] que são voltadas para processamento
+[02:30:39] e que são voltadas para armazenamento
+[02:30:41] como assim anos?
+[02:30:43] haverá perguntas
+[02:30:45] durante o exame
+[02:30:47] exemplo, exemplo, exemplo
+[02:30:51] uma empresa X
+[02:30:53] está ali fazendo
+[02:30:55] testes
+[02:30:57] de um servidor web
+[02:30:59] para um servidor web
+[02:31:01] que tipo de
+[02:31:03] tipo de instância eu posso usar
+[02:31:05] aí você vê aqui o participador web
+[02:31:09] teste
+[02:31:11] o molonação cara é de uso geral
+[02:31:17] existe
+[02:31:19] tipos de instâncias
+[02:31:21] que são voltadas para uso intensivo
+[02:31:23] de aqui ó
+[02:31:26] input
+[02:31:28] output
+[02:31:32] per
+[02:31:34] set
+[02:31:36] vou ter que ir ao contrário input
+[02:31:38] output por set, quer dizer o que?
+[02:31:40] entrada e saída por segundo
+[02:31:42] isso quer dizer o que?
+[02:31:44] eu posso ter um banco de dados
+[02:31:46] que é o EC2
+[02:31:48] para um banco de dados que sofre
+[02:31:50] muitas atualizações de inserção de dados
+[02:31:52] e leituras de dados eu tenho que pegar
+[02:31:54] que tipo de instância?
+[02:31:56] aí você tem que saber
+[02:31:58] você tem que pegar
+[02:32:00] uma instância
+[02:32:02] voltadas para armazenamento
+[02:32:04] que tem alta taxa de IOPS
+[02:32:06] IOPS
+[02:32:10] então é desse jeito que ganha no exame
+[02:32:12] você saber o tipo de
+[02:32:16] instância é melhor para aquele caso
+[02:32:18] do enunciado da pergunta
+[02:32:23] é que eu tenho 2 mil que tem um fritias 740
+[02:32:25] uma vez
+[02:32:27] mas muita gente se engana aqui
+[02:32:29] é para novos clientes
+[02:32:31] entender instâncias
+[02:32:34] vamos entender aqui o que
+[02:32:36] compõe
+[02:32:38] essa T2
+[02:32:40] 2xlarg
+[02:32:44] até nada mais é que
+[02:32:46] o tipo de instância
+[02:32:50] o 2 é nada mais o que?
+[02:32:52] geração
+[02:32:54] da instância
+[02:32:58] os 2 são maros compõe uma família
+[02:33:00] e após o ponto
+[02:33:02] é o tamanho que ela pode ser
+[02:33:04] nano
+[02:33:06] micro small
+[02:33:08] medium large large metal
+[02:33:10] e ela de forma completa
+[02:33:12] é o que chamamos dele
+[02:33:14] instância
+[02:33:19] esse é o que compõe uma instância
+[02:33:23] tipo geração
+[02:33:25] os 2 são maros viram a família
+[02:33:27] após o ponto
+[02:33:29] é o tamanho
+[02:33:31] vai variar números de
+[02:33:33] vcpus
+[02:33:36] números de
+[02:33:38] giga de memória
+[02:33:42] a figura de banda
+[02:33:47] entre outros detalhes
+[02:33:49] são os tamanhos
+[02:33:52] Dicas do exame
+[02:33:54] essa é 2 um serviço web
+[02:33:56] que disponibiliza uma capacidade
+[02:33:58] compo tacional segura
+[02:34:00] representado por instância
+[02:34:02] rede imissionável
+[02:34:04] o modelo compo tacional
+[02:34:06] ele se encaixa no infraestrutura como serviço
+[02:34:08] lembre-se grandes poderes
+[02:34:10] grandes responsabilidades
+[02:34:12] você pode criar vários
+[02:34:14] ambientes com vários tipos de sistema
+[02:34:16] operacional, como o mido, o back west
+[02:34:18] e linux
+[02:34:20] a comparação é por hora
+[02:34:22] ou segundo
+[02:34:26] ouroga
+[02:34:28] o midos segundo linux
+[02:34:30] que é do que 60 segundos é um mínimo palímpicos
+[02:34:36] vamos lá, vamos finalizar
+[02:34:38] com perguntas
+[02:34:40] uma empresa
+[02:34:44] tem data lakes projetados
+[02:34:46] para carga de trabalho de computação
+[02:34:48] de auto desempenho
+[02:34:50] o famoso HBC
+[02:34:52] que tipo de instância esse 2
+[02:34:54] a empresa deve usar para atender
+[02:34:56] a esses requisitos
+[02:34:58] e ai
+[02:35:00] instâncias do tipo de uso geral
+[02:35:02] utilizado para memória
+[02:35:04] utilizado para armazenamento
+[02:35:06] utilizado para computação
+[02:35:08] qual devemos escolher
+[02:35:10] esse é um tipo de questão que pode cair em visão
+[02:35:12] beleza
+[02:35:16] então o grande maioria ta voltando na Q&A
+[02:35:35] instâncias utilizadas
+[02:35:37] para computação
+[02:35:41] nós temos aqui as instâncias de forma correta
+[02:35:43] utilizada para computação
+[02:35:45] olha aqui
+[02:35:47] e para lá para a chave
+[02:35:49] computação de auto desempenho
+[02:35:51] a HPC
+[02:35:53] vamos lá
+[02:35:55] uma empresa deseja executar uma carga de trabalho
+[02:35:57] ou os intensificos de computação
+[02:35:59] que é os unidades de processamento gráfico
+[02:36:01] GPU
+[02:36:03] que instância devemos
+[02:36:05] que a gente deve usar nessa empresa
+[02:36:07] e ai
+[02:36:09] e que vocês acham
+[02:36:11] e que vocês acham
+[02:36:19] vamos ver aqui o chat
+[02:36:21] aqui
+[02:36:33] entra B
+[02:36:35] entra D
+[02:36:39] Dddd
+[02:36:41] vamos passar
+[02:36:46] instâncias otimizadas para
+[02:36:48] computação
+[02:36:50] perfeito, vocês estão bem aninhados
+[02:36:52] agora online
+[02:36:54] um time está migrando o sistema de
+[02:36:56] gerenciamento de banco de dados de auto desempenho
+[02:36:58] para AWS
+[02:37:00] o sistema exige alta taxa de leitura e gravação
+[02:37:02] ou seja, o IOS
+[02:37:04] em PlutipoCert
+[02:37:06] de forma
+[02:37:08] consistente, com baixa latência de disco
+[02:37:10] para manter o desempenho durante picos de uso
+[02:37:12] qual a ultimização deve ser usada no S2
+[02:37:14] uso geral
+[02:37:16] memória
+[02:37:18] armazenamento
+[02:37:20] computação
+[02:37:22] e ai, quem vocês acham
+[02:37:24] entra C C C C C C C C C C C
+[02:37:44] acusou né
+[02:37:46] o que foi que acusou aqui
+[02:37:48] IOS
+[02:37:50] o IOS
+[02:37:52] acusou aqui
+[02:37:54] vejam
+[02:37:56] esse é um tipo de pergunta
+[02:37:58] de ingível
+[02:38:00] dizem
+[02:38:06] dois desenvolvedores
+[02:38:11] de uma equipe fazem testes rápidos
+[02:38:13] com instâncias C2
+[02:38:15] ou
+[02:38:17] desenvolvedor a emissia
+[02:38:19] uma instância Linux
+[02:38:21] T3.min
+[02:38:23] para rodar um script que leva 30 segundos
+[02:38:25] e depois
+[02:38:27] ele em serve
+[02:38:29] o desenvolvedor B
+[02:38:31] faz de um mesmo
+[02:38:33] só que uma instância
+[02:38:35] um Windows Server 2019 T3.min
+[02:38:37] rodando
+[02:38:39] por 30 segundos também
+[02:38:41] a equipe
+[02:38:43] quer entender
+[02:38:45] como a AWS cobrará esses testes
+[02:38:47] para decidir qual é o sistema para acionar
+[02:38:49] e usar em atividades curtas e frequentes
+[02:38:51] considerando
+[02:38:53] modelo de cobrança
+[02:38:55] para a AWS parecer 2 sob demanda
+[02:38:57] o que acontece com os custos
+[02:38:59] nesses dois casos
+[02:39:01] como é que ele vai cobrar para Linux
+[02:39:03] e como é que ele vai cobrar para um Windows
+[02:39:05] o que vocês acham aí
+[02:39:12] como é que vai ser
+[02:39:14] o que vocês acham
+[02:39:57] letra D
+[02:39:59] letra C letra A letra D
+[02:40:01] letra B
+[02:40:03] eita foi a última questão
+[02:40:05] que pegou
+[02:40:07] vamos lá
+[02:40:09] vamos lá
+[02:40:11] vou pagar aqui
+[02:40:19] os desenvolvedores serão cobrados por um minuto
+[02:40:21] correto
+[02:40:23] não
+[02:40:25] não
+[02:40:27] não
+[02:40:29] os desenvolvedores serão cobrados por um minuto
+[02:40:31] não
+[02:40:33] somente um vai ser cobrado por um minuto
+[02:40:35] o desenvolvedor A
+[02:40:38] será cobrado por um minuto
+[02:40:40] o desenvolvedor B
+[02:40:42] será cobrado por uma hora
+[02:40:47] os desenvolvedores serão cobrados por 30 segundos
+[02:40:49] não
+[02:40:51] o desenvolvedor A
+[02:40:53] não será cobrado pois a exerção
+[02:40:55] a execução inferior é um minuto e a B será cobrado por 10 minutos
+[02:40:57] não
+[02:40:59] pessoal
+[02:41:01] a atenção
+[02:41:06] o desenvolvedor A
+[02:41:08] será cobrado por um minuto porque ele vai ser cobrado por um minuto
+[02:41:10] porque ele está rodando Linux
+[02:41:12] ele levou 30 segundos
+[02:41:14] mais um mínimo para Linux
+[02:41:16] é um minuto então ele vai
+[02:41:18] ser cobrado por um minuto
+[02:41:20] o B
+[02:41:22] ele está usando Windows
+[02:41:24] rodou 30 segundos
+[02:41:26] mas ele vai ser cobrado por uma hora
+[02:41:28] porque? porque ele está usando Windows
+[02:41:30] alguém consegue me explicar
+[02:41:32] porque? antes de eu dizer o porque
+[02:41:34] já me serve aqui no chat
+[02:41:36] pessoal
+[02:41:41] o nosso querido
+[02:41:45] adorado Bill Gates
+[02:41:47] cobra por licença
+[02:41:49] então a licença
+[02:41:51] quando você inicia um instância
+[02:41:56] um Windows Server
+[02:41:58] e roda por 30 segundos
+[02:42:00] aquele Windows estava
+[02:42:02] disponível para você de boa
+[02:42:04] e você vai ser cobrado
+[02:42:06] pela licença
+[02:42:10] a licença entra nesse visito
+[02:42:12] de custo
+[02:42:14] de
+[02:42:16] custo
+[02:42:18] licença
+[02:42:20] é isso aí
+[02:42:22] perfeito
+[02:42:24] de duas por um minuto
+[02:42:26] B por um alto
+[02:42:28] e chegamos aqui
+[02:42:30] ao fim do
+[02:42:32] do minuto
+[02:42:36] pessoal
+[02:42:38] seguinte
+[02:42:40] finalizamos aqui
+[02:42:47] finalizamos aqui a nossa
+[02:42:51] a nossa transmissão mas não saiu ainda
+[02:42:53] o que acontece
+[02:42:55] primeiro recado
+[02:42:57] esse era aqui que
+[02:43:07] que arreda no s
+[02:43:09] o deo links
+[02:43:11] muitos tenessensas e isso aí
+[02:43:13] quem não
+[02:43:16] quem não
+[02:43:18] colocou seu nome na lista de presença
+[02:43:20] coloque
+[02:43:22] Karen deixou aí
+[02:43:27] na descrição do vídeo
+[02:43:29] outra coisa
+[02:43:36] quando é que vai ser
+[02:43:38] a próxima live
+[02:43:40] fiquem atentos ao cléssimo
+[02:43:42] porém com tudo
+[02:43:44] por a via
+[02:43:47] se não me falha memória
+[02:43:49] vai ser na quinta-feira
+[02:43:51] se não me falha memória
+[02:43:53] do domingo 2
+[02:43:55] ok
+[02:43:57] fiquem atentos
+[02:43:59] a comunicação
+[02:44:01] de e-mail via cléssimo
+[02:44:03] fiquem atentos
+[02:44:05] agora
+[02:44:07] antes de dizer
+[02:44:09] qual é a surpresa
+[02:44:11] eu gostaria de
+[02:44:13] agradecer imensamente aqui a Karen
+[02:44:15] que estava auxiliando aqui
+[02:44:17] a gente do chat
+[02:44:19] pessoal, vocês não tem ideia quanto é um delay
+[02:44:21] eu comecei a falar aqui
+[02:44:23] e fiquei segurando
+[02:44:25] pegando aqui nada nos dedos
+[02:44:27] justamente por que
+[02:44:29] porque tem um delay enorme
+[02:44:31] soltando ele é um nome
+[02:44:33] então agradeço aqui a Karen que está
+[02:44:35] auxiliando a gente
+[02:44:37] quer você quer falar alguma coisa?
+[02:44:39] e despedir aqui da galera
+[02:44:41] quando eu vou dizer a novidade
+[02:44:43] todo mundo vai embora um bote feliz
+[02:44:45] você quer abrir o áudio
+[02:44:47] e comentar?
+[02:44:49] pode ficar à vontade
+[02:44:51] você está me ouvindo? faz um joinha
+[02:45:18] que eu tentei pra
+[02:45:20] não dar tanto ego
+[02:45:22] tá ótimo
+[02:45:24] tá ótimo
+[02:45:29] tá assim, tá ótimo
+[02:45:31] eu que quero agradecer
+[02:45:33] muito boa aula
+[02:45:35] Anderson
+[02:45:37] foi incrível
+[02:45:39] aqui no chat todo mundo
+[02:45:41] amou a aula
+[02:45:43] gostaram bastante
+[02:45:45] eu te agradeço também
+[02:45:47] pra estar aqui hoje contigo
+[02:45:49] muito bom
+[02:45:51] e pessoal um prazer
+[02:45:53] só reforçar novamente
+[02:45:55] por favor
+[02:45:57] não tem nenhum olhado aí na edição
+[02:45:59] a presença de vocês na lista
+[02:46:01] os guias
+[02:46:03] o chat também
+[02:46:05] mas está lá no crescum pra vocês
+[02:46:07] depois vejo o vídeo
+[02:46:09] e sim a aula
+[02:46:11] você é na QQF
+[02:46:13] muito obrigado
+[02:46:15] beleza
+[02:46:17] obrigado
+[02:46:19] vamos lá pessoal é o seguinte
+[02:46:22] o nosso
+[02:46:24] o nosso gesto
+[02:46:26] comentou que
+[02:46:28] por isso peço foco
+[02:46:33] atenção, eu sou bem sincero
+[02:46:35] que é meu alumínio Sávi da minha total sinceridade
+[02:46:37] vejo um vídeo
+[02:46:43] e estuda
+[02:46:45] faça simuladas
+[02:46:47] antes eu estou precisando simular
+[02:46:49] eu vou deixar lá no crescum
+[02:46:51] não pode estar aqui no chat
+[02:46:53] além do delay
+[02:46:55] tem que fazer logo e vai se perder
+[02:46:57] vou colocar lá no crescum
+[02:46:59] dois lindes de dois simuladas
+[02:47:01] pra vocês testarem
+[02:47:03] estudar todos os pontos que nós passamos
+[02:47:05] e
+[02:47:07] e
+[02:47:11] tanto e tanto e tanto
+[02:47:13] e tanto e tanto
+[02:47:17] nós averemos um
+[02:47:19] muito provavelmente haverá um simulado
+[02:47:21] valendo o voucher
+[02:47:23] pra vocês fazerem a prova
+[02:47:25] aqueles alunos que obtiverem
+[02:47:27] justamente
+[02:47:29] aquela pontuação necessária pra ver o voucher
+[02:47:31] se vocês já têm passado
+[02:47:33] não sei se é agora
+[02:47:35] ou se é depois
+[02:47:37] enfim
+[02:47:39] quando o aluno for fazer o exame
+[02:47:41] haverá
+[02:47:43] prêmios
+[02:47:45] haverá
+[02:47:47] prêmios
+[02:47:49] tá bom
+[02:47:51] eu soube
+[02:47:53] que aquele
+[02:47:55] que quando fizer o exame
+[02:47:57] aprovado
+[02:47:59] mantar pra gente o boletim de certificação
+[02:48:01] aquele aluno
+[02:48:03] e tirar a maior nota
+[02:48:05] o aluno
+[02:48:07] o aluno eu prefiro
+[02:48:09] manter e singular
+[02:48:14] mas eu acredito que vai ser mais de um
+[02:48:16] porque a gente conseguiu alguns
+[02:48:18] aquele aluno
+[02:48:22] que
+[02:48:24] tirar a área da maior nota
+[02:48:26] vai ganhar como
+[02:48:28] prêmio
+[02:48:30] além de outros, se não fare a memória
+[02:48:32] vai ganhar
+[02:48:34] um notebook
+[02:48:36] da escola da nuva
+[02:48:39] só aquele aluno
+[02:48:41] vou fazer um exame pra gente
+[02:48:43] tirar a maior nota
+[02:48:45] é claro que vai ter um prazo pra todo mundo
+[02:48:47] dar um boletim, aquele aluno que tirar a maior nota
+[02:48:53] e a nota do exame oficial
+[02:48:55] tá bom, a maior nota do exame oficial
+[02:48:59] vai ganhar
+[02:49:01] notebook
+[02:49:05] eu to me segurando
+[02:49:07] eu não posso cometer um rei de um
+[02:49:09] que é um ótimo prêmio
+[02:49:11] uma área
+[02:49:13] não vai ser só um aluno
+[02:49:17] não vai ser só um aluno
+[02:49:19] fica o suspense aí
+[02:49:21] pessoal
+[02:49:23] eu gostaria
+[02:49:25] de agradecer a vocês
+[02:49:27] a presença de todos
+[02:49:29] novamente repito
+[02:49:31] eu não consegui aqui
+[02:49:33] sem a Kerry também pra dar esse
+[02:49:35] suporte
+[02:49:37] eu gostaria de agradecer a presença de vocês
+[02:49:39] eu vi aqui que a gente tava aqui já
+[02:49:41] 3 horas de live praticamente
+[02:49:43] e
+[02:49:45] mais de 150 alunos
+[02:49:47] foi muito bom
+[02:49:49] foi muito emocionante
+[02:49:51] muito feliz, eu espero que vocês tenham gostado
+[02:49:53] e a gente se vê
+[02:49:55] no próximo encontro
+[02:49:57] o que eu decidi pra vocês é
+[02:49:59] descanso
+[02:50:01] vai ficar depois da gravação
+[02:50:03] e vai dar uma maneira de
+[02:50:05] colocar a gravação
+[02:50:07] então se
+[02:50:09] caras a necessidade de
+[02:50:11] dar uma recapitulada nos assuntos
+[02:50:13] não é só vídeo
+[02:50:15] não é só simulado
+[02:50:17] pele
+[02:50:21] materiais oficiais
+[02:50:23] da AWS
+[02:50:25] não é de terceiros
+[02:50:27] documentação
+[02:50:29] eu quero saber mais sobre tipo de instâncias
+[02:50:31] você vai lá no Google
+[02:50:33] instâncias da AWS
+[02:50:35] material oficial
+[02:50:37] dá uma olhada no documentação
+[02:50:39] faz a sua notação
+[02:50:41] eu
+[02:50:43] soube sincero com meus alunos
+[02:50:45] e pitinho
+[02:50:47] vocês estão na traje de certificação
+[02:50:49] vocês têm que ter
+[02:50:51] o guia ao alcance de vocês
+[02:50:53] é celular, tablet
+[02:50:55] e eu não funciono desse jeito
+[02:50:57] eu sou do papel pra documentar lá
+[02:50:59] uns 3 horas atrás
+[02:51:01] encerrando, boa noite
+[02:51:03] e
+[02:51:05] até breve
+[02:51:07] bom pessoal
+[02:51:09] muito obrigado, tchau tchau

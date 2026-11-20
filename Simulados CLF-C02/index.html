@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CLF-C02 · Resumo e Simulados</title>
+<style>
+:root{
+  --bg:#f5f6f8; --card:#ffffff; --ink:#16191f; --muted:#5d6675; --line:#dfe3ea;
+  --brand:#0b5fff; --brand-ink:#ffffff; --brand-soft:#e6eeff;
+  --ok:#0f7b45; --ok-soft:#e2f5ea; --bad:#b3261e; --bad-soft:#fbe7e5; --warn:#8a5a00; --warn-soft:#fff3d6;
+  --focus:#ff9900; --shadow:0 1px 2px rgba(16,24,40,.06),0 4px 14px rgba(16,24,40,.05);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0f1319; --card:#171c24; --ink:#e8ebf1; --muted:#9aa4b5; --line:#2a3240;
+    --brand:#5b9bff; --brand-ink:#08111f; --brand-soft:#17284a;
+    --ok:#4cc58a; --ok-soft:#12301f; --bad:#ff7d73; --bad-soft:#3a1816; --warn:#f0b955; --warn-soft:#352807;
+    --shadow:none;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--brand)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 56px}
+header.top{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+header.top .wrap{display:flex;align-items:center;gap:12px;padding:10px 16px;min-height:56px}
+header.top .logo{font-weight:700;letter-spacing:.2px;cursor:pointer;border:0;background:none;padding:6px 0;font-size:17px}
+header.top .logo span{color:var(--brand)}
+header.top .sp{flex:1}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:3px 10px;border-radius:999px;background:var(--brand-soft);color:var(--brand);font-weight:600}
+.pill.mut{background:transparent;border:1px solid var(--line);color:var(--muted);font-weight:500}
+.pill.ok{background:var(--ok-soft);color:var(--ok)} .pill.bad{background:var(--bad-soft);color:var(--bad)} .pill.warn{background:var(--warn-soft);color:var(--warn)}
+h1{font-size:28px;line-height:1.2;margin:28px 0 8px}
+h2{font-size:20px;margin:32px 0 12px}
+h3{font-size:16px;margin:0 0 6px}
+p{margin:0 0 12px}
+.lead{color:var(--muted);max-width:68ch}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);background:var(--card);padding:9px 16px;border-radius:10px;cursor:pointer;font-weight:600;min-height:42px}
+.btn:hover{border-color:var(--brand)}
+.btn.primary{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.sim h3{font-size:18px}
+.sim .meta{color:var(--muted);font-size:14px;margin-bottom:12px}
+.bar{height:8px;border-radius:999px;background:var(--line);overflow:hidden}
+.bar>i{display:block;height:100%;background:var(--brand);border-radius:999px}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600;font-size:13px}
+.num{font-variant-numeric:tabular-nums}
+.tablewrap{overflow-x:auto}
+/* quiz */
+.qhead{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:18px 0 10px}
+.qhead .sp{flex:1}
+.timer{font-variant-numeric:tabular-nums;font-weight:700;font-size:18px}
+.timer.low{color:var(--bad)}
+.qlayout{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:900px){.qlayout{grid-template-columns:1fr 250px;align-items:start}}
+.qcard{padding:22px}
+.qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.qtext{font-size:18px;line-height:1.5;margin-bottom:16px;white-space:pre-line}
+.hint{color:var(--muted);font-size:14px;margin-bottom:12px}
+.opts{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.opt{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer}
+.opt:hover{border-color:var(--brand)}
+.opt .k{flex:none;width:28px;height:28px;border-radius:8px;border:1.5px solid var(--line);display:grid;place-items:center;font-weight:700;font-size:14px;color:var(--muted)}
+.opt.multi .k{border-radius:6px}
+.opt .t{flex:1}
+.opt[aria-checked="true"]{border-color:var(--brand);background:var(--brand-soft)}
+.opt[aria-checked="true"] .k{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.right .k{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt.wrong .k{background:var(--bad);border-color:var(--bad);color:#fff}
+.opt .tag{font-size:12px;font-weight:700;margin-left:8px}
+.expl{margin-top:16px;border-left:4px solid var(--brand);background:var(--brand-soft);padding:12px 14px;border-radius:8px}
+.expl.ok{border-color:var(--ok);background:var(--ok-soft)} .expl.bad{border-color:var(--bad);background:var(--bad-soft)}
+.expl b.h{display:block;margin-bottom:4px}
+.nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.nav .sp{flex:1}
+.side{position:sticky;top:72px}
+.map{display:grid;grid-template-columns:repeat(auto-fill,minmax(38px,1fr));gap:6px;margin-top:8px}
+.map button{height:36px;border-radius:8px;border:1.5px solid var(--line);background:var(--card);cursor:pointer;font-weight:600;font-size:13px;position:relative;font-variant-numeric:tabular-nums}
+.map button.done{background:var(--brand-soft);border-color:var(--brand);color:var(--brand)}
+.map button.cur{outline:3px solid var(--focus);outline-offset:1px}
+.map button.flag::after{content:"";position:absolute;top:3px;right:3px;width:8px;height:8px;border-radius:50%;background:var(--focus)}
+.map button.okq{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.map button.badq{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.legend{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--muted);margin-top:10px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px;border:1.5px solid var(--line)}
+/* result */
+.score{display:grid;gap:16px;grid-template-columns:1fr;align-items:center}
+@media(min-width:700px){.score{grid-template-columns:200px 1fr}}
+.ring{width:170px;height:170px;border-radius:50%;display:grid;place-items:center;margin:0 auto;position:relative}
+.ring>div{width:134px;height:134px;border-radius:50%;background:var(--card);display:grid;place-items:center;text-align:center;line-height:1.1}
+.ring b{font-size:34px;display:block}
+.ring small{color:var(--muted)}
+.dom{display:grid;grid-template-columns:minmax(120px,230px) 1fr 70px;gap:10px;align-items:center;margin:8px 0;font-size:14.5px}
+.dom .bar{height:12px}
+.dom .bar>i.ok{background:var(--ok)} .dom .bar>i.bad{background:var(--bad)} .dom .bar>i.warn{background:var(--focus)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.filters .btn[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.rev{margin:12px 0}
+.rev summary{cursor:pointer;list-style:none;display:flex;gap:10px;align-items:flex-start}
+.rev summary::-webkit-details-marker{display:none}
+.rev .body{margin-top:12px}
+.note{font-size:13.5px;color:var(--muted)}
+dialog{border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);padding:22px;max-width:440px;width:calc(100% - 32px)}
+dialog::backdrop{background:rgba(0,0,0,.45)}
+header.top .wrap{flex-wrap:wrap}
+.tabs{order:5;flex:1 0 100%;display:flex;gap:4px;overflow-x:auto;margin:0 -4px;padding:0 4px 8px;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.tab{flex:none;border:1px solid transparent;background:transparent;border-radius:10px;padding:8px 14px;cursor:pointer;font-weight:600;color:var(--muted);white-space:nowrap;min-height:40px;display:inline-flex;align-items:center;gap:8px}
+.tab:hover{color:var(--ink);background:var(--bg)}
+.tab[aria-selected="true"]{background:var(--brand-soft);color:var(--brand);border-color:var(--brand)}
+.tab .dot{width:8px;height:8px;border-radius:50%;background:var(--focus)}
+.tab .best{font-size:12px;font-weight:700;opacity:.85}
+.md,.card,.lead{overflow-wrap:anywhere}
+.md h2{margin-top:36px;padding-top:6px;scroll-margin-top:130px}
+.md h3{margin:22px 0 8px;font-size:17px;scroll-margin-top:130px}
+.md h4{margin:16px 0 6px;font-size:15px}
+.md ul,.md ol{padding-left:22px;margin:0 0 12px}
+.md ul ul,.md ol ul{margin:4px 0}
+.md li{margin:3px 0}
+.md ul.ck{list-style:none;padding-left:4px}
+.md ul.ck input{margin-right:8px;width:17px;height:17px;vertical-align:-3px;accent-color:var(--brand)}
+.md blockquote{margin:12px 0;padding:10px 14px;border-left:4px solid var(--focus);background:var(--warn-soft);border-radius:8px}
+.md code{background:var(--brand-soft);padding:1px 6px;border-radius:5px;font-size:.92em}
+.md hr{border:0;border-top:1px solid var(--line);margin:28px 0 8px}
+.md .tablewrap{margin:10px 0 16px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.md table{min-width:480px}
+.md tr:last-child td{border-bottom:0}
+.toc{columns:2 260px;column-gap:24px;margin:0;padding-left:20px}
+.toc a{text-decoration:none}
+.toc li{margin:4px 0;break-inside:avoid}
+.quiz{border:1.5px solid var(--brand);background:var(--card);border-radius:12px;padding:16px 18px;margin:20px 0}
+.quiz-t{cursor:pointer;font-weight:700;font-size:16px;list-style:none;display:flex;flex-wrap:wrap;gap:6px;align-items:baseline}
+.quiz-t::-webkit-details-marker{display:none}
+.quiz-t::before{content:"▸";color:var(--brand);transition:transform .15s}
+.quiz[open] .quiz-t::before{transform:rotate(90deg)}
+.quiz-n{font-weight:400;font-size:13px;color:var(--muted)}
+.quiz[open] .quiz-t{margin-bottom:6px}
+.fig{margin:14px 0;padding:10px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.fig img{display:block;width:100%;height:auto;border-radius:8px}
+.fig figcaption{font-size:13px;color:var(--muted);margin-top:6px;text-align:center}
+.quiz-sub{color:var(--muted);font-size:14px;margin:0 0 6px}
+.qz{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.qz:first-of-type{border-top:0;padding-top:0}
+.qz-q{margin:0 0 8px;overflow-wrap:anywhere}
+.qz-o{display:grid;gap:8px}
+.opt[aria-pressed="true"]{border-color:var(--brand);background:var(--brand-soft)}
+.opt[aria-pressed="true"] .k{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+.opt.qz-b:disabled{cursor:default;opacity:1}
+.opt.right[aria-pressed="true"]{border-color:var(--ok);background:var(--ok-soft)}
+.opt.right[aria-pressed="true"] .k{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.wrong[aria-pressed="true"]{border-color:var(--bad);background:var(--bad-soft)}
+.opt.wrong[aria-pressed="true"] .k{background:var(--bad);border-color:var(--bad);color:#fff}
+.quiz-score{font-weight:700;margin:14px 0 4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+ul.refs{padding-left:18px;margin:0}
+ul.refs li{margin:6px 0}
+.empty{color:var(--muted);padding:12px 0}
+@media (prefers-reduced-motion:no-preference){.bar>i{transition:width .25s}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <button class="logo" id="goHome" aria-label="Ir para o Resumo">CLF-C02 <span>Estudo</span></button>
+  <span class="sp"></span>
+  <span id="topInfo"></span>
+  <nav class="tabs" id="tabs" role="tablist" aria-label="Seções do site"></nav>
+</div></header>
+<main class="wrap" id="app" tabindex="-1"></main>
+
+<dialog id="dlg" aria-labelledby="dlgTitle">
+  <h3 id="dlgTitle"></h3>
+  <p id="dlgBody"></p>
+  <div class="row" style="justify-content:flex-end;margin-top:16px" id="dlgBtns"></div>
+</dialog>
+
+<script src="dados/banco.js"></script>
+<script src="dados/docs.js"></script>
+<script>
+"use strict";
+/* ---------- constantes ---------- */
+const DOMS = {
+  1: "Conceitos de nuvem",
+  2: "Segurança e conformidade",
+  3: "Tecnologia e serviços da nuvem",
+  4: "Cobrança, preços e suporte",
+};
+const PESO = {1: 24, 2: 30, 3: 34, 4: 12};
+const TEMPO_PROVA = 90 * 60; // segundos
+const CORTE = 700;          // de 1000
+const KEY_ATT = "clf02.tentativa.v1";
+const KEY_HIST = "clf02.historico.v1";
+const BANCO = window.BANCO || {};
+
+/* ---------- utilitários ---------- */
+const $ = (s, r = document) => r.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const LETRAS = "ABCDEF";
+function ls(op, k, v) {
+  try {
+    if (op === "get") return JSON.parse(localStorage.getItem(k));
+    if (op === "set") localStorage.setItem(k, JSON.stringify(v));
+    if (op === "del") localStorage.removeItem(k);
+  } catch (e) { /* armazenamento indisponível: segue sem salvar */ }
+  return null;
+}
+function rng(seed) { // mulberry32
+  let a = seed >>> 0;
+  return () => { a |= 0; a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+}
+function embaralha(arr, seed) {
+  const r = rng(seed), a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
+}
+const fmtT = (s) => { s = Math.max(0, Math.round(s)); const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), x = s % 60;
+  return (h ? h + ":" + String(m).padStart(2, "0") : m) + ":" + String(x).padStart(2, "0"); };
+const fmtData = (iso) => new Date(iso).toLocaleString("pt-BR", {dateStyle: "short", timeStyle: "short"});
+const certa = (q, sel) => sel && sel.length === q.answer.length && q.answer.every((a) => sel.includes(a));
+const escala = (pct) => Math.round(100 + 900 * pct);
+
+/* ---------- estado ---------- */
+let att = null;      // tentativa em andamento
+let timerId = null;
+let verified = {};   // modo estudo: questões já verificadas (por posição)
+
+function simulados() { return Object.keys(BANCO).map(Number).sort((a, b) => a - b); }
+function historico() { return ls("get", KEY_HIST) || []; }
+
+/* ---------- diálogo ---------- */
+function dialogo(titulo, corpo, botoes) {
+  return new Promise((res) => {
+    const d = $("#dlg");
+    $("#dlgTitle").textContent = titulo; $("#dlgBody").textContent = corpo;
+    const box = $("#dlgBtns"); box.innerHTML = "";
+    botoes.forEach((b) => {
+      const el = document.createElement("button");
+      el.className = "btn " + (b.primary ? "primary" : ""); el.textContent = b.label;
+      el.onclick = () => { d.close(); res(b.value); };
+      box.appendChild(el);
+    });
+    d.oncancel = () => res(null);
+    d.showModal();
+  });
+}
+
+/* ---------- roteamento por abas ---------- */
+let aba = "resumo";
+const DOCS = window.DOCS || {};
+const DOCTABS = {resumo: "Guia de estudos", det: "Guia detalhado", aula1: "Aula 1", aula2: "Aula 2"};
+const ABAS = ["resumo", "aula1", "aula2", "1", "2", "3", "4", "det"];
+function desenhaAbas() {
+  const hist = historico(), tem = ls("get", KEY_ATT);
+  $("#tabs").innerHTML = ABAS.map((a) => {
+    const sel = a === aba;
+    if (DOCTABS[a]) return `<button class="tab" role="tab" aria-selected="${sel}" data-aba="${a}">${DOCTABS[a]}</button>`;
+    const n = +a, meus = hist.filter((x) => x.sim === n);
+    const best = meus.length ? Math.round(Math.max(...meus.map((x) => x.pct)) * 100) : null;
+    const andamento = tem && !tem.fim && tem.sim === n;
+    return `<button class="tab" role="tab" aria-selected="${sel}" data-aba="${a}" ${BANCO[n] ? "" : "disabled"}>Simulado ${n}${andamento ? '<span class="dot" title="em andamento"></span>' : ""}${best !== null ? `<span class="best" title="melhor resultado">${best}%</span>` : ""}</button>`;
+  }).join("");
+  document.querySelectorAll(".tab").forEach((b) => b.onclick = () => trocaAba(b.dataset.aba));
+}
+function trocaAba(a) {
+  if (att && !att.fim) salvar();     // o tempo pausa enquanto você está em outra aba
+  clearInterval(timerId); timerId = null;
+  att = null;
+  aba = a;
+  try { history.replaceState(null, "", "#" + (DOCTABS[a] ? (a === "det" ? "detalhado" : a) : "simulado" + a)); } catch (e) { /* sem histórico */ }
+  home(); window.scrollTo(0, 0);
+}
+function ir(view) {
+  clearInterval(timerId); timerId = null;
+  if (view === "home") home();
+  else if (view === "quiz") quiz();
+  else if (view === "result") resultado(att);
+  window.scrollTo(0, 0);
+  $("#app").focus({preventScroll: true});
+}
+$("#goHome").onclick = () => trocaAba("resumo");
+
+/* ---------- páginas das abas ---------- */
+const KEY_CK = "clf02.checklist.v1";
+function home() {
+  clearInterval(timerId); timerId = null;
+  $("#topInfo").innerHTML = "";
+  desenhaAbas();
+  if (DOCTABS[aba]) docTab(aba); else simTab(+aba);
+}
+
+function cardContinuar(a) {
+  const resp = Object.keys(a.resp).length;
+  return `<div class="card" style="margin:18px 0;border-color:var(--brand)">
+    <h3>Você tem uma tentativa em andamento no Simulado ${a.sim}</h3>
+    <p class="note">${a.modo === "prova" ? "Modo prova" : "Modo estudo"} · ${resp} de ${a.ordem.length} respondidas${a.modo === "prova" ? " · tempo restante " + fmtT(TEMPO_PROVA - a.gasto) : ""}</p>
+    <div class="row"><button class="btn primary" id="cont">Continuar</button><button class="btn ghost" id="desc">Descartar</button></div></div>`;
+}
+function ligaContinuar(a) {
+  const c = $("#cont");
+  if (c) c.onclick = () => { if (aba !== String(a.sim)) aba = String(a.sim); att = ls("get", KEY_ATT); ir("quiz"); };
+  const d = $("#desc");
+  if (d) d.onclick = async () => {
+    if (await dialogo("Descartar tentativa?", "O progresso desta tentativa será apagado.", [{label: "Cancelar", value: false}, {label: "Descartar", value: true, primary: true}])) { ls("del", KEY_ATT); home(); }
+  };
+}
+
+function bindQuiz(root) {
+  root.querySelectorAll(".quiz").forEach((sec) => {
+    const qzs = [...sec.querySelectorAll(".qz")];
+    const re = document.createElement("button");
+    re.type = "button"; re.className = "btn ghost"; re.textContent = "Refazer este teste"; re.hidden = true;
+    sec.appendChild(re);
+    const placar = () => {
+      const feitas = qzs.filter((q) => q.dataset.done), acertos = qzs.filter((q) => q.dataset.ok === "1");
+      sec.querySelector(".quiz-score").textContent = feitas.length ? `Você acertou ${acertos.length} de ${qzs.length}${feitas.length < qzs.length ? " até agora" : ""}.` : "";
+      re.hidden = feitas.length === 0;
+    };
+    qzs.forEach((qz) => {
+      const certas = qz.dataset.r.split(",").map(Number), multi = qz.dataset.multi === "1";
+      const bs = [...qz.querySelectorAll(".qz-b")], chk = qz.querySelector(".qz-check"), ex = qz.querySelector(".qz-e");
+      const marcadas = () => bs.map((b, k) => (b.getAttribute("aria-pressed") === "true" ? k : -1)).filter((k) => k >= 0);
+      const finaliza = () => {
+        const s = marcadas(); if (!s.length) return;
+        const ok = s.length === certas.length && certas.every((c) => s.includes(c));
+        qz.dataset.done = "1"; qz.dataset.ok = ok ? "1" : "0";
+        bs.forEach((b, k) => { b.disabled = true; b.classList.toggle("right", certas.includes(k)); b.classList.toggle("wrong", s.includes(k) && !certas.includes(k)); });
+        ex.hidden = false; ex.className = "expl qz-e " + (ok ? "ok" : "bad");
+        ex.querySelector(".qz-res").textContent = ok ? "Correto!" : "Não foi dessa vez.";
+        if (chk) chk.hidden = true;
+        placar();
+      };
+      bs.forEach((b) => b.onclick = () => {
+        if (qz.dataset.done) return;
+        if (multi) b.setAttribute("aria-pressed", b.getAttribute("aria-pressed") === "true" ? "false" : "true");
+        else { bs.forEach((x) => x.setAttribute("aria-pressed", "false")); b.setAttribute("aria-pressed", "true"); finaliza(); }
+      });
+      if (chk) chk.onclick = () => {
+        if (!marcadas().length) { ex.hidden = false; ex.className = "expl qz-e bad"; ex.querySelector(".qz-res").textContent = "Marque as respostas antes de verificar."; return; }
+        finaliza();
+      };
+    });
+    re.onclick = () => {
+      qzs.forEach((qz) => {
+        delete qz.dataset.done; delete qz.dataset.ok;
+        qz.querySelectorAll(".qz-b").forEach((b) => { b.disabled = false; b.setAttribute("aria-pressed", "false"); b.classList.remove("right", "wrong"); });
+        const ex = qz.querySelector(".qz-e"); ex.hidden = true; ex.className = "expl qz-e";
+        const chk = qz.querySelector(".qz-check"); if (chk) chk.hidden = false;
+      });
+      placar();
+    };
+  });
+}
+
+const INTRO = {
+  resumo: "Resumo curto, na ordem da prova (tarefas 1.1 a 4.3): cada tarefa tem o essencial em 30 segundos, um <b>desenho</b>, as <b>palavras-chave do enunciado</b> e um <b>teste rápido</b> para ver se você entendeu.",
+  det: "Versão longa e completa do guia, só para consulta quando você quiser mais detalhes de um serviço. Para estudar, use a aba Guia de estudos.",
+  aula1: "Tudo o que o professor falou na Aula 1: linha do tempo, dicas de prova, palavras-chave, histórias, perguntas dos alunos e o quiz com as respostas.",
+  aula2: "Tudo o que o professor falou na Aula 2 (segurança e conformidade): linha do tempo, dicas de prova, palavras-chave, perguntas dos alunos e o quiz com as respostas.",
+};
+function docTab(k) {
+  const d = DOCS[k];
+  if (!d) { $("#app").innerHTML = "<h1>Conteúdo não carregado</h1>"; return; }
+  const emAnd = ls("get", KEY_ATT);
+  const toc = d.toc.map((t) => `<li><a href="#" data-goto="${t.id}">${esc(t.t)}</a></li>`).join("");
+  const corpo = d.html.replace(/^<h1>.*?<\/h1>\s*/, "");
+  let h = `<h1>${esc(d.title)}</h1><p class="lead">${INTRO[k]}</p>
+  <div class="stats"><span class="pill">65 questões nos simulados</span><span class="pill">90 minutos</span><span class="pill">Corte: 700 de 1.000</span></div>`;
+  if (emAnd && !emAnd.fim && BANCO[emAnd.sim]) h += cardContinuar(emAnd);
+  h += `<div class="row" style="margin:16px 0 4px">` + [1, 2, 3, 4].map((n) => `<button class="btn" data-ir="${n}" ${BANCO[n] ? "" : "disabled"}>Ir para o Simulado ${n}</button>`).join("") + `</div>
+  <div class="card" style="margin-top:16px"><h3>Neste documento</h3><ul class="toc" style="list-style:none;padding-left:0">${toc}</ul></div>
+  <article class="md">${corpo}</article>
+  <p class="note" style="margin-top:20px">Os quadradinhos de <b>checklist</b> ficam salvos neste navegador.</p>`;
+  $("#app").innerHTML = h;
+
+  ligaContinuar(emAnd || {sim: 0});
+  bindQuiz($(".md"));
+  document.querySelectorAll("[data-ir]").forEach((b) => b.onclick = () => trocaAba(b.dataset.ir));
+  document.querySelectorAll("[data-goto]").forEach((a) => a.onclick = (e) => { e.preventDefault(); const el = document.getElementById(a.dataset.goto); if (el) el.scrollIntoView({block: "start"}); });
+  const marcados = ls("get", KEY_CK) || {};
+  document.querySelectorAll("input[data-ck]").forEach((c) => {
+    c.checked = !!marcados[c.dataset.ck];
+    c.onchange = () => { const m = ls("get", KEY_CK) || {}; if (c.checked) m[c.dataset.ck] = 1; else delete m[c.dataset.ck]; ls("set", KEY_CK, m); };
+  });
+}
+
+function simTab(n) {
+  const b = BANCO[n];
+  if (!b) { $("#app").innerHTML = `<h1>Simulado ${n}</h1><p class="empty">Este simulado ainda não está disponível.</p>`; return; }
+  const qs = b.questions, hist = historico().filter((x) => x.sim === n);
+  const emAnd = ls("get", KEY_ATT), meu = emAnd && !emAnd.fim && emAnd.sim === n ? emAnd : null;
+  const outro = emAnd && !emAnd.fim && emAnd.sim !== n ? emAnd : null;
+  const multi = qs.filter((q) => q.type === "multi").length;
+  const porDom = {1: 0, 2: 0, 3: 0, 4: 0}; qs.forEach((q) => porDom[q.domain]++);
+  const best = hist.length ? Math.round(Math.max(...hist.map((x) => x.pct)) * 100) : null;
+
+  let h = `<h1>Simulado ${n}</h1>
+  <p class="lead">${qs.length} questões no formato da prova: ${qs.length - multi} de múltipla escolha (uma resposta) e ${multi} de múltipla resposta (as questões dizem "Escolha duas" ou "Escolha três"). Sem penalidade por chute, então responda todas.</p>
+  <div class="stats"><span class="pill">${qs.length} questões</span><span class="pill">90 minutos</span><span class="pill">Corte: 700 de 1.000</span>${best !== null ? `<span class="pill ok">Melhor: ${best}%</span>` : ""}</div>`;
+  if (meu) h += cardContinuar(meu);
+  if (outro) h += `<p class="note" style="margin-top:14px">Há uma tentativa em andamento no Simulado ${outro.sim}. Começar uma nova aqui substitui aquela.</p>`;
+  h += `<h2>Como quer fazer?</h2><div class="grid g2">
+    <section class="card"><h3>Modo prova</h3><p class="note">Cronômetro de 90 minutos, sem gabarito durante o simulado. Você pode marcar questões para revisar e vê o resultado completo no fim.</p><button class="btn primary" id="mProva">Começar em modo prova</button></section>
+    <section class="card"><h3>Modo estudo</h3><p class="note">Sem limite de tempo. Depois de cada questão, você confere a resposta e lê a explicação na hora.</p><button class="btn" id="mEstudo">Começar em modo estudo</button></section></div>
+  <h2>O que tem neste simulado</h2><div class="card tablewrap"><table><thead><tr><th>Domínio</th><th>Peso na prova</th><th>Questões aqui</th></tr></thead><tbody>`;
+  [1, 2, 3, 4].forEach((d) => { h += `<tr><td>${d}. ${esc(DOMS[d])}</td><td class="num">${PESO[d]}%</td><td class="num">${porDom[d]}</td></tr>`; });
+  h += `</tbody></table></div>
+  <h2>Seu histórico neste simulado</h2>`;
+  if (!hist.length) h += `<p class="empty">Nenhuma tentativa concluída ainda. Os resultados ficam salvos só neste navegador.</p>`;
+  else {
+    h += `<div class="card tablewrap"><table><thead><tr><th>Quando</th><th>Modo</th><th>Acertos</th><th>Nota estimada</th><th>Tempo</th></tr></thead><tbody>`;
+    hist.slice().reverse().slice(0, 10).forEach((x) => {
+      const nota = escala(x.pct);
+      h += `<tr><td>${fmtData(x.data)}</td><td>${x.modo === "prova" ? "Prova" : "Estudo"}</td><td class="num">${x.acertos}/${x.total} (${Math.round(x.pct * 100)}%)</td>
+      <td class="num"><span class="pill ${nota >= CORTE ? "ok" : "bad"}">${nota}</span></td><td class="num">${fmtT(x.seg)}</td></tr>`;
+    });
+    h += `</tbody></table></div><div class="row" style="margin-top:10px"><button class="btn ghost" id="limpa">Apagar todo o histórico</button></div>`;
+  }
+  h += `<p class="note" style="margin-top:18px">A nota estimada é uma conta simples (100 + 900 × % de acerto). A AWS usa escala própria; use como referência, não como garantia.</p>
+  <p class="note">As questões sobre planos de suporte seguem o modelo cobrado no CLF-C02 (Basic, Developer, Business, Enterprise On-Ramp e Enterprise). A AWS vem reformulando esses planos, então confira o guia atual antes da prova.</p>`;
+  $("#app").innerHTML = h;
+
+  ligaContinuar(meu || {sim: n});
+  $("#mProva").onclick = () => comecar(n, "prova");
+  $("#mEstudo").onclick = () => comecar(n, "estudo");
+  const l = $("#limpa");
+  if (l) l.onclick = async () => {
+    if (await dialogo("Apagar histórico?", "Todos os resultados salvos neste navegador serão removidos.", [{label: "Cancelar", value: false}, {label: "Apagar", value: true, primary: true}])) { ls("del", KEY_HIST); home(); }
+  };
+}
+
+async function comecar(sim, modo) {
+  const exist = ls("get", KEY_ATT);
+  if (exist && !exist.fim) {
+    const ok = await dialogo("Substituir a tentativa em andamento?", "Já existe uma tentativa não finalizada. Começar outra apaga o progresso dela.", [{label: "Cancelar", value: false}, {label: "Começar nova", value: true, primary: true}]);
+    if (!ok) return;
+  }
+  const qs = BANCO[sim].questions;
+  att = {sim, modo, ordem: embaralha(qs.map((_, i) => i), sim * 7919 + 13), resp: {}, marca: {}, ver: {}, pos: 0,
+         inicio: new Date().toISOString(), gasto: 0, fim: false};
+  salvar(); ir("quiz");
+}
+function salvar() { if (att) ls("set", KEY_ATT, att); }
+
+/* ---------- QUIZ ---------- */
+function Q(i) { return BANCO[att.sim].questions[att.ordem[i]]; }
+function restante() { return TEMPO_PROVA - att.gasto; }
+
+function quiz() {
+  if (!att) return ir("home");
+  aba = String(att.sim); desenhaAbas();
+  att.t0 = Date.now(); const base = att.gasto;
+  timerId = setInterval(() => {
+    att.gasto = base + Math.floor((Date.now() - att.t0) / 1000);
+    const el = $("#tm"); if (el) { el.textContent = att.modo === "prova" ? fmtT(restante()) : fmtT(att.gasto); el.classList.toggle("low", att.modo === "prova" && restante() < 300); }
+    if (att.gasto % 10 === 0) salvar();
+    if (att.modo === "prova" && restante() <= 0) { finalizar(true); }
+  }, 500);
+  desenha();
+}
+
+function desenha() {
+  const total = att.ordem.length, i = att.pos, q = Q(i), modo = att.modo;
+  const sel = att.resp[i] || [];
+  const verificada = modo === "estudo" && att.ver[i];
+  $("#topInfo").innerHTML = `<span class="pill">Simulado ${att.sim} · ${modo === "prova" ? "Prova" : "Estudo"}</span>`;
+  const nresp = Object.keys(att.resp).length;
+  let h = `<div class="qhead">
+    <div><b>Questão ${i + 1}</b> <span class="note">de ${total}</span></div>
+    <div class="sp"></div>
+    <div class="note">${nresp} respondidas</div>
+    <div class="timer" id="tm" aria-label="${modo === "prova" ? "Tempo restante" : "Tempo gasto"}">${modo === "prova" ? fmtT(restante()) : fmtT(att.gasto)}</div>
+    <button class="btn primary" id="fin">Finalizar</button>
+  </div>
+  <div class="bar" aria-hidden="true"><i style="width:${Math.round(((i + 1) / total) * 100)}%"></i></div>
+  <div class="qlayout" style="margin-top:16px"><div>
+  <article class="card qcard" aria-live="polite">
+    <div class="qmeta"><span class="pill mut">Domínio ${q.domain} · ${esc(DOMS[q.domain])}</span>${att.marca[i] ? '<span class="pill warn">Marcada para revisão</span>' : ""}</div>
+    <div class="qtext">${esc(q.question)}</div>
+    <div class="hint">${q.type === "multi" ? `Escolha ${q.answer.length}. Selecione todas as respostas corretas.` : "Escolha uma resposta."}</div>
+    <div class="opts" role="${q.type === "multi" ? "group" : "radiogroup"}" aria-label="Opções de resposta">`;
+  q.options.forEach((o, k) => {
+    const on = sel.includes(k);
+    let cls = "opt" + (q.type === "multi" ? " multi" : "");
+    let tag = "";
+    if (verificada) {
+      if (q.answer.includes(k)) { cls += " right"; tag = '<span class="tag" style="color:var(--ok)">Correta</span>'; }
+      else if (on) { cls += " wrong"; tag = '<span class="tag" style="color:var(--bad)">Sua resposta</span>'; }
+    }
+    h += `<button type="button" class="${cls}" role="${q.type === "multi" ? "checkbox" : "radio"}" aria-checked="${on}" data-k="${k}" ${verificada ? "disabled" : ""}>
+      <span class="k">${LETRAS[k]}</span><span class="t">${esc(o)}${tag}</span></button>`;
+  });
+  h += `</div>`;
+  if (verificada) {
+    const ok = certa(q, sel);
+    h += `<div class="expl ${ok ? "ok" : "bad"}"><b class="h">${ok ? "Correto!" : "Não foi dessa vez."}</b>${esc(q.explanation)}</div>`;
+  }
+  h += `<div class="nav">
+    <button class="btn" id="prev" ${i === 0 ? "disabled" : ""}>← Anterior</button>
+    <button class="btn ghost" id="flag">${att.marca[i] ? "Desmarcar revisão" : "Marcar para revisão"}</button>
+    <span class="sp"></span>`;
+  if (modo === "estudo" && !verificada) h += `<button class="btn primary" id="check" ${sel.length ? "" : "disabled"}>Verificar</button>`;
+  h += `<button class="btn ${modo === "estudo" && !verificada ? "" : "primary"}" id="next" ${i === total - 1 ? "disabled" : ""}>Próxima →</button>
+  </div></article></div>
+  <aside class="side card" aria-label="Mapa de questões"><h3>Mapa de questões</h3><div class="map" id="map">`;
+  for (let n = 0; n < total; n++) {
+    let c = "";
+    if (modo === "estudo" && att.ver[n]) c = certa(Q(n), att.resp[n]) ? "okq" : "badq";
+    else if (att.resp[n] && att.resp[n].length) c = "done";
+    if (n === i) c += " cur"; if (att.marca[n]) c += " flag";
+    h += `<button type="button" class="${c}" data-n="${n}" aria-label="Questão ${n + 1}${att.resp[n] ? ", respondida" : ""}${att.marca[n] ? ", marcada" : ""}">${n + 1}</button>`;
+  }
+  h += `</div><div class="legend"><span><i style="background:var(--brand-soft);border-color:var(--brand)"></i>respondida</span><span><i style="background:var(--focus);border-color:var(--focus)"></i>marcada</span>${modo === "estudo" ? '<span><i style="background:var(--ok-soft);border-color:var(--ok)"></i>certa</span><span><i style="background:var(--bad-soft);border-color:var(--bad)"></i>errada</span>' : ""}</div>
+  <p class="note" style="margin:12px 0 0">Atalhos: A–F escolhem, ← → navegam${modo === "estudo" ? ", Enter verifica" : ""}.</p></aside></div>`;
+  $("#app").innerHTML = h;
+
+  document.querySelectorAll(".opt").forEach((b) => b.onclick = () => escolher(+b.dataset.k));
+  document.querySelectorAll("#map button").forEach((b) => b.onclick = () => { att.pos = +b.dataset.n; salvar(); desenha(); });
+  $("#prev").onclick = () => { att.pos--; salvar(); desenha(); window.scrollTo(0, 0); };
+  $("#next").onclick = () => { att.pos++; salvar(); desenha(); window.scrollTo(0, 0); };
+  $("#flag").onclick = () => { if (att.marca[i]) delete att.marca[i]; else att.marca[i] = 1; salvar(); desenha(); };
+  const ck = $("#check"); if (ck) ck.onclick = verifica;
+  $("#fin").onclick = () => finalizar(false);
+}
+
+function escolher(k) {
+  const i = att.pos, q = Q(i);
+  if (att.modo === "estudo" && att.ver[i]) return;
+  let sel = (att.resp[i] || []).slice();
+  if (q.type === "multi") { sel = sel.includes(k) ? sel.filter((x) => x !== k) : sel.concat(k); }
+  else sel = [k];
+  sel.sort((a, b) => a - b);
+  if (sel.length) att.resp[i] = sel; else delete att.resp[i];
+  salvar(); desenha();
+  const el = document.querySelector(`.opt[data-k="${k}"]`); if (el) el.focus();
+}
+function verifica() {
+  const i = att.pos; if (!att.resp[i]) return;
+  att.ver[i] = 1; salvar(); desenha();
+}
+
+document.addEventListener("keydown", (e) => {
+  if (!att || att.fim || !$("#fin") || $("#dlg").open) return;
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  const k = e.key.toUpperCase(), q = Q(att.pos);
+  if (/^[A-F]$/.test(k) && LETRAS.indexOf(k) < q.options.length) { escolher(LETRAS.indexOf(k)); e.preventDefault(); }
+  else if (e.key === "ArrowRight" && att.pos < att.ordem.length - 1) { att.pos++; salvar(); desenha(); }
+  else if (e.key === "ArrowLeft" && att.pos > 0) { att.pos--; salvar(); desenha(); }
+  else if (e.key === "Enter" && att.modo === "estudo" && !att.ver[att.pos] && att.resp[att.pos]) { verifica(); }
+});
+
+/* ---------- finalizar e resultado ---------- */
+async function finalizar(auto) {
+  const total = att.ordem.length, resp = Object.keys(att.resp).length, marc = Object.keys(att.marca).length;
+  if (!auto) {
+    let msg = resp < total ? `Faltam ${total - resp} questões sem resposta, que contam como erradas. ` : "Todas as questões foram respondidas. ";
+    if (marc) msg += `Você marcou ${marc} para revisão. `;
+    const ok = await dialogo("Finalizar o simulado?", msg + "Depois de finalizar, você vê o resultado e o gabarito comentado.", [{label: "Voltar", value: false}, {label: "Finalizar", value: true, primary: true}]);
+    if (!ok) return;
+  }
+  clearInterval(timerId); timerId = null;
+  att.fim = true; att.fimEm = new Date().toISOString();
+  const r = calcula(att);
+  const h = historico();
+  h.push({sim: att.sim, modo: att.modo, data: att.fimEm, pct: r.pct, acertos: r.acertos, total: r.total, seg: att.gasto, dom: r.dom});
+  ls("set", KEY_HIST, h.slice(-60));
+  ls("del", KEY_ATT);
+  ir("result");
+}
+function calcula(a) {
+  const dom = {}; let acertos = 0;
+  a.ordem.forEach((qi, i) => {
+    const q = BANCO[a.sim].questions[qi];
+    dom[q.domain] = dom[q.domain] || {ok: 0, n: 0};
+    dom[q.domain].n++;
+    if (certa(q, a.resp[i])) { acertos++; dom[q.domain].ok++; }
+  });
+  return {acertos, total: a.ordem.length, pct: acertos / a.ordem.length, dom};
+}
+function resultado(a, filtro = "todas") {
+  aba = String(a.sim); desenhaAbas();
+  const r = calcula(a), nota = escala(r.pct), passou = nota >= CORTE;
+  $("#topInfo").innerHTML = `<span class="pill">Simulado ${a.sim} · ${a.modo === "prova" ? "Prova" : "Estudo"}</span>`;
+  const cor = passou ? "var(--ok)" : "var(--bad)";
+  let h = `<h1>Resultado do Simulado ${a.sim}</h1>
+  <div class="card"><div class="score">
+    <div class="ring" style="background:conic-gradient(${cor} ${Math.round(r.pct * 360)}deg,var(--line) 0)" role="img" aria-label="${Math.round(r.pct * 100)}% de acerto"><div><span><b>${Math.round(r.pct * 100)}%</b><small>${r.acertos} de ${r.total}</small></span></div></div>
+    <div>
+      <p style="margin:0 0 6px"><span class="pill ${passou ? "ok" : "bad"}">${passou ? "Acima da nota de corte (estimativa)" : "Abaixo da nota de corte (estimativa)"}</span></p>
+      <p style="font-size:22px;margin:6px 0"><b>${nota}</b> <span class="note">de 1.000 · corte 700 (≈ 67% de acerto)</span></p>
+      <p class="note">Tempo gasto: ${fmtT(a.gasto)}${a.modo === "prova" ? " de 90:00" : ""}. A nota é uma estimativa simples; a AWS usa escala própria.</p>
+    </div></div></div>
+  <h2>Desempenho por domínio</h2><div class="card">`;
+  [1, 2, 3, 4].forEach((d) => {
+    const x = r.dom[d] || {ok: 0, n: 0}, p = x.n ? x.ok / x.n : 0;
+    const c = p >= 0.75 ? "ok" : p >= 0.6 ? "warn" : "bad";
+    h += `<div class="dom"><span>${d}. ${esc(DOMS[d])} <span class="note">(${PESO[d]}%)</span></span><div class="bar"><i class="${c}" style="width:${Math.round(p * 100)}%"></i></div><span class="num">${x.ok}/${x.n} · ${Math.round(p * 100)}%</span></div>`;
+  });
+  h += `<p class="note" style="margin:10px 0 0">Verde: 75% ou mais · laranja: 60 a 74% · vermelho: abaixo de 60%. Priorize os vermelhos, ponderando pelo peso do domínio.</p></div>
+  <h2>Revisão das questões</h2>
+  <div class="filters" role="group" aria-label="Filtrar questões">`;
+  [["todas", "Todas"], ["erradas", "Erradas e em branco"], ["marcadas", "Marcadas"], ["certas", "Certas"]].forEach(([k, l]) => {
+    h += `<button class="btn" data-f="${k}" aria-pressed="${filtro === k}">${l}</button>`;
+  });
+  h += `</div><div id="lista">`;
+  let mostradas = 0;
+  a.ordem.forEach((qi, i) => {
+    const q = BANCO[a.sim].questions[qi], sel = a.resp[i] || [], ok = certa(q, sel);
+    if (filtro === "erradas" && ok) return;
+    if (filtro === "certas" && !ok) return;
+    if (filtro === "marcadas" && !a.marca[i]) return;
+    mostradas++;
+    h += `<details class="card rev"><summary><span class="pill ${ok ? "ok" : "bad"}">${i + 1}</span><span style="flex:1"><b>${ok ? "Certa" : sel.length ? "Errada" : "Em branco"}</b> · <span class="note">Dom. ${q.domain}, tarefa ${esc(q.task)}</span><br>${esc(q.question.length > 160 ? q.question.slice(0, 160) + "…" : q.question)}</span></summary>
+      <div class="body"><div class="qtext" style="font-size:16px">${esc(q.question)}</div><div class="opts">`;
+    q.options.forEach((o, k) => {
+      let cls = "opt" + (q.type === "multi" ? " multi" : ""), tag = "";
+      if (q.answer.includes(k)) { cls += " right"; tag = '<span class="tag" style="color:var(--ok)">Correta</span>'; }
+      else if (sel.includes(k)) { cls += " wrong"; tag = '<span class="tag" style="color:var(--bad)">Sua resposta</span>'; }
+      h += `<div class="${cls}" style="cursor:default"><span class="k">${LETRAS[k]}</span><span class="t">${esc(o)}${tag}</span></div>`;
+    });
+    h += `</div><div class="expl ${ok ? "ok" : "bad"}"><b class="h">Explicação</b>${esc(q.explanation)}</div></div></details>`;
+  });
+  if (!mostradas) h += `<p class="empty">Nenhuma questão neste filtro.</p>`;
+  h += `</div><div class="row" style="margin-top:20px">
+    <button class="btn primary" id="again">Refazer este simulado</button>
+    <button class="btn" id="errs">Estudar só as erradas</button>
+    <button class="btn ghost" id="back">Voltar ao Simulado ${a.sim}</button></div>`;
+  $("#app").innerHTML = h;
+  document.querySelectorAll("[data-f]").forEach((b) => b.onclick = () => resultado(a, b.dataset.f));
+  $("#again").onclick = () => comecar(a.sim, a.modo);
+  $("#back").onclick = () => { ls("del", KEY_ATT); ir("home"); };
+  $("#errs").onclick = () => {
+    const idx = a.ordem.filter((qi, i) => !certa(BANCO[a.sim].questions[qi], a.resp[i]));
+    if (!idx.length) { dialogo("Sem erros", "Você acertou tudo neste simulado.", [{label: "Ok", value: true, primary: true}]); return; }
+    att = {sim: a.sim, modo: "estudo", ordem: idx, resp: {}, marca: {}, ver: {}, pos: 0, inicio: new Date().toISOString(), gasto: 0, fim: false, revisao: true};
+    salvar(); ir("quiz");
+  };
+}
+
+/* ---------- início ---------- */
+window.addEventListener("beforeunload", () => { if (att && !att.fim) { att.gasto = att.gasto || 0; salvar(); } });
+function inicio() {
+  const m = location.hash.match(/^#(resumo|detalhado|aula[12]|simulado[1-4])$/);
+  const k = m ? m[1].replace("simulado", "").replace("detalhado", "det") : "resumo";
+  aba = (DOCTABS[k] && DOCS[k]) || BANCO[k] ? k : "resumo";
+  home();
+}
+inicio();
+</script>
+</body>
+</html>
